@@ -78,30 +78,20 @@
 .navx-open .navx-overlay{display:block}
 .navx-open .navx-drawer{transform:translateX(0)}
 </style>
-<script id="navx-script">
-(function(){
-  function closeAll(){ document.querySelectorAll('.navx-group.open').forEach(el=>el.classList.remove('open')); document.querySelectorAll('.navx-toggle[aria-expanded="true"]').forEach(a=>a.setAttribute('aria-expanded','false')); }
-  document.addEventListener('click', function(e){
-    var t = e.target;
-    var toggle = t.closest('a.navx-toggle');
-    if (toggle){ e.preventDefault(); e.stopPropagation(); var parent = toggle.closest('.navx-group'); var isOpen = parent.classList.contains('open'); closeAll(); if(!isOpen){ parent.classList.add('open'); toggle.setAttribute('aria-expanded','true'); } return; }
-    if (!t.closest('.navx-sub')){ closeAll(); }
-  }, true);
-  // mobile drawer
-  document.addEventListener('click', function(e){
-    var btn = e.target.closest('#navx-burger');
-    var closeBtn = e.target.closest('#navx-close');
-    if (btn){ e.preventDefault(); document.documentElement.classList.add('navx-open'); }
-    if (closeBtn || e.target.classList.contains('navx-overlay')){ document.documentElement.classList.remove('navx-open'); }
-    // accordion
-    var acc = e.target.closest('.navx-acc');
-    if (acc){ e.preventDefault(); var body = acc.nextElementSibling; if(body){ body.classList.toggle('hidden'); }}
-  });
-})();
-</script>
+<script id="navx-script" src="tools/navx-accessible.js"></script>
 <link rel="stylesheet" href="tools/ux.css"/>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Proppy">
+<meta property="og:title" content="Proppy">
+<meta property="og:description" content="Smarter property investment with data-led insights and expert execution.">
+<meta property="og:image" content="/assets/placeholders/tablet.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proppy">
+<meta name="twitter:description" content="Smarter property investment with data-led insights and expert execution.">
+<meta name="twitter:image" content="/assets/placeholders/tablet.svg">
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+<a href="#content" class="skip-link">Skip to content</a>
 
 
 
@@ -159,8 +149,8 @@
       </button>
     </div>
   </div>
-  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
+  <div id="navx-overlay" class="fixed inset-0 navx-overlay bg-black/40" id="navx-overlay"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4" id="navx-drawer">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
         <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
@@ -206,6 +196,7 @@
     <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Get Started</a>
   </div>
 </nav>
+<div id="content"></div>
 
 
 

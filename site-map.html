@@ -20,30 +20,20 @@
 .navx-open .navx-overlay{display:block}
 .navx-open .navx-drawer{transform:translateX(0)}
 </style>
-<script id="navx-script">
-(function(){
-  function closeAll(){ document.querySelectorAll('.navx-group.open').forEach(el=>el.classList.remove('open')); document.querySelectorAll('.navx-toggle[aria-expanded="true"]').forEach(a=>a.setAttribute('aria-expanded','false')); }
-  document.addEventListener('click', function(e){
-    var t = e.target;
-    var toggle = t.closest('a.navx-toggle');
-    if (toggle){ e.preventDefault(); e.stopPropagation(); var parent = toggle.closest('.navx-group'); var isOpen = parent.classList.contains('open'); closeAll(); if(!isOpen){ parent.classList.add('open'); toggle.setAttribute('aria-expanded','true'); } return; }
-    if (!t.closest('.navx-sub')){ closeAll(); }
-  }, true);
-  // mobile drawer
-  document.addEventListener('click', function(e){
-    var btn = e.target.closest('#navx-burger');
-    var closeBtn = e.target.closest('#navx-close');
-    if (btn){ e.preventDefault(); document.documentElement.classList.add('navx-open'); }
-    if (closeBtn || e.target.classList.contains('navx-overlay')){ document.documentElement.classList.remove('navx-open'); }
-    // accordion
-    var acc = e.target.closest('.navx-acc');
-    if (acc){ e.preventDefault(); var body = acc.nextElementSibling; if(body){ body.classList.toggle('hidden'); }}
-  });
-})();
-</script>
+<script id="navx-script" src="tools/navx-accessible.js"></script>
 <link rel="stylesheet" href="tools/ux.css"/>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Proppy">
+<meta property="og:title" content="Proppy">
+<meta property="og:description" content="Smarter property investment with data-led insights and expert execution.">
+<meta property="og:image" content="/assets/placeholders/tablet.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proppy">
+<meta name="twitter:description" content="Smarter property investment with data-led insights and expert execution.">
+<meta name="twitter:image" content="/assets/placeholders/tablet.svg">
 </head>
 <body class="bg-white text-slate-900">
+<a href="#content" class="skip-link">Skip to content</a>
   <div class="max-w-3xl mx-auto p-8 prose">
     <h1>Site Map</h1>
     <p>All pages in this site are listed below.</p>
