@@ -1,0 +1,42 @@
+/* Respect reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in { opacity: 0; animation: fade-in 600ms ease-out forwards; }
+  .animate-slide-up { opacity: 0; transform: translateY(12px); animation: slide-up 600ms cubic-bezier(.2,.8,.2,1) forwards; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+}
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes slide-up { to { opacity: 1; transform: translateY(0); } }
+
+/* Generic hover lift for CTA-like elements */
+.btn, a[class*="px-"][class*="py-"][class*="rounded"], button[class*="px-"][class*="py-"][class*="rounded"] {
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  .btn:hover, a[class*="px-"][class*="py-"][class*="rounded"]:hover, button[class*="px-"][class*="py-"][class*="rounded"]:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Card polish */
+.card, .rounded, .rounded-xl, .rounded-2xl, .rounded-[2.5rem] {
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  .card:hover, .rounded:hover, .rounded-xl:hover, .rounded-2xl:hover, .rounded-[2.5rem]:hover {
+    box-shadow: 0 10px 30px rgba(2,6,23,0.08) !important;
+  }
+}
+
+/* Image frames and placeholders */
+.img-frame { background: linear-gradient(135deg,#f8fafc,#eef2ff); border: 1px solid rgba(148,163,184,.25); }
+.img-rounded { border-radius: 1rem; overflow: hidden; }
+.img-shadow { box-shadow: 0 8px 24px rgba(2,6,23,.08); }
+.img-bleed { border-radius: 1.5rem; }
+
+/* Utility to keep large sections tighter on mobile without editing every class */
+@media (max-width: 767px) {
+  .section-tight { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  .hero-tight { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+}

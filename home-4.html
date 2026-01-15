@@ -99,6 +99,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
 
@@ -110,8 +111,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -162,7 +163,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -214,10 +215,10 @@
 <div class="floating-blob w-96 h-96 bg-blue-200 dark:bg-blue-900/40 -top-20 -left-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob"></div>
 <div class="floating-blob w-96 h-96 bg-purple-200 dark:bg-purple-900/40 top-0 -right-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000"></div>
 <div class="max-w-5xl mx-auto px-6 text-center">
-<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+<h1 class="text-3xl md:text-5xl md:text-2xl md:text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] animate-slide-up">
             We’re redefining property investment by making it <span class="underline-accent">simpler, more transparent, and less stressful.</span>
 </h1>
-<p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
+<p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-10 leading-relaxed animate-fade-in delay-100">
             Property investment shouldn't be a second full-time job. We combine data-driven insights with expert guidance to help you build wealth without the hassle, hidden fees, or guesswork.
         </p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -230,7 +231,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -242,7 +243,7 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
       <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
-      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
     </div>
     <div class="flex items-center gap-3">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
@@ -256,7 +257,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -264,15 +265,15 @@
   </div>
 </section>
 </main>
-<section class="py-20 bg-white dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800">
+<section class="py-12 md:py-20 bg-white dark:bg-slate-900/40 border-y border-slate-100 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-6">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 <div>
-<h2 class="text-4xl font-extrabold mb-6">Why We Exist</h2>
-<p class="text-xl text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
+<h2 class="text-2xl md:text-4xl font-extrabold mb-6">Why We Exist</h2>
+<p class="text-xl text-slate-500 dark:text-slate-400 mb-8 leading-relaxed animate-fade-in delay-100">
                     The traditional property model is broken. It's expensive, opaque, and overly complex. We built Proppy to solve that.
                 </p>
-<p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+<p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed animate-fade-in delay-100">
                     We saw an industry filled with expensive buyers agents charging $15k+ for simple research, and data platforms that were too complex for everyday investors. We exist to bridge that gap—lowering the barrier to entry through technology.
                 </p>
 <div class="flex flex-col gap-4">
@@ -282,7 +283,7 @@
 </div>
 <div>
 <h4 class="font-bold text-slate-900 dark:text-white">Lowering Cost</h4>
-<p class="text-sm text-slate-500">Removing inefficiencies to pass savings to you.</p>
+<p class="text-sm text-slate-500 animate-fade-in delay-100">Removing inefficiencies to pass savings to you.</p>
 </div>
 </div>
 <div class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-2xl">
@@ -291,7 +292,7 @@
 </div>
 <div>
 <h4 class="font-bold text-slate-900 dark:text-white">Removing Complexity</h4>
-<p class="text-sm text-slate-500">Turning market chaos into clear action plans.</p>
+<p class="text-sm text-slate-500 animate-fade-in delay-100">Turning market chaos into clear action plans.</p>
 </div>
 </div>
 </div>
@@ -300,18 +301,18 @@
 <div class="absolute inset-0 bg-gradient-to-tr from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 rounded-[3rem] transform rotate-3 scale-95 opacity-50"></div>
 <div class="bg-card-light dark:bg-card-dark p-8 md:p-12 rounded-[3rem] border border-slate-200 dark:border-slate-700 shadow-xl relative z-10">
 <div class="flex items-start gap-4 mb-8">
-<span class="material-symbols-outlined text-4xl text-slate-300">format_quote</span>
-<p class="text-lg md:text-2xl font-medium leading-relaxed italic text-slate-800 dark:text-slate-200">
+<span class="material-symbols-outlined text-2xl md:text-4xl text-slate-300">format_quote</span>
+<p class="text-lg md:text-2xl font-medium leading-relaxed italic text-slate-800 dark:text-slate-200 animate-fade-in delay-100">
                             We believe that sophisticated investment tools shouldn't be reserved for the ultra-wealthy. By automating the data heavy-lifting, we empower everyday Australians to make institutional-grade decisions.
                         </p>
 </div>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 bg-slate-200 rounded-full overflow-hidden">
-<img alt="James Wilson" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUpIBZ7vXrFNOURTU5ojw1ASvVvVQf90TXbWQeCOJK8aao57oTUQGoS__HUHUCT0fHcQE95dXz3OJXlL5bozb8wkUabMh1jF4covEULOzSM_kgBeE7M5eAbQtGFK3_HcACTxEvybuDKC5nMR91uHXnaf4VuvLiPUj_Zx46ZCxm8JQvWtDSpHhyQa7vlQxNQuyDvpvzLnr4rplHwr_GXVISVc5unRkfMOCJFPC-GMrYAjqXZWDrxCpwKOIRQYkfwlM5ez0DTqYzKqzL"/>
+<img alt="James Wilson" class="w-full h-full object-cover img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUpIBZ7vXrFNOURTU5ojw1ASvVvVQf90TXbWQeCOJK8aao57oTUQGoS__HUHUCT0fHcQE95dXz3OJXlL5bozb8wkUabMh1jF4covEULOzSM_kgBeE7M5eAbQtGFK3_HcACTxEvybuDKC5nMR91uHXnaf4VuvLiPUj_Zx46ZCxm8JQvWtDSpHhyQa7vlQxNQuyDvpvzLnr4rplHwr_GXVISVc5unRkfMOCJFPC-GMrYAjqXZWDrxCpwKOIRQYkfwlM5ez0DTqYzKqzL" loading="lazy" decoding="async">
 </div>
 <div>
-<p class="font-bold text-slate-900 dark:text-white">James Wilson</p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Founder &amp; CEO</p>
+<p class="font-bold text-slate-900 dark:text-white animate-fade-in delay-100">James Wilson</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold animate-fade-in delay-100">Founder & CEO</p>
 </div>
 </div>
 </div>
@@ -319,11 +320,11 @@
 </div>
 </div>
 </section>
-<section class="py-24">
+<section class="py-16 md:py-24">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-20">
-<h2 class="text-4xl font-extrabold mb-4">Who We Are</h2>
-<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg">
+<h2 class="text-2xl md:text-4xl font-extrabold mb-4">Who We Are</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg animate-fade-in delay-100">
     We aren't just real estate agents. We are a hybrid team of seasoned property professionals, software engineers, and data specialists working together.
 </p>
 </div>
@@ -331,55 +332,55 @@
 <div class="bg-card-light dark:bg-card-dark p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all hover:-translate-y-1 text-center group">
 <div class="relative inline-block mx-auto mb-6">
 <div class="absolute inset-0 bg-accent/20 rounded-full transform scale-105 group-hover:scale-110 transition-transform"></div>
-<img alt="James Wilson" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUpIBZ7vXrFNOURTU5ojw1ASvVvVQf90TXbWQeCOJK8aao57oTUQGoS__HUHUCT0fHcQE95dXz3OJXlL5bozb8wkUabMh1jF4covEULOzSM_kgBeE7M5eAbQtGFK3_HcACTxEvybuDKC5nMR91uHXnaf4VuvLiPUj_Zx46ZCxm8JQvWtDSpHhyQa7vlQxNQuyDvpvzLnr4rplHwr_GXVISVc5unRkfMOCJFPC-GMrYAjqXZWDrxCpwKOIRQYkfwlM5ez0DTqYzKqzL"/>
+<img alt="James Wilson" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUpIBZ7vXrFNOURTU5ojw1ASvVvVQf90TXbWQeCOJK8aao57oTUQGoS__HUHUCT0fHcQE95dXz3OJXlL5bozb8wkUabMh1jF4covEULOzSM_kgBeE7M5eAbQtGFK3_HcACTxEvybuDKC5nMR91uHXnaf4VuvLiPUj_Zx46ZCxm8JQvWtDSpHhyQa7vlQxNQuyDvpvzLnr4rplHwr_GXVISVc5unRkfMOCJFPC-GMrYAjqXZWDrxCpwKOIRQYkfwlM5ez0DTqYzKqzL" loading="lazy" decoding="async">
 </div>
 <h3 class="text-xl font-bold mb-1">James Wilson</h3>
-<p class="text-xs text-accent font-bold uppercase tracking-wider mb-4">Strategy Lead</p>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-xs text-accent font-bold uppercase tracking-wider mb-4 animate-fade-in delay-100">Strategy Lead</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     15+ years in property strategy. Guides the overarching investment philosophy.
                 </p>
 </div>
 <div class="bg-card-light dark:bg-card-dark p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all hover:-translate-y-1 text-center group">
 <div class="relative inline-block mx-auto mb-6">
 <div class="absolute inset-0 bg-purple-500/20 rounded-full transform scale-105 group-hover:scale-110 transition-transform"></div>
-<img alt="Sarah Chen" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC02M5n6wIfupIS-yy77uaOPwiegmF43FW-x4HXUcXoENtAkvJ1uNsrgGGBmqy6uLMhwZBstKJgX0iulqsHpktN2-yQX8aPx_aWRt94bb3gOVMgnF8Ag96Z3RZ5NC0r6YklOjEcAZFkneEs6fKQziJtX4ystrm9gNjlJ8sCgbHy45RZG9GmAaDM9UNDQmK8D45aQg3eO8kx5U5WIeyFXw0ioKSBN1cmUxiut_QFF5Hq7WPMxKRCQBij0anIFH4r0E5yl97toeaBYW_N"/>
+<img alt="Sarah Chen" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC02M5n6wIfupIS-yy77uaOPwiegmF43FW-x4HXUcXoENtAkvJ1uNsrgGGBmqy6uLMhwZBstKJgX0iulqsHpktN2-yQX8aPx_aWRt94bb3gOVMgnF8Ag96Z3RZ5NC0r6YklOjEcAZFkneEs6fKQziJtX4ystrm9gNjlJ8sCgbHy45RZG9GmAaDM9UNDQmK8D45aQg3eO8kx5U5WIeyFXw0ioKSBN1cmUxiut_QFF5Hq7WPMxKRCQBij0anIFH4r0E5yl97toeaBYW_N" loading="lazy" decoding="async">
 </div>
 <h3 class="text-xl font-bold mb-1">Sarah Chen</h3>
-<p class="text-xs text-purple-500 font-bold uppercase tracking-wider mb-4">Head of Data Science</p>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-xs text-purple-500 font-bold uppercase tracking-wider mb-4 animate-fade-in delay-100">Head of Data Science</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     Former fintech engineer turning complex market data into actionable signals.
                 </p>
 </div>
 <div class="bg-card-light dark:bg-card-dark p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all hover:-translate-y-1 text-center group">
 <div class="relative inline-block mx-auto mb-6">
 <div class="absolute inset-0 bg-blue-500/20 rounded-full transform scale-105 group-hover:scale-110 transition-transform"></div>
-<img alt="Michael Ross" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmBnJ_SbNcCdnyZdQaR43eK0h6qsbrds_wfTAS01z3U21KJVdRo6s4RkRqIsX8lI8wuypibCJGN3IoMXo65IRlwQbcwGoQj_EW-1S8VStfYrrkZdGtymU05YctxMgz4lDc6A0JmRNBwMhuKkEYARWX4t7HlCwwl8vHSZ18ge1dx-epitNGzOG5hLM9a35WiKBgwEX5TMJWHOG-u--HH-ax0WQtu9Bn4WbPRgS1tmA_njppai4GkhKgAkgG_65MlRgFlW_muvScuMwK"/>
+<img alt="Michael Ross" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmBnJ_SbNcCdnyZdQaR43eK0h6qsbrds_wfTAS01z3U21KJVdRo6s4RkRqIsX8lI8wuypibCJGN3IoMXo65IRlwQbcwGoQj_EW-1S8VStfYrrkZdGtymU05YctxMgz4lDc6A0JmRNBwMhuKkEYARWX4t7HlCwwl8vHSZ18ge1dx-epitNGzOG5hLM9a35WiKBgwEX5TMJWHOG-u--HH-ax0WQtu9Bn4WbPRgS1tmA_njppai4GkhKgAkgG_65MlRgFlW_muvScuMwK" loading="lazy" decoding="async">
 </div>
 <h3 class="text-xl font-bold mb-1">Michael Ross</h3>
-<p class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-4">Acquisitions Manager</p>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-xs text-blue-500 font-bold uppercase tracking-wider mb-4 animate-fade-in delay-100">Acquisitions Manager</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     Expert negotiator with deep networks in off-market opportunities nationwide.
                 </p>
 </div>
 <div class="bg-card-light dark:bg-card-dark p-6 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all hover:-translate-y-1 text-center group">
 <div class="relative inline-block mx-auto mb-6">
 <div class="absolute inset-0 bg-green-500/20 rounded-full transform scale-105 group-hover:scale-110 transition-transform"></div>
-<img alt="Emma Thompson" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4loeogM36SBVLw_bVRYhRRM1uiAEN21gkndA3UdvOJlkeAIZAhyko_Q7ZFiBWSH9qcSukr2d1NMw5ALSF0R6zstuVglWuUukyYXkbgTjyLj67eDSW202flL3vQ0IvJjH_h1F_bUWWGFbT7yQqs7va9OFwv75KjAcuQucCowA_ydSOEQhv3zEkRgzquu8a3i6JC6J1gj8C-ohcRppXQzGdNTzQSG9Y19jKV7E3Gmsj8PhAwp5s21GDt0Kkwa0g2mglT1vZi1GTMRR4"/>
+<img alt="Emma Thompson" class="relative w-32 h-32 rounded-full object-cover border-4 border-slate-50 dark:border-slate-800 shadow-lg img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4loeogM36SBVLw_bVRYhRRM1uiAEN21gkndA3UdvOJlkeAIZAhyko_Q7ZFiBWSH9qcSukr2d1NMw5ALSF0R6zstuVglWuUukyYXkbgTjyLj67eDSW202flL3vQ0IvJjH_h1F_bUWWGFbT7yQqs7va9OFwv75KjAcuQucCowA_ydSOEQhv3zEkRgzquu8a3i6JC6J1gj8C-ohcRppXQzGdNTzQSG9Y19jKV7E3Gmsj8PhAwp5s21GDt0Kkwa0g2mglT1vZi1GTMRR4" loading="lazy" decoding="async">
 </div>
 <h3 class="text-xl font-bold mb-1">Emma Thompson</h3>
-<p class="text-xs text-green-500 font-bold uppercase tracking-wider mb-4">Client Success</p>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-xs text-green-500 font-bold uppercase tracking-wider mb-4 animate-fade-in delay-100">Client Success</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     Ensuring your journey from strategy to settlement is seamless and stress-free.
                 </p>
 </div>
 </div>
 </div>
 </section>
-<section class="py-20 bg-slate-50 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+<section class="py-12 md:py-20 bg-slate-50 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">Our Commitment</h2>
-<p class="text-slate-500 dark:text-slate-400">The core values that drive every decision we make for your portfolio.</p>
+<h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold mb-4">Our Commitment</h2>
+<p class="text-slate-500 dark:text-slate-400 animate-fade-in delay-100">The core values that drive every decision we make for your portfolio.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <div class="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 relative group hover:shadow-xl transition-all duration-300">
@@ -387,7 +388,7 @@
 <span class="material-symbols-outlined text-accent text-3xl">analytics</span>
 </div>
 <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Evidence-Based</h3>
-<p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm">
+<p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm animate-fade-in delay-100">
                     We leave emotion at the door. Every suburb we recommend and every property we vet is backed by over 50 data points and strict historical performance criteria.
                 </p>
 </div>
@@ -396,7 +397,7 @@
 <span class="material-symbols-outlined text-green-500 text-3xl">public</span>
 </div>
 <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Nationwide Opportunity</h3>
-<p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm">
+<p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm animate-fade-in delay-100">
                    We are borderless. Unlike local agents restricted to one postcode, we scan the entire country to find the markets with the best growth potential for your budget.
                 </p>
 </div>
@@ -405,24 +406,24 @@
 <span class="material-symbols-outlined text-purple-500 text-3xl">verified_user</span>
 </div>
 <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Risk-Free Guarantee</h3>
-<p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm">
+<p class="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed text-sm animate-fade-in delay-100">
                     We stand by our service. If you're not satisfied during the strategy phase, we offer a full refund. We believe in sharing the risk, not just taking the fees.
                 </p>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 relative overflow-hidden bg-white dark:bg-black">
+<section class="py-16 md:py-24 relative overflow-hidden bg-white dark:bg-black">
 <div class="absolute inset-0 bg-primary dark:bg-white/5 opacity-5 pointer-events-none"></div>
 <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-<h2 class="text-4xl md:text-6xl font-extrabold mb-8">Ready to invest smarter?</h2>
-<p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
+<h2 class="text-4xl md:text-2xl md:text-4xl md:text-6xl font-extrabold mb-8">Ready to invest smarter?</h2>
+<p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto animate-fade-in delay-100">
             Book your complimentary strategy session today. No obligation, just a clear roadmap for your portfolio.
         </p>
 <button class="bg-primary dark:bg-white dark:text-primary text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl shadow-primary/30 dark:shadow-white/10">
             Book Your Free Strategy Call
         </button>
-<p class="mt-6 text-sm text-slate-400 font-medium">Limited spots available for this month</p>
+<p class="mt-6 text-sm text-slate-400 font-medium animate-fade-in delay-100">Limited spots available for this month</p>
 </div>
 </section>
 <footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">

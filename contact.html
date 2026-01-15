@@ -46,6 +46,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
   <body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans">
     
@@ -57,8 +58,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -109,7 +110,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -159,8 +160,8 @@
 
     <header class="pt-24 md:pt-28 pb-8 text-center px-6 bg-white dark:bg-slate-900">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Contact</h1>
-        <p class="mt-4 text-slate-600 dark:text-slate-400">Questions about strategy, pricing, or getting started? We reply within one business day.</p>
+        <h1 class="text-2xl md:text-4xl md:text-3xl md:text-5xl font-extrabold tracking-tight animate-slide-up">Contact</h1>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 animate-fade-in delay-100">Questions about strategy, pricing, or getting started? We reply within one business day.</p>
       </div>
     </header>
     <main class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -196,7 +197,7 @@
             <textarea class="w-full min-h-[160px] rounded-xl border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800" name="message" placeholder="How can we help?" required></textarea>
           </div>
           <div class="flex items-center justify-between">
-            <p class="text-xs text-slate-500">By submitting, you agree to our <a class="underline" href="terms.html">Terms</a> and <a class="underline" href="privacy.html">Privacy</a>.</p>
+            <p class="text-xs text-slate-500 animate-fade-in delay-100">By submitting, you agree to our <a class="underline" href="terms.html">Terms</a> and <a class="underline" href="privacy.html">Privacy</a>.</p>
             <button class="px-6 py-3 rounded-full bg-primary text-white font-bold hover:shadow-lg hover:shadow-primary/30" type="submit">Send message</button>
           </div>
         </form>
@@ -212,7 +213,7 @@
         </div>
         <div class="rounded-[2rem] p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
           <h2 class="text-lg font-bold mb-2">Prefer a call?</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Book a free strategy session to see if Proppy is right for you.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-300 animate-fade-in delay-100">Book a free strategy session to see if Proppy is right for you.</p>
           <a href="book.html" class="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold">Book a strategy call <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
         </div>
         <div class="rounded-[2rem] p-6 border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">

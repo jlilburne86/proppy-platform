@@ -113,6 +113,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans selection:bg-primary/20 selection:text-primary">
 
@@ -124,8 +125,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -176,7 +177,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -233,10 +234,10 @@
 <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
             Our Technology
         </div>
-<h1 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-8 max-w-5xl mx-auto leading-[1.1] text-slate-900 dark:text-white">
+<h1 class="text-4xl md:text-2xl md:text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-8 max-w-5xl mx-auto leading-[1.1] text-slate-900 dark:text-white animate-slide-up">
             Built for Signal, <br/><span class="text-slate-400">Not Noise.</span>
 </h1>
-<p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed font-medium">
+<p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-16 leading-relaxed font-medium animate-fade-in delay-100">
             Technology is at the core of how Proppy identifies opportunity early. We don't just aggregate data; we synthesize millions of signals to spot market movements before they happen.
         </p>
 <div class="relative max-w-6xl mx-auto">
@@ -312,19 +313,19 @@
         Interface Highlights
       </span>
     </div>
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-3">Product screens that shorten the path to ‘yes’</h2>
-    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10">From market scan to property shortlists, your decision‑making lives in one place.</p>
+    <h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold text-center mb-3">Product screens that shorten the path to ‘yes’</h2>
+    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in delay-100">From market scan to property shortlists, your decision‑making lives in one place.</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/technology.png" alt="Signals view" class="w-full h-auto"/>
+        <img src="assets/screenshots/technology.png" alt="Signals view" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Signals & coverage: nationwide, data‑led</figcaption>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/pricing-faq.png" alt="Compare view" class="w-full h-auto"/>
+        <img src="assets/screenshots/pricing-faq.png" alt="Compare view" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Deal compare: shortlist the right asset quickly</figcaption>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/how-it-works.png" alt="Process view" class="w-full h-auto"/>
+        <img src="assets/screenshots/how-it-works.png" alt="Process view" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Process: track progress from brief to settlement</figcaption>
       </figure>
     </div>
@@ -336,7 +337,7 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
       <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
-      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
     </div>
     <div class="flex items-center gap-3">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
@@ -345,14 +346,14 @@
   </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-6 py-24">
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-24">
 <div class="grid md:grid-cols-2 gap-16 items-center">
 <div>
 <div class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-wider text-primary uppercase bg-indigo-50 dark:bg-indigo-900/30 rounded-full">
                     Data Spectrum
                 </div>
-<h2 class="text-4xl font-display font-bold mb-6 text-slate-900 dark:text-white">What We Analyse</h2>
-<p class="text-slate-500 dark:text-slate-400 text-lg mb-10 leading-relaxed">
+<h2 class="text-2xl md:text-4xl font-display font-bold mb-6 text-slate-900 dark:text-white">What We Analyse</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg mb-10 leading-relaxed animate-fade-in delay-100">
                     We track the leading indicators that signal change months before it's reflected in the listing price.
                 </p>
 <div class="space-y-6">
@@ -362,7 +363,7 @@
 </div>
 <div>
 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Infrastructure Projects</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Proposed and approved government spending that drives future demand and accessibility.</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm animate-fade-in delay-100">Proposed and approved government spending that drives future demand and accessibility.</p>
 </div>
 </div>
 <div class="flex gap-5 p-5 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700/50 hover:border-primary/30 transition-colors group">
@@ -371,7 +372,7 @@
 </div>
 <div>
 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Employment Hubs</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Job creation data and wage growth trends mapped against residential zones.</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm animate-fade-in delay-100">Job creation data and wage growth trends mapped against residential zones.</p>
 </div>
 </div>
 <div class="flex gap-5 p-5 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700/50 hover:border-primary/30 transition-colors group">
@@ -380,7 +381,7 @@
 </div>
 <div>
 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Demographic Shifts</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Migration patterns, gentrification indicators, and household composition changes.</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm animate-fade-in delay-100">Migration patterns, gentrification indicators, and household composition changes.</p>
 </div>
 </div>
 </div>
@@ -445,7 +446,7 @@
 </div>
 </div>
 </section>
-<section class="py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800 relative overflow-hidden">
 <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white to-transparent dark:from-slate-800 dark:to-transparent opacity-50"></div>
 <div class="max-w-7xl mx-auto px-6 relative z-10">
 <div class="grid md:grid-cols-2 gap-20 items-center">
@@ -484,12 +485,12 @@
 <div class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-primary uppercase bg-indigo-50 dark:bg-indigo-900/30 rounded-full">
                     Leading Indicators
                 </div>
-<h2 class="text-4xl font-display font-bold mb-6 text-slate-900 dark:text-white">Why This Matters</h2>
+<h2 class="text-2xl md:text-4xl font-display font-bold mb-6 text-slate-900 dark:text-white">Why This Matters</h2>
 <h3 class="text-xl text-primary font-medium mb-4">Markets move before prices do.</h3>
-<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed animate-fade-in delay-100">
                         Traditional real estate data looks backward at sold prices. By the time a suburb shows "growth," the best entry point has already passed.
                     </p>
-<p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+<p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed animate-fade-in delay-100">
                         Proppy allows investors to identify high-potential areas during their accumulation phase—maximizing capital growth potential.
                     </p>
 <ul class="space-y-4">
@@ -503,7 +504,7 @@
 <div class="mt-1 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
 <span class="material-symbols-outlined text-sm text-emerald-600">check</span>
 </div>
-<span class="font-medium">Avoid overheated markets &amp; frenzy</span>
+<span class="font-medium">Avoid overheated markets & frenzy</span>
 </li>
 <li class="flex items-start gap-3 text-slate-700 dark:text-slate-300">
 <div class="mt-1 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
@@ -522,8 +523,8 @@
 <span class="material-symbols-outlined text-base">psychology</span>
             Hybrid Intelligence
         </div>
-<h2 class="text-4xl md:text-5xl font-display font-bold mb-8 text-slate-900 dark:text-white">Human Oversight</h2>
-<p class="text-xl text-slate-600 dark:text-slate-400 mb-16 leading-relaxed">
+<h2 class="text-2xl md:text-4xl md:text-3xl md:text-5xl font-display font-bold mb-8 text-slate-900 dark:text-white">Human Oversight</h2>
+<p class="text-xl text-slate-600 dark:text-slate-400 mb-16 leading-relaxed animate-fade-in delay-100">
                 Algorithms are powerful at processing volume, but context is nuanced. We balance machine speed with expert validation to ensure accuracy.
             </p>
 <div class="relative bg-white dark:bg-slate-800 rounded-[3rem] p-10 md:p-16 border border-slate-100 dark:border-slate-700 shadow-2xl overflow-hidden">
@@ -532,34 +533,34 @@
 <div class="grid md:grid-cols-3 gap-8 relative z-10 items-start">
 <div class="space-y-6 group">
 <div class="relative h-20 w-20 mx-auto bg-slate-50 dark:bg-slate-700 rounded-2xl flex items-center justify-center text-slate-400 border border-slate-200 dark:border-slate-600 group-hover:border-primary/50 group-hover:text-primary transition-all">
-<span class="material-symbols-outlined text-4xl">database</span>
+<span class="material-symbols-outlined text-2xl md:text-4xl">database</span>
 <div class="absolute -top-2 -right-2 w-6 h-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-500">1</div>
 </div>
 <div>
 <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Big Data Collection</h3>
-<p class="text-sm text-slate-500 leading-relaxed">Ingesting millions of data points from diverse governmental and private sources daily.</p>
+<p class="text-sm text-slate-500 leading-relaxed animate-fade-in delay-100">Ingesting millions of data points from diverse governmental and private sources daily.</p>
 </div>
 </div>
 <div class="relative space-y-6 group">
 <div class="hidden md:block absolute top-10 -left-1/2 w-full h-px bg-slate-200 dark:bg-slate-700"></div>
 <div class="hidden md:block absolute top-10 -right-1/2 w-full h-px bg-slate-200 dark:bg-slate-700"></div>
 <div class="relative h-24 w-24 mx-auto bg-gradient-to-br from-primary to-purple-600 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-primary/30 transform scale-110 z-10">
-<span class="material-symbols-outlined text-5xl animate-pulse">neurology</span>
+<span class="material-symbols-outlined text-3xl md:text-5xl animate-pulse">neurology</span>
 <div class="absolute -top-3 -right-3 w-8 h-8 bg-white dark:bg-slate-900 rounded-full border-2 border-primary flex items-center justify-center text-sm font-bold text-primary">2</div>
 </div>
 <div>
 <h3 class="font-bold text-lg text-primary">AI Processing</h3>
-<p class="text-sm text-slate-500 leading-relaxed">Pattern recognition and anomaly detection at scale to highlight potential.</p>
+<p class="text-sm text-slate-500 leading-relaxed animate-fade-in delay-100">Pattern recognition and anomaly detection at scale to highlight potential.</p>
 </div>
 </div>
 <div class="space-y-6 group">
 <div class="relative h-20 w-20 mx-auto bg-slate-50 dark:bg-slate-700 rounded-2xl flex items-center justify-center text-slate-400 border border-slate-200 dark:border-slate-600 group-hover:border-primary/50 group-hover:text-primary transition-all">
-<span class="material-symbols-outlined text-4xl">supervisor_account</span>
+<span class="material-symbols-outlined text-2xl md:text-4xl">supervisor_account</span>
 <div class="absolute -top-2 -right-2 w-6 h-6 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-600 flex items-center justify-center text-xs font-bold text-slate-500">3</div>
 </div>
 <div>
 <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Expert Validation</h3>
-<p class="text-sm text-slate-500 leading-relaxed">Data scientists review statistical outliers to ensure "on the ground" reality aligns with data.</p>
+<p class="text-sm text-slate-500 leading-relaxed animate-fade-in delay-100">Data scientists review statistical outliers to ensure "on the ground" reality aligns with data.</p>
 </div>
 </div>
 </div>
@@ -571,8 +572,8 @@
 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
 <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-700 mix-blend-multiply"></div>
 <div class="relative z-10">
-<h2 class="text-4xl md:text-5xl font-display font-extrabold mb-6">See the data yourself.</h2>
-<p class="text-indigo-100 text-lg mb-10 max-w-xl mx-auto">
+<h2 class="text-2xl md:text-4xl md:text-3xl md:text-5xl font-display font-extrabold mb-6">See the data yourself.</h2>
+<p class="text-indigo-100 text-lg mb-10 max-w-xl mx-auto animate-fade-in delay-100">
                     Get a free suburb report and discover the depth of insight Proppy provides.
                 </p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -593,7 +594,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>

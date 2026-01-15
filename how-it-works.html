@@ -96,6 +96,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
 
@@ -107,8 +108,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -159,7 +160,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -207,13 +208,13 @@
 
 
 
-<section class="py-20 px-6">
+<section class="py-12 md:py-20 px-6">
 <div class="max-w-4xl mx-auto text-center">
 <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold text-primary bg-primary/10 rounded-full border border-primary/10">The Process</span>
-<h1 class="text-5xl md:text-6xl font-display font-bold mb-6 leading-tight tracking-tight text-slate-900 dark:text-white">
+<h1 class="text-3xl md:text-5xl md:text-2xl md:text-4xl md:text-6xl font-display font-bold mb-6 leading-tight tracking-tight text-slate-900 dark:text-white animate-slide-up">
             How It Works
         </h1>
-<p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+<p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-10 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in delay-100">
             A Clear, Proven Process designed to remove uncertainty and replace it with clarity.
         </p>
 </div>
@@ -225,15 +226,15 @@
         In The App
       </span>
     </div>
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-3">What this looks like in Proppy</h2>
-    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10">Every step maps to simple, powerful tools so you can move from strategy to settlement with clarity.</p>
+    <h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold text-center mb-3">What this looks like in Proppy</h2>
+    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in delay-100">Every step maps to simple, powerful tools so you can move from strategy to settlement with clarity.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/how-it-works.png" alt="Process screen" class="w-full h-auto"/>
+        <img src="assets/screenshots/how-it-works.png" alt="Process screen" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Process tracker: from brief → search → due diligence</figcaption>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/technology.png" alt="Signals screen" class="w-full h-auto"/>
+        <img src="assets/screenshots/technology.png" alt="Signals screen" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Signals: suburb shortlists, yields, and risk indicators</figcaption>
       </figure>
     </div>
@@ -251,7 +252,7 @@
 <div class="pt-2 pb-8">
 <span class="text-xs font-bold text-primary dark:text-blue-400 uppercase tracking-widest mb-2 block">Step 01</span>
 <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-slate-50">Understand Your Goals</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg animate-fade-in delay-100">
                             We begin by diving deep into your investment objectives. Whether you're seeking long-term capital growth or immediate rental yield, we define a clear strategy tailored to your financial capacity.
                         </p>
 </div>
@@ -263,11 +264,11 @@
 <div class="pt-2 pb-8">
 <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-2 block">Step 02</span>
 <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-slate-50">Analyse Markets Nationwide</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mb-6">
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mb-6 animate-fade-in delay-100">
                             We look beyond local biases, using data-driven insights to scan markets nationwide. Our algorithms evaluate thousands of suburbs against key performance indicators.
                         </p>
 <div class="bg-surface-light dark:bg-slate-800/50 rounded-xl p-5 border border-slate-200 dark:border-slate-700">
-<p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Key Data Points Analyzed</p>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 animate-fade-in delay-100">Key Data Points Analyzed</p>
 <div class="grid grid-cols-2 gap-y-3 gap-x-4">
 <div class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300 font-medium">
 <span class="material-symbols-outlined text-indigo-500 text-[18px]">check_circle</span> Capital Growth Rates
@@ -298,7 +299,7 @@
 <div class="pt-2 pb-8">
 <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-widest mb-2 block">Step 03</span>
 <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-slate-50">Identify Opportunity</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg animate-fade-in delay-100">
                             Markets move before prices do. We identify high-potential suburbs early in their growth cycle, targeting properties with value-add potential or under-market pricing that align with your personalized goals.
                         </p>
 </div>
@@ -310,7 +311,7 @@
 <div class="pt-2 pb-8">
 <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-2 block">Step 04</span>
 <h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-slate-50">Source the Right Property</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg animate-fade-in delay-100">
                             We don't just wait for listings. We leverage agent relationships to access both on and off-market opportunities, giving you the first-mover advantage before the general public sees them.
                         </p>
 </div>
@@ -321,8 +322,8 @@
 </div>
 <div class="pt-2 pb-8">
 <span class="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest mb-2 block">Step 05</span>
-<h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-slate-50">Secure &amp; Support</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+<h3 class="text-2xl font-display font-bold mb-3 text-slate-900 dark:text-slate-50">Secure & Support</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg animate-fade-in delay-100">
                             From due diligence and building inspections to negotiation and final settlement, we manage the entire transaction. Our support continues post-purchase with property management integration and portfolio reviews.
                         </p>
 </div>
@@ -334,7 +335,7 @@
 <div class="bg-white dark:bg-surface-dark rounded-3xl p-8 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none">
 <div class="mb-8">
 <h3 class="text-2xl font-display font-bold mb-3">Technology + Human</h3>
-<p class="text-slate-600 dark:text-slate-400">The hybrid advantage for smarter investing.</p>
+<p class="text-slate-600 dark:text-slate-400 animate-fade-in delay-100">The hybrid advantage for smarter investing.</p>
 </div>
 <div class="space-y-6">
 <div class="group p-5 rounded-2xl flex items-start gap-4 border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/30 transition-colors">
@@ -343,7 +344,7 @@
 </div>
 <div>
 <h4 class="font-bold text-base mb-1 text-slate-900 dark:text-slate-200">Algorithmic Precision</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-snug">Processing millions of data points to remove bias and emotional impulse from the search phase.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-snug animate-fade-in delay-100">Processing millions of data points to remove bias and emotional impulse from the search phase.</p>
 </div>
 </div>
 <div class="group p-5 rounded-2xl flex items-start gap-4 border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:border-primary/30 transition-colors">
@@ -352,7 +353,7 @@
 </div>
 <div>
 <h4 class="font-bold text-base mb-1 text-slate-900 dark:text-slate-200">Human Empathy</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-snug">Expert negotiators who understand nuance, building rapport that algorithms can't replicate.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-snug animate-fade-in delay-100">Expert negotiators who understand nuance, building rapport that algorithms can't replicate.</p>
 </div>
 </div>
 </div>
@@ -371,9 +372,9 @@
 </div>
 </div>
 </section>
-<section class="py-24 bg-surface-light dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+<section class="py-16 md:py-24 bg-surface-light dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
 <div class="max-w-4xl mx-auto px-6 text-center">
-<h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 dark:text-white mb-8">
+<h2 class="text-3xl md:text-2xl md:text-4xl font-display font-bold text-slate-900 dark:text-white mb-8">
             Want to see if Proppy is right for you?
         </h2>
 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -385,20 +386,20 @@
                 View Case Studies
             </button>
 </div>
-<p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+<p class="mt-6 text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">
             No commitment required. Speak with an expert, not a salesperson.
         </p>
 </div>
 </section>
 <section class="py-16 overflow-hidden">
 <div class="max-w-7xl mx-auto px-6">
-<p class="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-10">Trusted by modern investors from</p>
+<p class="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-10 animate-fade-in delay-100">Trusted by modern investors from</p>
 <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale dark:invert">
-<img alt="Google" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsbFpLqbWUYJBCQ_9FQDqokW53lEMSqCBbvBW_gGr5_ECoTYluk1PBtOEaIY-oDTwEBpaoAJFbgF1FK-3YAjV5VG7UtrDvMF7Fg8Vi1ep0Uv0ljDsNlLV_zjBJFd2uT_QOWihNHQ_kceTzp5kVXu4wlCRLIKJHk8MU9Eg5VPiJOwh4eMOh7U9DLGzF6B3_UfqOj3NWKSyIRL5_VQyzmMUmcywiCH6fhvJIP8G_Va13xxJmvaPoVuEkKol9ia0DanuyPAmuaHAr1rjg"/>
-<img alt="Meta" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0wemEg790epqvr9F77umscMOFj0ZreQB9na_MRwm2lusfgSt4hMiql0w5wo6SogqqRUx9de7oXAdTNbsmT3JJDmUy_CVIfyK_0IGTWtUxBw5KjPDYQsW_KJl0Y0zL5wQoE0V-D_abKfAXO4KcOsk7ZlR4rg9zR9YfmS3gyJnKaiTk2bLh6nGU123CEAjxD2GzrEKJwmFvMd3vB56jqp0QFwEVnn4iEZaAWVET_Yiau1QSZAdv2AFeuizxmiHXZBjyb7_WpcdydurL"/>
-<img alt="Amazon" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVH6_Voidivx-8L4NOEIDbdYspRQTXbAKqNpMAEii2mS44qvvOWixKTwsRwgd73GAoZ2NfPMPKVx-V6i_jKB7mxrtBhXJ5-lzu7Khq0_8Cet8x9rhcoSyL_bbrlQ4Odr1hbE6W0kHn53j61j3nAPQEu5CQtFbnMNCuSXw71Xhk6FPsMEuUScMUq9SjHy2iSgSkaOaWZP_HfcU9shD7YonO6VTXjXqt5h32t0PtIppdI6I7_QCbKqjFBOFcRLTrnB0DKByN7U_dfynT"/>
-<img alt="Netflix" class="h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxrcl7JxfdRJYANTuEUGhzySDzvqepeY7bNeCK8Z_Rr352lyTLyf9wYRhlPeuYRaOMbInZP2kqUD8FhSDl9LKaetiniMiDfbhnxoWV_aWqnHdgxOUSvP2iHEYzQiy4KvhjIVq_XslGppdTuhPTdRcPuIh6__I9ze63mVOPiaoybG-GI6teBqWnO99E-rw3qD5LPqEGV59rn2IjWMjTU9KQhA7lBqIRwh3slRJVd_5ueGFxocFCT_aANu_3qQZq8i2FuJMgZ0bzaVPX"/>
-<img alt="Slack" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvdB7-yp4_D1wRUBcZsgfOr_J2EpL108TCIb26IT4gam1rXlzK7oqkJzxrijAwZa7OZJR9pW_qPiDLOddwktvtyA2zCx0lmz6HgHb3Ob54aSwxJ40CXzQWnMMz6-4uQuWy41PWc74mZ-1qIFuGfod3xOVm7tWsk_cJhSGSmQXzPAcT9OjMIq2ussmVREzhxed3Yq9vPeKro9e7rNN1mS4IGMF_iUW-KB0hRX7psoluD3kDZixg6FxMFy1OZMQf41AlPdW3k11cqEcm"/>
+<img alt="Google" class="h-6 img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsbFpLqbWUYJBCQ_9FQDqokW53lEMSqCBbvBW_gGr5_ECoTYluk1PBtOEaIY-oDTwEBpaoAJFbgF1FK-3YAjV5VG7UtrDvMF7Fg8Vi1ep0Uv0ljDsNlLV_zjBJFd2uT_QOWihNHQ_kceTzp5kVXu4wlCRLIKJHk8MU9Eg5VPiJOwh4eMOh7U9DLGzF6B3_UfqOj3NWKSyIRL5_VQyzmMUmcywiCH6fhvJIP8G_Va13xxJmvaPoVuEkKol9ia0DanuyPAmuaHAr1rjg" loading="lazy" decoding="async">
+<img alt="Meta" class="h-6 img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0wemEg790epqvr9F77umscMOFj0ZreQB9na_MRwm2lusfgSt4hMiql0w5wo6SogqqRUx9de7oXAdTNbsmT3JJDmUy_CVIfyK_0IGTWtUxBw5KjPDYQsW_KJl0Y0zL5wQoE0V-D_abKfAXO4KcOsk7ZlR4rg9zR9YfmS3gyJnKaiTk2bLh6nGU123CEAjxD2GzrEKJwmFvMd3vB56jqp0QFwEVnn4iEZaAWVET_Yiau1QSZAdv2AFeuizxmiHXZBjyb7_WpcdydurL" loading="lazy" decoding="async">
+<img alt="Amazon" class="h-6 img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVH6_Voidivx-8L4NOEIDbdYspRQTXbAKqNpMAEii2mS44qvvOWixKTwsRwgd73GAoZ2NfPMPKVx-V6i_jKB7mxrtBhXJ5-lzu7Khq0_8Cet8x9rhcoSyL_bbrlQ4Odr1hbE6W0kHn53j61j3nAPQEu5CQtFbnMNCuSXw71Xhk6FPsMEuUScMUq9SjHy2iSgSkaOaWZP_HfcU9shD7YonO6VTXjXqt5h32t0PtIppdI6I7_QCbKqjFBOFcRLTrnB0DKByN7U_dfynT" loading="lazy" decoding="async">
+<img alt="Netflix" class="h-4 img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxrcl7JxfdRJYANTuEUGhzySDzvqepeY7bNeCK8Z_Rr352lyTLyf9wYRhlPeuYRaOMbInZP2kqUD8FhSDl9LKaetiniMiDfbhnxoWV_aWqnHdgxOUSvP2iHEYzQiy4KvhjIVq_XslGppdTuhPTdRcPuIh6__I9ze63mVOPiaoybG-GI6teBqWnO99E-rw3qD5LPqEGV59rn2IjWMjTU9KQhA7lBqIRwh3slRJVd_5ueGFxocFCT_aANu_3qQZq8i2FuJMgZ0bzaVPX" loading="lazy" decoding="async">
+<img alt="Slack" class="h-6 img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvdB7-yp4_D1wRUBcZsgfOr_J2EpL108TCIb26IT4gam1rXlzK7oqkJzxrijAwZa7OZJR9pW_qPiDLOddwktvtyA2zCx0lmz6HgHb3Ob54aSwxJ40CXzQWnMMz6-4uQuWy41PWc74mZ-1qIFuGfod3xOVm7tWsk_cJhSGSmQXzPAcT9OjMIq2ussmVREzhxed3Yq9vPeKro9e7rNN1mS4IGMF_iUW-KB0hRX7psoluD3kDZixg6FxMFy1OZMQf41AlPdW3k11cqEcm" loading="lazy" decoding="async">
 </div>
 </div>
 </section>

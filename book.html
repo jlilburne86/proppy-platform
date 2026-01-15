@@ -96,6 +96,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 flex flex-col min-h-screen">
 
@@ -107,8 +108,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -159,7 +160,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -216,10 +217,10 @@
 <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
 <span class="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Now booking for next week</span>
 </div>
-<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+<h1 class="text-3xl md:text-5xl md:text-2xl md:text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1] animate-slide-up">
                     Speak with a property investment specialist.
                 </h1>
-<p class="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-lg">
+<p class="text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-lg animate-fade-in delay-100">
                     Ready to build a high-performing portfolio? Book your complimentary strategy session with our expert team today. No pressure, just clear data-driven insights.
                 </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -228,8 +229,8 @@
 <span class="material-symbols-outlined text-sm">call</span>
 </div>
 <div>
-<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-0.5">Call Us</p>
-<p class="font-bold text-slate-900 dark:text-white">1300 122 914</p>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-0.5 animate-fade-in delay-100">Call Us</p>
+<p class="font-bold text-slate-900 dark:text-white animate-fade-in delay-100">1300 122 914</p>
 </div>
 </a>
 <a class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 transition-all group" href="mailto:hello@proppy.com.au">
@@ -237,8 +238,8 @@
 <span class="material-symbols-outlined text-sm">mail</span>
 </div>
 <div>
-<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-0.5">Email</p>
-<p class="font-bold text-slate-900 dark:text-white">hello@proppy.com.au</p>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider mb-0.5 animate-fade-in delay-100">Email</p>
+<p class="font-bold text-slate-900 dark:text-white animate-fade-in delay-100">hello@proppy.com.au</p>
 </div>
 </a>
 </div>
@@ -249,7 +250,7 @@
 </div>
 <div>
 <h3 class="font-bold text-base mb-1">Money-Back Guarantee</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed animate-fade-in delay-100">
                                 If you're not satisfied with the service that you are getting from us, get your money back. We stand by our results.
                             </p>
 </div>
@@ -260,7 +261,7 @@
 </div>
 <div>
 <h3 class="font-bold text-base mb-1">15 Years of Success</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed animate-fade-in delay-100">
                                 Backed by a proven track record across multiple market cycles. We've seen the highs and lows, so you don't have to guess.
                             </p>
 </div>
@@ -268,13 +269,13 @@
 </div>
 <div class="flex items-center gap-4 mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
 <div class="flex -space-x-3">
-<img alt="Advisor 1" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUnwzO3RuX0H5Od6IbS35YuoWCcKwdpLpPsDTO8yFRagXUuSEhRbs9XNZDLwQUkSnS1OwD_lmzf-8aFN5v12VSk8zLM7PClFHEX2XWkewBx_XJbeAtC2ceqlfCkQkBtej5BEWeG6RUrceGcIiHMNJDCglzfRKdjO2_2eT_chJmaikWJ-xuyKYgGemesK5IpWsw9Oql472vUbRLd22YmIz3XEHTox7dEfG8lTZ-2ygSfqSvq-CCSITRkKzcEBYnHlgM0N7Zx5ZrwbGa"/>
-<img alt="Advisor 2" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgGBYkYyXhQtj-M3novEg7RH6B_R7ZCFAdOotfDJQ159i7bpiWMNsKAWVCATFQ3utdbu-A2RAhLq2el3obxqpJL0LUmE6H1X3Dhop8reT4tZbkIlowEV05gfyOACSUuP5qfvlxeS5NHGK3FzaeBrjfXSq8BKXMW8DHaPsHZeAUieSHiAznnthV72gacvbPcDL-o-U0SafUbdnvtmduVFChEj36pGYOp0T7cjCyb4htn9Iz_WqguRjVSn9k2oZqrQljJ4NFmTm7tjJy"/>
-<img alt="Advisor 3" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-OdNEXvtRfH9kc_wWmb-YymeYXebdEppADmbWMtswnrJQXTNmUCSHjK8JOjCuXgiIM9Xhf5vj4vn58trsGVRYKFh5IFf17jtw-16cIBdFgboGR3DtJBAph9V1uoR10qg54DAaRtH6qzTz6rAMgx40CrHax8dy4dgfupcCxuT2q6H6aTqpvbnCgmzHiGq-9-B76bSxeqxv_2Tw-H2gd3NxQ-naCR8jKykC1HCRoou4xsmVKPNmB-VeXy01E7ya1oxPBcZK_iH4_RBW"/>
+<img alt="Advisor 1" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUnwzO3RuX0H5Od6IbS35YuoWCcKwdpLpPsDTO8yFRagXUuSEhRbs9XNZDLwQUkSnS1OwD_lmzf-8aFN5v12VSk8zLM7PClFHEX2XWkewBx_XJbeAtC2ceqlfCkQkBtej5BEWeG6RUrceGcIiHMNJDCglzfRKdjO2_2eT_chJmaikWJ-xuyKYgGemesK5IpWsw9Oql472vUbRLd22YmIz3XEHTox7dEfG8lTZ-2ygSfqSvq-CCSITRkKzcEBYnHlgM0N7Zx5ZrwbGa" loading="lazy" decoding="async">
+<img alt="Advisor 2" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgGBYkYyXhQtj-M3novEg7RH6B_R7ZCFAdOotfDJQ159i7bpiWMNsKAWVCATFQ3utdbu-A2RAhLq2el3obxqpJL0LUmE6H1X3Dhop8reT4tZbkIlowEV05gfyOACSUuP5qfvlxeS5NHGK3FzaeBrjfXSq8BKXMW8DHaPsHZeAUieSHiAznnthV72gacvbPcDL-o-U0SafUbdnvtmduVFChEj36pGYOp0T7cjCyb4htn9Iz_WqguRjVSn9k2oZqrQljJ4NFmTm7tjJy" loading="lazy" decoding="async">
+<img alt="Advisor 3" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 object-cover img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-OdNEXvtRfH9kc_wWmb-YymeYXebdEppADmbWMtswnrJQXTNmUCSHjK8JOjCuXgiIM9Xhf5vj4vn58trsGVRYKFh5IFf17jtw-16cIBdFgboGR3DtJBAph9V1uoR10qg54DAaRtH6qzTz6rAMgx40CrHax8dy4dgfupcCxuT2q6H6aTqpvbnCgmzHiGq-9-B76bSxeqxv_2Tw-H2gd3NxQ-naCR8jKykC1HCRoou4xsmVKPNmB-VeXy01E7ya1oxPBcZK_iH4_RBW" loading="lazy" decoding="async">
 </div>
 <div class="text-sm">
-<p class="font-bold text-slate-900 dark:text-white">Expert Advisory Team</p>
-<p class="text-slate-500 dark:text-slate-400">Available for your call</p>
+<p class="font-bold text-slate-900 dark:text-white animate-fade-in delay-100">Expert Advisory Team</p>
+<p class="text-slate-500 dark:text-slate-400 animate-fade-in delay-100">Available for your call</p>
 </div>
 </div>
 </div>
@@ -283,7 +284,7 @@
 <div class="p-8 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
 <div>
 <h2 class="text-2xl font-bold mb-2">Book a Free Strategy Call</h2>
-<p class="text-sm text-slate-500 dark:text-slate-400">Select a time that works best for you.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">Select a time that works best for you.</p>
 </div>
 <div class="flex items-center gap-3 text-xs font-semibold bg-white dark:bg-slate-800 py-2 px-3 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm">
 <div class="flex items-center gap-1">
@@ -378,11 +379,11 @@
 </div>
 </div>
 </main>
-<footer class="py-20 bg-white dark:bg-black border-t border-slate-100 dark:border-slate-900">
+<footer class="py-12 md:py-20 bg-white dark:bg-black border-t border-slate-100 dark:border-slate-900">
 <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
 <div class="col-span-1 md:col-span-1">
 <span class="text-2xl font-extrabold tracking-tighter uppercase italic mb-6 block">Proppy</span>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed animate-fade-in delay-100">
                     The next generation of property investment intelligence. Data-led, nationwide coverage.
                 </p>
 </div>
@@ -412,7 +413,7 @@
 </div>
 </div>
 <div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-xs text-slate-400">© 2024 Proppy Intelligence Inc. All rights reserved.</p>
+<p class="text-xs text-slate-400 animate-fade-in delay-100">© 2024 Proppy Intelligence Inc. All rights reserved.</p>
 <div class="flex gap-6">
 <a class="text-slate-400 hover:text-primary" href="javascript:void(0)"><span class="material-symbols-outlined">public</span></a>
 <a class="text-slate-400 hover:text-primary" href="javascript:void(0)"><span class="material-symbols-outlined">language</span></a>

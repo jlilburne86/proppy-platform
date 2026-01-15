@@ -101,6 +101,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
 
@@ -112,8 +113,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -164,7 +165,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -216,10 +217,10 @@
 <div class="floating-blob w-96 h-96 bg-blue-200 dark:bg-blue-900/40 -top-20 -left-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob"></div>
 <div class="floating-blob w-96 h-96 bg-purple-200 dark:bg-purple-900/40 top-0 -right-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000"></div>
 <div class="max-w-4xl mx-auto px-6 text-center mb-16">
-<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.15]">
+<h1 class="text-3xl md:text-5xl md:text-2xl md:text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.15] animate-slide-up">
             Investor <span class="underline-accent">Resources Hub</span>
 </h1>
-<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
+<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed animate-fade-in delay-100">
             Market analysis, property guides, and expert insights to help you build a high-performing portfolio.
         </p>
 <div class="max-w-xl mx-auto relative mb-12">
@@ -239,8 +240,8 @@
 <div class="relative z-10 flex flex-col md:flex-row gap-8 md:gap-16 items-center">
 <div class="w-full md:w-1/2 text-left">
 <span class="inline-block px-3 py-1 bg-white dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 text-xs font-extrabold uppercase tracking-wider rounded-lg mb-4 border border-blue-100 dark:border-blue-800">Featured Guide</span>
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">The 2024 Interstate Investment Playbook</h2>
-<p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+<h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold mb-4 text-slate-900 dark:text-white">The 2024 Interstate Investment Playbook</h2>
+<p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed animate-fade-in delay-100">
                         Why smart investors are looking beyond their backyard. This comprehensive guide breaks down the top 3 growth corridors in QLD and WA for the coming financial year.
                     </p>
 <div class="flex items-center gap-4 text-sm font-semibold text-slate-500">
@@ -260,8 +261,8 @@
 <span class="material-symbols-outlined text-blue-500">map</span>
 </div>
 <div>
-<p class="font-bold text-sm">Growth Corridor #1</p>
-<p class="text-xs text-slate-400">Perth Metro South</p>
+<p class="font-bold text-sm animate-fade-in delay-100">Growth Corridor #1</p>
+<p class="text-xs text-slate-400 animate-fade-in delay-100">Perth Metro South</p>
 </div>
 </div>
 <span class="text-emerald-500 font-bold text-sm">+14.2%</span>
@@ -294,7 +295,7 @@
 <span class="text-xs text-slate-400">2 days ago</span>
 </div>
 <h3 class="text-xl font-bold mb-3 group-hover:text-orange-500 transition-colors">Quarterly Review: East Coast Capitals</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2 animate-fade-in delay-100">
                         Sydney listings are up, but Melbourne is seeing a tightening rental market. Here is what the data says.
                     </p>
 <div class="mt-auto">
@@ -314,7 +315,7 @@
 <span class="text-xs text-slate-400">Oct 24, 2023</span>
 </div>
 <h3 class="text-xl font-bold mb-3 group-hover:text-purple-500 transition-colors">Yield vs. Capital Growth: Finding the Balance</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2 animate-fade-in delay-100">
                         Should you chase cashflow or equity? We break down the math for different portfolio stages.
                     </p>
 <div class="mt-auto">
@@ -334,7 +335,7 @@
 <span class="text-xs text-slate-400">Nov 02, 2023</span>
 </div>
 <h3 class="text-xl font-bold mb-3 group-hover:text-green-500 transition-colors">Suburb Spotlight: Logan Reserve</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2 animate-fade-in delay-100">
                         Infrastructure projects and population growth are driving this corridor. Is it too late to buy?
                     </p>
 <div class="mt-auto">
@@ -354,7 +355,7 @@
 <span class="text-xs text-slate-400">Sep 15, 2023</span>
 </div>
 <h3 class="text-xl font-bold mb-3 group-hover:text-slate-500 transition-colors">Tax Depreciation 101</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2 animate-fade-in delay-100">
                         Maximize your returns at tax time. A beginner's guide to depreciation schedules for new builds vs old.
                     </p>
 <div class="mt-auto">
@@ -374,7 +375,7 @@
 <span class="text-xs text-slate-400">Aug 10, 2023</span>
 </div>
 <h3 class="text-xl font-bold mb-3 group-hover:text-blue-500 transition-colors">Overcoming Analysis Paralysis</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2 animate-fade-in delay-100">
                         How to use data to make decisions with confidence, rather than getting stuck in the spreadsheets.
                     </p>
 <div class="mt-auto">
@@ -394,7 +395,7 @@
 <span class="text-xs text-slate-400">Jul 22, 2023</span>
 </div>
 <h3 class="text-xl font-bold mb-3 group-hover:text-orange-500 transition-colors">Interest Rates: The 2024 Forecast</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2 animate-fade-in delay-100">
                         What the major banks are predicting and how it impacts your borrowing capacity today.
                     </p>
 <div class="mt-auto">
@@ -412,7 +413,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -424,7 +425,7 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
       <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
-      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
     </div>
     <div class="flex items-center gap-3">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
@@ -438,7 +439,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -446,14 +447,14 @@
   </div>
 </section>
 </main>
-<section class="py-24 relative overflow-hidden bg-slate-50 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+<section class="py-16 md:py-24 relative overflow-hidden bg-slate-50 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-6">
 <div class="bg-primary dark:bg-white rounded-[3rem] p-10 md:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
 <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 <div class="relative z-10 text-white dark:text-slate-900 max-w-xl">
-<h2 class="text-3xl md:text-5xl font-extrabold mb-6">Stay ahead of the pack</h2>
-<p class="text-lg text-slate-300 dark:text-slate-500 mb-8">
+<h2 class="text-3xl md:text-3xl md:text-5xl font-extrabold mb-6">Stay ahead of the pack</h2>
+<p class="text-lg text-slate-300 dark:text-slate-500 mb-8 animate-fade-in delay-100">
                     Get our latest market intelligence, suburb reports, and investment strategies delivered straight to your inbox weekly.
                 </p>
 <div class="flex items-center gap-4 text-sm font-medium text-slate-400 dark:text-slate-500">

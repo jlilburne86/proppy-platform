@@ -102,6 +102,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
 
@@ -113,8 +114,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -165,7 +166,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -217,11 +218,11 @@
 <div class="floating-blob w-96 h-96 bg-blue-200 dark:bg-blue-900/40 -top-20 -left-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob"></div>
 <div class="floating-blob w-96 h-96 bg-purple-200 dark:bg-purple-900/40 top-0 -right-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000"></div>
 <div class="max-w-7xl mx-auto px-6 text-center">
-<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.15]">
+<h1 class="text-3xl md:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.15] animate-slide-up">
         Smarter Property Investment.<br/>
         Powered by Data. <span class="underline-accent">Guided by Experts.</span>
 </h1>
-<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
+<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed animate-fade-in delay-100">
         Gain the confidence of nationwide market intelligence. We combine institutional-grade data with expert strategy to help you build a high-performing property portfolio anywhere in Australia.
     </p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -248,9 +249,9 @@
 <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-2xl shadow-orange-200/50 dark:shadow-none w-full max-w-sm border border-slate-100 dark:border-slate-800 relative z-10 transform group-hover:scale-[1.02] transition-transform duration-500">
 <div class="flex justify-between items-center mb-8">
 <div>
-<p class="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider">Total Portfolio Value</p>
-<p class="text-3xl font-extrabold">$2,485,000</p>
-<p class="text-emerald-500 text-xs font-bold mt-1 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-lg w-fit">↑ +12.4% last 12mo</p>
+<p class="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider animate-fade-in delay-100">Total Portfolio Value</p>
+<p class="text-3xl font-extrabold animate-fade-in delay-100">$2,485,000</p>
+<p class="text-emerald-500 text-xs font-bold mt-1 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-lg w-fit animate-fade-in delay-100">↑ +12.4% last 12mo</p>
 </div>
 <div class="w-12 h-12 bg-orange-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center">
 <span class="material-symbols-outlined text-orange-500">pie_chart</span>
@@ -270,8 +271,8 @@
 <span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-lg">house</span>
 </div>
 <div>
-<p class="text-xs font-bold">Brisbane Growth Corridor</p>
-<p class="text-[10px] text-slate-400">Purchased: Mar 2023</p>
+<p class="text-xs font-bold animate-fade-in delay-100">Brisbane Growth Corridor</p>
+<p class="text-[10px] text-slate-400 animate-fade-in delay-100">Purchased: Mar 2023</p>
 </div>
 </div>
 <span class="text-xs font-bold text-emerald-500">+8.2%</span>
@@ -285,7 +286,7 @@
 <div class="flex justify-between items-start">
 <div>
 <h3 class="font-bold text-lg">Market Intelligence</h3>
-<p class="text-sm text-slate-400">Identifying Growth Zones</p>
+<p class="text-sm text-slate-400 animate-fade-in delay-100">Identifying Growth Zones</p>
 </div>
 <span class="material-symbols-outlined text-slate-300">bar_chart</span>
 </div>
@@ -297,7 +298,7 @@
 <linearGradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
 <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"></stop>
 <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"></stop>
-</linearGradient>
+</lineargradient>
 </defs>
 <circle cx="100" cy="5" fill="#6366f1" r="2" stroke="white" stroke-width="1" vector-effect="non-scaling-stroke"></circle>
 </svg>
@@ -307,12 +308,12 @@
 </div>
 <div class="mt-6 grid grid-cols-2 gap-4">
 <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl">
-<p class="text-[10px] text-slate-400 font-bold mb-1 uppercase">Vacancy Rate</p>
-<p class="text-xl font-extrabold text-slate-800 dark:text-slate-100">0.8%</p>
+<p class="text-[10px] text-slate-400 font-bold mb-1 uppercase animate-fade-in delay-100">Vacancy Rate</p>
+<p class="text-xl font-extrabold text-slate-800 dark:text-slate-100 animate-fade-in delay-100">0.8%</p>
 </div>
 <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl">
-<p class="text-[10px] text-slate-400 font-bold mb-1 uppercase">Yield</p>
-<p class="text-xl font-extrabold text-slate-800 dark:text-slate-100">5.2%</p>
+<p class="text-[10px] text-slate-400 font-bold mb-1 uppercase animate-fade-in delay-100">Yield</p>
+<p class="text-xl font-extrabold text-slate-800 dark:text-slate-100 animate-fade-in delay-100">5.2%</p>
 </div>
 </div>
 </div>
@@ -324,7 +325,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -338,19 +339,19 @@
         The Platform
       </span>
     </div>
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-3">See the platform in action</h2>
-    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10">Explore how you search markets, analyse deals, and track your portfolio with Proppy.</p>
+    <h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold text-center mb-3">See the platform in action</h2>
+    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in delay-100">Explore how you search markets, analyse deals, and track your portfolio with Proppy.</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/how-it-works.png" alt="Workflow overview" class="w-full h-auto"/>
+        <img src="assets/screenshots/how-it-works.png" alt="Workflow overview" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Guided workflow: from goals to secured deal</figcaption>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/technology.png" alt="Market intelligence" class="w-full h-auto"/>
+        <img src="assets/screenshots/technology.png" alt="Market intelligence" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Market intelligence and signals at a glance</figcaption>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/homepage-9.png" alt="Portfolio dashboard" class="w-full h-auto"/>
+        <img src="assets/screenshots/homepage-9.png" alt="Portfolio dashboard" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Portfolio and deal tracking dashboard</figcaption>
       </figure>
     </div>
@@ -362,7 +363,7 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
       <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
-      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
     </div>
     <div class="flex items-center gap-3">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
@@ -376,7 +377,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -384,11 +385,11 @@
   </div>
 </section>
 </main>
-<section class="py-24 bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">What Proppy Does</h2>
-<p class="text-slate-500 dark:text-slate-400">See why our approach consistently outperforms traditional investing.</p>
+<h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold mb-4">What Proppy Does</h2>
+<p class="text-slate-500 dark:text-slate-400 animate-fade-in delay-100">See why our approach consistently outperforms traditional investing.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
 <div class="bg-white dark:bg-slate-800 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 opacity-70 hover:opacity-100 transition-opacity">
@@ -396,11 +397,11 @@
 <span class="material-symbols-outlined text-slate-400 text-2xl">sentiment_dissatisfied</span>
 </div>
 <h3 class="text-2xl font-bold mb-4 text-slate-400 dark:text-slate-500">Most Investors</h3>
-<p class="text-xl font-medium mb-6">"Start with properties"</p>
+<p class="text-xl font-medium mb-6 animate-fade-in delay-100">"Start with properties"</p>
 <ul class="space-y-4 text-slate-500 dark:text-slate-400">
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-red-400 text-sm mt-1">close</span>
-<span>Restricted to local knowledge &amp; emotion</span>
+<span>Restricted to local knowledge & emotion</span>
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-red-400 text-sm mt-1">close</span>
@@ -408,7 +409,7 @@
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-red-400 text-sm mt-1">close</span>
-<span>Influenced by sales agents &amp; hype</span>
+<span>Influenced by sales agents & hype</span>
 </li>
 </ul>
 </div>
@@ -420,7 +421,7 @@
 <span class="material-symbols-outlined text-accent text-2xl">rocket_launch</span>
 </div>
 <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Proppy Investors</h3>
-<p class="text-xl font-medium mb-6 text-accent">"We start with markets"</p>
+<p class="text-xl font-medium mb-6 text-accent animate-fade-in delay-100">"We start with markets"</p>
 <ul class="space-y-4 text-slate-600 dark:text-slate-300 font-medium">
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-green-500 text-sm mt-1">check</span>
@@ -432,18 +433,18 @@
 </li>
 <li class="flex items-start gap-3">
 <span class="material-symbols-outlined text-green-500 text-sm mt-1">check</span>
-<span>Guided by unbiased data &amp; research</span>
+<span>Guided by unbiased data & research</span>
 </li>
 </ul>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24">
+<section class="py-16 md:py-24">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-20">
-<h2 class="text-4xl font-extrabold mb-4">Why Proppy Is Different</h2>
-<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">We've reimagined the buyer's agency model with a tech-first approach.</p>
+<h2 class="text-2xl md:text-4xl font-extrabold mb-4">Why Proppy Is Different</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto animate-fade-in delay-100">We've reimagined the buyer's agency model with a tech-first approach.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
 <div class="bg-card-light dark:bg-card-dark p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all hover:-translate-y-1">
@@ -451,7 +452,7 @@
 <span class="material-symbols-outlined text-orange-400">verified_user</span>
 </div>
 <h3 class="text-lg font-bold mb-2">15+ Years Experience</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     Built on a foundation of over 15 years in the Australian property market, navigating every cycle.
                 </p>
 </div>
@@ -460,7 +461,7 @@
 <span class="material-symbols-outlined text-blue-400">public</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Nationwide Coverage</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     We aren't limited by location. We scan the entire country to find the best growth corridors.
                 </p>
 </div>
@@ -469,7 +470,7 @@
 <span class="material-symbols-outlined text-purple-400">lock_open</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Off-Market Access</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     Our extensive agent network unlocks exclusive opportunities before they hit the open market.
                 </p>
 </div>
@@ -478,7 +479,7 @@
 <span class="material-symbols-outlined text-green-500">handshake</span>
 </div>
 <h3 class="text-lg font-bold mb-2">End-to-End Support</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                     From strategy to settlement and ongoing property management, we handle the entire lifecycle.
                 </p>
 </div>
@@ -487,18 +488,18 @@
 <span class="material-symbols-outlined text-red-400">shield</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Money-Back Guarantee</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                    Invest with absolute confidence. Our service is backed by a satisfaction guarantee.
                 </p>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 bg-slate-50 dark:bg-slate-900/30">
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/30">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-4xl font-extrabold mb-4">How It Works</h2>
-<p class="text-slate-500 dark:text-slate-400">Your journey to a high-performing portfolio in 5 simple steps.</p>
+<h2 class="text-2xl md:text-4xl font-extrabold mb-4">How It Works</h2>
+<p class="text-slate-500 dark:text-slate-400 animate-fade-in delay-100">Your journey to a high-performing portfolio in 5 simple steps.</p>
 </div>
 <div class="relative">
 <div class="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-slate-200 dark:bg-slate-700 -z-10"></div>
@@ -508,61 +509,61 @@
 <span class="text-2xl font-extrabold text-slate-300 group-hover:text-accent transition-colors">1</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Strategy Call</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">We define your goals and build a tailored investment roadmap.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">We define your goals and build a tailored investment roadmap.</p>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-24 h-24 bg-white dark:bg-slate-800 rounded-full border-4 border-slate-100 dark:border-slate-700 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:border-accent">
 <span class="text-2xl font-extrabold text-slate-300 group-hover:text-accent transition-colors">2</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Data-Led Search</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">We scan the nationwide market for high-growth, high-yield assets.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">We scan the nationwide market for high-growth, high-yield assets.</p>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-24 h-24 bg-white dark:bg-slate-800 rounded-full border-4 border-slate-100 dark:border-slate-700 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:border-accent">
 <span class="text-2xl font-extrabold text-slate-300 group-hover:text-accent transition-colors">3</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Due Diligence</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">Comprehensive checks to ensure the property stacks up.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">Comprehensive checks to ensure the property stacks up.</p>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-24 h-24 bg-white dark:bg-slate-800 rounded-full border-4 border-slate-100 dark:border-slate-700 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:border-accent">
 <span class="text-2xl font-extrabold text-slate-300 group-hover:text-accent transition-colors">4</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Negotiation</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">Expert negotiation to secure the property at the best price.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">Expert negotiation to secure the property at the best price.</p>
 </div>
 <div class="flex flex-col items-center text-center group">
 <div class="w-24 h-24 bg-white dark:bg-slate-800 rounded-full border-4 border-slate-100 dark:border-slate-700 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 group-hover:border-accent">
 <span class="text-2xl font-extrabold text-slate-300 group-hover:text-accent transition-colors">5</span>
 </div>
 <h3 class="text-lg font-bold mb-2">Settlement</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400">We handle the paperwork and set up property management.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">We handle the paperwork and set up property management.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 bg-slate-50 dark:bg-slate-900/30">
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/30">
 <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-20 items-center">
 <div class="lg:w-1/2">
-<h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Join Australians who’ve invested with clarity</h2>
-<p class="text-slate-500 dark:text-slate-400 mb-10 text-lg">
+<h2 class="text-2xl md:text-4xl md:text-3xl md:text-5xl font-extrabold mb-8 leading-tight">Join Australians who’ve invested with clarity</h2>
+<p class="text-slate-500 dark:text-slate-400 mb-10 text-lg animate-fade-in delay-100">
                 Don't just take our word for it. See how data-led decisions have changed the financial future for our clients.
             </p>
 <div class="grid grid-cols-2 gap-4 max-w-md">
 <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-100 dark:border-slate-700">
-<p class="text-3xl font-bold mb-1">94%</p>
-<p class="text-[10px] text-slate-400 font-bold uppercase">Client Retention</p>
+<p class="text-3xl font-bold mb-1 animate-fade-in delay-100">94%</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase animate-fade-in delay-100">Client Retention</p>
 </div>
 <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-100 dark:border-slate-700">
-<p class="text-3xl font-bold mb-1">$45k</p>
-<p class="text-[10px] text-slate-400 font-bold uppercase">Avg. Below Market Value</p>
+<p class="text-3xl font-bold mb-1 animate-fade-in delay-100">$45k</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase animate-fade-in delay-100">Avg. Below Market Value</p>
 </div>
 </div>
 </div>
 <div class="lg:w-1/2 w-full">
 <div class="bg-white dark:bg-slate-800 p-12 rounded-[3rem] shadow-2xl shadow-slate-200 dark:shadow-none relative">
-<div class="absolute -top-6 -left-6 bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl font-serif">"</div>
+<div class="absolute -top-6 -left-6 bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl md:text-4xl font-serif">"</div>
 <div class="flex gap-1 mb-6 text-yellow-400">
 <span class="material-symbols-outlined">star</span>
 <span class="material-symbols-outlined">star</span>
@@ -570,15 +571,15 @@
 <span class="material-symbols-outlined">star</span>
 <span class="material-symbols-outlined">star</span>
 </div>
-<p class="text-xl md:text-2xl font-medium mb-10 text-slate-700 dark:text-slate-300 italic leading-normal">
+<p class="text-xl md:text-2xl font-medium mb-10 text-slate-700 dark:text-slate-300 italic leading-normal animate-fade-in delay-100">
                     "I was stuck in analysis paralysis for 2 years. Proppy showed me data I didn't know existed. We secured a high-yield property in Perth within 3 weeks that has already grown 15%."
                 </p>
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-4">
-<img alt="User Profile" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM7oUpaDsV_iQ2TQZdk8uaZm5f9xum3PQ6a32OWfJ5h8zpq60Zm1JIGV9Y9YeE4DCsG-Jde1agG40u4hCMrO5et9RaZwsWdukuuipfWsDoYpili3VwLe7yf8rqcZ8BBTz-9icfVghrV4y9U-n6KtPZg5-gAhJtXASWFDgst3RFGUOFwAGZfus_HEkxXzp2RRuRP1Dm8NIt9GlLGZt5DDQTFzmPlnGAbLc2k0DsAZRrD1Xo-e9dmn3cJ7orl_360jmRcWOUoHPgftn1"/>
+<img alt="User Profile" class="w-12 h-12 rounded-full object-cover img-rounded img-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM7oUpaDsV_iQ2TQZdk8uaZm5f9xum3PQ6a32OWfJ5h8zpq60Zm1JIGV9Y9YeE4DCsG-Jde1agG40u4hCMrO5et9RaZwsWdukuuipfWsDoYpili3VwLe7yf8rqcZ8BBTz-9icfVghrV4y9U-n6KtPZg5-gAhJtXASWFDgst3RFGUOFwAGZfus_HEkxXzp2RRuRP1Dm8NIt9GlLGZt5DDQTFzmPlnGAbLc2k0DsAZRrD1Xo-e9dmn3cJ7orl_360jmRcWOUoHPgftn1" loading="lazy" decoding="async">
 <div>
 <h4 class="font-bold">Sarah Jenkins</h4>
-<p class="text-xs text-slate-400">Sydney Investor</p>
+<p class="text-xs text-slate-400 animate-fade-in delay-100">Sydney Investor</p>
 </div>
 </div>
 </div>
@@ -586,17 +587,17 @@
 </div>
 </div>
 </section>
-<section class="py-24 relative overflow-hidden">
+<section class="py-16 md:py-24 relative overflow-hidden">
 <div class="absolute inset-0 bg-primary dark:bg-white/5 opacity-5 pointer-events-none"></div>
 <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-<h2 class="text-4xl md:text-6xl font-extrabold mb-8">Ready to invest smarter?</h2>
-<p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
+<h2 class="text-4xl md:text-2xl md:text-4xl md:text-6xl font-extrabold mb-8">Ready to invest smarter?</h2>
+<p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto animate-fade-in delay-100">
             Book your complimentary strategy session today. No obligation, just a clear roadmap for your portfolio.
         </p>
 <button class="bg-primary dark:bg-white dark:text-primary text-white px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl shadow-primary/30 dark:shadow-white/10">
             Book Your Free Strategy Call
         </button>
-<p class="mt-6 text-sm text-slate-400 font-medium">Limited spots available for this month</p>
+<p class="mt-6 text-sm text-slate-400 font-medium animate-fade-in delay-100">Limited spots available for this month</p>
 </div>
 </section>
 

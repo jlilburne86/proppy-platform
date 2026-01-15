@@ -101,6 +101,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
 
@@ -112,8 +113,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -164,7 +165,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -221,10 +222,10 @@
 <span class="material-symbols-outlined text-lg">shield</span>
 <span>Ironclad Protection Policy</span>
 </div>
-<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.15]">
+<h1 class="text-3xl md:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.15] animate-slide-up">
             We back our service. If we don’t deliver... <span class="underline-accent">you’re covered.</span>
 </h1>
-<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed">
+<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed animate-fade-in delay-100">
             Investing requires trust. We earn yours by putting our fees on the line. Our Money-Back Guarantee ensures that if we can't match you with a high-performance property, you don't pay for the privilege.
         </p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -236,23 +237,23 @@
 <div class="absolute inset-0 bg-gradient-to-b from-emerald-100/50 to-transparent dark:from-emerald-900/20 rounded-[3rem] transform rotate-3 scale-105 opacity-50"></div>
 <div class="relative bg-white dark:bg-card-dark rounded border border-slate-100 dark:border-slate-800 p-12 shadow-2xl shadow-emerald-100/50 dark:shadow-none flex flex-col items-center">
 <div class="w-24 h-24 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-emerald-200 dark:shadow-emerald-900/20 text-white">
-<span class="material-symbols-outlined text-5xl">verified_user</span>
+<span class="material-symbols-outlined text-3xl md:text-5xl">verified_user</span>
 </div>
 <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">100% Money-Back</h3>
-<p class="text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-widest text-xs mb-8">Performance Guarantee</p>
+<p class="text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-widest text-xs mb-8 animate-fade-in delay-100">Performance Guarantee</p>
 <div class="w-full grid grid-cols-2 gap-4">
 <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
-<p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Coverage</p>
-<p class="font-bold text-slate-800 dark:text-slate-200">Full Retainer</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase mb-1 animate-fade-in delay-100">Coverage</p>
+<p class="font-bold text-slate-800 dark:text-slate-200 animate-fade-in delay-100">Full Retainer</p>
 </div>
 <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
-<p class="text-[10px] text-slate-400 font-bold uppercase mb-1">Duration</p>
-<p class="font-bold text-slate-800 dark:text-slate-200">90 Days</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase mb-1 animate-fade-in delay-100">Duration</p>
+<p class="font-bold text-slate-800 dark:text-slate-200 animate-fade-in delay-100">90 Days</p>
 </div>
 </div>
 <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 w-full flex items-center justify-center gap-2 text-slate-400 text-sm font-medium">
 <span class="material-symbols-outlined text-lg">lock</span>
-<span>Secure &amp; Binding Agreement</span>
+<span>Secure & Binding Agreement</span>
 </div>
 </div>
 </div>
@@ -262,7 +263,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -274,7 +275,7 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
       <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
-      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
     </div>
     <div class="flex items-center gap-3">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
@@ -288,7 +289,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -296,11 +297,11 @@
   </div>
 </section>
 </main>
-<section class="py-24 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-extrabold mb-4">How the Guarantee Works</h2>
-<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">We keep it simple. No hidden loopholes, just a straightforward commitment to finding you the right property.</p>
+<h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold mb-4">How the Guarantee Works</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto animate-fade-in delay-100">We keep it simple. No hidden loopholes, just a straightforward commitment to finding you the right property.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
 <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-slate-200 dark:bg-slate-700 border-t border-dashed border-slate-300 dark:border-slate-600 z-0"></div>
@@ -310,7 +311,7 @@
 <span class="text-3xl font-extrabold text-blue-500">1</span>
 </div>
 <h3 class="text-xl font-bold mb-3">Define the Brief</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                         We work with you to establish clear criteria: yield, capital growth potential, location parameters, and budget. This becomes our "agreed search mandate".
                     </p>
 </div>
@@ -321,7 +322,7 @@
 <span class="text-3xl font-extrabold text-purple-500">2</span>
 </div>
 <h3 class="text-xl font-bold mb-3">90-Day Search</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                         Our team uses proprietary data and off-market networks to hunt for properties that match your specific mandate. We present you with vetted options.
                     </p>
 </div>
@@ -332,7 +333,7 @@
 <span class="text-3xl font-extrabold text-emerald-500">3</span>
 </div>
 <h3 class="text-xl font-bold mb-3">Deliver or Refund</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed animate-fade-in delay-100">
                         If we fail to present a property that meets the agreed criteria within 90 days, you are entitled to a full refund of your retainer fee. No questions asked.
                     </p>
 </div>
@@ -340,11 +341,11 @@
 </div>
 </div>
 </section>
-<section class="py-24">
+<section class="py-16 md:py-24">
 <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 items-center">
 <div class="lg:w-1/2">
-<h2 class="text-4xl font-extrabold mb-6 leading-tight">Why we can offer this level of certainty</h2>
-<p class="text-slate-500 dark:text-slate-400 text-lg mb-8">
+<h2 class="text-2xl md:text-4xl font-extrabold mb-6 leading-tight">Why we can offer this level of certainty</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg mb-8 animate-fade-in delay-100">
                 Most buyer's agents rely on gut feel. We rely on data. Our confidence stems from a rigorous, data-driven selection process that filters 15,000+ suburbs down to the top 1%.
             </p>
 <div class="space-y-4">
@@ -354,7 +355,7 @@
 </div>
 <div>
 <h4 class="font-bold text-slate-900 dark:text-slate-100">Performance-First Approach</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">We don't just "buy houses". We acquire high-yield assets.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">We don't just "buy houses". We acquire high-yield assets.</p>
 </div>
 </div>
 <div class="flex items-center gap-4 p-4 rounded bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
@@ -363,7 +364,7 @@
 </div>
 <div>
 <h4 class="font-bold text-slate-900 dark:text-slate-100">National Reach</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">If the data points to Perth, we buy in Perth. We aren't geographically limited.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">If the data points to Perth, we buy in Perth. We aren't geographically limited.</p>
 </div>
 </div>
 <div class="flex items-center gap-4 p-4 rounded bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
@@ -372,7 +373,7 @@
 </div>
 <div>
 <h4 class="font-bold text-slate-900 dark:text-slate-100">Institutional Grade Data</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">We see market movements 3-6 months before the general public.</p>
+<p class="text-sm text-slate-500 dark:text-slate-400 animate-fade-in delay-100">We see market movements 3-6 months before the general public.</p>
 </div>
 </div>
 </div>
@@ -381,7 +382,7 @@
 <div class="bg-pastel-emerald dark:bg-emerald-950/20 rounded p-10 border border-emerald-100 dark:border-emerald-900/30 relative">
 <span class="material-symbols-outlined text-emerald-200 dark:text-emerald-900 absolute top-4 right-4 text-9xl -z-10 opacity-50">thumb_up</span>
 <h3 class="font-bold text-2xl mb-6">"Peace of mind is priceless"</h3>
-<p class="text-slate-600 dark:text-slate-300 italic mb-8 leading-relaxed">
+<p class="text-slate-600 dark:text-slate-300 italic mb-8 leading-relaxed animate-fade-in delay-100">
                     "I was hesitant to pay a buyer's agent upfront. The money-back guarantee removed that friction. Proppy not only found a property within 45 days, but it was off-market and $30k below bank valuation."
                 </p>
 <div class="flex items-center gap-4">
@@ -389,27 +390,27 @@
                         MJ
                     </div>
 <div>
-<p class="font-bold text-slate-900 dark:text-white">Michael James</p>
-<p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">Verified Investor</p>
+<p class="font-bold text-slate-900 dark:text-white animate-fade-in delay-100">Michael James</p>
+<p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold animate-fade-in delay-100">Verified Investor</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section class="py-24 relative overflow-hidden bg-slate-900 text-white rounded-t-[3rem] mt-12">
+<section class="py-16 md:py-24 relative overflow-hidden bg-slate-900 text-white rounded-t-[3rem] mt-12">
 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
 <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-[100px]"></div>
 <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]"></div>
 <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-<h2 class="text-4xl md:text-5xl font-extrabold mb-6">Ready to invest with confidence?</h2>
-<p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+<h2 class="text-2xl md:text-4xl md:text-3xl md:text-5xl font-extrabold mb-6">Ready to invest with confidence?</h2>
+<p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto animate-fade-in delay-100">
             Book your complimentary strategy session today. Let's define your criteria and start your risk-free journey.
         </p>
 <button class="bg-white text-slate-900 px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-2xl shadow-white/10">
             Get started risk-free
         </button>
-<p class="mt-6 text-sm text-slate-400 font-medium flex items-center justify-center gap-2">
+<p class="mt-6 text-sm text-slate-400 font-medium flex items-center justify-center gap-2 animate-fade-in delay-100">
 <span class="material-symbols-outlined text-sm">event_available</span>
             Limited spots available for new clients this month
         </p>

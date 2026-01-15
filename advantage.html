@@ -115,6 +115,7 @@
   });
 })();
 </script>
+<link rel="stylesheet" href="tools/ux.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
 
@@ -126,8 +127,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -178,7 +179,7 @@
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -235,11 +236,11 @@
 <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
             Why Choose Proppy
         </div>
-<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+<h1 class="text-3xl md:text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] animate-slide-up">
             The Unfair Advantage for <br/>
 <span class="underline-accent">Modern Investors.</span>
 </h1>
-<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium animate-fade-in delay-100">
             We've redesigned the property investment experience. No guesswork, no geographical limits, and no conflict of interest. Just pure, data-backed performance.
         </p>
 </div>
@@ -251,7 +252,7 @@
 <span class="material-symbols-outlined text-3xl">analytics</span>
 </div>
 <h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Evidence Over Opinion</h3>
-<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-lg">
+<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-lg animate-fade-in delay-100">
                         Most buyers rely on "gut feel" or biased advice. We don't guess. Our proprietary algorithms analyze over 40 distinct data points to forecast growth with institutional-grade precision.
                     </p>
 </div>
@@ -271,7 +272,7 @@
 <span class="material-symbols-outlined text-3xl">public</span>
 </div>
 <h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Nationwide by Design</h3>
-<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8 animate-fade-in delay-100">
                         Local agents are restricted to their backyard. We are borderless. We scan 15,000+ suburbs to find the best investment, regardless of state lines.
                     </p>
 </div>
@@ -285,7 +286,7 @@
 <span class="material-symbols-outlined text-3xl">smart_toy</span>
 </div>
 <h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Human + Technology</h3>
-<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
+<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed animate-fade-in delay-100">
                         Algorithms process the data; experts negotiate the deal. You get the speed and breadth of AI combined with the street-smarts of seasoned negotiators.
                     </p>
 </div>
@@ -326,7 +327,7 @@
 <span class="material-symbols-outlined text-3xl">percent</span>
 </div>
 <h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Better Value</h3>
-<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed animate-fade-in delay-100">
                         Standard agents charge a percentage, incentivizing them to make you pay more. We charge a fixed flat fee. Our only incentive is securing you the best asset at the lowest price.
                     </p>
 </div>
@@ -340,11 +341,11 @@
 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
 <div class="relative z-10 max-w-2xl">
 <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
-<span class="material-symbols-outlined text-emerald-400 text-4xl">verified_user</span>
+<span class="material-symbols-outlined text-emerald-400 text-2xl md:text-4xl">verified_user</span>
 <span class="text-emerald-400 font-bold tracking-widest uppercase text-sm">Proppy Promise</span>
 </div>
-<h3 class="text-3xl md:text-5xl font-extrabold mb-6 dark:text-slate-900">Guaranteed Performance</h3>
-<p class="text-slate-300 dark:text-slate-600 text-xl leading-relaxed">
+<h3 class="text-3xl md:text-3xl md:text-5xl font-extrabold mb-6 dark:text-slate-900">Guaranteed Performance</h3>
+<p class="text-slate-300 dark:text-slate-600 text-xl leading-relaxed animate-fade-in delay-100">
                             We are confident in our system. If we don't present you with a property that meets your strict investment criteria within 90 days, we waive our retainer fee.
                         </p>
 </div>
@@ -362,7 +363,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -374,7 +375,7 @@
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
       <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
-      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
     </div>
     <div class="flex items-center gap-3">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
@@ -387,15 +388,15 @@
   <div class="text-center mb-6">
     <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider">Quick Overview</span>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"><div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Data‑led</h3><p class="text-sm text-slate-600 dark:text-slate-400">50+ signals per suburb to remove bias</p></div>
-<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Proactive</h3><p class="text-sm text-slate-600 dark:text-slate-400">Define what to buy, then we go get it</p></div>
-<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Off‑market</h3><p class="text-sm text-slate-600 dark:text-slate-400">Deep agent networks for early access</p></div>
-<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Transparent</h3><p class="text-sm text-slate-600 dark:text-slate-400">No commissions; clear pricing and guarantee</p></div></div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"><div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Data‑led</h3><p class="text-sm text-slate-600 dark:text-slate-400 animate-fade-in delay-100">50+ signals per suburb to remove bias</p></div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Proactive</h3><p class="text-sm text-slate-600 dark:text-slate-400 animate-fade-in delay-100">Define what to buy, then we go get it</p></div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Off‑market</h3><p class="text-sm text-slate-600 dark:text-slate-400 animate-fade-in delay-100">Deep agent networks for early access</p></div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"><h3 class="font-bold mb-1">Transparent</h3><p class="text-sm text-slate-600 dark:text-slate-400 animate-fade-in delay-100">No commissions; clear pricing and guarantee</p></div></div>
 </section>
 
 <section class="max-w-7xl mx-auto px-6 py-10">
   <div class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-    <img src="assets/screenshots/technology.png" alt="Product preview" class="w-full h-auto"/>
+    <img src="assets/screenshots/technology.png" alt="Product preview" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -404,7 +405,7 @@
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
     <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
-    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
     <div class="flex items-center gap-3 justify-center">
       <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
@@ -412,10 +413,10 @@
   </div>
 </section>
 </main>
-<section class="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-center">
+<section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-center">
 <div class="max-w-3xl mx-auto px-6">
-<h2 class="text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">Ready to start your journey?</h2>
-<p class="text-xl text-slate-500 dark:text-slate-400 mb-10">Stop searching and start investing with confidence. Book your free strategy call today.</p>
+<h2 class="text-2xl md:text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">Ready to start your journey?</h2>
+<p class="text-xl text-slate-500 dark:text-slate-400 mb-10 animate-fade-in delay-100">Stop searching and start investing with confidence. Book your free strategy call today.</p>
 <button class="bg-accent text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo-500/30">
             Book a Free Strategy Call
         </button>
