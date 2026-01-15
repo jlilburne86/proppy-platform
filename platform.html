@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proppy Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+  <script id="color-mode-guard">(function(){try{document.documentElement.classList.remove('dark');}catch(e){}})();</script>
+<style id="navx-styles">
+.navx-sub{display:none}
+.navx-group:hover>.navx-sub,.navx-group:focus-within>.navx-sub,.navx-group.open>.navx-sub{display:block}
+.navx-toggle{cursor:pointer}
+.navx-overlay{display:none}
+.navx-drawer{transform:translateX(100%); transition:transform .2s ease}
+.navx-open .navx-overlay{display:block}
+.navx-open .navx-drawer{transform:translateX(0)}
+</style>
+<script id="navx-script">
+(function(){
+  function closeAll(){ document.querySelectorAll('.navx-group.open').forEach(el=>el.classList.remove('open')); document.querySelectorAll('.navx-toggle[aria-expanded="true"]').forEach(a=>a.setAttribute('aria-expanded','false')); }
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    var toggle = t.closest('a.navx-toggle');
+    if (toggle){ e.preventDefault(); e.stopPropagation(); var parent = toggle.closest('.navx-group'); var isOpen = parent.classList.contains('open'); closeAll(); if(!isOpen){ parent.classList.add('open'); toggle.setAttribute('aria-expanded','true'); } return; }
+    if (!t.closest('.navx-sub')){ closeAll(); }
+  }, true);
+  // mobile drawer
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('#navx-burger');
+    var closeBtn = e.target.closest('#navx-close');
+    if (btn){ e.preventDefault(); document.documentElement.classList.add('navx-open'); }
+    if (closeBtn || e.target.classList.contains('navx-overlay')){ document.documentElement.classList.remove('navx-open'); }
+    // accordion
+    var acc = e.target.closest('.navx-acc');
+    if (acc){ e.preventDefault(); var body = acc.nextElementSibling; if(body){ body.classList.toggle('hidden'); }}
+  });
+})();
+</script>
+</head>
+  <body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans">
+    <main class="max-w-7xl mx-auto px-6 pt-24 md:pt-28 pb-16">
+      <header class="text-center mb-10">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+          <span class="material-symbols-outlined text-sm">apps</span>
+          The Platform
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Explore the Proppy platform</h1>
+        <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Search markets, shortlist deals, and track your portfolio in one place—built for signal, not noise.</p>
+      </header>
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
+          <img src="assets/screenshots/technology.png" alt="Search markets" class="w-full h-auto"/>
+          <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Search nationwide markets with data‑led signals</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
+          <img src="assets/screenshots/pricing-faq.png" alt="Shortlist deals" class="w-full h-auto"/>
+          <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Shortlist, compare, and run due diligence</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
+          <img src="assets/screenshots/homepage-9.png" alt="Track portfolio" class="w-full h-auto"/>
+          <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Track portfolio performance and progress</figcaption>
+        </figure>
+      </section>
+<section class="max-w-7xl mx-auto px-6 py-10">
+  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Get Started</div>
+      <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
+      <p class="text-slate-600 dark:text-slate-400 mt-1">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
+      <a href="pricing.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">View pricing</a>
+    </div>
+  </div>
+</section>
+
+    
+<section class="max-w-7xl mx-auto px-6 py-14">
+  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
+    <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
+    <p class="text-slate-600 dark:text-slate-400 mb-6">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <div class="flex items-center gap-3 justify-center">
+      <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
+      <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
+    </div>
+  </div>
+</section>
+</main>
+  </body>
+  </html>
+

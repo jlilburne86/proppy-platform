@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Site Map</title>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<style id="nav-support-styles">
+.nav-submenu{display:none}
+.group:hover>.nav-submenu,.group:focus-within>.nav-submenu,.group.open>.nav-submenu{display:block}
+.nav-toggle{cursor:pointer}
+</style>
+
+<link rel="canonical" href="/site-map.html"><style id="navx-styles">
+.navx-sub{display:none}
+.navx-group:hover>.navx-sub,.navx-group:focus-within>.navx-sub,.navx-group.open>.navx-sub{display:block}
+.navx-toggle{cursor:pointer}
+.navx-overlay{display:none}
+.navx-drawer{transform:translateX(100%); transition:transform .2s ease}
+.navx-open .navx-overlay{display:block}
+.navx-open .navx-drawer{transform:translateX(0)}
+</style>
+<script id="navx-script">
+(function(){
+  function closeAll(){ document.querySelectorAll('.navx-group.open').forEach(el=>el.classList.remove('open')); document.querySelectorAll('.navx-toggle[aria-expanded="true"]').forEach(a=>a.setAttribute('aria-expanded','false')); }
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    var toggle = t.closest('a.navx-toggle');
+    if (toggle){ e.preventDefault(); e.stopPropagation(); var parent = toggle.closest('.navx-group'); var isOpen = parent.classList.contains('open'); closeAll(); if(!isOpen){ parent.classList.add('open'); toggle.setAttribute('aria-expanded','true'); } return; }
+    if (!t.closest('.navx-sub')){ closeAll(); }
+  }, true);
+  // mobile drawer
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('#navx-burger');
+    var closeBtn = e.target.closest('#navx-close');
+    if (btn){ e.preventDefault(); document.documentElement.classList.add('navx-open'); }
+    if (closeBtn || e.target.classList.contains('navx-overlay')){ document.documentElement.classList.remove('navx-open'); }
+    // accordion
+    var acc = e.target.closest('.navx-acc');
+    if (acc){ e.preventDefault(); var body = acc.nextElementSibling; if(body){ body.classList.toggle('hidden'); }}
+  });
+})();
+</script>
+</head>
+<body class="bg-white text-slate-900">
+  <div class="max-w-3xl mx-auto p-8 prose">
+    <h1>Site Map</h1>
+    <p>All pages in this site are listed below.</p>
+    <ul>
+      <li><a class="text-primary hover:underline" href="about.html">about.html</a></li>
+<li><a class="text-primary hover:underline" href="advantage.html">advantage.html</a></li>
+<li><a class="text-primary hover:underline" href="built-for-signal-not-noise.html">built-for-signal-not-noise.html</a></li>
+<li><a class="text-primary hover:underline" href="guarantee.html">guarantee.html</a></li>
+<li><a class="text-primary hover:underline" href="home-1.html">home-1.html</a></li>
+<li><a class="text-primary hover:underline" href="home-2.html">home-2.html</a></li>
+<li><a class="text-primary hover:underline" href="home-3.html">home-3.html</a></li>
+<li><a class="text-primary hover:underline" href="home-4.html">home-4.html</a></li>
+<li><a class="text-primary hover:underline" href="home-5.html">home-5.html</a></li>
+<li><a class="text-primary hover:underline" href="home-6.html">home-6.html</a></li>
+<li><a class="text-primary hover:underline" href="home-7.html">home-7.html</a></li>
+<li><a class="text-primary hover:underline" href="home-8.html">home-8.html</a></li>
+<li><a class="text-primary hover:underline" href="home-9.html">home-9.html</a></li>
+<li><a class="text-primary hover:underline" href="how-it-works.html">how-it-works.html</a></li>
+<li><a class="text-primary hover:underline" href="index.html">index.html</a></li>
+<li><a class="text-primary hover:underline" href="investor-resources-hub.html">investor-resources-hub.html</a></li>
+<li><a class="text-primary hover:underline" href="nationwide-sourcing.html">nationwide-sourcing.html</a></li>
+<li><a class="text-primary hover:underline" href="pricing.html">pricing.html</a></li>
+<li><a class="text-primary hover:underline" href="resources.html">resources.html</a></li>
+<li><a class="text-primary hover:underline" href="results.html">results.html</a></li>
+<li><a class="text-primary hover:underline" href="smarter-property-investment-powered-by-data-guided-by-experts.html">smarter-property-investment-powered-by-data-guided-by-experts.html</a></li>
+<li><a class="text-primary hover:underline" href="sourcing.html">sourcing.html</a></li>
+<li><a class="text-primary hover:underline" href="speak-with-a-property-investment-specialist-2.html">speak-with-a-property-investment-specialist-2.html</a></li>
+<li><a class="text-primary hover:underline" href="speak-with-a-property-investment-specialist.html">speak-with-a-property-investment-specialist.html</a></li>
+<li><a class="text-primary hover:underline" href="team.html">team.html</a></li>
+<li><a class="text-primary hover:underline" href="technology.html">technology.html</a></li>
+<li><a class="text-primary hover:underline" href="the-unfair-advantage-for-modern-investors.html">the-unfair-advantage-for-modern-investors.html</a></li>
+<li><a class="text-primary hover:underline" href="transparent-pricing-clear-value-no-surprises.html">transparent-pricing-clear-value-no-surprises.html</a></li>
+<li><a class="text-primary hover:underline" href="we-back-our-service-if-we-dont-deliver-youre-covered.html">we-back-our-service-if-we-dont-deliver-youre-covered.html</a></li>
+<li><a class="text-primary hover:underline" href="we-build-wealth-backed-by-15-years-of-experience.html">we-build-wealth-backed-by-15-years-of-experience.html</a></li>
+<li><a class="text-primary hover:underline" href="were-redefining-property-investment-by-making-it-simpler-more-transparent-and-less-stressful.html">were-redefining-property-investment-by-making-it-simpler-more-transparent-and-less-stressful.html</a></li>
+<li><a class="text-primary hover:underline" href="what-results-means.html">what-results-means.html</a></li>
+    </ul>
+  </div>
+<script id="nav-support-script">
+(function(){
+  function closeAll(){ document.querySelectorAll('.group.open').forEach(el=>el.classList.remove('open')); }
+  document.addEventListener('click', function(e){
+    var parent = e.target.closest('.group');
+    if (parent && parent.querySelector('.nav-submenu')){
+      // toggle only if clicking parent label
+      if (e.target.closest('a') && e.target.closest('a').getAttribute('href')==='javascript:void(0)'){
+        e.preventDefault();
+        if (parent.classList.contains('open')) parent.classList.remove('open'); else { closeAll(); parent.classList.add('open'); }
+      }
+    } else {
+      closeAll();
+    }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
+})();
+</script>
+</body></html>

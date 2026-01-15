@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proppy - Pricing &amp; FAQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              "background-light": "#fcfcfd",
+              "background-dark": "#0f172a",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .fintech-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(white, white) padding-box,
+                        linear-gradient(to right, #6366f1, #a855f7) border-box;
+            border: 2px solid transparent;
+        }
+        .dark .gradient-border {
+            background: linear-gradient(#0f172a, #0f172a) padding-box,
+                        linear-gradient(to right, #6366f1, #a855f7) border-box;
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 200px;
+            opacity: 1;
+        }
+        .accordion-item.active .icon-rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 fintech-blur border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-extrabold tracking-tight uppercase">Proppy</span>
+<div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<a class="hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-primary" href="#">Pricing</a>
+<a class="hover:text-primary transition-colors" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-semibold px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors">Log In</button>
+<button class="bg-primary text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-primary/30 transition-all">Get Started</button>
+</div>
+</div>
+</nav>
+<header class="relative pt-20 pb-12 overflow-hidden">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="max-w-7xl mx-auto px-6 text-center">
+<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">
+<span class="material-symbols-outlined text-sm">verified</span>
+                Simple &amp; Transparent
+            </div>
+<h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                Transparent pricing. <br class="hidden md:block"/>
+                Clear value. <span class="relative">
+                    No surprises.
+                    <svg class="absolute -bottom-2 left-0 w-full" height="8" preserveAspectRatio="none" viewBox="0 0 100 8">
+<path d="M0 5 Q50 8 100 5" fill="none" stroke="#6366f1" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400">
+                Choose the plan that fits your investment strategy. From initial market analysis to direct acquisition and negotiation.
+            </p>
+</div>
+</header>
+<section class="py-12 relative">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end mb-24">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+<h3 class="text-lg font-bold text-slate-500 uppercase tracking-wide mb-4">Strategy</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-extrabold text-slate-900 dark:text-white">$0</span>
+<span class="text-sm text-slate-500 font-medium">/month</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-8 leading-relaxed min-h-[40px]">
+                        Perfect for market research and defining your investment criteria.
+                    </p>
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold py-3.5 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors mb-8">
+                        Get Started
+                    </button>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">check</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Investment Strategy tools</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">check</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Public listing search</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">check</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Basic market data</span>
+</li>
+</ul>
+</div>
+<div class="gradient-border rounded-[2rem] p-8 md:p-10 shadow-2xl bg-white dark:bg-slate-900 relative transform md:-translate-y-4 z-10">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-primary/30">
+                        Most Popular
+                    </div>
+<h3 class="text-xl font-bold text-primary uppercase tracking-wide mb-4">Engagement</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-5xl font-extrabold text-slate-900 dark:text-white">$995</span>
+<span class="text-sm text-slate-500 font-medium">/month</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-8 leading-relaxed min-h-[40px]">
+                        For serious investors ready to source deals and analyze opportunities.
+                    </p>
+<button class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all mb-8 flex items-center justify-center gap-2">
+                        Start Free Trial
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-slate-900 dark:text-white text-sm font-bold">Deep Property Analysis</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-slate-900 dark:text-white text-sm font-bold">Advanced Sourcing Tools</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-slate-900 dark:text-white text-sm font-bold">Off-market deal access</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Predictive valuation models</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[14px] font-bold">check</span>
+</div>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Priority Email support</span>
+</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[2rem] p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+<h3 class="text-lg font-bold text-slate-500 uppercase tracking-wide mb-4">Acquisition</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-extrabold text-slate-900 dark:text-white">$4,995</span>
+<span class="text-sm text-slate-500 font-medium">/month</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-8 leading-relaxed min-h-[40px]">
+                        Full-service execution for negotiation and closing at scale.
+                    </p>
+<button class="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold py-3.5 rounded-xl hover:opacity-90 transition-opacity mb-8">
+                        Contact Sales
+                    </button>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="text-slate-900 dark:text-white text-sm font-bold">Negotiation Support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="text-slate-900 dark:text-white text-sm font-bold">Deal Closure Facilitation</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Direct seller messaging</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">White-glove onboarding</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check</span>
+<span class="text-slate-700 dark:text-slate-300 text-sm font-medium">Unlimited team seats</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-slate-100 dark:border-slate-700 relative overflow-hidden mb-24">
+<div class="absolute top-0 right-0 w-64 h-64 bg-yellow-400/10 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-tr-full -ml-16 -mb-16 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-center gap-8 relative z-10">
+<div class="w-20 h-20 bg-yellow-100 dark:bg-yellow-500/20 rounded-3xl flex items-center justify-center text-yellow-600 shrink-0 shadow-lg shadow-yellow-500/10">
+<span class="material-symbols-outlined text-4xl">verified_user</span>
+</div>
+<div class="text-center md:text-left flex-1">
+<h4 class="text-2xl md:text-3xl font-extrabold mb-3 text-slate-900 dark:text-white">100% Money-Back Guarantee</h4>
+<p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">
+                        We're confident Proppy will transform your investing journey. If you don't find value within your first 30 days, we'll refund your subscription in full. No forms, no hassle.
+                    </p>
+</div>
+<div class="hidden md:flex gap-4">
+<div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-slate-400 text-xl">lock</span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase">AES-256 Secure</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-16">
+<div class="text-center mb-12">
+<h3 class="text-3xl font-bold mb-4">Frequently Asked Questions</h3>
+<p class="text-slate-500 dark:text-slate-400">Everything you need to know about getting started with Proppy.</p>
+</div>
+<div class="max-w-3xl mx-auto space-y-4">
+<div class="accordion-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden" onclick="this.classList.toggle('active')">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between group cursor-pointer">
+<span class="font-bold text-base md:text-lg group-hover:text-primary transition-colors">Are you buyers agents?</span>
+<span class="material-symbols-outlined text-slate-400 icon-rotate transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50/50 dark:bg-slate-800/50">
+<div class="pb-6">
+                            No, Proppy is a technology and data platform, not a licensed real estate agency. We provide the institutional-grade data, off-market listings, and analytical tools you need to make your own investment decisions directly, giving you more control over the process.
+                        </div>
+</div>
+</div>
+<div class="accordion-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden" onclick="this.classList.toggle('active')">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between group cursor-pointer">
+<span class="font-bold text-base md:text-lg group-hover:text-primary transition-colors">Do you charge commissions?</span>
+<span class="material-symbols-outlined text-slate-400 icon-rotate transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50/50 dark:bg-slate-800/50">
+<div class="pb-6">
+                            We do not charge any commissions on your transactions. Unlike traditional agents who take 2-3% of the purchase price, Proppy operates on a transparent flat monthly subscription fee. You keep 100% of the upside on your deals.
+                        </div>
+</div>
+</div>
+<div class="accordion-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden" onclick="this.classList.toggle('active')">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between group cursor-pointer">
+<span class="font-bold text-base md:text-lg group-hover:text-primary transition-colors">Is Proppy suitable for first-time investors?</span>
+<span class="material-symbols-outlined text-slate-400 icon-rotate transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50/50 dark:bg-slate-800/50">
+<div class="pb-6">
+                            Absolutely. We've built Proppy to demystify real estate investing. Our 'Strategy' tier is specifically designed to guide you through terminology, deal analysis, and risk assessment, making it perfect for your first purchase.
+                        </div>
+</div>
+</div>
+<div class="accordion-item bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden" onclick="this.classList.toggle('active')">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between group cursor-pointer">
+<span class="font-bold text-base md:text-lg group-hover:text-primary transition-colors">Do you support overseas investors?</span>
+<span class="material-symbols-outlined text-slate-400 icon-rotate transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content px-6 text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-50/50 dark:bg-slate-800/50">
+<div class="pb-6">
+                            Yes, we support investors globally. Since our platform is entirely digital, you can analyze, source, and even negotiate deals in the US market from anywhere in the world. We have a significant community of international investors using Proppy.
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="text-xl font-extrabold uppercase tracking-tight">Proppy</span>
+<span class="text-slate-400 text-sm">© 2024 Proppy Inc. All rights reserved.</span>
+</div>
+<div class="flex gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<button class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl flex items-center justify-center transition-all hover:scale-110 z-50" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+
+</body></html>

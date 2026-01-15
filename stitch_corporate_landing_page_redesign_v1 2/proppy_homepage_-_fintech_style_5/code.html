@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proppy - Why Choose Us</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0f172a", 
+              accent: "#6366f1",
+              "background-light": "#fcfcfd",
+              "background-dark": "#0a0a0a",
+              "card-light": "#ffffff",
+              "card-dark": "#161616",
+              "pastel-blue": "#eff6ff",
+              "pastel-green": "#f0fdf4",
+              "pastel-purple": "#f5f3ff",
+              "pastel-orange": "#fff7ed",
+              "pastel-teal": "#f0fdfa",
+              "pastel-yellow": "#fefce8",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1.5rem",
+              "2xl": "2.5rem",
+              "3xl": "3rem",
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+:root {
+  --primary-color: #0f172a;
+}
+</style>
+<style>
+.underline-accent {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+.underline-accent::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: 4px;
+    width: 105%;
+    height: 14px;
+    background-color: #fbbf24; 
+    opacity: 0.3;
+    border-radius: 2px;
+    transform: rotate(-1deg);
+    z-index: -1;
+}
+.floating-blob {
+    position: absolute;
+    z-index: -1;
+    filter: blur(80px);
+    opacity: 0.5;
+}
+.pattern-bg {
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+.dark .pattern-bg {
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+}
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+<nav class="fixed top-0 w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-extrabold tracking-tight italic">PROPPY</span>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Home</a>
+<a class="text-primary dark:text-white transition-colors" href="#">Why Choose Us</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Success Stories</a>
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+<button class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 font-bold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-slate-700 dark:text-slate-200">Client Login</button>
+</div>
+</div>
+</nav>
+<main class="relative pt-32 pb-24 overflow-hidden min-h-screen">
+<div class="absolute inset-0 pattern-bg opacity-40 pointer-events-none"></div>
+<div class="floating-blob w-[500px] h-[500px] bg-blue-100 dark:bg-blue-900/20 -top-20 -left-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob"></div>
+<div class="floating-blob w-[500px] h-[500px] bg-indigo-100 dark:bg-indigo-900/20 top-40 -right-20 rounded-full mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000"></div>
+<div class="max-w-7xl mx-auto px-6 text-center relative z-10 mb-24">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-bold mb-8 border border-slate-200 dark:border-slate-700">
+<span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            Why Choose Proppy
+        </div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
+            The Unfair Advantage for <br/>
+<span class="underline-accent">Modern Investors.</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+            We've redesigned the property investment experience. No guesswork, no geographical limits, and no conflict of interest. Just pure, data-backed performance.
+        </p>
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none flex flex-col justify-between group overflow-hidden relative">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mb-8 text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined text-3xl">analytics</span>
+</div>
+<h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Evidence Over Opinion</h3>
+<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-lg">
+                        Most buyers rely on "gut feel" or biased advice. We don't guess. Our proprietary algorithms analyze over 40 distinct data points to forecast growth with institutional-grade precision.
+                    </p>
+</div>
+<div class="mt-10 relative h-32 w-full bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 overflow-hidden flex items-end px-6 pb-6 gap-2">
+<div class="w-1/5 h-[40%] bg-blue-200 dark:bg-blue-900/40 rounded-t-lg"></div>
+<div class="w-1/5 h-[60%] bg-blue-300 dark:bg-blue-800/40 rounded-t-lg"></div>
+<div class="w-1/5 h-[50%] bg-blue-400 dark:bg-blue-700/40 rounded-t-lg"></div>
+<div class="w-1/5 h-[80%] bg-blue-500 dark:bg-blue-600 rounded-t-lg shadow-lg shadow-blue-500/20"></div>
+<div class="w-1/5 h-[95%] bg-accent rounded-t-lg shadow-lg shadow-accent/20 relative group-hover:-translate-y-2 transition-transform duration-300">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">Proppy</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 bg-pastel-teal dark:bg-teal-950/10 rounded-[2.5rem] p-10 border border-teal-100 dark:border-teal-900/20 flex flex-col relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-900/30 flex items-center justify-center mb-8 text-teal-600 dark:text-teal-400">
+<span class="material-symbols-outlined text-3xl">public</span>
+</div>
+<h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Nationwide by Design</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
+                        Local agents are restricted to their backyard. We are borderless. We scan 15,000+ suburbs to find the best investment, regardless of state lines.
+                    </p>
+</div>
+<div class="absolute bottom-0 right-0 w-48 h-48 opacity-20 pointer-events-none">
+<span class="material-symbols-outlined text-[12rem] text-teal-600">map</span>
+</div>
+</div>
+<div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none flex flex-col md:flex-row gap-8 items-center relative overflow-hidden order-last lg:order-none">
+<div class="w-full md:w-1/2 relative z-10">
+<div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center mb-8 text-purple-600 dark:text-purple-400">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+</div>
+<h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Human + Technology</h3>
+<p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
+                        Algorithms process the data; experts negotiate the deal. You get the speed and breadth of AI combined with the street-smarts of seasoned negotiators.
+                    </p>
+</div>
+<div class="w-full md:w-1/2 relative z-10 bg-slate-50 dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700/50">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined text-lg">database</span>
+</div>
+<div class="h-1 flex-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-purple-500 w-[80%] animate-pulse"></div>
+</div>
+<div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-lg">person</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Data identifies growth zone</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>AI filters 15k+ suburbs</span>
+</div>
+<div class="flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-green-500 text-lg">check</span>
+<span>Expert negotiates best terms</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 bg-pastel-orange dark:bg-orange-950/10 rounded-[2.5rem] p-10 border border-orange-100 dark:border-orange-900/20 flex flex-col justify-between relative overflow-hidden order-last lg:order-none">
+<div class="absolute top-0 right-0 p-10 opacity-10">
+<span class="material-symbols-outlined text-9xl text-orange-500">savings</span>
+</div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-8 text-orange-600 dark:text-orange-400">
+<span class="material-symbols-outlined text-3xl">percent</span>
+</div>
+<h3 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Better Value</h3>
+<p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                        Standard agents charge a percentage, incentivizing them to make you pay more. We charge a fixed flat fee. Our only incentive is securing you the best asset at the lowest price.
+                    </p>
+</div>
+<div class="mt-8 inline-flex items-center gap-2 text-orange-700 dark:text-orange-400 font-bold bg-orange-100 dark:bg-orange-900/30 px-4 py-2 rounded-full w-fit">
+<span class="material-symbols-outlined text-sm">check_circle</span> Transparency First
+                </div>
+</div>
+<div class="lg:col-span-12 mt-4 order-last">
+<div class="bg-primary dark:bg-card-light dark:text-primary rounded-[2.5rem] p-10 md:p-14 text-white relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-10">
+<div class="absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-900 dark:from-white dark:to-slate-100 opacity-100"></div>
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 max-w-2xl">
+<div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+<span class="material-symbols-outlined text-emerald-400 text-4xl">verified_user</span>
+<span class="text-emerald-400 font-bold tracking-widest uppercase text-sm">Proppy Promise</span>
+</div>
+<h3 class="text-3xl md:text-5xl font-extrabold mb-6 dark:text-slate-900">Guaranteed Performance</h3>
+<p class="text-slate-300 dark:text-slate-600 text-xl leading-relaxed">
+                            We are confident in our system. If we don't present you with a property that meets your strict investment criteria within 90 days, we waive our retainer fee.
+                        </p>
+</div>
+<div class="relative z-10 shrink-0">
+<button class="bg-white text-slate-900 dark:bg-primary dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-lg">
+                            Read the Guarantee
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<section class="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-center">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="text-4xl font-extrabold mb-6 text-slate-900 dark:text-white">Ready to start your journey?</h2>
+<p class="text-xl text-slate-500 dark:text-slate-400 mb-10">Stop searching and start investing with confidence. Book your free strategy call today.</p>
+<button class="bg-accent text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo-500/30">
+            Book a Free Strategy Call
+        </button>
+</div>
+</section>
+<footer class="py-20 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<span class="text-2xl font-extrabold tracking-tight italic mb-6 block">PROPPY</span>
+<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                    The next generation of property investment intelligence. Data-led, nationwide coverage, expert guidance.
+                </p>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-slate-900 dark:text-white">Product</h5>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Features</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Market Intel</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-slate-900 dark:text-white">Company</h5>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-slate-900 dark:text-white">Support</h5>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400 font-medium">
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-xs text-slate-400 font-medium">© 2024 Proppy Intelligence Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">public</span></a>
+<a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">language</span></a>
+<a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors" href="#"><span class="material-symbols-outlined text-lg">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</body></html>
