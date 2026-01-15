@@ -100,7 +100,7 @@ def build_nav_html():
     desktop = build_desktop_links()
     mobile = build_mobile_list()
     return f'''
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">

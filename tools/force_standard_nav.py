@@ -5,7 +5,7 @@ from set_dropdown_nav_canonical import build_nav_html
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 
 STANDARD_PREFIX = (
-    '<nav class="fixed top-0 w-full z-50 bg-background-light/80 dark:bg-background-dark/80 '
+    '<nav class="fixed top-0 w-full z-50 bg-background-light dark:bg-background-dark md:bg-background-light/80 md:dark:bg-background-dark/80 '
     'backdrop-blur-md border-b border-slate-200 dark:border-slate-800">\n'
     '<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">\n'
     '<div class="flex items-center gap-2">\n'
