@@ -144,7 +144,7 @@ def generate_category_index(articles: List[Dict[str, Any]]) -> str:
         cat_articles = categories.get(cat_key, [])
         if cat_articles:
             items_html = '\n'.join(
-                f'<li><a href="/articles/{a["slug"]}.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">{a["title"]}</a></li>'
+                f'<li><a href="articles/{a["slug"]}.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">{a["title"]}</a></li>'
                 for a in cat_articles
             )
             sections.append(f"""<div>
