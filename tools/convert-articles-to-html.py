@@ -87,54 +87,79 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="/assets/screenshots/platform-screenshot.png">
-<script id="navx-script" src="/tools/navx-accessible.js"></script>
-<link rel="stylesheet" href="/tools/ux.css"/>
-<script src="/tools/analytics.js"></script>
+<script id="navx-script" src="../tools/navx-accessible.js"></script>
+<link rel="stylesheet" href="../tools/ux.css"/>
+<script src="../tools/analytics.js"></script>
 <style>
-  .prose h2 {{
-    font-size: 1.75rem;
+  main h2 {{
+    font-size: 1.875rem;
     font-weight: 800;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #0f172a;
+    line-height: 1.2;
+  }}
+  .dark main h2 {{
+    color: #f1f5f9;
+  }}
+  main h3 {{
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-top: 2rem;
     margin-bottom: 1rem;
     color: #1e293b;
   }}
-  .dark .prose h2 {{
-    color: #f1f5f9;
+  .dark main h3 {{
+    color: #e2e8f0;
   }}
-  .prose h3 {{
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }}
-  .prose p {{
-    margin-bottom: 1rem;
+  main p {{
+    font-size: 1.125rem;
     line-height: 1.75;
+    margin-bottom: 1.25rem;
+    color: #475569;
   }}
-  .prose strong {{
-    font-weight: 700;
-    color: #334155;
-  }}
-  .dark .prose strong {{
+  .dark main p {{
     color: #cbd5e1;
   }}
-  .prose ul, .prose ol {{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
+  main strong {{
+    font-weight: 700;
+    color: #1e293b;
   }}
-  .prose li {{
-    margin-bottom: 0.5rem;
+  .dark main strong {{
+    color: #f1f5f9;
   }}
-  .prose blockquote {{
+  main ul, main ol {{
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-left: 1.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #475569;
+  }}
+  .dark main ul, .dark main ol {{
+    color: #cbd5e1;
+  }}
+  main li {{
+    margin-bottom: 0.75rem;
+  }}
+  main blockquote {{
     border-left: 4px solid #8b5cf6;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
     font-style: italic;
     color: #64748b;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
+    font-size: 1.125rem;
   }}
-  .dark .prose blockquote {{
+  .dark main blockquote {{
     color: #94a3b8;
+  }}
+  main a {{
+    color: #8b5cf6;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }}
+  main a:hover {{
+    color: #7c3aed;
   }}
 </style>
 </head>
@@ -239,7 +264,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
   </div>
 </nav>
 
-<main id="content" class="max-w-3xl mx-auto px-6 pt-28 pb-16 prose prose-slate dark:prose-invert">
+<main id="content" class="max-w-3xl mx-auto px-6 pt-28 pb-16">
 <nav aria-label="Breadcrumb" class="text-sm text-slate-500 dark:text-slate-400 mb-4 not-prose">
   <ol class="flex items-center gap-2">
     <li><a class="hover:underline" href="../index.html">Home</a></li>
