@@ -48,7 +48,12 @@ def markdown_to_html(md_content: str) -> str:
         'nl2br',
         'sane_lists'
     ])
-    return md.convert(md_content)
+    html = md.convert(md_content)
+
+    # Remove first H1 from markdown (template already has display H1)
+    html = re.sub(r'<h1[^>]*>.*?</h1>\s*', '', html, count=1, flags=re.DOTALL)
+
+    return html
 
 def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> str:
     """Generate complete HTML page for article."""
@@ -250,8 +255,8 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
       </button>
     </div>
   </div>
-  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
+  <div class="fixed inset-0 navx-overlay bg-black/40 hidden"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4 hidden">
     <div class="flex items-center justify-between mb-2">
       <a href="../index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
         <img src="../proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
