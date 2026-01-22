@@ -76,6 +76,23 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+  tailwind.config = {{
+    darkMode: 'class',
+    theme: {{
+      extend: {{
+        fontFamily: {{
+          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+        }},
+        colors: {{
+          primary: '#8b5cf6',
+          'background-light': '#ffffff',
+          'background-dark': '#0f172a'
+        }}
+      }}
+    }}
+  }}
+</script>
 <link rel="canonical" href="/articles/{slug}.html">
 <meta name="description" content="{description}">
 <meta property="og:type" content="article">
@@ -91,6 +108,17 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <link rel="stylesheet" href="../tools/ux.css"/>
 <script src="../tools/analytics.js"></script>
 <style>
+  main h1 {{
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+    line-height: 1.2;
+  }}
+  .dark main h1 {{
+    color: #f1f5f9;
+  }}
   main h2 {{
     font-size: 1.875rem;
     font-weight: 800;
@@ -160,6 +188,12 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
   }}
   main a:hover {{
     color: #7c3aed;
+  }}
+  .not-prose h1 {{
+    color: #0f172a !important;
+  }}
+  .dark .not-prose h1 {{
+    color: #f1f5f9 !important;
   }}
 </style>
 </head>
