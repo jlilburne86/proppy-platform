@@ -89,7 +89,7 @@ def generate_article_card(article: Dict[str, Any]) -> str:
       {article['description']}
     </p>
     <div class="mt-auto">
-      <a href="/articles/{article['slug']}.html" class="inline-flex items-center gap-2 font-semibold {colors['text']} hover:gap-3 transition-all">
+      <a href="articles/{article['slug']}.html" class="inline-flex items-center gap-2 font-semibold {colors['text']} hover:gap-3 transition-all">
         Read Article
         <span class="material-symbols-outlined text-sm">arrow_forward</span>
       </a>
