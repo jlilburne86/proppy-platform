@@ -111,6 +111,7 @@
 .navx-open .navx-drawer{transform:translateX(0)}
 </style>
 <script id="navx-script" src="tools/navx-accessible.js"></script>
+<script src=\"tools/analytics.js\"></script>
 <link rel="stylesheet" href="tools/ux.css"/>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Proppy">
@@ -129,12 +130,14 @@
 
 
 
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 md:backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+
+
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy-mobile-icon.png" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -145,7 +148,6 @@
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
 <a href="technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
-<a href="platform.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Platform</a>
   </div>
 </div>
 <div class="navx-group relative">
@@ -181,11 +183,11 @@
       </button>
     </div>
   </div>
-  <div id="navx-overlay" class="fixed inset-0 navx-overlay bg-black/40" id="navx-overlay"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4" id="navx-drawer">
+  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -197,7 +199,6 @@
 <ul class="navx-acc-body hidden pl-3 pb-3">
 <li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
 <li><a class="block py-2" href="technology.html">Technology</a></li>
-<li><a class="block py-2" href="platform.html">Platform</a></li>
 </ul>
 </li>
 <li class="border-b border-slate-200 dark:border-slate-800">
@@ -228,6 +229,8 @@
     <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Get Started</a>
   </div>
 </nav>
+
+
 <div id="content"></div>
 
 
@@ -317,6 +320,39 @@
 </div>
 </div>
 </div>
+
+<!-- Data-led Top 1% + Off-market Access -->
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+    <div class="bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-[11px] font-bold uppercase tracking-wider mb-3">
+        <span class="material-symbols-outlined text-sm">analytics</span> Data-led Selection
+      </div>
+      <h3 class="text-2xl md:text-3xl font-extrabold mb-3">Top 1% Regions Nationwide</h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Right now the best markets might be QLD, WA, or SA. Tomorrow: VIC, NSW, or TAS. We source where the data points, narrowing in on the top 1% regions across the country.</p>
+      <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check</span> Live signals identify momentum early</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check</span> Balanced growth and yield filters</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check</span> Borderless sourcing: we go where value is</li>
+      </ul>
+    </div>
+    <div class="bg-white dark:bg-slate-900 rounded-[2rem] p-8 border border-slate-200 dark:border-slate-800">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-[11px] font-bold uppercase tracking-wider mb-3">
+        <span class="material-symbols-outlined text-sm">visibility_off</span> Off‑market Advantage
+      </div>
+      <h3 class="text-2xl md:text-3xl font-extrabold mb-3">Your Gateway to Exclusive Opportunities</h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-4">Off‑market properties aren’t advertised online nor auctioned. Through our national agent network, we bring these opportunities directly—fewer bidders, more leverage.</p>
+      <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check</span> Reduced competition vs. auctions</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check</span> Vendor openness to negotiation</li>
+        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-500 text-sm">check</span> Faster execution when the numbers stack up</li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center mt-10">
+    <a href="book.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">See exclusive opportunities <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+  </div>
+</section>
 </div>
 </div>
 </div>
@@ -477,7 +513,8 @@
 
 <section class="max-w-7xl mx-auto px-6 py-10">
   <div class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-    <img src="assets/screenshots/homepage-6.png" alt="Product preview" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
+    <img src="assets/screenshots/platform-screenshot.png" alt="Product preview" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
+<p class="text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Pipeline view: off‑market → appraisal → negotiation → contract; DD checklist.</p>
   </div>
 </section>
 
@@ -507,6 +544,19 @@
     </div>
   </div>
 </section>
+<!-- Trust strip -->
+<section class="py-6 border-t border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40">
+  <div class="max-w-7xl mx-auto px-6 flex flex-wrap gap-3 items-center justify-center text-sm font-semibold text-slate-600 dark:text-slate-300">
+    <span>15+ Years</span>
+    <span class="opacity-30">•</span>
+    <a href="guarantee.html" class="hover:text-primary">Money‑Back Guarantee</a>
+    <span class="opacity-30">•</span>
+    <span>Nationwide Sourcing</span>
+    <span class="opacity-30">•</span>
+    <a href="technology.html" class="hover:text-primary">Top 1% Data‑Led</a>
+  </div>
+  </section>
+
 </main>
 <section class="py-16 md:py-24 relative overflow-hidden">
 <div class="absolute inset-0 bg-primary dark:bg-white/5 opacity-5 pointer-events-none"></div>
@@ -555,4 +605,14 @@
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
 })();
 </script>
+<!-- Mobile sticky booking bar -->
+<section class="fixed bottom-4 inset-x-0 z-50 px-4 md:hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex gap-2">
+      <a href="book.html" class="flex-1 inline-flex items-center justify-center px-4 py-3 rounded-full bg-slate-900 text-white font-semibold shadow-lg shadow-slate-900/20">Book a Free Call</a>
+      <a href="guarantee.html" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-white border border-slate-200 text-slate-900 font-semibold">Guarantee</a>
+    </div>
+  </div>
+</section>
+
 </body></html>

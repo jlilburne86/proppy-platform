@@ -1,0 +1,1831 @@
+{
+  "tax-depreciation-101": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "N/A",
+        "note": "Topic is tax; use QS evidence"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Contextual",
+        "note": "Use local market data"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Contextual",
+        "note": "DD at suburb level"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "N/A",
+        "note": "Use build dates/renos"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Depreciation components overview",
+        "og": true
+      },
+      {
+        "src": "/assets/screenshots/how-it-works.png",
+        "alt": "Schedule structure"
+      },
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Div 40 vs Div 43"
+      }
+    ]
+  },
+  "yield-vs-capital-growth-finding-the-balance": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Yield vs growth decision map",
+        "og": true
+      }
+    ]
+  },
+  "which-capital-cities-are-leading-and-which-are-lagging": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Mixed"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Varies"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Uneven"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "City-specific"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "City signals",
+        "og": true
+      }
+    ]
+  },
+  "affordable-investment-areas-still-under-the-national-median": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Check estates"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Signals shortlist",
+        "og": true
+      }
+    ]
+  },
+  "market-downturns-how-australian-property-has-historically-responded": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Rising"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sticky"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Up"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Monitor"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Historical signals",
+        "og": true
+      }
+    ]
+  },
+  "rentvesting-explained-how-investors-separate-home-and-portfolio": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Use target market"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Use target market"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Use target market"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Use target market"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Home vs portfolio",
+        "og": true
+      }
+    ]
+  },
+  "buy-and-hold-explained-why-long-term-investors-focus-on-cycles": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Phase-based"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Phase-based"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Phase-based"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Phase-based"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/homepage-9.png",
+        "alt": "Portfolio glidepath",
+        "og": true
+      }
+    ]
+  },
+  "co-ownership-in-property-what-the-data-and-case-studies-show": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,planning",
+        "alt": "Unsplash: finance calculator notebook planning",
+        "og": true,
+        "kw": "finance calculator notebook planning"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,co",
+        "alt": "Unsplash: finance calculator notebook co",
+        "og": false,
+        "kw": "finance calculator notebook co"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,co,ownership",
+        "alt": "Unsplash: finance calculator co ownership",
+        "og": false,
+        "kw": "finance calculator co ownership"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,co,ownership,in",
+        "alt": "Unsplash: finance co ownership in",
+        "og": false,
+        "kw": "finance co ownership in"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "tasmanias-property-market-explained-hobart-vs-regional-areas": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,australia,houses",
+        "alt": "Unsplash: suburb street australia houses",
+        "og": true,
+        "kw": "suburb street australia houses"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,australia,tasmanias",
+        "alt": "Unsplash: suburb street australia tasmanias",
+        "og": false,
+        "kw": "suburb street australia tasmanias"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,tasmanias,property",
+        "alt": "Unsplash: suburb street tasmanias property",
+        "og": false,
+        "kw": "suburb street tasmanias property"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,tasmanias,property,market",
+        "alt": "Unsplash: suburb tasmanias property market",
+        "og": false,
+        "kw": "suburb tasmanias property market"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight",
+        "note": "Tenant demand"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Comparable leases"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Stable",
+        "note": "DOM steady"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Limited",
+        "note": "Check estates"
+      }
+    }
+  },
+  "from-first-property-to-portfolio-a-long-term-investor-journey": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,home",
+        "alt": "Unsplash: keys house door home",
+        "og": true,
+        "kw": "keys house door home"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,from",
+        "alt": "Unsplash: keys house door from",
+        "og": false,
+        "kw": "keys house door from"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,from,first",
+        "alt": "Unsplash: keys house from first",
+        "og": false,
+        "kw": "keys house from first"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,from,first,property",
+        "alt": "Unsplash: keys from first property",
+        "og": false,
+        "kw": "keys from first property"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Local",
+        "note": "Illustrative"
+      }
+    }
+  },
+  "regulatory-changes-affecting-australian-landlords": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,umbrella",
+        "alt": "Unsplash: caution risk storm umbrella",
+        "og": true,
+        "kw": "caution risk storm umbrella"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,regulatory",
+        "alt": "Unsplash: caution risk storm regulatory",
+        "og": false,
+        "kw": "caution risk storm regulatory"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,regulatory,changes",
+        "alt": "Unsplash: caution risk regulatory changes",
+        "og": false,
+        "kw": "caution risk regulatory changes"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,regulatory,changes,affecting",
+        "alt": "Unsplash: caution regulatory changes affecting",
+        "og": false,
+        "kw": "caution regulatory changes affecting"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Rising",
+        "note": "Stress scenario"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sticky",
+        "note": "Lag vs prices"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Up",
+        "note": "Watch absorption"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Monitor",
+        "note": "Delivery/capacity"
+      }
+    }
+  },
+  "emerging-suburbs-to-watch-heading-into-2026": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Falling"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Manageable"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Emerging signals screen",
+        "og": true
+      }
+    ]
+  },
+  "the-2024-interstate-investment-playbook": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,property,real estate",
+        "alt": "Unsplash: australia property real estate",
+        "og": true,
+        "kw": "australia property real estate"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,property,real estate,the",
+        "alt": "Unsplash: australia property real estate the",
+        "og": false,
+        "kw": "australia property real estate the"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,property,the,interstate",
+        "alt": "Unsplash: australia property the interstate",
+        "og": false,
+        "kw": "australia property the interstate"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,the,interstate,investment",
+        "alt": "Unsplash: australia the interstate investment",
+        "og": false,
+        "kw": "australia the interstate investment"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "short-term-rentals-and-changing-state-rules": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,umbrella",
+        "alt": "Unsplash: caution risk storm umbrella",
+        "og": true,
+        "kw": "caution risk storm umbrella"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,short",
+        "alt": "Unsplash: caution risk storm short",
+        "og": false,
+        "kw": "caution risk storm short"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,short,term",
+        "alt": "Unsplash: caution risk short term",
+        "og": false,
+        "kw": "caution risk short term"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,short,term,rentals",
+        "alt": "Unsplash: caution short term rentals",
+        "og": false,
+        "kw": "caution short term rentals"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Rising",
+        "note": "Stress scenario"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sticky",
+        "note": "Lag vs prices"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Up",
+        "note": "Watch absorption"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Monitor",
+        "note": "Delivery/capacity"
+      }
+    }
+  },
+  "interest-rates-and-property-lessons-from-past-rba-cycles": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,city,skyline,real estate",
+        "alt": "Unsplash: australia city skyline real estate",
+        "og": true,
+        "kw": "australia city skyline real estate"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,city,skyline,interest",
+        "alt": "Unsplash: australia city skyline interest",
+        "og": false,
+        "kw": "australia city skyline interest"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,city,interest,rates",
+        "alt": "Unsplash: australia city interest rates",
+        "og": false,
+        "kw": "australia city interest rates"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,interest,rates,and",
+        "alt": "Unsplash: australia interest rates and",
+        "og": false,
+        "kw": "australia interest rates and"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Mixed",
+        "note": "City/segment dependent"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Varies",
+        "note": "Watch YoY"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Uneven",
+        "note": "Absorption matters"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Below peaks",
+        "note": "Delivery risk"
+      }
+    }
+  },
+  "brisbane-growth-corridors-ipswich-logan-and-moreton-bay": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight pockets"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Corridor\u2011dependent"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Check estates"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "SEQ corridor map",
+        "og": true
+      }
+    ]
+  },
+  "first-time-investor-guide-market-fundamentals-to-understand": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,planning",
+        "alt": "Unsplash: finance calculator notebook planning",
+        "og": true,
+        "kw": "finance calculator notebook planning"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,first",
+        "alt": "Unsplash: finance calculator notebook first",
+        "og": false,
+        "kw": "finance calculator notebook first"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,first,time",
+        "alt": "Unsplash: finance calculator first time",
+        "og": false,
+        "kw": "finance calculator first time"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,first,time,investor",
+        "alt": "Unsplash: finance first time investor",
+        "og": false,
+        "kw": "finance first time investor"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "lessons-from-investors-who-bought-early-in-growth-corridors": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,home",
+        "alt": "Unsplash: keys house door home",
+        "og": true,
+        "kw": "keys house door home"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,lessons",
+        "alt": "Unsplash: keys house door lessons",
+        "og": false,
+        "kw": "keys house door lessons"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,lessons,from",
+        "alt": "Unsplash: keys house lessons from",
+        "og": false,
+        "kw": "keys house lessons from"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,lessons,from,investors",
+        "alt": "Unsplash: keys lessons from investors",
+        "og": false,
+        "kw": "keys lessons from investors"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Local",
+        "note": "Illustrative"
+      }
+    }
+  },
+  "units-vs-houses-how-performance-has-changed-over-the-decade": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "By stock"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Differs"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Stock mix"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "High\u2011rise vs infill"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Units vs houses",
+        "og": true
+      }
+    ]
+  },
+  "capital-cities-vs-regional-markets-where-growth-has-shifted": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Mixed"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Divergent"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Uneven"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "City/regional split"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "City vs regional signals",
+        "og": true
+      }
+    ]
+  },
+  "understanding-the-australian-property-cycle": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Phase signal"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Phase signal"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Phase signal"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Lagging"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/homepage-9.png",
+        "alt": "Cycle overview",
+        "og": true
+      }
+    ]
+  },
+  "overconcentration-risk-why-one-market-is-rarely-enough": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,umbrella",
+        "alt": "Unsplash: caution risk storm umbrella",
+        "og": true,
+        "kw": "caution risk storm umbrella"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,overconcentration",
+        "alt": "Unsplash: caution risk storm overconcentration",
+        "og": false,
+        "kw": "caution risk storm overconcentration"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,overconcentration,risk",
+        "alt": "Unsplash: caution risk overconcentration risk",
+        "og": false,
+        "kw": "caution risk overconcentration risk"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,overconcentration,risk,why",
+        "alt": "Unsplash: caution overconcentration risk why",
+        "og": false,
+        "kw": "caution overconcentration risk why"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Rising",
+        "note": "Stress scenario"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sticky",
+        "note": "Lag vs prices"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Up",
+        "note": "Watch absorption"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Monitor",
+        "note": "Delivery/capacity"
+      }
+    }
+  },
+  "value-add-strategies-renovation-layout-and-usability-improvements": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,planning",
+        "alt": "Unsplash: finance calculator notebook planning",
+        "og": true,
+        "kw": "finance calculator notebook planning"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,value",
+        "alt": "Unsplash: finance calculator notebook value",
+        "og": false,
+        "kw": "finance calculator notebook value"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,value,add",
+        "alt": "Unsplash: finance calculator value add",
+        "og": false,
+        "kw": "finance calculator value add"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,value,add,strategies",
+        "alt": "Unsplash: finance value add strategies",
+        "og": false,
+        "kw": "finance value add strategies"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "perths-recovery-story-suburbs-benefiting-from-was-economy": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Elevated"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Steady"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Perth signals",
+        "og": true
+      }
+    ]
+  },
+  "suburb-spotlight-logan-reserve": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,australia,houses",
+        "alt": "Unsplash: suburb street australia houses",
+        "og": true,
+        "kw": "suburb street australia houses"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,australia,suburb",
+        "alt": "Unsplash: suburb street australia suburb",
+        "og": false,
+        "kw": "suburb street australia suburb"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,suburb,spotlight",
+        "alt": "Unsplash: suburb street suburb spotlight",
+        "og": false,
+        "kw": "suburb street suburb spotlight"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,suburb,spotlight,logan",
+        "alt": "Unsplash: suburb suburb spotlight logan",
+        "og": false,
+        "kw": "suburb suburb spotlight logan"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight",
+        "note": "Tenant demand"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Comparable leases"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Stable",
+        "note": "DOM steady"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Limited",
+        "note": "Check estates"
+      }
+    }
+  },
+  "boom-plateau-or-decline-how-to-read-market-signals": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,ocean,seasons",
+        "alt": "Unsplash: cycle waves ocean seasons",
+        "og": true,
+        "kw": "cycle waves ocean seasons"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,ocean,boom",
+        "alt": "Unsplash: cycle waves ocean boom",
+        "og": false,
+        "kw": "cycle waves ocean boom"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,boom,plateau",
+        "alt": "Unsplash: cycle waves boom plateau",
+        "og": false,
+        "kw": "cycle waves boom plateau"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,boom,plateau,or",
+        "alt": "Unsplash: cycle boom plateau or",
+        "og": false,
+        "kw": "cycle boom plateau or"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Phase signal",
+        "note": "Leading"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Phase signal",
+        "note": "Leading"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Phase signal",
+        "note": "Lagging"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Lagging",
+        "note": "Context"
+      }
+    }
+  },
+  "coastal-markets-that-have-transformed-over-the-past-10-years": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight pockets"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sustained in anchors"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Seasonal"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained (planning)"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Coastal amenity map",
+        "og": true
+      }
+    ]
+  },
+  "melbournes-shifting-growth-pattern-inner-vs-outer-suburbs": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Inner improving"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Inner/middle"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Ring split"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Estates vs infill"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Inner vs outer signals",
+        "og": true
+      }
+    ]
+  },
+  "housing-supply-vs-population-growth-why-shortages-persist": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight where gaps"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Elevated"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Absorbing"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Insufficient"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Approvals vs completions",
+        "og": true
+      }
+    ]
+  },
+  "vacancy-rates-explained-what-tight-and-loose-markets-mean": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,umbrella",
+        "alt": "Unsplash: caution risk storm umbrella",
+        "og": true,
+        "kw": "caution risk storm umbrella"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,vacancy",
+        "alt": "Unsplash: caution risk storm vacancy",
+        "og": false,
+        "kw": "caution risk storm vacancy"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,vacancy,rates",
+        "alt": "Unsplash: caution risk vacancy rates",
+        "og": false,
+        "kw": "caution risk vacancy rates"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,vacancy,rates,explained",
+        "alt": "Unsplash: caution vacancy rates explained",
+        "og": false,
+        "kw": "caution vacancy rates explained"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Rising",
+        "note": "Stress scenario"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sticky",
+        "note": "Lag vs prices"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Up",
+        "note": "Watch absorption"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Monitor",
+        "note": "Delivery/capacity"
+      }
+    }
+  },
+  "capital-growth-vs-rental-yield-understanding-the-trade-offs": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,planning",
+        "alt": "Unsplash: finance calculator notebook planning",
+        "og": true,
+        "kw": "finance calculator notebook planning"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,capital",
+        "alt": "Unsplash: finance calculator notebook capital",
+        "og": false,
+        "kw": "finance calculator notebook capital"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,capital,growth",
+        "alt": "Unsplash: finance calculator capital growth",
+        "og": false,
+        "kw": "finance calculator capital growth"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,capital,growth,vs",
+        "alt": "Unsplash: finance capital growth vs",
+        "og": false,
+        "kw": "finance capital growth vs"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "adelaides-quiet-achievers-where-demand-is-outpacing-supply": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,australia,houses",
+        "alt": "Unsplash: suburb street australia houses",
+        "og": true,
+        "kw": "suburb street australia houses"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,australia,adelaides",
+        "alt": "Unsplash: suburb street australia adelaides",
+        "og": false,
+        "kw": "suburb street australia adelaides"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,street,adelaides,quiet",
+        "alt": "Unsplash: suburb street adelaides quiet",
+        "og": false,
+        "kw": "suburb street adelaides quiet"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?suburb,adelaides,quiet,achievers",
+        "alt": "Unsplash: suburb adelaides quiet achievers",
+        "og": false,
+        "kw": "suburb adelaides quiet achievers"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Tight",
+        "note": "Tenant demand"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Comparable leases"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Stable",
+        "note": "DOM steady"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Limited",
+        "note": "Check estates"
+      }
+    }
+  },
+  "climate-risk-and-property-what-investors-should-know": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,umbrella",
+        "alt": "Unsplash: caution risk storm umbrella",
+        "og": true,
+        "kw": "caution risk storm umbrella"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,storm,climate",
+        "alt": "Unsplash: caution risk storm climate",
+        "og": false,
+        "kw": "caution risk storm climate"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,risk,climate,risk",
+        "alt": "Unsplash: caution risk climate risk",
+        "og": false,
+        "kw": "caution risk climate risk"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?caution,climate,risk,and",
+        "alt": "Unsplash: caution climate risk and",
+        "og": false,
+        "kw": "caution climate risk and"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Rising",
+        "note": "Stress scenario"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Sticky",
+        "note": "Lag vs prices"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Up",
+        "note": "Watch absorption"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Monitor",
+        "note": "Delivery/capacity"
+      }
+    }
+  },
+  "rental-market-pressures-explained-supply-demand-and-rents": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Key"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Explained"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Leasing speed"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Handovers"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "Vacancy and rents",
+        "og": true
+      }
+    ]
+  },
+  "quarterly-review-east-coast-capitals": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,city,skyline,real estate",
+        "alt": "Unsplash: australia city skyline real estate",
+        "og": true,
+        "kw": "australia city skyline real estate"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,city,skyline,quarterly",
+        "alt": "Unsplash: australia city skyline quarterly",
+        "og": false,
+        "kw": "australia city skyline quarterly"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,city,quarterly,review",
+        "alt": "Unsplash: australia city quarterly review",
+        "og": false,
+        "kw": "australia city quarterly review"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?australia,quarterly,review,east",
+        "alt": "Unsplash: australia quarterly review east",
+        "og": false,
+        "kw": "australia quarterly review east"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Mixed",
+        "note": "City/segment dependent"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Varies",
+        "note": "Watch YoY"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Uneven",
+        "note": "Absorption matters"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Below peaks",
+        "note": "Delivery risk"
+      }
+    }
+  },
+  "regional-investing-case-study-growth-outside-capital-cities": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,home",
+        "alt": "Unsplash: keys house door home",
+        "og": true,
+        "kw": "keys house door home"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,regional",
+        "alt": "Unsplash: keys house door regional",
+        "og": false,
+        "kw": "keys house door regional"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,regional,investing",
+        "alt": "Unsplash: keys house regional investing",
+        "og": false,
+        "kw": "keys house regional investing"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,regional,investing,case",
+        "alt": "Unsplash: keys regional investing case",
+        "og": false,
+        "kw": "keys regional investing case"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Local",
+        "note": "Illustrative"
+      }
+    }
+  },
+  "long-term-price-growth-what-20-year-data-reveals": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Durable"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Long\u2011run"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Cyclical"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constraints"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Long\u2011term chart",
+        "og": true
+      }
+    ]
+  },
+  "investor-lending-trends-across-australias-states": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Context"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Context"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Context"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Context"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Credit flows",
+        "og": true
+      }
+    ]
+  },
+  "overcoming-analysis-paralysis": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,planning",
+        "alt": "Unsplash: finance calculator notebook planning",
+        "og": true,
+        "kw": "finance calculator notebook planning"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,overcoming",
+        "alt": "Unsplash: finance calculator notebook overcoming",
+        "og": false,
+        "kw": "finance calculator notebook overcoming"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,overcoming,analysis",
+        "alt": "Unsplash: finance calculator overcoming analysis",
+        "og": false,
+        "kw": "finance calculator overcoming analysis"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,overcoming,analysis,paralysis",
+        "alt": "Unsplash: finance overcoming analysis paralysis",
+        "og": false,
+        "kw": "finance overcoming analysis paralysis"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "post-pandemic-property-shifts-what-has-endured-and-what-hasnt": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,ocean,seasons",
+        "alt": "Unsplash: cycle waves ocean seasons",
+        "og": true,
+        "kw": "cycle waves ocean seasons"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,ocean,post",
+        "alt": "Unsplash: cycle waves ocean post",
+        "og": false,
+        "kw": "cycle waves ocean post"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,post,pandemic",
+        "alt": "Unsplash: cycle waves post pandemic",
+        "og": false,
+        "kw": "cycle waves post pandemic"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,post,pandemic,property",
+        "alt": "Unsplash: cycle post pandemic property",
+        "og": false,
+        "kw": "cycle post pandemic property"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Phase signal",
+        "note": "Leading"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Phase signal",
+        "note": "Leading"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Phase signal",
+        "note": "Lagging"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Lagging",
+        "note": "Context"
+      }
+    }
+  },
+  "interest-rates-the-2024-forecast": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Context"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Context"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Context"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Context"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/platform-screenshot.png",
+        "alt": "Scenario planning",
+        "og": true
+      }
+    ]
+  },
+  "using-equity-to-expand-a-portfolio-an-educational-example": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,home",
+        "alt": "Unsplash: keys house door home",
+        "og": true,
+        "kw": "keys house door home"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,using",
+        "alt": "Unsplash: keys house door using",
+        "og": false,
+        "kw": "keys house door using"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,using,equity",
+        "alt": "Unsplash: keys house using equity",
+        "og": false,
+        "kw": "keys house using equity"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,using,equity,to",
+        "alt": "Unsplash: keys using equity to",
+        "og": false,
+        "kw": "keys using equity to"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Local",
+        "note": "Illustrative"
+      }
+    }
+  },
+  "diversification-in-property-cities-states-and-asset-types": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,planning",
+        "alt": "Unsplash: finance calculator notebook planning",
+        "og": true,
+        "kw": "finance calculator notebook planning"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,notebook,diversification",
+        "alt": "Unsplash: finance calculator notebook diversification",
+        "og": false,
+        "kw": "finance calculator notebook diversification"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,calculator,diversification,in",
+        "alt": "Unsplash: finance calculator diversification in",
+        "og": false,
+        "kw": "finance calculator diversification in"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?finance,diversification,in,property",
+        "alt": "Unsplash: finance diversification in property",
+        "og": false,
+        "kw": "finance diversification in property"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Target <1.5%",
+        "note": "Screen threshold"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Rising",
+        "note": "Prefer YoY up"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Flat",
+        "note": "Avoid spikes"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Constrained",
+        "note": "Prefer infill"
+      }
+    }
+  },
+  "rentvesting-in-practice-a-decade-of-outcomes": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,home",
+        "alt": "Unsplash: keys house door home",
+        "og": true,
+        "kw": "keys house door home"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,door,rentvesting",
+        "alt": "Unsplash: keys house door rentvesting",
+        "og": false,
+        "kw": "keys house door rentvesting"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,house,rentvesting,in",
+        "alt": "Unsplash: keys house rentvesting in",
+        "og": false,
+        "kw": "keys house rentvesting in"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?keys,rentvesting,in,practice",
+        "alt": "Unsplash: keys rentvesting in practice",
+        "og": false,
+        "kw": "keys rentvesting in practice"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Local",
+        "note": "Illustrative"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Local",
+        "note": "Illustrative"
+      }
+    }
+  },
+  "australias-2026-housing-market-outlook-what-the-data-is-signalling": {
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Mixed"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Elevated pockets"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Uneven"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Below peaks"
+      }
+    },
+    "images": [
+      {
+        "src": "/assets/screenshots/technology.png",
+        "alt": "National signals",
+        "og": true
+      }
+    ]
+  },
+  "when-growth-slows-historical-examples-from-australian-cities": {
+    "images": [
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,ocean,seasons",
+        "alt": "Unsplash: cycle waves ocean seasons",
+        "og": true,
+        "kw": "cycle waves ocean seasons"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,ocean,when",
+        "alt": "Unsplash: cycle waves ocean when",
+        "og": false,
+        "kw": "cycle waves ocean when"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,waves,when,growth",
+        "alt": "Unsplash: cycle waves when growth",
+        "og": false,
+        "kw": "cycle waves when growth"
+      },
+      {
+        "src": "https://source.unsplash.com/960x600/?cycle,when,growth,slows",
+        "alt": "Unsplash: cycle when growth slows",
+        "og": false,
+        "kw": "cycle when growth slows"
+      }
+    ],
+    "metrics": {
+      "vacancy": {
+        "label": "Vacancy",
+        "value": "Phase signal",
+        "note": "Leading"
+      },
+      "rent": {
+        "label": "Rent Pressure",
+        "value": "Phase signal",
+        "note": "Leading"
+      },
+      "listings": {
+        "label": "Listings",
+        "value": "Phase signal",
+        "note": "Lagging"
+      },
+      "pipeline": {
+        "label": "Pipeline",
+        "value": "Lagging",
+        "note": "Context"
+      }
+    }
+  }
+}

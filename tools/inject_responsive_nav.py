@@ -8,7 +8,6 @@ DESKTOP_MENU = [
     ('how-it-works.html', 'How It Works', [
         ('how-it-works.html', 'How It Works'),
         ('technology.html', 'Technology'),
-        ('platform.html', 'Platform'),
     ]),
     ('#', 'Solutions', [
         ('advantage.html', 'Advantage'),

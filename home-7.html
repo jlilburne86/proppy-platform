@@ -3,6 +3,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Proppy - Our Results & Case Studies</title>
+
+<meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -88,6 +90,7 @@
 .navx-open .navx-drawer{transform:translateX(0)}
 </style>
 <script id="navx-script" src="tools/navx-accessible.js"></script>
+<script src=\"tools/analytics.js\"></script>
 <link rel="stylesheet" href="tools/ux.css"/>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Proppy">
@@ -106,12 +109,14 @@
 
 
 
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 md:backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+
+
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy-mobile-icon.png" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -122,7 +127,6 @@
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
 <a href="technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
-<a href="platform.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Platform</a>
   </div>
 </div>
 <div class="navx-group relative">
@@ -158,11 +162,11 @@
       </button>
     </div>
   </div>
-  <div id="navx-overlay" class="fixed inset-0 navx-overlay bg-black/40" id="navx-overlay"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4" id="navx-drawer">
+  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -174,7 +178,6 @@
 <ul class="navx-acc-body hidden pl-3 pb-3">
 <li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
 <li><a class="block py-2" href="technology.html">Technology</a></li>
-<li><a class="block py-2" href="platform.html">Platform</a></li>
 </ul>
 </li>
 <li class="border-b border-slate-200 dark:border-slate-800">
@@ -205,6 +208,8 @@
     <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Get Started</a>
   </div>
 </nav>
+
+
 <div id="content"></div>
 
 

@@ -76,6 +76,7 @@
 .navx-open .navx-drawer{transform:translateX(0)}
 </style>
 <script id="navx-script" src="tools/navx-accessible.js"></script>
+<script src=\"tools/analytics.js\"></script>
 <link rel="stylesheet" href="tools/ux.css"/>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Proppy">
@@ -94,12 +95,14 @@
 
 
 
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 md:backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+
+
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy-mobile-icon.png" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -110,7 +113,6 @@
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
 <a href="technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
-<a href="platform.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Platform</a>
   </div>
 </div>
 <div class="navx-group relative">
@@ -146,11 +148,11 @@
       </button>
     </div>
   </div>
-  <div id="navx-overlay" class="fixed inset-0 navx-overlay bg-black/40" id="navx-overlay"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4" id="navx-drawer">
+  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -162,7 +164,6 @@
 <ul class="navx-acc-body hidden pl-3 pb-3">
 <li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
 <li><a class="block py-2" href="technology.html">Technology</a></li>
-<li><a class="block py-2" href="platform.html">Platform</a></li>
 </ul>
 </li>
 <li class="border-b border-slate-200 dark:border-slate-800">
@@ -193,6 +194,8 @@
     <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Get Started</a>
   </div>
 </nav>
+
+
 <div id="content"></div>
 
 
@@ -289,77 +292,13 @@
 </div>
 </div>
 </div>
-<div class="flex flex-col md:flex-row h-full">
-<div class="w-full md:w-1/2 p-6 border-r border-slate-100 dark:border-slate-800">
-<div class="flex items-center justify-between mb-6">
-<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
-<span class="material-symbols-outlined text-slate-400">chevron_left</span>
-</button>
-<span class="font-bold text-slate-700 dark:text-slate-200">October 2024</span>
-<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
-<span class="material-symbols-outlined text-slate-400">chevron_right</span>
-</button>
-</div>
-<div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-slate-400 mb-2">
-<div>Su</div>
-<div>Mo</div>
-<div>Tu</div>
-<div>We</div>
-<div>Th</div>
-<div>Fr</div>
-<div>Sa</div>
-</div>
-<div class="grid grid-cols-7 gap-1 text-sm font-medium">
-<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700">29</div>
-<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700">30</div>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 disabled" disabled="">1</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 disabled" disabled="">2</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 disabled" disabled="">3</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">4</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">5</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">6</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">7</button>
-<button class="aspect-square flex items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black shadow-md shadow-slate-200 dark:shadow-none">8</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">9</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">10</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">11</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">12</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">13</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">14</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">15</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">16</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">17</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">18</button>
-<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">19</button>
-</div>
-</div>
-<div class="w-full md:w-1/2 p-6 bg-slate-50/30 dark:bg-black/20 flex flex-col">
-<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 mb-4 uppercase tracking-wider">Tuesday, Oct 8</h3>
-<div class="space-y-3 custom-scrollbar overflow-y-auto flex-grow pr-2 -mr-2">
-<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
-                                    9:00 AM
-                                </button>
-<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
-                                    9:30 AM
-                                </button>
-<button class="w-full py-3 px-4 rounded-xl border border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-bold transition-all text-center shadow-lg shadow-slate-200 dark:shadow-none">
-                                    10:00 AM
-                                </button>
-<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
-                                    10:30 AM
-                                </button>
-<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
-                                    11:00 AM
-                                </button>
-<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
-                                    1:00 PM
-                                </button>
-<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
-                                    2:30 PM
-                                </button>
-</div>
-</div>
-</div>
+<div class="p-0">
+  <div class="calendly-inline-widget" data-url="https://calendly.com/your-org/strategy-call-30min" style="min-width:320px;height:700px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <noscript>
+    <div class="p-6 text-sm text-slate-600 dark:text-slate-400">Enable JavaScript to book directly, or <a class="underline" href="https://calendly.com/your-org/strategy-call-30min" target="_blank" rel="noopener">open Calendly</a>.</div>
+  </noscript>
+</div></div></div>
 <div class="p-6 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 mt-auto">
 <button class="w-full bg-primary dark:bg-white dark:text-primary text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
 <span>Confirm 10:00 AM</span>
@@ -370,47 +309,20 @@
 </div>
 </div>
 </main>
-<footer class="py-12 md:py-20 bg-white dark:bg-black border-t border-slate-100 dark:border-slate-900">
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="col-span-1 md:col-span-1">
-<span class="text-2xl font-extrabold tracking-tighter uppercase italic mb-6 block">Proppy</span>
-<p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed animate-fade-in delay-100">
-                    The next generation of property investment intelligence. Data-led, nationwide coverage.
-                </p>
-</div>
-<div>
-<h5 class="font-bold mb-6">Product</h5>
-<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary dark:hover:text-white" href="platform.html">Features</a></li>
-<li><a class="hover:text-primary dark:hover:text-white" href="technology.html">Market Intel</a></li>
-<li><a class="hover:text-primary dark:hover:text-white" href="pricing.html">Pricing</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-bold mb-6">Company</h5>
-<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary dark:hover:text-white" href="about.html">About Us</a></li>
-<li><a class="hover:text-primary dark:hover:text-white" href="contact.html">Careers</a></li>
-<li><a class="hover:text-primary dark:hover:text-white" href="resources.html">Blog</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-bold mb-6">Support</h5>
-<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary dark:hover:text-white" href="contact.html">Help Center</a></li>
-<li><a class="hover:text-primary dark:hover:text-white" href="privacy.html">Privacy</a></li>
-<li><a class="hover:text-primary dark:hover:text-white" href="terms.html">Terms</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-slate-100 dark:border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-xs text-slate-400 animate-fade-in delay-100">© 2024 Proppy Intelligence Inc. All rights reserved.</p>
-<div class="flex gap-6">
-<a class="text-slate-400 hover:text-primary" href="javascript:void(0)"><span class="material-symbols-outlined">public</span></a>
-<a class="text-slate-400 hover:text-primary" href="javascript:void(0)"><span class="material-symbols-outlined">language</span></a>
-<a class="text-slate-400 hover:text-primary" href="javascript:void(0)"><span class="material-symbols-outlined">alternate_email</span></a>
-</div>
-</div>
+<footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-extrabold uppercase tracking-tight">Proppy</span>
+        <span class="text-slate-400 text-sm">© 2024 Proppy Inc. All rights reserved.</span>
+      </div>
+      <div class="flex gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
+        <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+        <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+        <a class="hover:text-primary transition-colors" href="site-map.html">Site Map</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script id="nav-support-script">

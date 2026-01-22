@@ -70,6 +70,7 @@
 .navx-open .navx-drawer{transform:translateX(0)}
 </style>
 <script id="navx-script" src="tools/navx-accessible.js"></script>
+<script src=\"tools/analytics.js\"></script>
 <link rel="stylesheet" href="tools/ux.css"/>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Proppy">
@@ -88,12 +89,14 @@
 
 
 
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 md:backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+
+
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy-mobile-icon.png" alt="Proppy" class="h-7 w-7 md:hidden img-rounded img-shadow" loading="lazy" decoding="async">
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -104,7 +107,6 @@
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
 <a href="technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
-<a href="platform.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Platform</a>
   </div>
 </div>
 <div class="navx-group relative">
@@ -140,11 +142,11 @@
       </button>
     </div>
   </div>
-  <div id="navx-overlay" class="fixed inset-0 navx-overlay bg-black/40" id="navx-overlay"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4" id="navx-drawer">
+  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="assets/placeholders/phone.svg" alt="Proppy" class="h-6 w-6 img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -156,7 +158,6 @@
 <ul class="navx-acc-body hidden pl-3 pb-3">
 <li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
 <li><a class="block py-2" href="technology.html">Technology</a></li>
-<li><a class="block py-2" href="platform.html">Platform</a></li>
 </ul>
 </li>
 <li class="border-b border-slate-200 dark:border-slate-800">
@@ -187,6 +188,8 @@
     <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Get Started</a>
   </div>
 </nav>
+
+
 <div id="content"></div>
 
 
@@ -214,6 +217,15 @@
             </p>
 </div>
 </header>
+<section class="max-w-7xl mx-auto px-6 mt-6">
+  <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 flex items-center justify-between gap-6">
+    <div class="flex items-center gap-3 text-sm">
+      <span class="material-symbols-outlined text-emerald-500">verified_user</span>
+      <p><span class="font-bold">Money‑Back Guarantee:</span> If you’re not satisfied with our service, we’ll refund your fee.</p>
+    </div>
+    <a href="guarantee.html" class="text-sm font-semibold text-primary">Learn more →</a>
+  </div>
+</section>
 <section class="py-12 relative">
 <div class="max-w-7xl mx-auto px-6">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end mb-24">
@@ -346,8 +358,41 @@
 <div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-100 dark:border-slate-700">
 <span class="material-symbols-outlined text-slate-400 text-xl">lock</span>
 <span class="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase">AES-256 Secure</span>
-</div>
-</div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Trust strip -->
+  <section class="py-6 border-t border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap gap-3 items-center justify-center text-sm font-semibold text-slate-600 dark:text-slate-300">
+      <span>15+ Years</span>
+      <span class="opacity-30">•</span>
+      <a href="guarantee.html" class="hover:text-primary">Money‑Back Guarantee</a>
+      <span class="opacity-30">•</span>
+      <span>Nationwide Sourcing</span>
+      <span class="opacity-30">•</span>
+      <a href="technology.html" class="hover:text-primary">Top 1% Data‑Led</a>
+    </div>
+  </section>
+<!-- Biggest Savings -->
+<div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-slate-100 dark:border-slate-700 relative overflow-hidden mb-12">
+  <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-400/10 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
+  <div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+    <div class="w-16 h-16 bg-emerald-100 dark:bg-emerald-500/20 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0">
+      <span class="material-symbols-outlined text-3xl">savings</span>
+    </div>
+    <div class="text-center md:text-left">
+      <h4 class="text-xl md:text-2xl font-extrabold mb-1 text-slate-900 dark:text-white">The Biggest Savings</h4>
+      <p class="text-slate-600 dark:text-slate-400">We’re a tech‑first business, designed to be efficient—and pass the savings on to you. On top of reduced fees, buyers save an average of <span class="font-semibold">$10,000</span> through negotiation.</p>
+    </div>
+    <div class="hidden md:flex items-center gap-2 bg-slate-50 dark:bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-100 dark:border-slate-700">
+      <span class="material-symbols-outlined text-slate-400 text-xl">price_check</span>
+      <span class="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase">Transparent Pricing</span>
+    </div>
+  </div>
+  <div class="mt-4 text-center md:text-left">
+    <a href="guarantee.html" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">Money Back Guarantee <span class="material-symbols-outlined text-sm">shield</span></a>
+  </div>
 </div>
 </div>
 <div class="border-t border-slate-200 dark:border-slate-800 pt-16">
@@ -415,16 +460,19 @@
     <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in delay-100">Your subscription unlocks the platform features below—built for confident, fast decisions.</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/how-it-works.png" alt="Workflow" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="assets/screenshots/platform-screenshot.png" alt="Workflow" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Guided workflow from brief to negotiation</figcaption>
+          <p class="px-4 pb-4 text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Plans feature map: what’s included per plan.</p>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/technology.png" alt="Signals" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="assets/screenshots/platform-screenshot.png" alt="Signals" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Signals & suburb shortlists</figcaption>
+          <p class="px-4 pb-4 text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Show shortlist table with scores, comps, rental appraisals.</p>
       </figure>
       <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/homepage-9.png" alt="Portfolio" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
+        <img src="assets/screenshots/platform-screenshot.png" alt="Portfolio" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
         <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Portfolio dashboard & tracking</figcaption>
+          <p class="px-4 pb-4 text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Show portfolio dashboard with equity, rent p/w, recent growth.</p>
       </figure>
     </div>
   </div>
@@ -444,8 +492,6 @@
       </div>
     </div>
   </div>
-
-
 </footer>
 <button class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl flex items-center justify-center transition-all hover:scale-110 z-50" onclick="document.documentElement.classList.toggle('dark')">
 <span class="material-symbols-outlined">dark_mode</span>
@@ -469,4 +515,14 @@
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
 })();
 </script>
+<!-- Mobile sticky booking bar -->
+<section class="fixed bottom-4 inset-x-0 z-50 px-4 md:hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex gap-2">
+      <a href="book.html" class="flex-1 inline-flex items-center justify-center px-4 py-3 rounded-full bg-slate-900 text-white font-semibold shadow-lg shadow-slate-900/20">Book a Free Call</a>
+      <a href="guarantee.html" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-white border border-slate-200 text-slate-900 font-semibold">Guarantee</a>
+    </div>
+  </div>
+</section>
+
 </body></html>

@@ -1,0 +1,20 @@
+{
+  "title": "Client Results",
+  "hero_headline": "Real results from real investors",
+  "hero_description": "See how Proppy clients are building wealth through data-driven property investment across Australian markets.",
+  "results": [
+    {
+      "client": "Sarah M.",
+      "location": "Logan Reserve, QLD",
+      "headline": "First-time investor achieves 18% capital growth in 18 months",
+      "description": "Purchased in Logan corridor at $580K with 5.1% gross yield. Property appreciated to $685K while delivering positive cashflow throughout.",
+      "image": "/assets/uploads/placeholder-result.jpg",
+      "metrics": {
+        "capital_growth": "18%",
+        "rental_yield": "5.1%",
+        "purchase_price": "$580,000",
+        "current_value": "$685,000"
+      }
+    }
+  ]
+}

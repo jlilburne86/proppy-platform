@@ -1,0 +1,226 @@
+# Decap CMS Configuration for Proppy
+# Documentation: https://decapcms.org/docs/
+
+# Backend configuration
+backend:
+  name: git-gateway
+  branch: main # Change to your main branch name if different
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+    openAuthoring: '{{message}}'
+
+# Enable local backend for testing (optional - remove in production)
+# Run: npx decap-server
+# local_backend: true
+
+# Media library configuration
+media_folder: "assets/uploads" # Where uploaded images will be stored
+public_folder: "/assets/uploads" # Public URL path for images
+
+# Site URL (for preview)
+site_url: https://proppy.com.au
+display_url: https://proppy.com.au
+
+# Editor settings
+publish_mode: editorial_workflow # Enable draft/review/publish workflow
+logo_url: /proppy-logo.png
+
+# Collections - Define your content types
+collections:
+  # ARTICLES COLLECTION
+  - name: "articles"
+    label: "Articles"
+    label_singular: "Article"
+    folder: "articles"
+    path: "{{slug}}"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    editor:
+      preview: true
+
+    # Article fields matching existing frontmatter structure
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Article title (50-70 characters recommended for SEO)"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Meta description for SEO (150-160 characters)"
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: true
+        options:
+          - { label: "Market Trends", value: "Market Trends" }
+          - { label: "Suburb Profiles", value: "Suburb Profiles" }
+          - { label: "Strategy", value: "Strategy" }
+          - { label: "Cycles", value: "Cycles" }
+          - { label: "Case Studies", value: "Case Studies" }
+          - { label: "Risk", value: "Risk" }
+
+      - label: "Audience"
+        name: "audience"
+        widget: "select"
+        default: "Both"
+        options:
+          - { label: "Both (Newer & Experienced)", value: "Both" }
+          - { label: "Newer Investors", value: "Newer" }
+          - { label: "Experienced Investors", value: "Experienced" }
+
+      - label: "Reading Time"
+        name: "reading_time"
+        widget: "string"
+        default: "7 min"
+        pattern: ['\d+\s+min', "Must be in format: '7 min'"]
+        hint: "Estimated reading time (e.g., '7 min')"
+
+      - label: "Publication Status"
+        name: "publish_status"
+        widget: "select"
+        default: "draft"
+        options:
+          - { label: "Draft (not visible)", value: "draft" }
+          - { label: "Published (visible on site)", value: "published" }
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Proppy Editorial"
+
+      - label: "Owner Email"
+        name: "owner"
+        widget: "string"
+        default: "editor@proppy.com.au"
+        pattern: ['^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', "Must be a valid email"]
+
+      - label: "Next Review Date"
+        name: "next_review_date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        required: true
+        hint: "When to review this article for updates (typically 6 months out)"
+
+      - label: "Sources"
+        name: "sources"
+        widget: "list"
+        required: true
+        fields:
+          - { label: "Source Name", name: "name", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+        default:
+          - name: "CoreLogic"
+            url: "https://corelogic.com.au/"
+          - name: "ABS"
+            url: "https://www.abs.gov.au/"
+          - name: "PropTrack"
+            url: "https://www.proptrack.com.au/insights/"
+          - name: "RBA"
+            url: "https://www.rba.gov.au/"
+
+      - label: "Version"
+        name: "version"
+        widget: "number"
+        default: 2
+        value_type: "int"
+        min: 1
+        step: 1
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        required: true
+        hint: "Article content in markdown format. Use ## for headings, **bold**, *italic*, etc."
+        buttons:
+          - bold
+          - italic
+          - code
+          - link
+          - heading-two
+          - heading-three
+          - quote
+          - bulleted-list
+          - numbered-list
+        editor_components: []
+        modes:
+          - raw
+          - rich_text
+
+  # AUTHORS COLLECTION (for managing author bios)
+  - name: "authors"
+    label: "Authors"
+    label_singular: "Author"
+    folder: "data/authors"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - { label: "Name", name: "name", widget: "string", required: true }
+      - { label: "Email", name: "email", widget: "string", required: true }
+      - { label: "Bio", name: "bio", widget: "text", required: false }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+
+  # PAGES COLLECTION (for editing static pages)
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    files:
+      # Results page configuration
+      - label: "Results Page"
+        name: "results"
+        file: "data/results-content.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Client Results" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - label: "Results"
+            name: "results"
+            widget: "list"
+            fields:
+              - { label: "Client Name", name: "client", widget: "string" }
+              - { label: "Property Location", name: "location", widget: "string" }
+              - { label: "Result Headline", name: "headline", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - label: "Metrics"
+                name: "metrics"
+                widget: "object"
+                fields:
+                  - { label: "Capital Growth %", name: "capital_growth", widget: "string", required: false }
+                  - { label: "Rental Yield %", name: "rental_yield", widget: "string", required: false }
+                  - { label: "Purchase Price", name: "purchase_price", widget: "string", required: false }
+                  - { label: "Current Value", name: "current_value", widget: "string", required: false }
+
+      # Resources page metadata
+      - label: "Resources Page"
+        name: "resources"
+        file: "data/resources-content.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Resources" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Newsletter CTA Title", name: "newsletter_title", widget: "string" }
+          - { label: "Newsletter CTA Description", name: "newsletter_description", widget: "text" }
+
+# Site settings
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"

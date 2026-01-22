@@ -1,0 +1,117 @@
+name: Build and Deploy Articles
+
+# Trigger when:
+# 1. Markdown files in /articles/ are changed
+# 2. Python build scripts are updated
+# 3. Manually triggered
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'articles/**.md'
+      - 'tools/convert-articles-to-html.py'
+      - 'tools/generate-articles.py'
+      - 'data/**.json'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build:
+    name: Rebuild HTML from Markdown
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full history for proper git operations
+
+      # Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # Install Python dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml markdown pymdown-extensions
+
+      # Convert markdown articles to HTML
+      - name: Convert articles to HTML
+        run: |
+          python3 tools/convert-articles-to-html.py
+
+      # Generate resources.html with all published articles
+      - name: Generate resources page
+        run: |
+          python3 tools/generate-articles.py
+
+      # Check if there are changes to commit
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet || echo "changed=true" >> $GITHUB_OUTPUT
+
+      # Commit and push changes back to repository
+      - name: Commit changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add articles/*.html resources.html
+          git commit -m "🤖 Auto-build: Regenerate HTML from markdown articles"
+          git push
+
+      # Optional: Deploy to hosting (FTP example)
+      # Uncomment and configure if using FTP deployment
+      # - name: Deploy to Hostinger via FTP
+      #   if: steps.changes.outputs.changed == 'true'
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      #   with:
+      #     server: ftp.proppy.com.au
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: ./
+      #     server-dir: /public_html/
+      #     exclude: |
+      #       **/.git*
+      #       **/.git*/**
+      #       **/node_modules/**
+      #       **/.venv/**
+      #       **/tools/**
+      #       **/site-audit/**
+
+      # Optional: Deploy to Netlify
+      # Uncomment if using Netlify
+      # - name: Deploy to Netlify
+      #   if: steps.changes.outputs.changed == 'true'
+      #   uses: nwtgck/actions-netlify@v3.0
+      #   with:
+      #     publish-dir: '.'
+      #     production-branch: main
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     deploy-message: "Deploy from GitHub Actions"
+      #   env:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  summary:
+    name: Build Summary
+    runs-on: ubuntu-latest
+    needs: build
+    if: always()
+
+    steps:
+      - name: Job summary
+        run: |
+          echo "## 📝 Article Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Markdown articles converted to HTML" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Resources page regenerated" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Changes committed and pushed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🚀 Site is ready for deployment!" >> $GITHUB_STEP_SUMMARY

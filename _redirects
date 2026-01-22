@@ -10,3 +10,9 @@
 /we-build-wealth-backed-by-15-years-of-experience.html /team.html 301
 /speak-with-a-property-investment-specialist.html /book.html 301
 /speak-with-a-property-investment-specialist-2.html /contact.html 301
+
+# Retire platform page; consolidate to How It Works
+/platform.html /how-it-works.html 301
+
+# Pretty URLs for property detail pages
+/property/:slug  /property/:slug.html  200

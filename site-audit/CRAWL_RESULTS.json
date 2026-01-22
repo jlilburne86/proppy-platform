@@ -1,0 +1,150 @@
+{
+  "crawlDate": "2026-01-16",
+  "siteName": "Proppy.com.au",
+  "baseUrl": "https://proppy.com.au",
+  "pagesVisited": 10,
+  "pageData": [
+    {
+      "title": "Pricing - Proppy",
+      "url": "https://proppy.com.au/pricing",
+      "status": "success"
+    },
+    {
+      "title": "What We Do - Proppy",
+      "url": "https://proppy.com.au/what-we-do",
+      "status": "success"
+    },
+    {
+      "title": "Reviews & Customer Testimonials - Proppy",
+      "url": "https://proppy.com.au/reviews-and-customer-testimonials",
+      "status": "success"
+    },
+    {
+      "title": "Frequently Asked Questions - Proppy",
+      "url": "https://proppy.com.au/faq",
+      "status": "success"
+    },
+    {
+      "title": "Contact Us - Proppy",
+      "url": "https://proppy.com.au/contact-us",
+      "status": "success"
+    },
+    {
+      "url": "https://proppy.com.au/why-choose-proppy",
+      "status": "timeout",
+      "note": "Page took longer than 30s to load - slow loading or heavy content"
+    },
+    {
+      "url": "https://proppy.com.au/how-we-do-it",
+      "status": "timeout"
+    },
+    {
+      "url": "https://proppy.com.au/properties-we-source",
+      "status": "timeout"
+    },
+    {
+      "url": "https://proppy.com.au/our-technology",
+      "status": "timeout"
+    },
+    {
+      "url": "https://proppy.com.au/our-results",
+      "status": "timeout"
+    }
+  ],
+  "commonElements": {
+    "logo": "https://proppy.com.au/wp-content/uploads/2025/06/proppy-logo.png",
+    "primaryCTA": "Get started",
+    "phone": "1300 122 914",
+    "email": "hello@proppy.com.au",
+    "whatsapp": "0485 994 964",
+    "address": "Level 3, 55 Collins St, Melbourne VIC 3000",
+    "businessHours": "Monday – Friday, 9 AM – 5 PM (AEST)",
+    "socialMedia": {
+      "facebook": "https://www.facebook.com/proppy.com.au",
+      "instagram": "https://www.instagram.com/proppy.com.au"
+    },
+    "googleRating": "5.0",
+    "copyright": "Proppy Pty Ltd © 2025"
+  },
+  "navigationStructure": {
+    "mainNav": [
+      {
+        "label": "What is Proppy?",
+        "type": "dropdown",
+        "children": [
+          "Why Choose Proppy",
+          "What We Do",
+          "How We Do It",
+          "Properties We Source",
+          "Our Tech & Platform",
+          "Get Started"
+        ]
+      },
+      {
+        "label": "Customer Success",
+        "type": "dropdown",
+        "children": [
+          "Results",
+          "Reviews & Customer Testimonials"
+        ]
+      },
+      {
+        "label": "Resources",
+        "type": "dropdown",
+        "children": [
+          "Investor Guides",
+          "Market Updates",
+          "Investor Hotspot Updates",
+          "Free investment assessment and starter guide"
+        ]
+      },
+      {
+        "label": "Pricing",
+        "type": "link",
+        "url": "https://proppy.com.au/pricing"
+      },
+      {
+        "label": "About",
+        "type": "dropdown",
+        "children": [
+          "Contact Us",
+          "About Us",
+          "FAQ",
+          "Pricing",
+          "Sitemap",
+          "Terms & Conditions",
+          "Privacy Policy"
+        ]
+      }
+    ]
+  },
+  "thirdPartyIntegrations": [
+    "Google Reviews",
+    "Facebook Pixel",
+    "LeadConnector/GoHighLevel (forms)",
+    "reCAPTCHA",
+    "Slick Carousel",
+    "GSAP ScrollTrigger",
+    "jQuery",
+    "Divi Filter plugin"
+  ],
+  "screenshots": [
+    "homepage-full.png",
+    "about-us-full.png"
+  ],
+  "remainingPages": [
+    "why-choose-proppy",
+    "how-we-do-it",
+    "properties-we-source",
+    "our-technology",
+    "our-results",
+    "get-started",
+    "investor-assessment-session",
+    "money-back-guarantee",
+    "privacy-policy",
+    "terms-and-conditions",
+    "investor-guides",
+    "market-updates",
+    "investor-updates"
+  ]
+}

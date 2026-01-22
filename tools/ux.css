@@ -51,6 +51,52 @@
 /* Scroll lock when mobile drawer open */
 html.navx-open { overflow: hidden; }
 
+/* Scorecard tiles */
+.score-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.75rem}
+@media (min-width:768px){.score-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.score-tile{border:1px solid #e2e8f0;border-radius:0.75rem;padding:0.75rem;background:#ffffff}
+.dark .score-tile{border-color:#334155;background:#0f172a}
+.score-label{font-size:0.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.03em}
+.dark .score-label{color:#94a3b8}
+.score-value{font-weight:800;margin-top:.125rem}
+.score-note{font-size:.75rem;color:#64748b}
+.dark .score-note{color:#94a3b8}
+
+/* Related articles */
+.related-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:0.75rem}
+@media (min-width:768px){.related-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.related-card{border:1px solid #e2e8f0;border-radius:0.75rem;padding:0.75rem;background:#ffffff;display:block}
+.related-card:hover{box-shadow:0 6px 16px rgba(2,6,23,0.08)}
+.dark .related-card{border-color:#334155;background:#0f172a}
+
+/* Mini scorecards for resource tiles */
+.score-mini .score-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.score-mini .score-tile{padding:.5rem;border-radius:.5rem}
+.score-mini .score-label{font-size:.65rem}
+.score-mini .score-value{font-size:.85rem}
+.score-mini .score-note{display:none}
+
+/* Outlook badge */
+.outlook-badge{display:inline-flex;align-items:center;gap:.375rem;border:1px solid #e2e8f0;border-radius:9999px;padding:.25rem .5rem;font-size:.75rem;font-weight:700}
+.dark .outlook-badge{border-color:#334155}
+.outlook-constructive{background:#ecfdf5;color:#065f46;border-color:#a7f3d0}
+.outlook-neutral{background:#f8fafc;color:#334155}
+.outlook-cautious{background:#fff7ed;color:#9a3412;border-color:#fed7aa}
+
+/* Resource card thumbnail and tags */
+.card-thumb{border-radius:1rem;overflow:hidden;border:1px solid #e2e8f0;background:#ffffff;position:relative}
+.dark .card-thumb{border-color:#334155;background:#0f172a}
+.card-thumb img{display:block;width:100%;height:160px;object-fit:cover}
+.thumb-overlay{position:absolute;top:.5rem;left:.5rem}
+.tag-list{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.25rem}
+.tag{display:inline-flex;align-items:center;padding:.125rem .5rem;border:1px solid #e2e8f0;border-radius:9999px;font-size:.65rem;font-weight:600;color:#334155;background:#ffffff}
+.dark .tag{border-color:#334155;color:#cbd5e1;background:#0f172a}
+
+/* Article hero */
+.hero-img{border-radius:1rem;overflow:hidden;border:1px solid #e2e8f0;background:#ffffff}
+.dark .hero-img{border-color:#334155;background:#0f172a}
+.hero-img img{display:block;width:100%;height:280px;object-fit:cover}
+
 /* Accessibility: global focus-visible outline */
 :focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
 /* Skip link styling */
