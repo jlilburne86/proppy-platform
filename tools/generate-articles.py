@@ -57,13 +57,21 @@ def get_published_articles() -> List[Dict[str, Any]]:
             # Extract slug from filename
             slug = md_file.stem
 
+            # Normalise fields where CMS may store lists (e.g., ["Strategy"]) instead of strings
+            cat_val = frontmatter.get('category', 'Strategy')
+            if isinstance(cat_val, list):
+                cat_val = (cat_val[0] if cat_val else 'Strategy')
+            aud_val = frontmatter.get('audience', 'Both')
+            if isinstance(aud_val, list):
+                aud_val = (aud_val[0] if aud_val else 'Both')
+
             articles.append({
                 'slug': slug,
                 'title': frontmatter.get('title', slug.replace('-', ' ').title()),
                 'description': frontmatter.get('description', ''),
-                'category': frontmatter.get('category', 'Strategy'),
+                'category': cat_val,
                 'reading_time': frontmatter.get('reading_time', '7 min'),
-                'audience': frontmatter.get('audience', 'Both'),
+                'audience': aud_val,
             })
         except Exception as e:
             print(f"Error processing {md_file.name}: {e}")

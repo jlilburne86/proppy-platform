@@ -5,280 +5,508 @@
     <link>http://127.0.0.1:8000/resources.html</link>
     <description>Latest articles from Proppy</description>
     <item>
-      <title>Yield vs. Capital Growth: Finding the Balance</title>
+      <title>Yield vs Capital Growth: Finding the Balance</title>
       <link>http://127.0.0.1:8000/articles/yield-vs-capital-growth-finding-the-balance.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>How to think about cashflow versus equity at different portfolio stages — with simple, practical math.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Balance cashflow and equity with a multi‑signal framework—vacancy, rents, listings, DOM, approvals—and practical calculations investors can reuse.</description>
     </item>
     <item>
       <title>Which Capital Cities Are Leading — and Which Are Lagging</title>
       <link>http://127.0.0.1:8000/articles/which-capital-cities-are-leading-and-which-are-lagging.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A comparative snapshot of which capitals lead and lag on key indicators.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Which capitals show the strongest signals now — vacancy, rents, listings, DOM, approvals — and how to standardise a city‑by‑city read without the noise.</description>
+    </item>
+    <item>
+      <title>When to Use Equity and When to Save Cash</title>
+      <link>http://127.0.0.1:8000/articles/when-to-use-equity-when-to-save-cash.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Equity release timing, costs, and risk—balancing leverage with buffers across cycle phases.</description>
     </item>
     <item>
       <title>When Growth Slows: Historical Examples from Australian Cities</title>
       <link>http://127.0.0.1:8000/articles/when-growth-slows-historical-examples-from-australian-cities.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at When Growth Slows: Historical Examples from Australian Cities — data-led and balanced.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to when growth slows: historical examples from australian cities — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Value‑Add Strategies: Renovation, Layout and Usability Improvements</title>
       <link>http://127.0.0.1:8000/articles/value-add-strategies-renovation-layout-and-usability-improvements.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Small, practical upgrades that improve rentability and value — with realistic cost/return thinking.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to value‑add strategies: renovation, layout and usability improvements — using vacancy, rents, listings, DOM and supply signals to translate…</description>
+    </item>
+    <item>
+      <title>Vacancy Risk in Oversupplied Markets</title>
+      <link>http://127.0.0.1:8000/articles/vacancy-risk-in-oversupplied-markets.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Identifying oversupply early using ABS approvals, DA trackers, and absorption rates—with real-world examples from Australian markets.</description>
     </item>
     <item>
       <title>Vacancy Rates Explained: What Tight and Loose Markets Mean</title>
       <link>http://127.0.0.1:8000/articles/vacancy-rates-explained-what-tight-and-loose-markets-mean.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>What tight and loose rental markets mean — and how to read vacancy.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How to read vacancy correctly — definitions, realistic thresholds, how it interacts with rents/listings/approvals — and a step‑by‑step data retrieval and action checklist.</description>
     </item>
     <item>
       <title>Using Equity to Expand a Portfolio: An Educational Example</title>
       <link>http://127.0.0.1:8000/articles/using-equity-to-expand-a-portfolio-an-educational-example.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A pragmatic example of using equity to expand a portfolio — with risks.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A practical walkthrough of using equity to expand a portfolio—how to calculate usable equity, buffers and sensitivities—plus risk checks and actions.</description>
     </item>
     <item>
       <title>Units vs Houses: How Performance Has Changed Over the Decade</title>
       <link>http://127.0.0.1:8000/articles/units-vs-houses-how-performance-has-changed-over-the-decade.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A data‑first view on unit vs house performance — yields, growth, and where the exceptions live.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑first view on units vs houses—yield vs growth, where stock mix matters, and how to read vacancy, listings and approvals in each segment.</description>
     </item>
     <item>
       <title>Understanding the Australian Property Cycle</title>
       <link>http://127.0.0.1:8000/articles/understanding-the-australian-property-cycle.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A practical primer on the phases of Australia’s property cycle — and what to monitor in each stage.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A practical primer on the phases of Australia’s property cycle—how to read rates, vacancy, listings and approvals—and turn them into repeatable actions.</description>
+    </item>
+    <item>
+      <title>The Role of Property Managers in Portfolio Success</title>
+      <link>http://127.0.0.1:8000/articles/the-role-of-property-managers.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>PM selection criteria, fee structures, vacancy fill times, and how bad management erodes returns—what to measure and when to switch.</description>
+    </item>
+    <item>
+      <title>The Regional Premium Shift: When Lifestyle Suburbs Outperform</title>
+      <link>http://127.0.0.1:8000/articles/regional-premium-shift.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Post-pandemic regional price growth—separating structural demand from temporary speculation using vacancy and employment data.</description>
+    </item>
+    <item>
+      <title>The Build-to-Rent Sector in Australia: Implications for Investors</title>
+      <link>http://127.0.0.1:8000/articles/build-to-rent-sector-australia.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Institutional capital entering BTR—how it affects supply, rents, and whether individual investors should worry.</description>
     </item>
     <item>
       <title>The 2024 Interstate Investment Playbook</title>
       <link>http://127.0.0.1:8000/articles/the-2024-interstate-investment-playbook.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A step‑by‑step, data‑led guide to investing across state lines, with QLD and WA growth corridors for the coming financial year.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to the 2024 interstate investment playbook — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical…</description>
+    </item>
+    <item>
+      <title>Tenant Default and Arrears Risk</title>
+      <link>http://127.0.0.1:8000/articles/tenant-default-and-arrears-risk.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Probability, impact, and mitigation strategies for rental arrears—including bond adequacy, insurance, and PM selection.</description>
     </item>
     <item>
       <title>Tax Depreciation 101</title>
       <link>http://127.0.0.1:8000/articles/tax-depreciation-101.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A beginner’s guide to depreciation schedules — new builds vs established, and what investors should know.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to tax depreciation 101 — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor actions.</description>
     </item>
     <item>
       <title>Tasmania’s Property Market Explained: Hobart vs Regional Areas</title>
       <link>http://127.0.0.1:8000/articles/tasmanias-property-market-explained-hobart-vs-regional-areas.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>How Hobart and regional Tasmania differ — vacancy, rents, and supply dynamics.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to tasmania’s property market explained: hobart vs regional areas — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>Supply Constraints and Construction Delays: The 2020–2024 Reality</title>
+      <link>http://127.0.0.1:8000/articles/supply-constraints-construction-delays.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Builder collapses, material costs, and labor shortages—how supply-side issues created undersupply in high-demand markets.</description>
+    </item>
+    <item>
+      <title>Sunshine Coast Growth Hubs: Caloundra to Maroochydore</title>
+      <link>http://127.0.0.1:8000/articles/sunshine-coast-growth-hubs.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>SEQ&#x27;s coastal alternative—vacancy, employment diversification, and infrastructure shaping the Sunshine Coast opportunity.</description>
     </item>
     <item>
       <title>Suburb Spotlight: Logan Reserve</title>
       <link>http://127.0.0.1:8000/articles/suburb-spotlight-logan-reserve.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A balanced look at demand drivers, supply, and risk considerations for this SEQ corridor.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to suburb spotlight: logan reserve — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor actions.</description>
     </item>
     <item>
       <title>Short-Term Rentals and Changing State Rules</title>
       <link>http://127.0.0.1:8000/articles/short-term-rentals-and-changing-state-rules.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Changing rules for short-term rentals across states — what matters for investors.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to short-term rentals and changing state rules — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical…</description>
+    </item>
+    <item>
+      <title>Rentvesting: The Case For and Against</title>
+      <link>http://127.0.0.1:8000/articles/rentvesting-the-case-for-and-against.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Living in desirable locations while investing elsewhere—financial math, lifestyle trade-offs, and when it makes sense.</description>
     </item>
     <item>
       <title>Rentvesting in Practice: A Decade of Outcomes</title>
       <link>http://127.0.0.1:8000/articles/rentvesting-in-practice-a-decade-of-outcomes.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A decade-long look at rentvesting outcomes — what worked and what didn’t.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to rentvesting in practice: a decade of outcomes — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical…</description>
     </item>
     <item>
       <title>Rentvesting Explained: How Investors Separate Home and Portfolio</title>
       <link>http://127.0.0.1:8000/articles/rentvesting-explained-how-investors-separate-home-and-portfolio.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>How rentvesting separates home choice from portfolio strategy.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to rentvesting explained: how investors separate home and portfolio — using vacancy, rents, listings, DOM and supply signals to translate…</description>
+    </item>
+    <item>
+      <title>Rental Yield Compression in Australian Capital Cities</title>
+      <link>http://127.0.0.1:8000/articles/rental-yield-compression-capital-cities.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Why gross yields fell from 4.5% to 3.2% in Sydney and Melbourne—and what it means for new investors in 2024.</description>
     </item>
     <item>
       <title>Rental Market Pressures Explained: Supply, Demand and Rents</title>
       <link>http://127.0.0.1:8000/articles/rental-market-pressures-explained-supply-demand-and-rents.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Why rents rose in some corridors, fell in others — and which metrics matter.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to rental market pressures explained: supply, demand and rents — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Regulatory Changes Affecting Australian Landlords</title>
       <link>http://127.0.0.1:8000/articles/regulatory-changes-affecting-australian-landlords.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>The regulatory changes affecting landlords now — and how to stay compliant.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to regulatory changes affecting australian landlords — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
+    </item>
+    <item>
+      <title>Regional vs. Metro: The Trade-offs Australian Investors Face</title>
+      <link>http://127.0.0.1:8000/articles/regional-vs-metro-the-tradeoffs.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Yield, growth, liquidity, and vacancy compared—using Geelong, Newcastle, and Central Coast data vs. capital city benchmarks.</description>
     </item>
     <item>
       <title>Regional Investing Case Study: Growth Outside Capital Cities</title>
       <link>http://127.0.0.1:8000/articles/regional-investing-case-study-growth-outside-capital-cities.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at Regional Investing Case Study: Growth Outside Capital Cities — data-led and balanced.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to regional investing case study: growth outside capital cities — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Quarterly Review: East Coast Capitals</title>
       <link>http://127.0.0.1:8000/articles/quarterly-review-east-coast-capitals.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Listings, rents and vacancy across Sydney, Melbourne and Brisbane — a level‑headed quarterly read of the data.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to quarterly review: east coast capitals — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor…</description>
     </item>
     <item>
-      <title>Post-Pandemic Property Shifts: What Has Endured and What Hasn’t</title>
+      <title>Post-Pandemic Property Shifts: What Has Endured and What Hasn&#x27;t</title>
       <link>http://127.0.0.1:8000/articles/post-pandemic-property-shifts-what-has-endured-and-what-hasnt.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at Post-Pandemic Property Shifts: What Has Endured and What Hasn’t — data-led and balanced.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to post-pandemic property shifts: what has endured and what hasn&#x27;t — using vacancy, rents, listings, DOM and supply signals to translate…</description>
     </item>
     <item>
       <title>Perth’s Recovery Story: Suburbs Benefiting from WA’s Economy</title>
       <link>http://127.0.0.1:8000/articles/perths-recovery-story-suburbs-benefiting-from-was-economy.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Where WA’s momentum is showing up at suburb level — vacancy, rents, and demand drivers.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to perth’s recovery story: suburbs benefiting from wa’s economy — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>Perth Metro North: Joondalup and Wanneroo</title>
+      <link>http://127.0.0.1:8000/articles/perth-metro-north-joondalup-wanneroo.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Vacancy, rent trends, employment hubs, and Metronet&#x27;s impact on Perth&#x27;s northern growth corridor.</description>
+    </item>
+    <item>
+      <title>Overleveraging and Cashflow Stress: Warning Signs</title>
+      <link>http://127.0.0.1:8000/articles/overleveraging-and-cashflow-stress.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>When LVR, debt serviceability, and vacancy combine to create distress—how to recognize risk before it crystallizes.</description>
     </item>
     <item>
       <title>Overconcentration Risk: Why One Market Is Rarely Enough</title>
       <link>http://127.0.0.1:8000/articles/overconcentration-risk-why-one-market-is-rarely-enough.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Why concentrating in one market is risky — how to diversify sensibly.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to overconcentration risk: why one market is rarely enough — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
     </item>
     <item>
       <title>Overcoming Analysis Paralysis</title>
       <link>http://127.0.0.1:8000/articles/overcoming-analysis-paralysis.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A practical framework to move from research to decision, using a small set of high‑signal metrics.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to overcoming analysis paralysis — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor actions.</description>
+    </item>
+    <item>
+      <title>Newcastle and Lake Macquarie Investment Profile</title>
+      <link>http://127.0.0.1:8000/articles/newcastle-and-lake-macquarie.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Regional NSW&#x27;s largest city—employment, vacancy, rent growth, and why Newcastle outperformed Sydney in 2020–2023.</description>
+    </item>
+    <item>
+      <title>Natural Disasters, Insurance, and Property Resilience</title>
+      <link>http://127.0.0.1:8000/articles/natural-disasters-insurance-and-resilience.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Flood, bushfire, and cyclone risk in Australian markets—insurance costs, council overlays, and climate-adjusted investing.</description>
     </item>
     <item>
       <title>Melbourne’s Shifting Growth Pattern: Inner vs Outer Suburbs</title>
       <link>http://127.0.0.1:8000/articles/melbournes-shifting-growth-pattern-inner-vs-outer-suburbs.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Inner vs outer rings: vacancy, rents and time‑to‑lease post‑pandemic — where signals improved.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to melbourne’s shifting growth pattern: inner vs outer suburbs — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Market Downturns: How Australian Property Has Historically Responded</title>
       <link>http://127.0.0.1:8000/articles/market-downturns-how-australian-property-has-historically-responded.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>How Australian property historically responded in downturns — risks and resilience.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How Australian housing has historically behaved in downturns—signals that deteriorate first, what stabilises, and the process investors can reuse.</description>
     </item>
     <item>
       <title>Long-Term Price Growth: What 20-Year Data Reveals</title>
       <link>http://127.0.0.1:8000/articles/long-term-price-growth-what-20-year-data-reveals.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>What two decades of data say about location, stock type and holding discipline.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to long-term price growth: what 20-year data reveals — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
     </item>
     <item>
       <title>Lessons from Investors Who Bought Early in Growth Corridors</title>
       <link>http://127.0.0.1:8000/articles/lessons-from-investors-who-bought-early-in-growth-corridors.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>What early corridor investors learned — a balanced set of takeaways.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to lessons from investors who bought early in growth corridors — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>Legislative Changes and Tenancy Reforms</title>
+      <link>http://127.0.0.1:8000/articles/legislative-changes-and-tenancy-reforms.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>State-by-state rental law changes from 2020–2024, impact on investor returns, and how to adapt portfolio strategy.</description>
     </item>
     <item>
       <title>Investor Lending Trends Across Australia’s States</title>
       <link>http://127.0.0.1:8000/articles/investor-lending-trends-across-australias-states.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Where investor credit is flowing — and what that may mean for yields and prices.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to investor lending trends across australia’s states — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
+    </item>
+    <item>
+      <title>Interstate Migration Patterns Post-2020: Where Australians Moved and Why</title>
+      <link>http://127.0.0.1:8000/articles/interstate-migration-patterns-post-2020.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>ABS data on the great relocation—Queensland, WA inflows, and what sustained migration means for rental demand.</description>
     </item>
     <item>
       <title>Interest Rates: The 2024 Forecast</title>
       <link>http://127.0.0.1:8000/articles/interest-rates-the-2024-forecast.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>What major bank outlooks imply — and how investors can plan without relying on point predictions.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to interest rates: the 2024 forecast — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor actions.</description>
     </item>
     <item>
       <title>Interest Rates and Property: Lessons from Past RBA Cycles</title>
       <link>http://127.0.0.1:8000/articles/interest-rates-and-property-lessons-from-past-rba-cycles.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>What prior RBA cycles suggest — planning without relying on forecasts.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to interest rates and property: lessons from past rba cycles — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
+    </item>
+    <item>
+      <title>Interest Rate Risk Management for Investors</title>
+      <link>http://127.0.0.1:8000/articles/interest-rate-risk-management.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How rising rates impact serviceability, cashflow, and equity—with stress-testing examples and hedging strategies.</description>
     </item>
     <item>
       <title>Housing Supply vs Population Growth: Why Shortages Persist</title>
       <link>http://127.0.0.1:8000/articles/housing-supply-vs-population-growth-why-shortages-persist.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A clear view of approvals, completions and migration flows — and why shortages persist despite cycles.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to housing supply vs population growth: why shortages persist — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>House vs. Unit: What the Data Actually Shows</title>
+      <link>http://127.0.0.1:8000/articles/house-vs-unit-what-the-data-shows.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Capital growth, yield, vacancy, and maintenance compared across Sydney, Melbourne, Brisbane using 10-year CoreLogic data.</description>
+    </item>
+    <item>
+      <title>Hobart&#x27;s Expanding Outer Ring: Bridgewater to Glenorchy</title>
+      <link>http://127.0.0.1:8000/articles/hobarts-expanding-outer-ring.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Tasmania&#x27;s affordability plays—rent yields, price growth, and migration-driven demand in Hobart&#x27;s outer suburbs.</description>
+    </item>
+    <item>
+      <title>Gold Coast Growth Corridors: Coomera to Pimpama</title>
+      <link>http://127.0.0.1:8000/articles/gold-coast-growth-corridors.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Population inflows, infrastructure rollout, and rental fundamentals across Gold Coast&#x27;s fastest-growing suburbs.</description>
+    </item>
+    <item>
+      <title>Geelong and the Bellarine Peninsula</title>
+      <link>http://127.0.0.1:8000/articles/geelong-and-bellarine-peninsula.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Regional Victoria&#x27;s strongest performer—vacancy, rents, infrastructure, and what the data reveals about sustained growth.</description>
     </item>
     <item>
       <title>From First Property to Portfolio: A Long-Term Investor Journey</title>
       <link>http://127.0.0.1:8000/articles/from-first-property-to-portfolio-a-long-term-investor-journey.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at From First Property to Portfolio: A Long-Term Investor Journey — data-led and balanced.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to from first property to portfolio: a long-term investor journey — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>Foreign Investment Trends in Australian Residential Property</title>
+      <link>http://127.0.0.1:8000/articles/foreign-investment-trends-australia.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>FIRB data on foreign buyer volumes, policy changes, and how international capital affects inner-city apartment markets.</description>
     </item>
     <item>
       <title>First‑Time Investor Guide: Market Fundamentals to Understand</title>
       <link>http://127.0.0.1:8000/articles/first-time-investor-guide-market-fundamentals-to-understand.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A calm, practical primer on the metrics and steps that matter for your first purchase.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to first‑time investor guide: market fundamentals to understand — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>First Home Buyer Grants and Market Impact</title>
+      <link>http://127.0.0.1:8000/articles/first-home-buyer-grants-market-impact.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How state and federal incentives shift demand—analyzing the effect on entry-level price points and investor competition.</description>
     </item>
     <item>
       <title>Emerging Suburbs to Watch Heading into 2026</title>
       <link>http://127.0.0.1:8000/articles/emerging-suburbs-to-watch-heading-into-2026.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Signals pointing to emerging suburbs heading into 2026.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to emerging suburbs to watch heading into 2026 — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical…</description>
     </item>
     <item>
       <title>Diversification in Property: Cities, States and Asset Types</title>
       <link>http://127.0.0.1:8000/articles/diversification-in-property-cities-states-and-asset-types.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>How to reduce concentration risk with sensible, data‑led diversification across markets and stock types.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to diversification in property: cities, states and asset types — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>Depreciation and Tax Optimization for Investors</title>
+      <link>http://127.0.0.1:8000/articles/depreciation-and-tax-optimization-for-investors.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How depreciation schedules work, new vs. established properties, and the post-2017 changes—with real return examples.</description>
+    </item>
+    <item>
+      <title>Demographic Trends Shaping Australian Property Demand</title>
+      <link>http://127.0.0.1:8000/articles/demographic-trends-shaping-demand.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Aging population, household formation rates, and migration—how demographics create long-term rental and ownership demand.</description>
+    </item>
+    <item>
+      <title>Days-on-Market as a Leading Indicator</title>
+      <link>http://127.0.0.1:8000/articles/days-on-market-as-leading-indicator.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>DOM trends from CoreLogic and PropTrack—how shortening and lengthening cycles signal demand shifts 3–6 months early.</description>
+    </item>
+    <item>
+      <title>DIY Investing vs. Buyer&#x27;s Agent: Evaluating the Trade-off</title>
+      <link>http://127.0.0.1:8000/articles/diy-investing-vs-buyers-agent-value.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Cost-benefit analysis of buyer&#x27;s agent fees vs. DIY due diligence—when expertise adds value and when it doesn&#x27;t.</description>
     </item>
     <item>
       <title>Coastal Markets That Have Transformed Over the Past 10 Years</title>
       <link>http://127.0.0.1:8000/articles/coastal-markets-that-have-transformed-over-the-past-10-years.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A balanced look at coastal market shifts over the past decade.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to coastal markets that have transformed over the past 10 years — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Co-Ownership in Property: What the Data and Case Studies Show</title>
       <link>http://127.0.0.1:8000/articles/co-ownership-in-property-what-the-data-and-case-studies-show.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>What the data and case studies say about co-ownership structures.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to co-ownership in property: what the data and case studies show — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Climate Risk and Property: What Investors Should Know</title>
       <link>http://127.0.0.1:8000/articles/climate-risk-and-property-what-investors-should-know.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at Climate Risk and Property: What Investors Should Know — data-led and balanced.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to climate risk and property: what investors should know — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
+    </item>
+    <item>
+      <title>Choosing Between New Estates and Established Suburbs</title>
+      <link>http://127.0.0.1:8000/articles/new-estates-vs-established-suburbs.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Land appreciation, build quality, oversupply risk, and infrastructure lag—comparing new vs. established with Australian data.</description>
+    </item>
+    <item>
+      <title>Central Coast NSW: Opportunity or Oversupply Risk?</title>
+      <link>http://127.0.0.1:8000/articles/central-coast-nsw-opportunity.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Analyzing Gosford, Wyong, and Woy Woy—vacancy trends, commute dynamics, and what separates strong from weak pockets.</description>
+    </item>
+    <item>
+      <title>Case Study: Renovating for Value vs. Cash</title>
+      <link>http://127.0.0.1:8000/articles/case-study-renovating-for-value-vs-cash.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A Melbourne investor&#x27;s $45K renovation lifted rent 18% and equity $85K—what worked, what didn&#x27;t, and the ROI calculation.</description>
+    </item>
+    <item>
+      <title>Case Study: Multi-City Portfolio Building Over 8 Years</title>
+      <link>http://127.0.0.1:8000/articles/case-study-multi-city-portfolio-building.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>From single Sydney property to 5-property portfolio across Brisbane, Perth, and Adelaide—timing, financing, and lessons learned.</description>
+    </item>
+    <item>
+      <title>Case Study: Managing Negative Gearing Through Rate Rises</title>
+      <link>http://127.0.0.1:8000/articles/case-study-surviving-rate-rises.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How an investor with 3 Sydney properties navigated 4% rate increases: cashflow stress, decisions made, and survival tactics.</description>
+    </item>
+    <item>
+      <title>Case Study: First-Time Buyer in Regional QLD</title>
+      <link>http://127.0.0.1:8000/articles/case-study-first-time-buyer-regional-qld.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How a Brisbane renter entered Logan corridor with $80K deposit, 5.2% yield, and 14% appreciation in 18 months.</description>
+    </item>
+    <item>
+      <title>Case Study: Converting to Dual Income</title>
+      <link>http://127.0.0.1:8000/articles/case-study-converting-to-dual-income.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Subdividing a Perth property into duplex: $220K cost, $380/week additional rent, and lessons from DA approval to tenant handover.</description>
     </item>
     <item>
       <title>Capital Growth vs Rental Yield: Understanding the Trade-Offs</title>
       <link>http://127.0.0.1:8000/articles/capital-growth-vs-rental-yield-understanding-the-trade-offs.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at Capital Growth vs Rental Yield: Understanding the Trade-Offs — data-led and balanced.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to capital growth vs rental yield: understanding the trade-offs — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Capital Cities vs Regional Markets: Where Growth Has Shifted</title>
       <link>http://127.0.0.1:8000/articles/capital-cities-vs-regional-markets-where-growth-has-shifted.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A clean comparison of city and regional trends — listings, vacancy and rent pressure — and what changed post‑pandemic.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to capital cities vs regional markets: where growth has shifted — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Buy‑and‑Hold Explained: Why Long‑Term Investors Focus on Cycles</title>
       <link>http://127.0.0.1:8000/articles/buy-and-hold-explained-why-long-term-investors-focus-on-cycles.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Why time in market beats timing, and how to set rules for each phase.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to buy‑and‑hold explained: why long‑term investors focus on cycles — using vacancy, rents, listings, DOM and supply signals to translate…</description>
+    </item>
+    <item>
+      <title>Building Your First Investment Property Portfolio</title>
+      <link>http://127.0.0.1:8000/articles/building-your-first-investment-property-portfolio.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Step-by-step framework for acquiring properties 1–3: deposit, serviceability, market selection, and avoiding early mistakes.</description>
     </item>
     <item>
       <title>Brisbane Growth Corridors: Ipswich, Logan and Moreton Bay</title>
       <link>http://127.0.0.1:8000/articles/brisbane-growth-corridors-ipswich-logan-and-moreton-bay.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Signals and fundamentals across SEQ corridors — vacancy, rents, and infrastructure.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to brisbane growth corridors: ipswich, logan and moreton bay — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
     </item>
     <item>
-      <title>Boom, Plateau or Decline? How to Read Market Signals</title>
+      <title>Boom, Plateau, or Decline: How to Read Market Signals</title>
       <link>http://127.0.0.1:8000/articles/boom-plateau-or-decline-how-to-read-market-signals.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A field guide to interpreting vacancy, rental growth, listings and DOM — without overreacting.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to boom, plateau, or decline: how to read market signals — using vacancy, rents, listings, DOM and supply signals to translate analysis into…</description>
     </item>
     <item>
       <title>Australia’s 2026 Housing Market Outlook: What the Data Is Signalling</title>
       <link>http://127.0.0.1:8000/articles/australias-2026-housing-market-outlook-what-the-data-is-signalling.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>A measured look at listings, vacancy, rents and approvals — and how to plan through uncertainty.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to australia’s 2026 housing market outlook: what the data is signalling — using vacancy, rents, listings, DOM and supply signals to translate…</description>
+    </item>
+    <item>
+      <title>Auction Clearance Rates: What They Signal and What They Don&#x27;t</title>
+      <link>http://127.0.0.1:8000/articles/auction-clearance-rates-what-they-signal.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>How to interpret weekly clearance data, seasonal adjustments, and why 70% vs. 55% matters for cycle positioning.</description>
     </item>
     <item>
       <title>Affordable Investment Areas Still Under the National Median</title>
       <link>http://127.0.0.1:8000/articles/affordable-investment-areas-still-under-the-national-median.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Areas still under national median prices — checked against demand and supply.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to affordable investment areas still under the national median — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
     </item>
     <item>
       <title>Adelaide’s Quiet Achievers: Where Demand Is Outpacing Supply</title>
       <link>http://127.0.0.1:8000/articles/adelaides-quiet-achievers-where-demand-is-outpacing-supply.html</link>
-      <pubDate>Wed, 21 Jan 2026 00:00:00 +0000</pubDate>
-      <description>Where demand is outpacing supply across Adelaide — vacancy, rents, and fundamentals.</description>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>A data‑led guide to adelaide’s quiet achievers: where demand is outpacing supply — using vacancy, rents, listings, DOM and supply signals to translate analysis…</description>
+    </item>
+    <item>
+      <title>Adelaide&#x27;s Northern Suburbs: Salisbury to Gawler</title>
+      <link>http://127.0.0.1:8000/articles/adelaides-northern-suburbs.html</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Affordability, employment access, and rental yields across Adelaide&#x27;s northern growth belt.</description>
     </item>
   </channel>
 </rss>

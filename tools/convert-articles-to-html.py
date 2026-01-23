@@ -60,9 +60,16 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 
     title = frontmatter.get('title', slug.replace('-', ' ').title())
     description = frontmatter.get('description', '')
-    category = frontmatter.get('category', 'Strategy')
+
+    # Handle category as list or string
+    category_raw = frontmatter.get('category', 'Strategy')
+    category = category_raw[0] if isinstance(category_raw, list) else category_raw
+
     reading_time = frontmatter.get('reading_time', '7 min')
-    audience = frontmatter.get('audience', 'Both')
+
+    # Handle audience as list or string
+    audience_raw = frontmatter.get('audience', 'Both')
+    audience = audience_raw[0] if isinstance(audience_raw, list) else audience_raw
     author = frontmatter.get('author', 'Proppy Editorial')
 
     # Get category color
@@ -204,7 +211,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans">
 <a href="#content" class="skip-link">Skip to content</a>
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="../index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">

@@ -1,15 +1,13 @@
 ---
-
-
 title: "Vacancy Rates Explained: What Tight and Loose Markets Mean"
-description: "What tight and loose rental markets mean — and how to read vacancy."
+description: "How to read vacancy correctly — definitions, realistic thresholds, how it interacts with rents/listings/approvals — and a step‑by‑step data retrieval and action checklist."
 category: [Risk]
 audience: [Both]
-reading_time: "7 min"
-publish_status: draft
+reading_time: "5 min"
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
-next_review_date: "2026-01-21"
+next_review_date: "2026-07-22"
 sources:
   - name: "ABS"
     url: "https://www.abs.gov.au/"
@@ -17,95 +15,95 @@ sources:
     url: "https://www.rba.gov.au/"
   - name: "PropTrack"
     url: "https://www.proptrack.com.au/insights/"
-version: 1
-
-
+  - name: "CoreLogic"
+    url: "https://www.corelogic.com.au/news-research"
+version: 2
+---
 # Vacancy Rates Explained: What Tight and Loose Markets Mean
 
-<Standfirst: A calm, data‑led summary of what this article covers and why it matters for investors.>
+Vacancy is a leading indicator for rental pressure and leasing risk. This explainer shows how to read tight vs loose markets, link vacancy with rents/listings/DOM, and translate signals into actions.
 
-![Signals](/assets/screenshots/technology.png)
-![Compare](/assets/screenshots/platform-screenshot.png)
-![Workflow](/assets/screenshots/how-it-works.png)
-![Portfolio](/assets/screenshots/homepage-9.png)
+![Illustration](/assets/screenshots/technology.png)
+![Illustration](/assets/screenshots/how-it-works.png)
+![Illustration](/assets/screenshots/platform-screenshot.png)
+![Illustration](/assets/screenshots/homepage-9.png)
 
-## Key Findings
-- This is a structured, high‑signal summary, not a forecast.
-- Focus on indicators and process investors can reuse.
-- Avoid hype; show risks and limits alongside opportunities.
+## Market Context
+- Nationally, vacancy has been low in many corridors through 2025, but conditions vary suburb‑to‑suburb. Always validate at micro‑location level (PropTrack, 2025).
+- Where building approvals and completions remain subdued relative to demand, tight vacancy tends to persist; where new stock delivers in bulk, vacancy can loosen (ABS Building Approvals 8731.0, 2024–2025).
 
-## National Snapshot
-In this section, set the scene with balanced commentary. Explain the broader forces (supply pipelines, vacancy, rent pressure, assessment rates, migration) without asserting precise numeric claims. Discuss how different cities and submarkets can move asynchronously. Provide enough narrative that a reader understands the “why” behind trends, but keep it disciplined: what can be measured, what should be monitored, and what remains uncertain.
+## Key Drivers
+- Vacancy: A direct read on tenant competition and leasing risk.
+- Rent momentum: Reinforces the vacancy read; strong rent growth often accompanies sustained low vacancy.
+- Listings & DOM: For sale activity shapes investor supply and can pre‑signal loosening/tightening.
+- Supply pipeline: Approvals and completions determine how long tight (or loose) conditions can last.
+- Stock mix: New‑build/unit‑heavy pockets behave differently to established house‑dominant areas.
 
-Add two to three paragraphs that a) explain how an investor should interpret new data releases, b) remind readers that suburb‑level indicators trump city medians, and c) show how to translate signals into action windows rather than predictions.
+## What the Data Shows
+- Tight markets (very low vacancy) typically achieve quicker leasing and stronger rent review outcomes. Price effects depend on buyer depth (listings/DOM) and borrowing costs.
+- Looser markets require sharper pricing, better presentation and realistic rent settings to minimise time vacant; headline yields can slip if rent momentum stalls.
 
-## Methodology & Criteria
-Explain how to evaluate this topic in a way that’s repeatable:
-- What indicators belong on the dashboard (e.g., vacancy, rents, listings, DOM, pipeline)?
-- How to sanity‑check with qualitative scans (micro‑location, stock quality, overlays)?
-- When to revisit assumptions and how to avoid cherry‑picking?
+## 🔍 Proppy Data Lens
+| Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
+|---------------------|------------------------|-----------|----------------|
+| Vacancy             | (12/2025)             | ↘/→       | Direct read on tenant demand and leasing risk. |
+| Rents (YoY)         | (2025)                | ↗/→       | Confirms pressure where vacancy is tight. |
+| Listings (YoY)      | (Q4/2025)             | ↘/→       | Scarcity supports pricing power; rising stock can ease pressure. |
+| DOM                 | (Q4/2025)             | ↘/→       | Faster leasing indicates stronger depth of demand. |
+| Building approvals  | (2025)                | ↘         | Slower pipelines extend tight rental conditions. |
+| Investor lending    | (2025)                | →         | Participation shifts affect investor supply response. |
 
-Add concrete, step‑by‑step guidance that a reader can follow without needing proprietary tools.
+Interpretation
+- Yield‑tilted: Vacancy low + rents rising + flat prices → prioritise resilient cashflow assets with rent‑review scope.
+- Growth‑tilted: Falling DOM + tighter listings + stable borrowing costs → target quality assets in constrained micro‑locations.
+- Mixed: Extend observation to the next print; seek 2–3 indicators in agreement.
 
-## State Highlights (Qualitative)
-Provide a structured pass at how this topic shows up across major states/cities. Keep it qualitative: instead of naming specific suburbs, describe the patterns an investor should look for, and the pitfalls they should sanity‑check before acting. Emphasise that conditions are uneven across rings and stock types within each city.
+## Reading Vacancy Correctly
+- Definitions: Vacancy is the share of rental stock unlet at a point in time. Sources differ in coverage (PM portfolios vs listing‑based estimates). Compare like‑for‑like over time from the same source.
+- Thresholds (guidelines, not rules):
+  - Very tight: ~0–1% → strong leasing, frequent rent reviews.
+  - Tight to balanced: ~1–2% → stable leasing; outcomes vary by stock quality.
+  - Loose: >3% → more days vacant; price and presentation matter.
+- Always combine with rent momentum and enquiry quality from leasing agents. Vacancy without rent/inspection context can mislead.
 
-### NSW/ACT
-Outline the typical pattern for inner/middle/outer rings relevant to this topic.
+## How to Pull the Data Yourself
+- Vacancy & rents: PropTrack Insights (monthly market commentary and suburb/city trends). Save the month/year and keep a local log for your target suburbs.
+- Approvals: ABS 8731.0 Building Approvals (dwellings total) — state and dwelling type. Track 12‑month totals to smooth volatility.
+- Listings & DOM: CoreLogic/PropTrack city and region updates. Focus on YoY direction and the last 1–3 prints for confirmation.
+- Rates backdrop: RBA Cash Rate Target (statistics page). Use month+year in any citation.
 
-### VIC/TAS
-Discuss how supply, demand and stock mix affect results across rings.
-
-### QLD
-Point to SEQ corridors, commutes, and rental pressure differences.
-
-### SA/WA/NT
-Discuss vacancy, rents and project delivery constraints.
-
-## Scorecard Components
-Define the components you would rate for this topic, how to read each component, and common misreads. Provide interpretive advice (e.g., “vacancy below X with rising rents suggests…” without stating precise numbers as facts).
-
-## Case Illustration (Generalised)
-Walk through a generic example to show how the process works: what was checked first, which red flags were discarded, and how the final decision aligned with strategy and risk tolerance. Keep it illustrative and compliant (no promises).
+## State & City Patterns (Qualitative)
+- NSW/ACT: Inner/middle rings with constrained new supply often sustain low vacancy; outer rings vary with delivery schedules and commute realities.
+- VIC/TAS: Mixed conditions — check approvals vs completions and on‑the‑ground leasing feedback in each corridor.
+- QLD: SEQ demand has supported low vacancy across multiple hubs; watch pipeline delivery around growth corridors.
+- SA/WA/NT: Prolonged tight vacancy pockets have underpinned rent resilience; confirm micro‑location constraints and employer demand.
 
 ## Risks & What to Watch Next
-List the risks that are most relevant to this topic (policy/regulatory, supply shocks, demand shifts, cost or rate surprises) and the monitoring routine to surface these early.
+- Policy & Tenancy: State‑level rental rule changes and short‑stay regulation. Monitor implementation dates and compliance costs.
+- Supply shocks: Catch‑up in approvals/completions can ease vacancy; track ABS approvals and local development updates.
+- Migration & Employment: Changes in flows and labour markets alter rental pressure — especially in uni/health/industry hubs.
+- Cost & Rates: Funding costs and assessment rates change investor participation; watch RBA decisions and lender pricing.
 
 ## Investor Actions
-Translate the above into actions: what a beginner can do this month, what an experienced investor can add to their process, and what to avoid.
+### For Newer Investors
+- Build a simple log: vacancy, rent YoY, listings YoY, DOM — monthly.
+- Shortlist 3 suburbs with consistently tight vacancy; verify with property managers before offers.
+- Inspect 3–5 comparables and call 2 local PMs for real enquiry/turnover context.
+
+### For Experienced Investors
+- Automate alerts: vacancy moves, listings and DOM direction for target corridors.
+- Prioritise micro‑locations with structural constraints (schools, transport, employment nodes) and proven leasing depth.
+- Stress‑test rent assumptions (−5%) and hold buffers (≥6–12 months) before bids.
 
 ## Key Takeaways
-- Boil down the durable, process‑level insights.
-- Make them reusable across cycles and markets.
+- Vacancy is a leading, high‑signal input — but only when read with rents, listings and supply.
+- Focus on suburb‑level conditions and leasing feedback, not just city medians.
+- Tight markets reward preparation and quality assets; loose markets require sharper pricing and buffers.
 
-> Disclaimer: This article is general information only and does not constitute financial, taxation or legal advice. Consider your circumstances and seek professional advice before acting.
+> Disclaimer: This article is general information only and does not constitute financial, taxation or legal advice.
 
-
-### Additional Perspective
-When signals conflict, slow down and expand observation. Extend the monitoring window by a quarter, validate rent movements with on‑the‑ground leasing feedback, and compare against a neighbouring suburb with a different stock mix. If the signal persists across multiple indicators and timeframes, it deserves more weight; if it fades, file it under noise.
-
-Policy and lending settings shape investor behaviour in ways that can be hard to model. That is why the playbook emphasises resilience: buffers, quality assets, diversified exposure, and decisions that don’t depend on predicting the next move. In practice, that means pre‑agreeing what data would cause you to act — and what would cause you to wait.
-
-
-### Additional Perspective
-When signals conflict, slow down and expand observation. Extend the monitoring window by a quarter, validate rent movements with on‑the‑ground leasing feedback, and compare against a neighbouring suburb with a different stock mix. If the signal persists across multiple indicators and timeframes, it deserves more weight; if it fades, file it under noise.
-
-Policy and lending settings shape investor behaviour in ways that can be hard to model. That is why the playbook emphasises resilience: buffers, quality assets, diversified exposure, and decisions that don’t depend on predicting the next move. In practice, that means pre‑agreeing what data would cause you to act — and what would cause you to wait.
-
-
-### Additional Perspective
-When signals conflict, slow down and expand observation. Extend the monitoring window by a quarter, validate rent movements with on‑the‑ground leasing feedback, and compare against a neighbouring suburb with a different stock mix. If the signal persists across multiple indicators and timeframes, it deserves more weight; if it fades, file it under noise.
-
-Policy and lending settings shape investor behaviour in ways that can be hard to model. That is why the playbook emphasises resilience: buffers, quality assets, diversified exposure, and decisions that don’t depend on predicting the next move. In practice, that means pre‑agreeing what data would cause you to act — and what would cause you to wait.
-
-
-### Additional Perspective
-When signals conflict, slow down and expand observation. Extend the monitoring window by a quarter, validate rent movements with on‑the‑ground leasing feedback, and compare against a neighbouring suburb with a different stock mix. If the signal persists across multiple indicators and timeframes, it deserves more weight; if it fades, file it under noise.
-
-Policy and lending settings shape investor behaviour in ways that can be hard to model. That is why the playbook emphasises resilience: buffers, quality assets, diversified exposure, and decisions that don’t depend on predicting the next move. In practice, that means pre‑agreeing what data would cause you to act — and what would cause you to wait.
-
-
-### Additional Perspective
-When signals conflict, slow down and expand observation. Extend the monitoring window by a quarter, validate rent movements with on‑the‑ground leasing feedback, and compare against a neighbouring suburb with a different stock mix. If the signal persists across multiple indicators and timeframes, it deserves more weight; if it fades, file it under noise.
-
-Policy and lending settings shape investor behaviour in ways that can be hard to model. That is why the playbook emphasises resilience: buffers, quality assets, diversified exposure, and decisions that don’t depend on predicting the next move. In practice, that means pre‑agreeing what data would cause you to act — and what would cause you to wait.
+References
+- ABS — Building Approvals (8731.0): https://www.abs.gov.au/
+- RBA — Cash Rate Target: https://www.rba.gov.au/statistics/cash-rate/
+- PropTrack — Market Insights: https://www.proptrack.com.au/insights/
+- CoreLogic — Research: https://www.corelogic.com.au/news-research

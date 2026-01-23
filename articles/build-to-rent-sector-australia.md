@@ -4,7 +4,7 @@ description: "Institutional capital entering BTR—how it affects supply, rents,
 category: Market Trends
 audience: Both
 reading_time: "6 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-21"

@@ -4,7 +4,7 @@ description: "Tasmania's affordability plays—rent yields, price growth, and mi
 category: Suburb Profiles
 audience: Both
 reading_time: "6 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-21"

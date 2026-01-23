@@ -4,7 +4,7 @@ description: "Why gross yields fell from 4.5% to 3.2% in Sydney and Melbourne—
 category: Market Trends
 audience: Both
 reading_time: "6 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-21"

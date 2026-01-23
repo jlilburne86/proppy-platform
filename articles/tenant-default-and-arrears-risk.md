@@ -4,7 +4,7 @@ description: "Probability, impact, and mitigation strategies for rental arrearsâ
 category: Risk
 audience: Both
 reading_time: "6 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-21"
