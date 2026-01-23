@@ -1,10 +1,10 @@
 ---
 title: "Investor Lending Trends Across Australia’s States"
-description: "A data‑led guide to investor lending trends across australia’s states — using vacancy, rents, listings, DOM and supply signals to translate analysis into…"
+description: "How investor lending ebbs and flows by state — how to read ABS Lending Indicators and what changing participation means for competition and timing."
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,7 +21,7 @@ version: 2
 ---
 # Investor Lending Trends Across Australia’s States
 
-Growth compounds equity; yield funds holding. This article examines investor lending trends across australia’s states with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Investor lending cycles shape competition and timing. This guide shows how to read ABS Lending Indicators and complementary signals to understand when and where investor participation is rising — and what that means for your shortlist.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
@@ -29,35 +29,26 @@ Growth compounds equity; yield funds holding. This article examines investor len
 ![Illustration](/assets/screenshots/homepage-9.png)
 
 ## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+- Lending conditions reflect both rates and risk appetite. Participation varies by state and stock type; reading state‑level series alongside vacancy and listings gives the best signal.
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
 - New dwelling approvals eased from 2021 peaks before stabilising in 2024–2025, varying by state [CHECK: ABS 8731.0, mm/yyyy, NSW/VIC/QLD lines].
 
-## Key Drivers
-- Vacancy: Lower vacancy supports rent growth and reduces leasing risk.
-- Rent momentum: Sustained rent increases improve gross yield and buffers.
-- Listings & DOM: Scarcer listings and falling DOM can confirm buyer depth.
-- Supply pipeline: Completions vs approvals inform medium‑term rental pressure.
-- Borrowing costs: Assessment rates shape buyer depth and turnover.
-- Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
+## How to Read the Data
+- ABS Lending Indicators: Track investor loan values by state (month + YoY). Rising trends often coincide with tighter listings and falling DOM.
+- Cross‑signals: Pair with vacancy and rent momentum; when all firm together, expect more competition in shortlisted suburbs.
+- Lag/lead: Lending can lag early leasing signals; look for 2–3 confirming prints before changing strategy.
 
-## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+## Practical Interpretation
+- Rising investor lending + tight vacancy/listings → act faster, expand search radius, and pre‑book inspections/finance.
+- Flat lending + mixed signals → extend observation, prioritise quality assets and conservative buffers.
+- Falling lending + improving vacancy/listings → potential window for disciplined buys with less competition.
 
-## 🔍 Proppy Data Lens
-| Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
-|---------------------|------------------------|-----------|----------------|
-| Vacancy             | [CHECK: %]            | ↘/↗/→     | Tight vacancy supports yields and leasing certainty. |
-| Rents (YoY)         | [CHECK: %]            | ↘/↗/→     | Rent growth boosts gross yield and buffers. |
-| Listings (YoY)      | [CHECK: %]            | ↘/↗/→     | Scarcity can support prices; rising stock can loosen conditions. |
-| DOM                 | [CHECK: days]         | ↘/↗/→     | Faster sales often signal stronger buyer depth. |
-| Building approvals  | [CHECK: level/YoY]    | ↘/↗/→     | Lower approvals today can mean tighter future rentals. |
-| Investor lending    | [CHECK: YoY]          | ↘/↗/→     | Participation shifts influence competition and timing. |
+## 🔍 Proppy Checklist
+- Download ABS Lending Indicators (state investor series); log last 6–12 months.
+- Overlay vacancy, listings and DOM for target corridors.
+- Note lead/lag; set alerts for 2–3 confirming prints before acting.
 
 Interpretation:
 - Yield‑tilted: Vacancy low + rents rising + flat prices → prioritise resilient cashflow assets with rent review scope.
@@ -88,14 +79,14 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Track investor lending by state alongside vacancy/listings in your shortlist.
+- Pre‑book finance and inspections when participation rises.
+- Expand suburb radius if competition increases.
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Rotate focus across states: prioritise corridors where participation is rising together with tight leasing signals.
+- Shorten cycle time from shortlist → offer with pre‑cleared ops (B&P, PM, finance).
+- Use alerts to avoid crowding into late phases; pivot when lending flattens but vacancy loosens.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.

@@ -1,10 +1,10 @@
 ---
 title: "Value‑Add Strategies: Renovation, Layout and Usability Improvements"
-description: "A data‑led guide to value‑add strategies: renovation, layout and usability improvements — using vacancy, rents, listings, DOM and supply signals to translate…"
+description: "Low‑cost, high‑impact upgrades that improve rentability and value — layout fixes, functionality, and presentation — with simple cost/benefit thinking."
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,43 +21,38 @@ version: 2
 ---
 # Value‑Add Strategies: Renovation, Layout and Usability Improvements
 
-Growth compounds equity; yield funds holding. This article examines value‑add strategies: renovation, layout and usability improvements with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Not every upgrade pays — the best value‑adds improve rentability, function and buyer appeal without overcapitalising. This guide prioritises layout fixes, usability and presentation, with simple ways to think about cost vs benefit.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
 ![Illustration](/assets/screenshots/platform-screenshot.png)
 ![Illustration](/assets/screenshots/homepage-9.png)
 
-## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+## What Matters (Not Market Noise)
+- Focus upgrades on frictions that block tenants/buyers: poor light, lack of storage, dysfunctional flow, tired wet areas, noise/thermal issues.
+- Start with rentability: target changes that shorten leasing time and reduce vacancy, then consider sale appeal.
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
 - New dwelling approvals eased from 2021 peaks before stabilising in 2024–2025, varying by state [CHECK: ABS 8731.0, mm/yyyy, NSW/VIC/QLD lines].
 
-## Key Drivers
-- Vacancy: Lower vacancy supports rent growth and reduces leasing risk.
-- Rent momentum: Sustained rent increases improve gross yield and buffers.
-- Listings & DOM: Scarcer listings and falling DOM can confirm buyer depth.
-- Supply pipeline: Completions vs approvals inform medium‑term rental pressure.
-- Borrowing costs: Assessment rates shape buyer depth and turnover.
-- Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
+## High‑Impact, Low‑Complexity Plays
+- Layout improvements: add wardrobes; convert dead space to study nook; improve bedroom door swing and circulation.
+- Light & ventilation: brighter globes, sheers + blockouts, remove heavy window dressings, add exhausts where missing.
+- Kitchen/bath refresh: new handles, tapware, re‑silicone/re‑grout; replace benchtops and vanity where warranted.
+- Storage & usability: add linen/pantry modules; hooks/shelving at entries; bike storage.
+- Noise/thermal comfort: seals, door closers, basic acoustic rugs/underlays.
 
-## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+## Practical Cost/Benefit Thinking (Illustrative)
+- Target upgrades with measurable rentability impact (faster leasing, fewer objections) rather than speculative value.
+- Use a simple hurdle: aim for payback within 12–24 months on small items; insist on strong evidence for larger works.
+- Validate with your PM: list objections from the last campaign; fix the top 3 if cost‑effective.
 
-## 🔍 Proppy Data Lens
-| Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
-|---------------------|------------------------|-----------|----------------|
-| Vacancy             | [CHECK: %]            | ↘/↗/→     | Tight vacancy supports yields and leasing certainty. |
-| Rents (YoY)         | [CHECK: %]            | ↘/↗/→     | Rent growth boosts gross yield and buffers. |
-| Listings (YoY)      | [CHECK: %]            | ↘/↗/→     | Scarcity can support prices; rising stock can loosen conditions. |
-| DOM                 | [CHECK: days]         | ↘/↗/→     | Faster sales often signal stronger buyer depth. |
-| Building approvals  | [CHECK: level/YoY]    | ↘/↗/→     | Lower approvals today can mean tighter future rentals. |
-| Investor lending    | [CHECK: YoY]          | ↘/↗/→     | Participation shifts influence competition and timing. |
+## 🔍 Proppy Checklist
+- Gather PM feedback from last leasing/sale campaign.
+- List top 3 objections; map each to a low‑complexity fix.
+- Price parts/labour; sanity‑check payback period.
+- Stage works to minimise vacancy days; re‑list with better media/presentation.
 
 Interpretation:
 - Yield‑tilted: Vacancy low + rents rising + flat prices → prioritise resilient cashflow assets with rent review scope.
@@ -88,14 +83,14 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Do the basics: paint, lights, handles, sheers, deep clean, garden trim.
+- Fix function first (storage, flow), then looks.
+- Ask your PM to price a leasing‑ready scope and timeline.
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Systematise make‑readies across assets (templates, preferred trades, parts lists).
+- Batch upgrades to reduce call‑outs/travel; calendar them between lease cycles.
+- Track campaign metrics (days to let, enquiry, objections) and iterate.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.

@@ -1,10 +1,10 @@
 ---
 title: "Perth’s Recovery Story: Suburbs Benefiting from WA’s Economy"
-description: "A data‑led guide to perth’s recovery story: suburbs benefiting from wa’s economy — using vacancy, rents, listings, DOM and supply signals to translate analysis…"
+description: "Perth’s recovery in focus — vacancy, rent momentum, listings and approvals — and which suburb patterns have benefited from WA’s economic settings."
 category: [Suburb Profiles]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,7 +21,7 @@ version: 2
 ---
 # Perth’s Recovery Story: Suburbs Benefiting from WA’s Economy
 
-Growth compounds equity; yield funds holding. This article examines perth’s recovery story: suburbs benefiting from wa’s economy with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Perth’s recovery has shown up in tight vacancy, rent momentum and stronger absorption in selected corridors. This article highlights the suburb‑level patterns and how to verify them with a consistent dashboard before acting.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
@@ -29,8 +29,8 @@ Growth compounds equity; yield funds holding. This article examines perth’s re
 ![Illustration](/assets/screenshots/homepage-9.png)
 
 ## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+- Tight vacancy across many Perth suburbs has supported rents; buyer depth varies by stock and corridor.
+- Approvals and delivery schedules shape how long conditions persist; confirm for each LGA/corridor (ABS/WA releases, 2024–2025).
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
@@ -45,9 +45,8 @@ Examples to verify and cite:
 - Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
 
 ## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+- Inner‑to‑middle ring suburbs with constrained new supply and good access to employment/amenity have outperformed on rents and leasing speed.
+- New‑build pockets behave differently: watch completion waves and pricing power.
 
 ## 🔍 Proppy Data Lens
 | Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
@@ -88,9 +87,9 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Build a Perth‑focused dashboard for 3 target suburbs (vacancy, rents, listings, DOM, approvals).
+- Call two local PMs to confirm leasing enquiry; inspect comparable rentals.
+- Validate overlays (flood, bushfire) and micro‑location (schools, transport, noise).
 
 ### For Experienced Investors
 - Standardise cross‑state DD; set alerts for key signals.

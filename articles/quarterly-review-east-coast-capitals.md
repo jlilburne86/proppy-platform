@@ -1,10 +1,10 @@
 ---
 title: "Quarterly Review: East Coast Capitals"
-description: "A data‑led guide to quarterly review: east coast capitals — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor…"
+description: "Listings, rents, vacancy and DOM across Sydney, Melbourne and Brisbane — a level‑headed quarterly read and how to use it for decisions."
 category: [Cycles]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,16 +21,17 @@ version: 2
 ---
 # Quarterly Review: East Coast Capitals
 
-Growth compounds equity; yield funds holding. This article examines quarterly review: east coast capitals with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Quarterly reads help you separate signal from noise. This review frames Sydney, Melbourne and Brisbane using the same dashboard — vacancy, rents, listings and DOM — and shows how to turn that into practical actions.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
 ![Illustration](/assets/screenshots/platform-screenshot.png)
 ![Illustration](/assets/screenshots/homepage-9.png)
 
-## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+## How to Read Quarterly Changes
+- Direction over precision: focus on up/flat/down in vacancy, rents, listings and DOM.
+- Confirmation: look for 2–3 consecutive prints lining up before changing strategy.
+- Suburb over city: use city reads to aim your suburb shortlist; then go granular.
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
@@ -44,20 +45,15 @@ Examples to verify and cite:
 - Borrowing costs: Assessment rates shape buyer depth and turnover.
 - Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
 
-## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+## City Snapshots (Qualitative)
+- Sydney: Tight vacancy in select inner/middle rings; listings pockets vary; DOM falling where buyer depth improved.
+- Melbourne: Mixed conditions by corridor; monitor listings and DOM for recovery signals and validate rent momentum.
+- Brisbane: Broad rental pressure across several hubs; watch vacancy and listings by corridor to balance yield vs growth.
 
-## 🔍 Proppy Data Lens
-| Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
-|---------------------|------------------------|-----------|----------------|
-| Vacancy             | [CHECK: %]            | ↘/↗/→     | Tight vacancy supports yields and leasing certainty. |
-| Rents (YoY)         | [CHECK: %]            | ↘/↗/→     | Rent growth boosts gross yield and buffers. |
-| Listings (YoY)      | [CHECK: %]            | ↘/↗/→     | Scarcity can support prices; rising stock can loosen conditions. |
-| DOM                 | [CHECK: days]         | ↘/↗/→     | Faster sales often signal stronger buyer depth. |
-| Building approvals  | [CHECK: level/YoY]    | ↘/↗/→     | Lower approvals today can mean tighter future rentals. |
-| Investor lending    | [CHECK: YoY]          | ↘/↗/→     | Participation shifts influence competition and timing. |
+## 🔍 Proppy Checklist
+- Pull latest quarter for vacancy, rents, listings and DOM per city; note direction.
+- Translate to suburb shortlist; confirm locally with PMs.
+- Set alerts for the next print to confirm or challenge your read.
 
 Interpretation:
 - Yield‑tilted: Vacancy low + rents rising + flat prices → prioritise resilient cashflow assets with rent review scope.

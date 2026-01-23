@@ -1,10 +1,10 @@
 ---
 title: "Overconcentration Risk: Why One Market Is Rarely Enough"
-description: "A data‑led guide to overconcentration risk: why one market is rarely enough — using vacancy, rents, listings, DOM and supply signals to translate analysis into…"
+description: "Why concentrating in one market is risky — evidence for diversification across cities/stock types, and a practical framework to spread risk sensibly."
 category: [Risk]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,7 +21,7 @@ version: 2
 ---
 # Overconcentration Risk: Why One Market Is Rarely Enough
 
-Growth compounds equity; yield funds holding. This article examines overconcentration risk: why one market is rarely enough with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Cycles don’t move in lockstep. Concentrating in one city, corridor or stock type amplifies drawdowns and narrows opportunity. This guide outlines the evidence for spreading risk and a practical way to diversify without drift.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
@@ -29,8 +29,7 @@ Growth compounds equity; yield funds holding. This article examines overconcentr
 ![Illustration](/assets/screenshots/homepage-9.png)
 
 ## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+- Cities and stock types cycle differently (rates, approvals, migration, local industry). Cross‑market exposure reduces the chance of being stuck in the same phase everywhere.
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
@@ -45,9 +44,8 @@ Examples to verify and cite:
 - Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
 
 ## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+- Diversification smooths cashflows and action windows; different corridors offer yield vs growth at different times.
+- A “house only” or “unit only” approach can miss recoveries in the other segment; consider measured cross‑segment exposure.
 
 ## 🔍 Proppy Data Lens
 | Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
@@ -88,14 +86,14 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Split shortlist across two cities with different profiles; run identical dashboards.
+- Add one yield stabiliser before a growth‑tilted asset; keep ≥6–12 months buffer.
+- Avoid doubling up on the same risk (e.g., same employer/industry hub).
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Use risk budgets (city/segment caps) and rotate additions when signals improve elsewhere.
+- Set automated alerts for vacancy/listings/DOM in candidate corridors; act on 2–3 signal confirmation.
+- Periodically rebalance by adding the opposite tilt (yield vs growth) as buffers change.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.

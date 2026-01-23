@@ -1,10 +1,10 @@
 ---
 title: "The 2024 Interstate Investment Playbook"
-description: "A data‑led guide to the 2024 interstate investment playbook — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical…"
+description: "How to invest across state lines with a repeatable, data‑led process — comparing vacancy, rents, listings, DOM and approvals by city, and managing logistics and risk."
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,7 +21,7 @@ version: 2
 ---
 # The 2024 Interstate Investment Playbook
 
-Growth compounds equity; yield funds holding. This article examines the 2024 interstate investment playbook with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Interstate investing broadens the opportunity set and diversifies risk, but it only works with a disciplined, data‑led process. This playbook shows how to compare states on the same dashboard, set up on‑the‑ground support, and execute inspections, offers and settlements cleanly.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
@@ -29,8 +29,8 @@ Growth compounds equity; yield funds holding. This article examines the 2024 int
 ![Illustration](/assets/screenshots/homepage-9.png)
 
 ## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+- Rates & credit: RBA 3.60% (Dec 2025) provides the backdrop, but serviceability varies by lender; assess borrowing capacity before shortlisting (RBA).
+- Dispersion: Vacancy, rents, listings and approvals differ by city/region, so a single national view is misleading; compare like‑for‑like timeframes (ABS/PropTrack/CoreLogic, 2024–2025).
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
@@ -65,9 +65,10 @@ Interpretation:
 - Mixed: Extend observation to the next print; seek 2–3 signals in agreement.
 
 ## Methodology & Criteria
-- Dashboard (monthly/quarterly): Vacancy, rent YoY/QoQ, listings YoY, DOM, approvals, investor lending.
-- Qualitative overlay: Micro‑location (arterials/noise/flood), stock quality (layout, light, maintenance), body corporate/land size.
-- Guideline thresholds: “Vacancy < ~1.5% with rising rents” strengthens yield case; “DOM falling and listings tightening” strengthens growth case.
+- Build a cross‑state dashboard: vacancy, rents YoY, listings YoY, DOM, approvals (12‑month totals), investor lending.
+- Normalise time windows (e.g., last 12m and last 3 prints) to compare momentum.
+- Qualitative overlay: zoning, overlays, stock quality, and commuting realities — by suburb.
+- Ops: Engage a local PM before offers; define inspections, photos, and report standards.
 
 Worked examples
 - Gross yield = annual rent / price. Example: $560/wk → $29,120/yr on $620,000 → 4.7% gross.
@@ -88,14 +89,14 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Choose two states with complementary profiles (e.g., yield stabiliser vs growth tilt).
+- Build identical dashboards for 3 suburbs per state; call two PMs in each.
+- Line up remote inspections with photo/video standards; pre‑book B&P.
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Automate alerts; cut decisions to a 2‑week window once signals align.
+- Use a “two‑bid” play: one asset under offer, one as back‑up; pre‑negotiated finance.
+- Sequence across states to diversify policy/regulatory risk.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.

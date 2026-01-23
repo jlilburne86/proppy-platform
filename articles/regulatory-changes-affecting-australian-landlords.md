@@ -1,10 +1,10 @@
 ---
 title: "Regulatory Changes Affecting Australian Landlords"
-description: "A data‑led guide to regulatory changes affecting australian landlords — using vacancy, rents, listings, DOM and supply signals to translate analysis into…"
+description: "What’s changing for landlords across states — tenancy standards, notice periods, rent regulations, short‑stay rules — and how to stay compliant and resilient."
 category: [Risk]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,43 +21,40 @@ version: 2
 ---
 # Regulatory Changes Affecting Australian Landlords
 
-Growth compounds equity; yield funds holding. This article examines regulatory changes affecting australian landlords with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Rules shift — tenancy standards, notice periods, bond and pet provisions, and short‑stay regulations. This guide highlights common areas of change, where to verify state‑specific details, and how to build resilience into your process.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
 ![Illustration](/assets/screenshots/platform-screenshot.png)
 ![Illustration](/assets/screenshots/homepage-9.png)
 
-## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+## What’s Changing (Themes)
+- Minimum standards: Safety, heating/cooling, locks, and basic amenity requirements.
+- Notice periods & grounds: Adjustments to termination/eviction grounds and required notice lengths.
+- Pets & modifications: Rules around consent and reasonable modifications.
+- Short‑stay rules: Local council and state caps, registration and planning requirements (varies by jurisdiction).
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
 - New dwelling approvals eased from 2021 peaks before stabilising in 2024–2025, varying by state [CHECK: ABS 8731.0, mm/yyyy, NSW/VIC/QLD lines].
 
-## Key Drivers
-- Vacancy: Lower vacancy supports rent growth and reduces leasing risk.
-- Rent momentum: Sustained rent increases improve gross yield and buffers.
-- Listings & DOM: Scarcer listings and falling DOM can confirm buyer depth.
-- Supply pipeline: Completions vs approvals inform medium‑term rental pressure.
-- Borrowing costs: Assessment rates shape buyer depth and turnover.
-- Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
+## Where to Verify (By State)
+- NSW: Fair Trading NSW and local council short‑stay pages.
+- VIC: Consumer Affairs Victoria; Residential Tenancies changes and minimum standards.
+- QLD: RTA; tenancy reforms and bond/notice updates.
+- SA/WA/NT/TAS/ACT: State tenancy authority pages; council short‑stay overlays where applicable.
 
-## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+## Practical Implications
+- Compliance cost: Budget for upgrades to meet minimum standards; stage works to minimise vacancy.
+- PM engagement: Clarify processes for notices, modifications and pet approvals; keep templates current.
+- Short‑stay exposure: Validate local rules before purchase; stress‑test revenue under cap changes.
+- Documentation: Keep records of works, inspections and communications; align with insurer requirements.
 
-## 🔍 Proppy Data Lens
-| Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
-|---------------------|------------------------|-----------|----------------|
-| Vacancy             | [CHECK: %]            | ↘/↗/→     | Tight vacancy supports yields and leasing certainty. |
-| Rents (YoY)         | [CHECK: %]            | ↘/↗/→     | Rent growth boosts gross yield and buffers. |
-| Listings (YoY)      | [CHECK: %]            | ↘/↗/→     | Scarcity can support prices; rising stock can loosen conditions. |
-| DOM                 | [CHECK: days]         | ↘/↗/→     | Faster sales often signal stronger buyer depth. |
-| Building approvals  | [CHECK: level/YoY]    | ↘/↗/→     | Lower approvals today can mean tighter future rentals. |
-| Investor lending    | [CHECK: YoY]          | ↘/↗/→     | Participation shifts influence competition and timing. |
+## 🔍 Proppy Checklist
+- Create a state‑by‑state compliance tracker for your properties.
+- Align PM authorities and lease templates to current rules.
+- Calendar annual compliance reviews and insurance checks.
+- Build a reserve for regulatory upgrades (e.g., minimum standards).
 
 Interpretation:
 - Yield‑tilted: Vacancy low + rents rising + flat prices → prioritise resilient cashflow assets with rent review scope.
@@ -88,14 +85,14 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Before purchase, check the state tenancy authority site and council overlays.
+- Ask your PM to summarise key rules for that suburb and building type.
+- Confirm minimum standards and timing; budget upgrades.
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Maintain a regulatory register across states; assign owners for updates.
+- Pre‑approve scopes for common upgrades; batch them to reduce downtime.
+- Coordinate compliance works with lease turns to minimise vacancy.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.

@@ -1,10 +1,10 @@
 ---
 title: "Tax Depreciation 101"
-description: "A data‑led guide to tax depreciation 101 — using vacancy, rents, listings, DOM and supply signals to translate analysis into practical investor actions."
+description: "How depreciation works for property investors — schedules, eligible items, new vs established, typical claims and compliance — with practical do’s and don’ts."
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,43 +21,37 @@ version: 2
 ---
 # Tax Depreciation 101
 
-Growth compounds equity; yield funds holding. This article examines tax depreciation 101 with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Depreciation can improve after‑tax cashflow without changing the asset’s fundamentals. This guide explains schedules, eligible items, how the rules differ for new vs established dwellings, and how to work with a quantity surveyor.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
 ![Illustration](/assets/screenshots/platform-screenshot.png)
 ![Illustration](/assets/screenshots/homepage-9.png)
 
-## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+## What Matters (Not Market Conditions)
+- Depreciation is a tax concept, not a market signal. Focus on build year, renovations, and the asset’s plant & equipment and capital works components.
+- The ATO’s 2017 changes limit deductions for second‑hand plant & equipment in established properties acquired after 9 May 2017; capital works deductions still apply (seek tax advice).
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
 - New dwelling approvals eased from 2021 peaks before stabilising in 2024–2025, varying by state [CHECK: ABS 8731.0, mm/yyyy, NSW/VIC/QLD lines].
 
-## Key Drivers
-- Vacancy: Lower vacancy supports rent growth and reduces leasing risk.
-- Rent momentum: Sustained rent increases improve gross yield and buffers.
-- Listings & DOM: Scarcer listings and falling DOM can confirm buyer depth.
-- Supply pipeline: Completions vs approvals inform medium‑term rental pressure.
-- Borrowing costs: Assessment rates shape buyer depth and turnover.
-- Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
+## Key Concepts
+- Capital works (Division 43): Generally 2.5% p.a. over 40 years on eligible construction costs.
+- Plant & equipment (Division 40): Depreciable assets like carpets, appliances — subject to acquisition date rules.
+- New vs established: New builds often have larger claim pools; established can still claim capital works and new items added post‑purchase.
+- Quantity surveyor reports: Often required to substantiate claims; update after substantial renovations.
 
-## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+## Practical Examples (Illustrative)
+- Capital works: $200,000 eligible → $5,000 p.a. for up to 40 years.
+- Plant & equipment: New appliances $8,000 → depreciate per effective life schedule.
+- Record‑keeping: Keep invoices, dates, and photos; log renovations separately.
 
-## 🔍 Proppy Data Lens
-| Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
-|---------------------|------------------------|-----------|----------------|
-| Vacancy             | [CHECK: %]            | ↘/↗/→     | Tight vacancy supports yields and leasing certainty. |
-| Rents (YoY)         | [CHECK: %]            | ↘/↗/→     | Rent growth boosts gross yield and buffers. |
-| Listings (YoY)      | [CHECK: %]            | ↘/↗/→     | Scarcity can support prices; rising stock can loosen conditions. |
-| DOM                 | [CHECK: days]         | ↘/↗/→     | Faster sales often signal stronger buyer depth. |
-| Building approvals  | [CHECK: level/YoY]    | ↘/↗/→     | Lower approvals today can mean tighter future rentals. |
-| Investor lending    | [CHECK: YoY]          | ↘/↗/→     | Participation shifts influence competition and timing. |
+## 🔍 Proppy Checklist
+- Confirm build date and acquisition date (ATO rules differ by date).
+- Arrange a quantity surveyor report; update after renovations.
+- Separate schedules for capital works vs plant & equipment.
+- Keep evidence (invoices, photos); store securely for tax time.
 
 Interpretation:
 - Yield‑tilted: Vacancy low + rents rising + flat prices → prioritise resilient cashflow assets with rent review scope.
@@ -88,14 +82,14 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- Ask PM and builder for construction dates and scope.
+- Commission a quantity surveyor; store the report with your records.
+- Discuss with your tax adviser how to apply schedules.
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Standardise documentation across the portfolio; calendar reviews before EOFY.
+- Re‑run schedules after upgrades to capture new eligible items.
+- Coordinate with finance strategy to time renovations and claims appropriately.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.

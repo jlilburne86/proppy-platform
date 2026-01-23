@@ -1,10 +1,10 @@
 ---
 title: "Rentvesting Explained: How Investors Separate Home and Portfolio"
-description: "A data‑led guide to rentvesting explained: how investors separate home and portfolio — using vacancy, rents, listings, DOM and supply signals to translate…"
+description: "Rentvesting explained — why investors rent where they live and buy where the numbers work; benefits, trade‑offs, and a practical framework to do it well."
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: draft
+publish_status: published
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"
@@ -21,33 +21,31 @@ version: 2
 ---
 # Rentvesting Explained: How Investors Separate Home and Portfolio
 
-Growth compounds equity; yield funds holding. This article examines rentvesting explained: how investors separate home and portfolio with a repeatable, multi‑signal approach—vacancy, rents, listings, days on market, and supply—then turns it into investor actions.
+Rentvesting decouples lifestyle from investment. You rent where you want to live and buy where the numbers work. This guide lays out the benefits, trade‑offs and a simple process to do it well.
 
 ![Illustration](/assets/screenshots/technology.png)
 ![Illustration](/assets/screenshots/how-it-works.png)
 ![Illustration](/assets/screenshots/platform-screenshot.png)
 ![Illustration](/assets/screenshots/homepage-9.png)
 
-## Market Context
-- Rental market tightness and uneven listing volumes have shaped yields and price momentum differently across cities and stock types.
-- Policy, borrowing costs, and migration shifts matter—read them through high‑signal indicators that update monthly or quarterly.
+## When It Helps
+- If lifestyle areas are high cost, rentvesting can unlock earlier entry into investment markets where yields and vacancy are more favourable.
+- Separating decisions reduces pressure to compromise on either lifestyle or asset quality.
 
 Examples to verify and cite:
 - Vacancy remained low in several markets through late 2025–early 2026, with sub‑1% periods in some corridors [CHECK: PropTrack/Domain vacancy, mm/yyyy, city/suburb].
 - New dwelling approvals eased from 2021 peaks before stabilising in 2024–2025, varying by state [CHECK: ABS 8731.0, mm/yyyy, NSW/VIC/QLD lines].
 
-## Key Drivers
-- Vacancy: Lower vacancy supports rent growth and reduces leasing risk.
-- Rent momentum: Sustained rent increases improve gross yield and buffers.
-- Listings & DOM: Scarcer listings and falling DOM can confirm buyer depth.
-- Supply pipeline: Completions vs approvals inform medium‑term rental pressure.
-- Borrowing costs: Assessment rates shape buyer depth and turnover.
-- Stock mix: Houses vs units, and micro‑location livability, drive dispersion.
+## Key Considerations
+- Budget & buffers: Model rent paid vs rent received, plus expenses and buffers.
+- Serviceability: Check how rental income is shaded by lenders; confirm assessment rates.
+- Location spread: Choose investment locations using vacancy, rents, listings and approvals.
+- Tenancy & management: Line up a PM; define rent‑ready standards and inspection cadence.
 
-## What the Data Shows
-- Long‑run (10–20y): Compounding and holding quality assets through cycles dominate outcomes (CoreLogic indexes, [CHECK series & date]).
-- 12–24m momentum: Some corridors show strong rent growth with modest price gains, others the reverse [CHECK: PropTrack/ABS rents, CoreLogic price indexes, mm/yyyy].
-- Last 1–3 quarters: Listings, vacancy, and approvals provide near‑term signal; confirm across 2–3 updates to avoid noise.
+## Example (Illustrative)
+- Lifestyle rent: $800/wk; Investment rent: $560/wk; Annual rents: $41,600 vs $29,120.
+- Investment purchase: $620,000; Gross yield: 4.7%. Stress net cashflow at +150 bps.
+- Decide on buffers and sequencing before offers; keep ≥6–12 months cash.
 
 ## 🔍 Proppy Data Lens
 | Signal              | Recent Read (mm/yyyy) | Direction | Why it matters |
@@ -88,14 +86,13 @@ Worked examples
 
 ## Investor Actions
 ### For Newer Investors
-- Define a 6‑metric dashboard; refresh monthly.
-- Shortlist 3 suburbs that meet yield or growth criteria; run standard DD (zoning, overlays, stock quality).
-- Timebox research (e.g., 2 weeks), then inspect and decide.
+- List goals (lifestyle vs portfolio); write them down.
+- Build a suburb shortlist using vacancy/rents/listings/approvals; call two PMs.
+- Timebox research; inspect and decide with buffers in place.
 
 ### For Experienced Investors
-- Standardise cross‑state DD; set alerts for key signals.
-- Run sensitivity (rent −5% / interest +1.5%) before offers.
-- Sequence portfolio: Add a yield stabiliser if buffers are thin; lean into growth when signals align.
+- Standardise the rentvesting model across states; automate alerts.
+- Rebalance with yield stabilisers when buffers thin; revisit lifestyle vs portfolio annually.
 
 ## Key Takeaways
 - Let multi‑signal confirmation guide timing; avoid single‑metric bets.
