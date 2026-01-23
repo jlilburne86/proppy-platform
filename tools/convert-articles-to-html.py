@@ -243,17 +243,17 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="../index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="../proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
+        <img src="../proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
         <span class="sr-only">Proppy</span>
       </a>
     </div>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
       <a class="hover:text-primary transition-colors" href="../index.html">Home</a>
 <div class="navx-group relative">
-  <a class="navx-toggle hover:text-primary transition-colors" href="how-it-works.html" role="button" aria-expanded="false">How It Works</a>
+  <a class="navx-toggle hover:text-primary transition-colors" href="../how-it-works.html" role="button" aria-expanded="false">How It Works</a>
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
-    <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
+    <a href="../how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
 <a href="../technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
   </div>
 </div>
@@ -294,7 +294,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
   <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="../index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="../proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -304,7 +304,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <li class="border-b border-slate-200 dark:border-slate-800">
 <button class="navx-acc w-full flex items-center justify-between py-3 text-left font-semibold">How It Works<span class="material-symbols-outlined text-base">expand_more</span></button>
 <ul class="navx-acc-body hidden pl-3 pb-3">
-<li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
+<li><a class="block py-2" href="../how-it-works.html">How It Works</a></li>
 <li><a class="block py-2" href="../technology.html">Technology</a></li>
 </ul>
 </li>
