@@ -2,22 +2,22 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Days-on-Market as a Leading Indicator - Proppy</title>
+<title>Days‑on‑Market as a Leading Indicator - Proppy</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <link rel="canonical" href="/articles/days-on-market-as-leading-indicator.html">
-<meta name="description" content="DOM trends from CoreLogic and PropTrack—how shortening and lengthening cycles signal demand shifts 3–6 months early.">
+<meta name="description" content="How changes in DOM foreshadow shifts in demand — reading shortening/lengthening trends at suburb level and linking them to vacancy, listings and rates.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Proppy">
-<meta property="og:title" content="Days-on-Market as a Leading Indicator">
-<meta property="og:description" content="DOM trends from CoreLogic and PropTrack—how shortening and lengthening cycles signal demand shifts 3–6 months early.">
+<meta property="og:title" content="Days‑on‑Market as a Leading Indicator">
+<meta property="og:description" content="How changes in DOM foreshadow shifts in demand — reading shortening/lengthening trends at suburb level and linking them to vacancy, listings and rates.">
 <meta property="og:image" content="/assets/screenshots/platform-screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Days-on-Market as a Leading Indicator">
-<meta name="twitter:description" content="DOM trends from CoreLogic and PropTrack—how shortening and lengthening cycles signal demand shifts 3–6 months early.">
+<meta name="twitter:title" content="Days‑on‑Market as a Leading Indicator">
+<meta name="twitter:description" content="How changes in DOM foreshadow shifts in demand — reading shortening/lengthening trends at suburb level and linking them to vacancy, listings and rates.">
 <meta name="twitter:image" content="/assets/screenshots/platform-screenshot.png">
 <script id="navx-script" src="/tools/navx-accessible.js"></script>
 <link rel="stylesheet" href="/tools/ux.css"/>
@@ -134,13 +134,13 @@
 </nav>
 
 <div class="flex items-center justify-between gap-3 flex-wrap">
-  <h1 class="!mb-2">Days-on-Market as a Leading Indicator</h1>
+  <h1 class="!mb-2">Days‑on‑Market as a Leading Indicator</h1>
   <span class="outlook-badge outlook-neutral">Outlook: Neutral</span>
 </div>
 <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-6">
   <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800">Market Trends</span>
   <span>•</span>
-  <span>7 min</span>
+  <span>5 min</span>
   <span>•</span>
   <span>Both</span>
   <span>•</span>
@@ -176,9 +176,9 @@
     </div>
   </details>
 </section>
-<section class="max-w-3xl mx-auto px-6 py-2"><details class="border border-slate-200 dark:border-slate-800 rounded-xl p-3"><summary class="text-sm font-semibold cursor-pointer">In this article</summary><ul class="list-disc pl-6 space-y-1"><li><a class="text-primary hover:underline" href="#market-context">Market Context</a></li>
-<li><a class="text-primary hover:underline" href="#key-drivers">Key Drivers</a></li>
-<li><a class="text-primary hover:underline" href="#what-the-data-shows">What the Data Shows</a></li>
+<section class="max-w-3xl mx-auto px-6 py-2"><details class="border border-slate-200 dark:border-slate-800 rounded-xl p-3"><summary class="text-sm font-semibold cursor-pointer">In this article</summary><ul class="list-disc pl-6 space-y-1"><li><a class="text-primary hover:underline" href="#why-dom-works">Why DOM Works</a></li>
+<li><a class="text-primary hover:underline" href="#how-to-read-it">How to Read It</a></li>
+<li><a class="text-primary hover:underline" href="#practical-examples">Practical Examples</a></li>
 <li><a class="text-primary hover:underline" href="#proppy-data-lens">🔍 Proppy Data Lens</a></li>
 <li><a class="text-primary hover:underline" href="#expert-insight">Expert Insight</a></li>
 <li><a class="text-primary hover:underline" href="#investor-lens">Investor Lens</a></li>
@@ -188,43 +188,30 @@
 
 
 
-<h1 class="text-2xl md:text-4xl font-extrabold mb-4">Days-on-Market as a Leading Indicator</h1>
+<h1 class="text-2xl md:text-4xl font-extrabold mb-4">Days‑on‑Market as a Leading Indicator</h1>
 
-<p class="mb-4 text-slate-700 dark:text-slate-300">Examining days-on-market as a leading indicator using CoreLogic, PropTrack, and ABS data — with insights for investors navigating current conditions.</p>
+<p class="mb-4 text-slate-700 dark:text-slate-300">DOM (days‑on‑market) is one of the cleanest signals of buyer depth. Read alongside listings, vacancy and rates, it helps you spot slowdowns and recoveries 1–3 prints earlier than price medians.</p>
 
-<h2 id="market-context" class="text-xl md:text-2xl font-bold mt-8 mb-3">Market Context</h2>
+<h2 id="why-dom-works" class="text-xl md:text-2xl font-bold mt-8 mb-3">Why DOM Works</h2>
 
-<p class="mb-4 text-slate-700 dark:text-slate-300">Australian property markets operate across multiple timeframes, with distinct fundamentals shaping outcomes in each city and region. Between 2020 and 2023, divergence between capital cities reached historic levels. Brisbane median house prices rose 42.7%, while Melbourne fell 8.4% from peak (CoreLogic, 2023). Perth recorded 67% growth from trough to peak, while Sydney corrected 13% before stabilizing.</p>
+<ul class="list-disc pl-6 space-y-1">
+<li>It’s behavioural: sellers adjust price/terms when campaigns linger.</li>
+<li>It’s local: suburb DOM reflects real buyer depth better than city medians.</li>
+<li>It’s linkable: falling DOM with flat listings indicates strengthening absorption; rising DOM with rising listings warns of softer demand.</li>
+</ul>
 
-<p class="mb-4 text-slate-700 dark:text-slate-300">These movements reflect localized drivers: employment concentration, migration patterns, supply constraints, and credit conditions. For investors, the implication is clear: national headlines obscure suburb-level opportunity and risk. Understanding the specific context relevant to this analysis requires examining both recent (2020–2023) and longer-term (10–20 year) patterns.</p>
+<h2 id="how-to-read-it" class="text-xl md:text-2xl font-bold mt-8 mb-3">How to Read It</h2>
+<ul class="list-disc pl-6 space-y-1">
+<li>Track DOM at suburb level (house vs unit) for your shortlist; log monthly.</li>
+<li>Pair with listings and vacancy direction; look for 2–3 confirming prints.</li>
+<li>Use DOM to time inspections and offers — shortening DOM argues for faster ops, lengthening DOM for patience and negotiation.</li>
+</ul>
 
-<p class="mb-4 text-slate-700 dark:text-slate-300">The 2022–2023 interest rate hiking cycle—from 0.10% to 4.35% in 18 months—reshaped borrowing capacity and investor cashflow across all markets. This macro shift created both headwinds (reduced serviceability, higher holding costs) and opportunities (compressed competition, better entry pricing in select corridors).</p>
-
-<h2 id="key-drivers" class="text-xl md:text-2xl font-bold mt-8 mb-3">Key Drivers</h2>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Credit conditions and borrowing capacity:</strong> Interest rate settings determine how much investors can borrow and at what cost. The RBA's rate hiking cycle reduced borrowing capacity by approximately 30% for median-income households, directly impacting demand and price dynamics across markets.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Supply and demand balance:</strong> Dwelling approvals, construction completions, and population growth create the fundamental supply-demand equation. ABS data showed dwelling approvals fell 18% nationally in 2022–2023, while net overseas migration surged to 518,000 in the year to June 2023—compressing vacancy and accelerating rents in arrival cities.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Employment and economic growth:</strong> Jobs underpin rental demand and household formation. Markets with diversified employment bases and unemployment below 4% demonstrate greater rental resilience during economic cycles.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Infrastructure investment:</strong> Announced transport, health, and education projects create long-term employment and accessibility improvements. Queensland's SEQ Infrastructure Plan ($17 billion over 10 years) and WA's Metronet ($5.4 billion) exemplify state-level commitments shaping multi-year property demand.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Investor sentiment and cycle positioning:</strong> Auction clearance rates, vendor behavior, and days-on-market reflect buyer/seller psychology. When clearance rates fall below 55–60% for extended periods, sentiment typically shifts from optimism to caution, signaling cycle transitions.</p>
-
-<h2 id="what-the-data-shows" class="text-xl md:text-2xl font-bold mt-8 mb-3">What the Data Shows</h2>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300">Analysis of CoreLogic, PropTrack, and ABS data across the 2020–2023 period reveals several consistent patterns:</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Vacancy as a leading indicator:</strong> Markets with vacancy below 1.5% consistently showed rent acceleration 6–12 months before prices moved. Perth's vacancy fell to 0.7% in mid-2022, preceding 12–15% annual price growth in 2023. Melbourne's vacancy rose from 1.8% to 2.4% in late 2021, preceding an 8-month price correction starting April 2022.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Rent growth preceding capital growth:</strong> Median rent increases of 5–8% annually typically signal constrained supply and precede capital appreciation. PropTrack data showed Brisbane rents rose 43% between January 2020 and December 2023, while prices rose 42.7%—the movements tracked closely with rent leading by 3–6 months.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Supply pipeline inversions:</strong> When dwelling approvals fall while population growth accelerates, undersupply creates sustained price pressure. Logan City (QLD) saw approvals fall 22% year-on-year in Q3 2023 while receiving 8,500 net new residents—creating a 2+ year supply deficit.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300"><strong>Clearance rate inflection points:</strong> Sustained clearance above 70% signals expansion phases; sustained clearance below 55% signals correction or recovery phases. Sydney's clearance fell from 80% (January 2022) to 52% (August 2022) in six months—a clear cycle transition signal.</p>
-
-<p class="mb-4 text-slate-700 dark:text-slate-300">Historical context matters. Over 20-year periods, Australian capital city price growth converges around 6–7% annually, but any given 3–5 year window shows extreme divergence. Investors who rotate capital toward undersupplied, migration-receiving markets capture asymmetric gains unavailable in home cities.</p>
+<h2 id="practical-examples" class="text-xl md:text-2xl font-bold mt-8 mb-3">Practical Examples</h2>
+<ul class="list-disc pl-6 space-y-1">
+<li>DOM falls from 38 → 26 days over two prints, listings flat, vacancy tight → absorption improving; prepare offers faster.</li>
+<li>DOM rises from 27 → 40 days, listings up, vacancy loosening → negotiate harder; widen search or wait for confirmation.</li>
+</ul>
 
 <h2 id="proppy-data-lens" class="text-xl md:text-2xl font-bold mt-8 mb-3">🔍 Proppy Data Lens</h2>
 
@@ -329,15 +316,15 @@
     </div>
   </div>
 </section>
-<section class="max-w-3xl mx-auto px-6 py-8"><h3 class="text-lg font-extrabold mb-2">Related Articles</h3><div class="related-grid"><a href="/articles/rental-market-pressures-explained-supply-demand-and-rents.html" class="related-card"><h4 class="font-bold mb-1">Rental Market Pressures Explained: Supply, Demand and Rents</h4><p class="text-sm text-slate-500">Related read</p></a>
-<a href="/articles/market-downturns-how-australian-property-has-historically-responded.html" class="related-card"><h4 class="font-bold mb-1">Market Downturns: How Australian Property Has Historically Responded</h4><p class="text-sm text-slate-500">Related read</p></a>
-<a href="/articles/lessons-from-investors-who-bought-early-in-growth-corridors.html" class="related-card"><h4 class="font-bold mb-1">Lessons from Investors Who Bought Early in Growth Corridors</h4><p class="text-sm text-slate-500">Related read</p></a></div></section>
+<section class="max-w-3xl mx-auto px-6 py-8"><h3 class="text-lg font-extrabold mb-2">Related Articles</h3><div class="related-grid"><a href="australias-2026-housing-market-outlook-what-the-data-is-signalling.html" class="related-card"><h4 class="font-bold mb-1">Australia’s 2026 Housing Market Outlook: What the Data Is Signalling</h4><p class="text-sm text-slate-500">Related read</p></a>
+<a href="rental-market-pressures-explained-supply-demand-and-rents.html" class="related-card"><h4 class="font-bold mb-1">Rental Market Pressures Explained: Supply, Demand and Rents</h4><p class="text-sm text-slate-500">Related read</p></a>
+<a href="market-downturns-how-australian-property-has-historically-responded.html" class="related-card"><h4 class="font-bold mb-1">Market Downturns: How Australian Property Has Historically Responded</h4><p class="text-sm text-slate-500">Related read</p></a></div></section>
 <section class="max-w-3xl mx-auto px-6 py-8 flex items-center gap-3">
-  <a href="/resources.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
+  <a href="../resources.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
     <span class="material-symbols-outlined text-sm">arrow_back</span>
     Back to Resources
   </a>
-  <a href="/resources.html#pillar-market-trends" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
+  <a href="../resources.html#pillar-market-trends" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
     <span class="material-symbols-outlined text-sm">category</span>
     Back to Market Trends &amp; Analysis
   </a>
