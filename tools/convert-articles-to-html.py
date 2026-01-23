@@ -89,22 +89,36 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <script>
-  tailwind.config = {{
-    darkMode: 'class',
-    theme: {{
-      extend: {{
-        fontFamily: {{
-          sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+      tailwind.config = {{
+        darkMode: "class",
+        theme: {{
+          extend: {{
+            colors: {{
+              primary: "#000000",
+              accent: "#6366f1",
+              "background-light": "#fcfcfd",
+              "background-dark": "#0a0a0a",
+              "card-light": "#ffffff",
+              "card-dark": "#161616",
+              "pastel-orange": "#fff4e6",
+              "pastel-blue": "#f0f4ff",
+              "pastel-purple": "#f8f5ff",
+              "pastel-green": "#f0fdf4",
+              "pastel-red": "#fef2f2",
+            }},
+            fontFamily: {{
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            }},
+            borderRadius: {{
+              DEFAULT: "1.5rem",
+              "2xl": "2.5rem",
+              "3xl": "3rem",
+            }},
+          }},
         }},
-        colors: {{
-          primary: '#8b5cf6',
-          'background-light': '#ffffff',
-          'background-dark': '#0f172a'
-        }}
-      }}
-    }}
-  }}
-</script>
+      }};
+    </script>
 <link rel="canonical" href="/articles/{slug}.html">
 <meta name="description" content="{description}">
 <meta property="og:type" content="article">
@@ -116,9 +130,23 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="/assets/screenshots/platform-screenshot.png">
+<style id="nav-support-styles">
+.nav-submenu{{display:none}}
+.group:hover>.nav-submenu,.group:focus-within>.nav-submenu,.group.open>.nav-submenu{{display:block}}
+.nav-toggle{{cursor:pointer}}
+</style>
+<style id="navx-styles">
+.navx-sub{{display:none}}
+.navx-group:hover>.navx-sub,.navx-group:focus-within>.navx-sub,.navx-group.open>.navx-sub{{display:block}}
+.navx-toggle{{cursor:pointer}}
+.navx-overlay{{display:none}}
+.navx-drawer{{transform:translateX(100%); transition:transform .2s ease}}
+.navx-open .navx-overlay{{display:block}}
+.navx-open .navx-drawer{{transform:translateX(0)}}
+</style>
 <script id="navx-script" src="../tools/navx-accessible.js"></script>
-<link rel="stylesheet" href="../tools/ux.css"/>
 <script src="../tools/analytics.js"></script>
+<link rel="stylesheet" href="../tools/ux.css"/>
 <style>
   main h1 {{
     font-size: 2.25rem;
@@ -211,26 +239,26 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans">
 <a href="#content" class="skip-link">Skip to content</a>
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="../index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="../proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
-        <img src="../proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/>
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/>
         <span class="sr-only">Proppy</span>
       </a>
     </div>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
       <a class="hover:text-primary transition-colors" href="../index.html">Home</a>
 <div class="navx-group relative">
-  <a class="navx-toggle hover:text-primary transition-colors" href="../how-it-works.html" role="button" aria-expanded="false">How It Works</a>
+  <a class="navx-toggle hover:text-primary transition-colors" href="how-it-works.html" role="button" aria-expanded="false">How It Works</a>
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
-    <a href="../how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
+    <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
 <a href="../technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
   </div>
 </div>
 <div class="navx-group relative">
-  <a class="navx-toggle hover:text-primary transition-colors" href="javascript:void(0)" role="button" aria-expanded="false">Solutions</a>
+  <a class="navx-toggle hover:text-primary transition-colors" href="../javascript:void(0)" role="button" aria-expanded="false">Solutions</a>
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="../advantage.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Advantage</a>
 <a href="../sourcing.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Sourcing</a>
@@ -239,7 +267,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
   </div>
 </div>
 <div class="navx-group relative">
-  <a class="navx-toggle hover:text-primary transition-colors" href="javascript:void(0)" role="button" aria-expanded="false">Success</a>
+  <a class="navx-toggle hover:text-primary transition-colors" href="../javascript:void(0)" role="button" aria-expanded="false">Success</a>
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="../results.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Results</a>
 <a href="../guarantee.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Guarantee</a>
@@ -247,7 +275,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 </div>
 <a class="hover:text-primary transition-colors" href="../resources.html">Resources</a>
 <div class="navx-group relative">
-  <a class="navx-toggle hover:text-primary transition-colors" href="javascript:void(0)" role="button" aria-expanded="false">Get Started</a>
+  <a class="navx-toggle hover:text-primary transition-colors" href="../javascript:void(0)" role="button" aria-expanded="false">Get Started</a>
   <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
     <a href="../pricing.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Pricing</a>
 <a href="../book.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Book</a>
@@ -262,11 +290,11 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
       </button>
     </div>
   </div>
-  <div class="fixed inset-0 navx-overlay bg-black/40 hidden"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4 hidden">
+  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="../index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-        <img src="../proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/>
       </a>
       <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
         <span class="material-symbols-outlined">close</span>
@@ -276,7 +304,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <li class="border-b border-slate-200 dark:border-slate-800">
 <button class="navx-acc w-full flex items-center justify-between py-3 text-left font-semibold">How It Works<span class="material-symbols-outlined text-base">expand_more</span></button>
 <ul class="navx-acc-body hidden pl-3 pb-3">
-<li><a class="block py-2" href="../how-it-works.html">How It Works</a></li>
+<li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
 <li><a class="block py-2" href="../technology.html">Technology</a></li>
 </ul>
 </li>
@@ -304,9 +332,8 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
 <li><a class="block py-2" href="../book.html">Book</a></li>
 <li><a class="block py-2" href="../contact.html">Contact</a></li>
 </ul>
-</li>
-</ul>
-<div class="mt-6"><a href="../book.html" class="block px-5 py-3 text-sm text-center font-semibold text-white bg-slate-900 dark:bg-white dark:text-slate-900 rounded-full">Get Started</a></div>
+</li></ul>
+    <a href="../book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Get Started</a>
   </div>
 </nav>
 
@@ -362,7 +389,7 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
       <div class="flex gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
         <a class="hover:text-primary transition-colors" href="../privacy.html">Privacy Policy</a>
         <a class="hover:text-primary transition-colors" href="../terms.html">Terms of Service</a>
-        <a class="hover:text-primary transition-colors" href="../site-map.html">Site Map</a>
+        <a class="hover:text-primary transition-colors" href="site-map.html">Site Map</a>
       </div>
     </div>
   </div>
