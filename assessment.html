@@ -37,6 +37,20 @@
     .step-card{border:1px solid rgb(226 232 240);border-radius:1.5rem}
     .dark .step-card{border-color:rgb(30 41 59)}
   </style>
+  <style id="nav-support-styles">
+  .nav-submenu{display:none}
+  .group:hover>.nav-submenu,.group:focus-within>.nav-submenu,.group.open>.nav-submenu{display:block}
+  .nav-toggle{cursor:pointer}
+  </style>
+  <style id="navx-styles">
+  .navx-sub{display:none}
+  .navx-group:hover>.navx-sub,.navx-group:focus-within>.navx-sub,.navx-group.open>.navx-sub{display:block}
+  .navx-toggle{cursor:pointer}
+  .navx-overlay{display:none}
+  .navx-drawer{transform:translateX(100%); transition:transform .2s ease}
+  .navx-open .navx-overlay{display:block}
+  .navx-open .navx-drawer{transform:translateX(0)}
+  </style>
   <script id="navx-script" src="tools/navx-accessible.js"></script>
   <script src="tools/analytics.js"></script>
   <link rel="stylesheet" href="tools/ux.css"/>
