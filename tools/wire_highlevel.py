@@ -167,6 +167,9 @@ def build_snippet(cfg: dict) -> str:
 })();</script>
 """)
 
+    # GitHub Pages path fix (rewrite absolute /assets and /page links when served from repo pages)
+    parts.append('<script src="assets/gh-pages-path.js"></script>')
+
     if cfg.get('utm_passthrough'):
         parts.append("""
 <script>(function(){
