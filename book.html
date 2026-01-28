@@ -359,8 +359,15 @@
     var frame = document.getElementById('booking-frame');
     if (frame && (qs.get('name') || qs.get('email'))){
       var u = new URL(frame.src, location.href);
-      if (qs.get('name') && !u.searchParams.get('name')) u.searchParams.set('name', qs.get('name'));
-      if (qs.get('email') && !u.searchParams.get('email')) u.searchParams.set('email', qs.get('email'));
+      var name = qs.get('name')||''; var email = qs.get('email')||'';
+      if (name && !u.searchParams.get('name')) u.searchParams.set('name', name);
+      if (email && !u.searchParams.get('email')) u.searchParams.set('email', email);
+      // also try first_name / last_name for GetHighLevel if supported
+      if (name && (!u.searchParams.get('first_name') || !u.searchParams.get('last_name'))){
+        var parts = name.split(/\s+/); var first = parts.shift()||''; var last = parts.join(' ');
+        if (!u.searchParams.get('first_name')) u.searchParams.set('first_name', first);
+        if (!u.searchParams.get('last_name')) u.searchParams.set('last_name', last);
+      }
       if (frame.src !== u.toString()) frame.src = u.toString();
     }
   }catch(e){}
