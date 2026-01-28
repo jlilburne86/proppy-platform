@@ -339,7 +339,7 @@
     const beds = Number(answers.brief.beds_min||0);
     const rb = String(row.bedrooms||'All');
     if (rb!=='All'){ const nb = parseInt(rb,10); if (!isNaN(nb) && nb < beds) return false; }
-    // budget
+    // budget with tolerance band (±15%) and forgiving when no band set
     const band = answers.finance.price_band || '';
     const tp = Number(row.typicalPrice||0);
     if (band && tp){
@@ -349,7 +349,10 @@
         const unit = m[3]||'';
         const toNum = (v)=> /m/i.test(unit)? v*1_000_000 : v*1_000;
         const lo = toNum(a), hi = toNum(b);
-        if (tp < lo || tp > hi) return false;
+        const tol = 0.15; // 15% tolerance
+        const loT = Math.max(0, lo*(1-tol));
+        const hiT = hi*(1+tol);
+        if (tp < loT || tp > hiT) return false;
       }
     }
     // state filter
@@ -388,21 +391,26 @@
     // seeded sort helper
     const seed = 137;
     const h = s=>{ let x=seed; for(let i=0;i<s.length;i++){ x = (x*31 + s.charCodeAt(i)) & 0xffffffff; } return (x>>>0)/0xffffffff; };
-    // pick up to 2 per state, prefer user-selected states first
+    // pick up to N per state (default 10), prefer user-selected states first
     const picks = [];
     const sel = (answers.locations.states||[]).filter(s=> s && s!=='Australia-wide').map(s=> s.toUpperCase());
     const allStates = Array.from(byState.keys());
     const orderedStates = sel.length? [...sel.filter(s=> byState.has(s)), ...allStates.filter(s=> !sel.includes(s))] : allStates;
+    const perState = 10;
     for (const st of orderedStates){
       const arr = byState.get(st)||[];
       if (!arr.length) continue;
-      const suburbFirst = arr.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || (b.avgScore||0)-(a.avgScore||0));
+      // Relax further if strict filter produced too few rows: include all types/bed cohorts
+      let suburbFirst = arr;
+      if (arr.length < perState){
+        suburbFirst = arr; // already minimal; otherwise the matchesCohort filter above limits type/bed/budget
+      }
+      suburbFirst = suburbFirst.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
       const shuffled = suburbFirst.sort((a,b)=> h(String(a.slug||a.area||'')) - h(String(b.slug||b.area||'')));
-      shuffled.slice(0,2).forEach(x=> { if (picks.length<8) picks.push(x); });
-      if (picks.length>=8) break; // safety cap before final limit
+      shuffled.slice(0, perState).forEach(x=> picks.push(x));
     }
-    // limit total cards to 4
-    const finalPicks = picks.slice(0,4);
+    // limit total cards overall to 40 to keep UI snappy (4 states * 10 if many)
+    const finalPicks = picks.slice(0,40);
     const cards = finalPicks.map((r,i)=>{
       const label = (String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'')|| `${r.slug||''}`).replace(/\s+\(.*\)$/, '').trim();
       const price5 = bandFrom(r.price5yGrowth, i);
@@ -461,6 +469,38 @@
     if (answers.locations.open_to_suggestions!==false){ out.push({ icon:'travel_explore', title:'Nationwide coverage', desc:'We include areas beyond the familiar when fundamentals align.' }); }
     else if (answers.locations.acceptability_drivers && answers.locations.acceptability_drivers.length){ out.push({ icon:'tune', title:'Location constraints', desc: answers.locations.acceptability_drivers.join(', ') }); }
     return out.slice(0,5);
+  }
+
+  function numFrom(field){
+    if (field===undefined || field===null) return NaN;
+    if (typeof field === 'number') return field;
+    const m = String(field).match(/-?\d+(?:\.\d+)?/);
+    return m? parseFloat(m[0]) : NaN;
+  }
+
+  function goalSortScore(row){
+    const goals = (answers.motivation.goals||[]).map(String);
+    const strat = (answers.strategy && answers.strategy.goal) || '';
+    const price5 = numFrom(row.price5yGrowth);
+    const price10 = numFrom(row.price10yGrowth);
+    const rent5 = numFrom(row.rent5yGrowth);
+    const yieldNow = numFrom(row.grossYield);
+    const cg = numFrom(row.cgScore||row.avgScore||0);
+    const cf = numFrom(row.cfScore||row.avgScore||0);
+    // weights by goal/strategy
+    if (goals.includes('Capital growth') || strat==='High Growth'){
+      return (isNaN(price5)?0:price5)*1.0 + (isNaN(price10)?0:price10)*0.4 + (isNaN(cg)?0:cg)*0.5;
+    }
+    if (goals.includes('Rental yield') || goals.includes('Cashflow now') || strat==='High Yield'){
+      return (isNaN(yieldNow)?0:yieldNow)*1.0 + (isNaN(rent5)?0:rent5)*0.5 + (isNaN(cf)?0:cf)*0.3;
+    }
+    if (goals.includes('Balanced') || goals.includes('Portfolio scale') || strat==='Balanced'){
+      const a = numFrom(row.avgScore||0);
+      return (isNaN(a)?0:a)*1.0 + (isNaN(price5)?0:price5)*0.3 + (isNaN(yieldNow)?0:yieldNow)*0.3;
+    }
+    // default balanced if none selected
+    const a = numFrom(row.avgScore||0);
+    return (isNaN(a)?0:a)*1.0 + (isNaN(price5)?0:price5)*0.3 + (isNaN(yieldNow)?0:yieldNow)*0.3;
   }
 
   function computeSignals(){
