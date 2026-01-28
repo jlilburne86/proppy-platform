@@ -38,23 +38,21 @@
   }
 
   function computeFlow(){
-    // Derive one-question-per-screen order by step groups; also compute activeGroups for progress
+    // One screen per group; record activeGroups and stepOrder as groups
     const visible = window.ProppyEngine.visibleNodes(schema, answers);
-    const order = [];
     const groups = [];
     for (const step of schema.steps){
       const nodesInGroup = visible.filter(n=> n.step_group === step.group);
-      if (nodesInGroup.length){ groups.push(step.group); nodesInGroup.forEach(n=> order.push(n.id)); }
-      if (step.id==='comparables'){ groups.push('comparables'); order.push('comparables'); }
-      if (step.id==='summary'){ groups.push('summary'); order.push('summary'); }
+      if (nodesInGroup.length){ groups.push(step.group); }
+      if (step.id==='comparables'){ groups.push('comparables'); }
     }
-    stepOrder = order;
     activeGroups = groups;
+    stepOrder = groups;
   }
 
   function render(){
     computeFlow();
-    const curId = stepOrder[idx]||'summary';
+    const curId = stepOrder[idx]||activeGroups[activeGroups.length-1];
     const root = $('#step-root');
     root.innerHTML = '';
     const head = document.createElement('div');
@@ -62,8 +60,7 @@
     head.innerHTML = `<div class=\"mb-4\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p></div>`;
     root.appendChild(head);
     if (curId==='comparables') root.appendChild(renderComparables());
-    else if (curId==='summary') root.appendChild(renderSummary());
-    else root.appendChild(renderQuestion(curId));
+    else root.appendChild(renderGroup(curId));
     setProgress();
     // Advance on Enter for non-textarea inputs
     root.onkeydown = (ev)=>{
@@ -95,17 +92,21 @@
     return '';
   }
 
-  function renderQuestion(id){
-    const node = schema.nodes.find(n=> n.id===id);
+  function renderGroup(group){
     const wrap = document.createElement('div');
-    wrap.className = 'space-y-3';
-    const label = document.createElement('label');
-    label.className = 'text-sm'; label.textContent = node.prompt;
-    wrap.appendChild(label);
-    const path = node.maps_to_field;
-    const v = get(answers, path);
-    const input = buildControl(node, v);
-    wrap.appendChild(input);
+    wrap.className = 'space-y-4';
+    const nodes = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===group);
+    nodes.forEach(node=>{
+      const row = document.createElement('div');
+      row.className = 'space-y-2';
+      const label = document.createElement('label');
+      label.className = 'text-sm'; label.textContent = node.prompt;
+      row.appendChild(label);
+      const v = get(answers, node.maps_to_field);
+      const input = buildControl(node, v);
+      row.appendChild(input);
+      wrap.appendChild(row);
+    });
     return wrap;
   }
 
@@ -260,8 +261,9 @@
 
   async function goNextIfValid(fromClick){
     const errs = window.ProppyEngine.validate(schema, answers);
-    const curId = stepOrder[idx];
-    const curErr = errs.find(e=> e.id===curId);
+    const curGroup = stepOrder[idx];
+    const groupNodeIds = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===curGroup).map(n=> n.id);
+    const curErr = errs.find(e=> groupNodeIds.includes(e.id));
     if (curErr) { if (fromClick) alert('Please complete required fields.'); return false; }
     track('assessment_step_complete', { step_id: curId });
     if (idx < stepOrder.length-1){ idx++; render(); return true; }
