@@ -61,7 +61,9 @@
     root.innerHTML = '';
     const head = document.createElement('div');
     const gInfo = groupProgress(curId);
-    head.innerHTML = `<div class=\"mb-4 animate-fadeIn\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p></div>`;
+    const hp = proppyHelp(curId);
+    const helpLine = hp? `<p class=\"text-xs text-slate-500 dark:text-slate-400 mt-1\">How Proppy helps: ${hp}</p>` : '';
+    head.innerHTML = `<div class=\"mb-4 animate-fadeIn\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p>${helpLine}</div>`;
     root.appendChild(head);
     if (curId==='comparables') root.appendChild(renderComparables());
     else root.appendChild(renderGroup(curId));
@@ -94,6 +96,27 @@
     if (id==='target_states') return 'Choose states to consider, or keep it Australia‑wide for the broadest historical view.';
     if (id==='top_priorities') return 'Fast path: we’ll prioritise constraints to accelerate alignment.';
     return '';
+  }
+
+  function proppyHelp(groupId){
+    switch(groupId){
+      case 'start':
+        return 'We’re buy‑side only, data‑led, and held to outcomes (see our guarantee). Your brief shapes everything we show next.';
+      case 'location':
+        return 'We consider nationwide signals and historical outcomes to surface candidate areas that fit your brief—no hype, no predictions.';
+      case 'goals':
+        return 'We map goals to proven strategies (Set & Forget vs Value Add) and align constraints so you see the right stock sooner.';
+      case 'timing':
+        return 'Timing and experience guide how fast we move and how we negotiate; hot paths get streamlined sourcing.';
+      case 'finance':
+        return 'Budget and pre‑approval sharpen your target list and strengthen negotiation; we can introduce lending if needed.';
+      case 'property':
+        return 'We avoid oversupplied stock and poor strata; filters are tuned to scarcity, rentability, and long‑term resilience.';
+      case 'comparables':
+        return 'Your examples calibrate condition and location expectations so the first shortlist is on‑target.';
+      default:
+        return '';
+    }
   }
 
   function renderGroup(group){
