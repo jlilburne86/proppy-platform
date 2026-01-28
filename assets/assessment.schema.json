@@ -1,0 +1,74 @@
+{
+  "rule_version": "v1.0.0",
+  "steps": [
+    {"id": "client_start", "title": "Let’s define your brief.", "group": "start"},
+    {"id": "motivation", "title": "Why invest?", "group": "why"},
+    {"id": "readiness", "title": "When do you want to act?", "group": "readiness"},
+    {"id": "finance", "title": "Finance snapshot (ranges are fine)", "group": "finance"},
+    {"id": "strategy", "title": "Strategy", "group": "strategy"},
+    {"id": "requirements", "title": "Property requirements", "group": "what"},
+    {"id": "location", "title": "Where should we scan?", "group": "where"},
+    {"id": "risk_success", "title": "Risk & 5‑year success", "group": "risk"},
+    {"id": "comparables", "title": "Share up to 3 example properties (optional)", "group": "comparables"},
+    {"id": "summary", "title": "Your Investment Brief", "group": "summary"}
+  ],
+  "nodes": [
+    {"id":"first_name","prompt":"First name","type":"text","maps_to_field":"client.first_name","step_group":"start"},
+    {"id":"last_name","prompt":"Last name","type":"text","maps_to_field":"client.last_name","step_group":"start"},
+    {"id":"email","prompt":"Email","type":"text","validation":{"pattern":"[^@\n]+@[^@\n]+\.[^@\n]+"},"required_when":{"const":true},"maps_to_field":"client.email","step_group":"start"},
+    {"id":"mobile","prompt":"Mobile","type":"text","maps_to_field":"client.mobile","step_group":"start"},
+    {"id":"current_location","prompt":"Current location (state/country)","type":"text","maps_to_field":"client.location","step_group":"start"},
+
+    {"id":"goals","prompt":"Primary goals","type":"multi_select","options":["Capital growth","Rental yield","Balanced","Cashflow now","Portfolio scale"],"required_when":{"const":true},"maps_to_field":"motivation.goals","step_group":"why"},
+    {"id":"horizon","prompt":"Time horizon","type":"single_select","options":["Short","Medium","Long"],"required_when":{"const":true},"maps_to_field":"motivation.horizon","step_group":"why"},
+    {"id":"experience","prompt":"Experience level","type":"single_select","options":["First‑time","Experienced","Professional"],"maps_to_field":"motivation.experience","step_group":"why"},
+    {"id":"risk_tol","prompt":"Risk tolerance","type":"single_select","options":["Conservative","Moderate","Aggressive"],"required_when":{"const":true},"maps_to_field":"motivation.risk","step_group":"why"},
+
+    {"id":"timeline","prompt":"Timeline","type":"single_select","options":["Now","1–3 months","3–6 months","6–12 months"],"required_when":{"const":true},"maps_to_field":"engagement.timeline","step_group":"readiness"},
+
+    {"id":"price_band","prompt":"Purchase price (range)","type":"single_select","options":["<500k","500–700k","700–900k","900k–1.2M","1.2–1.5M","1.5M+"],"required_when":{"const":true},"maps_to_field":"finance.price_band","step_group":"finance"},
+    {"id":"deposit_band","prompt":"Deposit amount (range)","type":"single_select","options":["<50k","50–100k","100–200k","200–300k","300k+"],"required_when":{"const":true},"maps_to_field":"finance.deposit_band","step_group":"finance"},
+    {"id":"deposit_source","prompt":"Deposit source","type":"single_select","options":["Cash","Equity","Cash + Equity","Not sure"],"maps_to_field":"finance.deposit_source","step_group":"finance"},
+    {"id":"borrowing_band","prompt":"Borrowing capacity (range)","type":"single_select","options":["<400k","400–600k","600–800k","800k–1.0M","1.0M+"],"maps_to_field":"finance.borrowing_band","step_group":"finance"},
+    {"id":"preapproval","prompt":"Pre-approval status","type":"single_select","options":["Not required","Pending","Obtained","Expired","Need help"],"maps_to_field":"finance.preapproval","step_group":"finance"},
+    {"id":"preapproval_amount","prompt":"Pre-approval amount","type":"number","show_when":{"in":["finance.preapproval",["Obtained","Expired"]]},"maps_to_field":"finance.preapproval_amount","step_group":"finance"},
+    {"id":"preapproval_expiry","prompt":"Pre-approval expiry","type":"date","show_when":{"in":["finance.preapproval",["Obtained","Expired"]]},"required_when":{"in":["finance.preapproval",["Obtained","Expired"]]},"maps_to_field":"finance.preapproval_expiry","step_group":"finance"},
+
+    {"id":"investment_type","prompt":"Investment type","type":"single_select","options":["Set & Forget","Value Add","Development"],"required_when":{"const":true},"maps_to_field":"strategy.investment_type","step_group":"strategy"},
+    {"id":"strategy_goal","prompt":"Strategy goal","type":"single_select","options":["High Yield","High Growth","Balanced"],"required_when":{"const":true},"maps_to_field":"strategy.goal","step_group":"strategy"},
+    {"id":"target_yield","prompt":"Target yield %","type":"number","show_when":{"in":["strategy.goal",["High Yield","Balanced"]]},"maps_to_field":"strategy.target_yield","step_group":"strategy"},
+    {"id":"target_growth","prompt":"Target growth %","type":"number","show_when":{"in":["strategy.goal",["High Growth","Balanced"]]},"maps_to_field":"strategy.target_growth","step_group":"strategy"},
+    {"id":"reno_budget","prompt":"Reno budget","type":"number","show_when":{"eq":["strategy.investment_type","Value Add"]},"required_when":{"eq":["strategy.investment_type","Value Add"]},"maps_to_field":"strategy.reno_budget","step_group":"strategy"},
+    {"id":"reno_scope","prompt":"Reno scope","type":"single_select","options":["Cosmetic","Structural"],"show_when":{"eq":["strategy.investment_type","Value Add"]},"maps_to_field":"strategy.reno_scope","step_group":"strategy"},
+    {"id":"dev_experience","prompt":"Development experience","type":"single_select","options":["None","Some","Extensive"],"show_when":{"eq":["strategy.investment_type","Development"]},"maps_to_field":"strategy.dev_experience","step_group":"strategy"},
+    {"id":"dev_planning_risk","prompt":"Planning risk tolerance","type":"single_select","options":["Low","Medium","High"],"show_when":{"eq":["strategy.investment_type","Development"]},"maps_to_field":"strategy.dev_planning_risk","step_group":"strategy"},
+    {"id":"dev_holding","prompt":"Holding tolerance","type":"single_select","options":["Low","Medium","High"],"show_when":{"eq":["strategy.investment_type","Development"]},"maps_to_field":"strategy.dev_holding","step_group":"strategy"},
+
+    {"id":"property_types","prompt":"Property types","type":"multi_select","options":["House","Townhouse","Villa","Unit/Apartment","Dual income","Land-dev"],"required_when":{"const":true},"maps_to_field":"brief.property_types","step_group":"what"},
+    {"id":"beds_min","prompt":"Bedrooms min","type":"number","maps_to_field":"brief.beds_min","step_group":"what"},
+    {"id":"beds_max","prompt":"Bedrooms max","type":"number","maps_to_field":"brief.beds_max","step_group":"what"},
+    {"id":"baths_min","prompt":"Bathrooms min","type":"number","maps_to_field":"brief.baths_min","step_group":"what"},
+    {"id":"baths_max","prompt":"Bathrooms max","type":"number","maps_to_field":"brief.baths_max","step_group":"what"},
+    {"id":"construction","prompt":"Construction preference","type":"single_select","options":["New","Established","Both"],"maps_to_field":"brief.construction","step_group":"what"},
+    {"id":"land_min","prompt":"Land size min (m²)","type":"number","show_when":{"includes":["brief.property_types","House|Townhouse|Villa"]},"maps_to_field":"brief.land_min","step_group":"what"},
+    {"id":"land_max","prompt":"Land size max (m²)","type":"number","show_when":{"includes":["brief.property_types","House|Townhouse|Villa"]},"maps_to_field":"brief.land_max","step_group":"what"},
+    {"id":"strata_tol","prompt":"Strata tolerance","type":"single_select","options":["Low","Medium","High"],"show_when":{"includes":["brief.property_types","Unit/Apartment"]},"required_when":{"includes":["brief.property_types","Unit/Apartment"]},"maps_to_field":"brief.strata_tolerance","step_group":"what"},
+    {"id":"building_style","prompt":"Building style preference","type":"single_select","options":["Low-rise","Mid-rise","High-rise","No preference"],"show_when":{"includes":["brief.property_types","Unit/Apartment"]},"maps_to_field":"brief.building_style","step_group":"what"},
+    {"id":"dual_config","prompt":"Dual-income config","type":"single_select","options":["House + Granny flat","Duplex","Other"],"show_when":{"includes":["brief.property_types","Dual income"]},"required_when":{"includes":["brief.property_types","Dual income"]},"maps_to_field":"brief.dual_config","step_group":"what"},
+    {"id":"features","prompt":"Desired features (optional)","type":"text","maps_to_field":"brief.features","step_group":"what"},
+    {"id":"additional_reqs","prompt":"Additional requirements (optional)","type":"text","maps_to_field":"brief.additional_requirements","step_group":"what"},
+
+    {"id":"target_states","prompt":"Target states","type":"multi_select","options":["NSW","VIC","QLD","SA","WA","TAS","ACT","NT"],"required_when":{"const":true},"maps_to_field":"locations.states","step_group":"where"},
+    {"id":"regions","prompt":"Regions (optional)","type":"text","maps_to_field":"locations.regions","step_group":"where"},
+    {"id":"suburbs","prompt":"Suburbs (optional)","type":"text","maps_to_field":"locations.suburbs","step_group":"where"},
+    {"id":"proximity","prompt":"Proximity (optional)","type":"text","maps_to_field":"locations.proximity","step_group":"where"},
+    {"id":"open_to_suggestions","prompt":"Open to data-led suggestions","type":"toggle","maps_to_field":"locations.open_to_suggestions","step_group":"where"},
+    {"id":"accept_drivers","prompt":"Location acceptability drivers (pick up to 3)","type":"multi_select","options":["Rent growth","Low vacancy","Infrastructure","Price point","Schools","Commute"],"show_when":{"eq":["locations.open_to_suggestions",false]},"required_when":{"eq":["locations.open_to_suggestions",false]},"validation":{"max":3},"maps_to_field":"locations.acceptability_drivers","step_group":"where"},
+
+    {"id":"risk","prompt":"Risk tolerance","type":"single_select","options":["Conservative","Moderate","Aggressive"],"required_when":{"const":true},"maps_to_field":"risk.tolerance","step_group":"risk"},
+    {"id":"success_def","prompt":"What would success look like in 5 years?","type":"text","maps_to_field":"risk.success","step_group":"risk"},
+
+    {"id":"comparables","prompt":"Example properties","type":"group","maps_to_field":"comparables","step_group":"comparables"}
+  ]
+}
+

@@ -4,12 +4,23 @@ export default {
       const url = new URL(request.url);
       const path = url.pathname.replace(/^\/api\//, '/');
       if (request.method === 'OPTIONS') return new Response('', cors());
+      if (path.startsWith('/assessment/resume/') && request.method === 'GET') {
+        const token = path.split('/').pop();
+        // Token lookup: scan drafts and match token (KV key list requires Durable Objects; store secondary index)
+        // Simplified: store token->id pointer
+        const id = await env.ASSESS_KV.get(`token:${token}`);
+        if (!id) return json({ error:'invalid_token' }, 404);
+        const current = await env.ASSESS_KV.get(`draft:${id}`, { type:'json' });
+        if (!current) return json({ error:'not_found' }, 404);
+        return json({ draft_id: id, data: current.data });
+      }
       if (path === '/assessment/draft' && request.method === 'POST') {
         const data = await request.json();
         const id = cryptoRandomId();
         const token = cryptoRandomId();
         const now = Date.now();
         await env.ASSESS_KV.put(`draft:${id}`, JSON.stringify({ data, created: now, updated: now, token }), { expirationTtl: 60 * 60 * 24 * 14 });
+        await env.ASSESS_KV.put(`token:${token}`, id, { expirationTtl: 60 * 60 * 24 * 14 });
         const base = env.PUBLIC_BASE_URL || `${url.protocol}//${url.host}`;
         return json({ draft_id: id, resume_token: token, resume_url: `${base}/assessment.html?resume=${token}`, expires_at: now + 14*864e5 });
       }
@@ -25,11 +36,14 @@ export default {
       }
       if (path === '/assessment/submit' && request.method === 'POST') {
         const body = await request.json();
-        const brief = body && body.brief || body || {};
-        const route = computeRouting(brief);
+        const answers = body && body.answers || {};
+        const analytics = body && body.analytics || {};
+        const rule_version = body && body.rule_version || 'v1.0.0';
+        const lead = computeLead(answers);
         const engagement_id = `eng-${cryptoRandomId().slice(0,8)}`;
-        await env.ASSESS_KV.put(`engagement:${engagement_id}`, JSON.stringify({ brief, route, created: Date.now() }), { expirationTtl: 60 * 60 * 24 * 365 });
-        return json({ engagement_id, priority: route.priority, next_action: route.next });
+        const payload = { answers, analytics, rule_version, lead, created: Date.now(), status:'submitted' };
+        await env.ASSESS_KV.put(`engagement:${engagement_id}`, JSON.stringify(payload), { expirationTtl: 60 * 60 * 24 * 365 });
+        return json({ engagement_id, priority: lead.priority, recommended_next_step: lead.recommended_next_step, reason_codes: lead.reason_codes, rule_version });
       }
       if (path === '/listing/preview' && request.method === 'GET') {
         const target = url.searchParams.get('url');
@@ -58,13 +72,26 @@ function cors() {
 function json(obj, status=200) { return new Response(JSON.stringify(obj), { status, headers: { 'content-type':'application/json', 'Access-Control-Allow-Origin': '*' } }); }
 function cryptoRandomId() { return [...crypto.getRandomValues(new Uint8Array(16))].map(b=>b.toString(16).padStart(2,'0')).join(''); }
 
-function computeRouting(b){
-  const soon = /^(Now|1–3 months)$/.test(b.timeline||'');
-  const fin = (b.preapproval==='In progress' || b.preapproval==='Obtained' || b.deposit_source==='Equity' || b.deposit_source==='Mix');
-  const stratSet = (b.strategy && !/^Not sure/.test(b.strategy));
-  if (soon && fin && stratSet) return { priority:'Hot', next:'book' };
-  if (stratSet && (b.timeline==='3–6 months' || (b.timeline && !fin))) return { priority:'Warm', next:'trial' };
-  return { priority:'Nurture', next:'report' };
+function computeLead(a){
+  let score = 0; const reasons = [];
+  const tl = get(a,'engagement.timeline');
+  const pre = get(a,'finance.preapproval');
+  const dep = get(a,'finance.deposit_source');
+  const exp = get(a,'motivation.experience');
+  const sugg = get(a,'locations.open_to_suggestions');
+  const comps = (get(a,'comparables')||[]).filter(Boolean).length;
+  if (/^(Now|1–3 months)$/.test(tl||'')) { score+=25; reasons.push('TL_SOON'); }
+  if (pre==='Obtained' || pre==='Pending' || pre==='Expired' || dep==='Equity' || dep==='Cash + Equity') { score+=20; reasons.push('FIN_READY'); }
+  if (exp==='Experienced' || exp==='Professional') { score+=10; reasons.push('EXP'); }
+  if (sugg===true || sugg===undefined) { score+=5; reasons.push('OPEN_SUGG'); }
+  if (comps>0) { score+=5; reasons.push('COMPS'); }
+  if (tl==='6–12 months') { score-=10; reasons.push('TL_LATER'); }
+  let priority='NURTURE'; if (score>=50) priority='HOT'; else if (score>=25) priority='WARM';
+  let next='REPORT_SHORTLIST';
+  if (pre==='Need help') next='FINANCE_INTRO';
+  else if (priority==='HOT') next='BOOK_CALL';
+  else if (priority==='WARM') next='SIGNUP_MATCHES';
+  return { score, priority, recommended_next_step: next, reason_codes: reasons };
 }
 
 function isAllowedPreview(target, list){
@@ -87,3 +114,4 @@ function extractOG(html){
   return { title, image, site };
 }
 
+function get(obj, path){ if(!path) return undefined; return path.split('.').reduce((o,k)=> (o&&o[k]!==undefined)? o[k]:undefined, obj); }
