@@ -13,6 +13,18 @@
       var c = m.getAttribute('content');
       if (c && c.startsWith('/')) m.setAttribute('content', repo + c);
     });
+    // If we are under a nested directory like /<repo>/articles/, fix relative header links (index.html, *.html)
+    if (parts.length >= 2) {
+      var prefixUp = '../';
+      // For safety, only adjust links inside header/nav and drawers
+      document.querySelectorAll('nav a[href]').forEach(a => {
+        var href = a.getAttribute('href')||'';
+        if (!href) return;
+        if (/^(https?:|mailto:|tel:|#|\.{2}\/|\/)/.test(href)) return;
+        if (/\.html?(#|$)/i.test(href)) {
+          a.setAttribute('href', prefixUp + href);
+        }
+      });
+    }
   } catch (e) {}
 })();
-
