@@ -270,6 +270,89 @@
     // Render scope chip
     const chip = $('#scope-chip'); if (chip) chip.textContent = scope;
     ul.innerHTML = items.map(i=> `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-accent">${esc(i.icon||'check_circle')}</span><div><div class="font-semibold">${esc(i.title)}</div><div class="text-slate-500 dark:text-slate-400 text-xs">${esc(i.desc)}</div></div></li>`).join('');
+    renderHistorical();
+  }
+
+  let _proppyData = null;
+  async function loadProppy(){ if (_proppyData) return _proppyData; try{ const r = await fetch(path('data/proppydata.json')); _proppyData = await r.json(); return _proppyData; }catch(e){ _proppyData=[]; return _proppyData; } }
+
+  function matchesCohort(row){
+    const type = (answers.brief.property_types||[])[0] || '';
+    const mapType = t=> t.includes('Unit')? 'Units' : 'Houses';
+    const rowType = (row.type||'').toLowerCase();
+    const wantType = mapType(type).toLowerCase();
+    if (type && rowType && rowType.indexOf(wantType)===-1) return false;
+    const beds = Number(answers.brief.beds_min||0);
+    const rb = String(row.bedrooms||'All');
+    if (rb!=='All'){ const nb = parseInt(rb,10); if (!isNaN(nb) && nb < beds) return false; }
+    // budget
+    const band = answers.finance.price_band || '';
+    const tp = Number(row.typicalPrice||0);
+    if (band && tp){
+      const m = band.match(/(\d+[\.,]?\d*)\s*[kKmM]?\s*[–-]\s*(\d+[\.,]?\d*)\s*([kKmM]?)/);
+      if (m){
+        const a = parseFloat(m[1].replace(',','')); const b = parseFloat(m[2].replace(',',''));
+        const unit = m[3]||'';
+        const toNum = (v)=> /m/i.test(unit)? v*1_000_000 : v*1_000;
+        const lo = toNum(a), hi = toNum(b);
+        if (tp < lo || tp > hi) return false;
+      }
+    }
+    // state filter
+    const states = answers.locations.states||[];
+    if (states.length){ const st = String(row.stateName||'').toUpperCase(); if (!states.includes(st)) return false; }
+    return true;
+  }
+
+  function bandFrom(str, jitter=0){
+    if (!str) return '—';
+    const n = parseFloat(String(str).replace('%',''));
+    if (isNaN(n)) return String(str);
+    const lo = Math.max(-100, n - (4 + jitter));
+    const hi = Math.min(200, n + (4 + jitter));
+    return `${lo.toFixed(0)}–${hi.toFixed(0)}%`;
+  }
+
+  async function renderHistorical(){
+    const box = document.getElementById('historical'); if (!box) return;
+    // Need minimum info
+    if (!answers.finance.price_band || !(answers.brief.property_types||[]).length || !answers.brief.beds_min){ box.classList.add('hidden'); return; }
+    const data = await loadProppy(); if (!data || !data.length){ box.classList.add('hidden'); return; }
+    // filter and score
+    const rows = data.filter(matchesCohort);
+    if (!rows.length){ box.classList.add('hidden'); return; }
+    const seed = 17;
+    const picks = rows.sort((a,b)=> (b.avgScore||0)-(a.avgScore||0)).slice(0,4);
+    const cards = picks.map((r,i)=>{
+      const label = (String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'')|| `${r.slug||''}`).replace(/\s+\(.*\)$/, '').trim();
+      const price5 = bandFrom(r.price5yGrowth, i);
+      const price10 = bandFrom(r.price10yGrowth, i);
+      const cagr = bandFrom(r.gsp5, i); // using gsp5 as proxy
+      const rent5 = bandFrom(r.rent5yGrowth, i);
+      const yieldNow = r.grossYield || '—';
+      const vacTrend = (parseFloat(String(r.stVacancyRate||'0'))<0)? 'Vacancy ↓' : 'Vacancy ↔';
+      const invTrend = (parseFloat(String(r.stInventory||'0'))<0)? 'Inventory ↓' : 'Inventory ↔';
+      const fit = r.avgScore || 0;
+      const why = [
+        `Budget aligned with typical entry (~${(r.typicalPrice||'').toLocaleString?.()||r.typicalPrice})`,
+        `Vacancy trend: ${vacTrend.replace(/\s.*/, '')}`,
+        `Inventory trend: ${invTrend.replace(/\s.*/, '')}`
+      ];
+      return `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">
+        <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full\">Fit ${fit}</span></div>
+        <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
+          <div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div>
+          <div>Price 10y: <span class=\"font-semibold\">${esc(price10)}</span></div>
+          <div>CAGR 5y: <span class=\"font-semibold\">${esc(cagr)}</span></div>
+          <div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>
+          <div>Yield now: <span class=\"font-semibold\">${esc(yieldNow)}</span></div>
+          <div>Risk: <span class=\"font-semibold\">${esc(vacTrend)}, ${esc(invTrend)}</span></div>
+        </div>
+        <ul class=\"mt-2 text-[11px] text-slate-500 dark:text-slate-400 list-disc pl-5\">${why.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>
+      </div>`;
+    }).join('');
+    document.getElementById('historical-cards').innerHTML = cards;
+    box.classList.remove('hidden');
   }
 
   function computeHighlights(){
