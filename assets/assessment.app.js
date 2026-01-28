@@ -42,14 +42,10 @@
   }
 
   function computeFlow(){
-    // One screen per group; record activeGroups and stepOrder as groups
-    const visible = window.ProppyEngine.visibleNodes(schema, answers);
-    const groups = [];
-    for (const step of schema.steps){
-      const nodesInGroup = visible.filter(n=> n.step_group === step.group);
-      if (nodesInGroup.length){ groups.push(step.group); }
-      if (step.id==='comparables'){ groups.push('comparables'); }
-    }
+    // One screen per group; include all step groups in order to avoid visibility edge-cases hiding the first page
+    const groups = (schema.steps||[]).map(s=> s.group);
+    // Ensure comparables present at end if defined separately
+    if (!groups.includes('comparables')) groups.push('comparables');
     activeGroups = groups;
     stepOrder = groups;
   }
