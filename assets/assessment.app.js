@@ -84,6 +84,24 @@
     $('#btn-back').disabled = idx===0;
     $('#btn-next').textContent = idx>=stepOrder.length-1? 'Finish' : 'Continue';
     track('assessment_step_view', { step_id: curId });
+    // Wire mobile sticky save action
+    const save2 = document.getElementById('cta-save');
+    if (save2 && !save2._wired){ save2._wired=true; save2.addEventListener('click', async ()=>{ await serverDraft('POST'); alert('Saved. You can resume later.'); }); }
+    // Wire inline email checklist capture
+    const sendBtn = document.getElementById('checklist-send');
+    if (sendBtn && !sendBtn._wired){
+      sendBtn._wired = true;
+      sendBtn.addEventListener('click', async ()=>{
+        const inp = document.getElementById('checklist-email');
+        const email = String(inp && inp.value || '').trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ alert('Please enter a valid email.'); if (inp) inp.focus(); return; }
+        try{
+          const res = await fetch('/api/assessment/checklist', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ email, answers, rule_version: schema.rule_version, analytics: gatherAttribution() }) });
+          if (res && res.ok){ alert('Sent! Check your inbox.'); }
+          else { alert('Could not send right now. Please try again.'); }
+        }catch(e){ alert('Network error. Please try again later.'); }
+      });
+    }
   }
 
   function titleFor(id){
