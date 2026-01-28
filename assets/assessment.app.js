@@ -420,12 +420,11 @@
     const hasBudget = !!(answers.finance.price_band);
     const hasBeds = !!(answers.brief.beds_min);
     const cardsHolder = document.getElementById('historical-cards');
-    // Gate: if not ready, show guidance instead of hiding
-    if (!(hasStates && hasBudget && hasBeds)){
+    // Gate: if not ready, show guidance instead of hiding (states not required)
+    if (!(hasBudget && hasBeds)){
       box.classList.remove('hidden');
       if (cardsHolder){
         const needs = [];
-        if (!hasStates) needs.push('Select one or more states');
         if (!hasBudget) needs.push('Set your budget range');
         if (!hasBeds) needs.push('Choose minimum bedrooms');
         cardsHolder.innerHTML = `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">\n  <div class=\"text-xs text-slate-500 dark:text-slate-400\">Complete the following to see matched suburbs:</div>\n  <ul class=\"mt-1 list-disc pl-5 text-xs text-slate-600 dark:text-slate-300\">${needs.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>\n</div>`;
@@ -514,7 +513,7 @@
       viewBtn._wired = true;
       viewBtn.addEventListener('click', async ()=>{
         try{
-          const map = await getShortlistMap(10);
+          const map = await getShortlistMap(3);
           const body = document.getElementById('shortlist-body');
           if (body){
             const sections = Object.keys(map).sort().map(st=>{
@@ -526,6 +525,17 @@
               return `<div class="mb-4"><div class="font-semibold mb-1">${st==='AU'?'Australia‑wide':esc(st)}</div><table class="w-full text-left"><thead><tr><th class="py-1 pr-2">Suburb</th><th class="py-1 pr-2">Price 5y</th><th class="py-1">Yield</th></tr></thead><tbody>${items}</tbody></table></div>`;
             }).join('');
             body.innerHTML = sections || '<div class="text-xs text-slate-500">No matches found.</div>';
+            // Override: show a single combined shortlist of top 3 overall
+            try{
+              const picks = map['AU'] || [].concat(...Object.values(map));
+              const top = (picks||[]).slice(0,3);
+              const items = top.map(r=>{
+                const area = String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'').replace(/\s+\(.*\)$/,'').trim();
+                const price5 = bandFrom(r.price5yGrowth, 0); const yieldNow = r.grossYield||'—';
+                return `<tr><td class="py-1 pr-2">${esc(area)}</td><td class="py-1 pr-2">${esc(price5)}</td><td class="py-1">${esc(yieldNow)}</td></tr>`;
+              }).join('');
+              body.innerHTML = `<div class="mb-2"><div class="font-semibold mb-1">Top 3 overall</div><table class="w-full text-left"><thead><tr><th class="py-1 pr-2">Suburb</th><th class="py-1 pr-2">Price 5y</th><th class="py-1">Yield</th></tr></thead><tbody>${items}</tbody></table></div>`;
+            }catch(e){}
           }
           const modal = document.getElementById('shortlist-modal');
           if (modal){ modal.classList.remove('hidden'); }
@@ -533,7 +543,7 @@
           if (close && !close._wired){ close._wired=true; close.addEventListener('click', ()=> modal.classList.add('hidden')); }
           const dl = document.getElementById('shortlist-download');
           if (dl && !dl._wired){ dl._wired=true; dl.addEventListener('click', async ()=>{
-            const map = await getShortlistMap(10);
+            const map = await getShortlistMap(3);
             const lines = ['State,Suburb,Price5y,Yield'];
             Object.keys(map).forEach(st=>{ map[st].forEach(r=>{ const area = String(r.area||'').replace(/<[^>]+>/g,'').replace(/,/g,' '); const p5 = bandFrom(r.price5yGrowth,0); const y=r.grossYield||''; lines.push([st, area, p5, y].join(',')); }); });
             const blob = new Blob([lines.join('\n')], {type:'text/csv;charset=utf-8'});
