@@ -352,6 +352,21 @@
 })();
 </script>
 <script>
+// Merge name/email into the booking iframe if present in query
+(function(){
+  try{
+    var qs = new URLSearchParams(location.search||'');
+    var frame = document.getElementById('booking-frame');
+    if (frame && (qs.get('name') || qs.get('email'))){
+      var u = new URL(frame.src, location.href);
+      if (qs.get('name') && !u.searchParams.get('name')) u.searchParams.set('name', qs.get('name'));
+      if (qs.get('email') && !u.searchParams.get('email')) u.searchParams.set('email', qs.get('email'));
+      if (frame.src !== u.toString()) frame.src = u.toString();
+    }
+  }catch(e){}
+})();
+</script>
+<script>
 (function(){
   try{
     var params = new URLSearchParams(location.search);

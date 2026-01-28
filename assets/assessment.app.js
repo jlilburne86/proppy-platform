@@ -120,6 +120,7 @@
     nodes.forEach(node=>{
       const row = document.createElement('div');
       row.className = 'space-y-2 animate-slideUp';
+      row.setAttribute('data-node-id', node.id);
       const label = document.createElement('label');
       label.className = 'text-sm'; label.textContent = node.prompt;
       row.appendChild(label);
@@ -505,7 +506,22 @@
     const curGroup = stepOrder[idx];
     const groupNodeIds = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===curGroup).map(n=> n.id);
     const curErr = errs.find(e=> groupNodeIds.includes(e.id));
-    if (curErr) { if (fromClick) alert('Please complete required fields.'); return false; }
+    if (curErr) {
+      // Inline error on the row
+      const row = document.querySelector(`[data-node-id="${curErr.id}"]`);
+      if (row){
+        let msg = 'Please complete this field.';
+        if (curErr.reason==='pattern') msg = 'Please enter a valid value.';
+        if (curErr.reason==='max') msg = 'Too many selections.';
+        let err = row.querySelector('.field-error');
+        if (!err){ err = document.createElement('div'); err.className = 'field-error text-xs text-rose-600'; row.appendChild(err); }
+        err.textContent = msg;
+        const focusEl = row.querySelector('input,select,textarea,button');
+        if (focusEl) focusEl.focus();
+      }
+      if (fromClick) track('validation_error', { id: curErr.id, reason: curErr.reason||'required' });
+      return false;
+    }
     track('assessment_step_complete', { step_id: curGroup });
     if (idx < stepOrder.length-1){ await analyzeThen(()=>{ idx++; render(); }); return true; }
     else {
@@ -525,7 +541,9 @@
       if (!root) { fn(); return; }
       const overlay = document.createElement('div');
       overlay.className = 'analyze-overlay bg-white/90 dark:bg-slate-900/90 flex items-center justify-center z-40';
-      overlay.innerHTML = `<div class="text-center animate-fadeIn"><div class="h-1.5 w-44 rounded-full scanner mb-3 mx-auto"></div><div class="text-sm text-slate-700 dark:text-slate-200">${esc(label||'Analyzing inputs…')}</div></div>`;
+      overlay.setAttribute('role','status');
+      overlay.setAttribute('aria-live','polite');
+      overlay.innerHTML = `<div class="text-center animate-fadeIn"><div class="h-1.5 w-44 rounded-full scanner mb-3 mx-auto" aria-hidden="true"></div><div class="text-sm text-slate-700 dark:text-slate-200">${esc(label||'Analyzing inputs…')}</div></div>`;
       // Position over step area
       const container = root.parentElement;
       container.style.position = 'relative';
@@ -650,6 +668,9 @@
       if (lead.recommended_next_step==='FINANCE_INTRO') return 'book.html#finance';
       return 'technology.html';
     })();
+    // Build name/email params for booking links
+    const nameParam = encodeURIComponent(([answers.client.first_name, answers.client.last_name].filter(Boolean).join(' '))||'');
+    const emailParam = encodeURIComponent(answers.client.email||'');
     const tasks = [];
     if ((answers.client.country||'') !== 'Australia'){
       tasks.push({text:'Review FIRB requirements (if applicable)', href:'https://www.ato.gov.au/individuals-and-families/investments-and-assets/foreign-resident-investments/foreign-investment-in-australia'});
@@ -666,7 +687,7 @@
       const s1 = new Date(now.getTime()+ 6*60*60*1000);
       const s2 = new Date(now.getTime()+ 30*60*60*1000);
       const s3 = new Date(now.getTime()+ 54*60*60*1000);
-      return [s1,s2,s3].map(d=>({ label: fmt(d), href: 'book.html?slot='+encodeURIComponent(d.toISOString()) }));
+      return [s1,s2,s3].map(d=>({ label: fmt(d), href: 'book.html?slot='+encodeURIComponent(d.toISOString()) + (nameParam? `&name=${nameParam}`:'' ) + (emailParam? `&email=${emailParam}`:'' ) }));
     }
     const slots = quickSlots();
     const leadLabel = (lead && lead.recommended_next_step==='BOOK_CALL')? 'Book a strategy call'
