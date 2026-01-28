@@ -27,6 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build Tailwind CSS
+        run: |
+          curl -sL https://github.com/tailwindlabs/tailwindcss/releases/download/v3.4.1/tailwindcss-linux-x64 -o tailwindcss
+          chmod +x tailwindcss
+          ./tailwindcss -i styles/tw.css -o assets/site.css --minify
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
