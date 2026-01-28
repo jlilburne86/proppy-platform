@@ -167,7 +167,7 @@
         } else if (node.id === 'firb'){
           const hint = document.createElement('div');
           hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
-          hint.innerHTML = 'Foreign Investment Review Board (FIRB) may apply. Learn more at <a href="https://firb.gov.au/" target="_blank" rel="noopener" class="underline">firb.gov.au</a>.';
+          hint.innerHTML = 'Foreign Investment Review Board (FIRB) may apply. Learn more at <a href="https://www.ato.gov.au/individuals-and-families/investments-and-assets/foreign-resident-investments/foreign-investment-in-australia" target="_blank" rel="noopener" class="underline">ato.gov.au — Foreign investment in Australia</a>.';
           box.appendChild(hint);
         }
         break;
