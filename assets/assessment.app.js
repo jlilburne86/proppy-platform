@@ -87,12 +87,12 @@
   function helperFor(id){
     const a = answers;
     // Insight selection based on node + state
-    if (id==='preapproval') return 'This keeps your shortlist realistic and avoids unsuitable properties.';
-    if (id==='open_to_suggestions' && (a.locations.open_to_suggestions!==false)) return 'We scan beyond familiar areas to find where fundamentals strengthen before headlines.';
+    if (id==='preapproval') return 'This keeps your brief realistic and avoids unsuitable properties.';
+    if (id==='open_to_suggestions' && (a.locations.open_to_suggestions!==false)) return 'We include areas you may not have considered when fundamentals align.';
     if (id==='property_types' && (a.brief.property_types||[]).includes('Unit/Apartment')) return 'Strata can materially change cashflow—this keeps recommendations aligned.';
-    if (id==='investment_type' && a.strategy.investment_type==='Value Add') return 'Your renovation appetite changes both suburbs and property condition we target.';
-    if (id==='target_states') return 'Nationwide scan ensures we don’t miss markets where signals are strongest.';
-    if (id==='top_priorities') return 'Fast path: we’ll prioritise constraints to accelerate your shortlist.';
+    if (id==='investment_type' && a.strategy.investment_type==='Value Add') return 'Your renovation appetite changes both areas and property condition we target.';
+    if (id==='target_states') return 'Choose states to consider, or keep it Australia‑wide for the broadest historical view.';
+    if (id==='top_priorities') return 'Fast path: we’ll prioritise constraints to accelerate alignment.';
     return '';
   }
 
@@ -428,7 +428,7 @@
     // Property focus
     if (answers.brief.property_types && answers.brief.property_types.length){ out.push({ icon:'home', title:'Property focus', desc: answers.brief.property_types.join(', ') }); }
     // Suggestions
-    if (answers.locations.open_to_suggestions!==false){ out.push({ icon:'travel_explore', title:'Nationwide scan', desc:'We’ll search beyond familiar areas using signals.' }); }
+    if (answers.locations.open_to_suggestions!==false){ out.push({ icon:'travel_explore', title:'Nationwide coverage', desc:'We include areas beyond the familiar when fundamentals align.' }); }
     else if (answers.locations.acceptability_drivers && answers.locations.acceptability_drivers.length){ out.push({ icon:'tune', title:'Location constraints', desc: answers.locations.acceptability_drivers.join(', ') }); }
     return out.slice(0,5);
   }

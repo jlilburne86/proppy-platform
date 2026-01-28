@@ -2,7 +2,7 @@
   "rule_version": "v1.0.0",
   "steps": [
     {"id": "start", "title": "Let’s define your brief.", "group": "start"},
-    {"id": "location", "title": "Where should we scan?", "group": "location"},
+    {"id": "location", "title": "Which states should we consider?", "group": "location"},
     {"id": "goals", "title": "Your goals", "group": "goals"},
     {"id": "timing", "title": "Timing & experience", "group": "timing"},
     {"id": "finance", "title": "Finance snapshot", "group": "finance"},
