@@ -8,8 +8,21 @@
   init();
 
   async function init(){
-    const v = '20260128';
-    schema = await fetchJson(path('assets/assessment.schema.json?v='+v));
+    const v = Date.now().toString(36);
+    try{
+      schema = await fetchJson(path('assets/assessment.schema.json?v='+v));
+    }catch(e){ schema = null; }
+    if (!schema || !schema.steps || !schema.nodes){
+      const root = document.getElementById('step-root');
+      if (root) root.innerHTML = '<div class="text-sm text-rose-600">We couldn\'t load the assessment configuration. Please hard refresh (Cmd+Shift+R) and try again.</div>';
+      // Proceed with minimal defaults to avoid a blank screen
+      schema = { rule_version:'v1', steps:[ {id:'start', title:'Let\'s define your brief.', group:'start'} ], nodes:[
+        {id:'first_name', prompt:'First name', type:'text', maps_to_field:'client.first_name', step_group:'start'},
+        {id:'last_name', prompt:'Last name', type:'text', maps_to_field:'client.last_name', step_group:'start'},
+        {id:'email', prompt:'Email', type:'text', maps_to_field:'client.email', step_group:'start'},
+        {id:'mobile', prompt:'Mobile', type:'text', maps_to_field:'client.mobile', step_group:'start'}
+      ] };
+    }
     const resume = new URLSearchParams(location.search||'').get('resume');
     if (resume){
       try{
