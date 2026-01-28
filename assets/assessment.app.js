@@ -7,7 +7,8 @@
   init();
 
   async function init(){
-    schema = await fetchJson(path('assets/assessment.schema.json'));
+    const v = '20260128';
+    schema = await fetchJson(path('assets/assessment.schema.json?v='+v));
     const resume = new URLSearchParams(location.search||'').get('resume');
     if (resume){
       try{
