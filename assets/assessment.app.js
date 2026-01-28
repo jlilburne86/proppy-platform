@@ -288,9 +288,8 @@
   }
 
   function groupFor(id){
-    if (id==='comparables' || id==='summary') return id;
-    const n = schema.nodes.find(x=> x.id===id);
-    return n && n.step_group || 'start';
+    // curId is already a group id in the consolidated flow
+    return id;
   }
   function groupProgress(id){
     const grp = groupFor(id);
