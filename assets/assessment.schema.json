@@ -15,7 +15,7 @@
   "nodes": [
     {"id":"first_name","prompt":"First name","type":"text","maps_to_field":"client.first_name","step_group":"start"},
     {"id":"last_name","prompt":"Last name","type":"text","maps_to_field":"client.last_name","step_group":"start"},
-    {"id":"email","prompt":"Email","type":"text","validation":{"pattern":"[^@\n]+@[^@\n]+\.[^@\n]+"},"required_when":{"const":true},"maps_to_field":"client.email","step_group":"start"},
+    {"id":"email","prompt":"Email","type":"text","validation":{"pattern":"[^@\n]+@[^@\n]+\\.[^@\n]+"},"required_when":{"const":true},"maps_to_field":"client.email","step_group":"start"},
     {"id":"mobile","prompt":"Mobile","type":"text","maps_to_field":"client.mobile","step_group":"start"},
     {"id":"current_location","prompt":"Current location (state/country)","type":"text","maps_to_field":"client.location","step_group":"start"},
 
