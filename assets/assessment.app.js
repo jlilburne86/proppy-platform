@@ -515,6 +515,15 @@
         `Inventory trend: ${invTrend.replace(/\s.*/, '')}`
       ];
       const priceLine = `<div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div><div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>`;
+      // Compute 3-bed median (5y) vs latest using growth percent and typicalPrice
+      const _latest = Number(r.typicalPrice||0);
+      const _gnum = parseFloat(String(r.price5yGrowth||'').toString().replace('%',''));
+      const _prev = (!isNaN(_latest) && _latest>0 && !isNaN(_gnum)) ? Math.round(_latest/(1+_gnum/100)) : NaN;
+      const _value = (!isNaN(_prev) && _prev>0) ? (_latest - _prev) : NaN;
+      const _growthStr = (!isNaN(_gnum)) ? `${_gnum.toFixed(0)}%` : '';
+      const _prevStr = (!isNaN(_prev)) ? `$${_prev.toLocaleString()}` : '—';
+      const _latestStr = (_latest>0)? `$${_latest.toLocaleString()}` : '—';
+      const _valueStr = (!isNaN(_value) && _growthStr)? `(+$${_value.toLocaleString()}, +${_growthStr})` : '';
       return `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">
         <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-full\" title=\"${esc(tip)}\">${esc(ribbon)}</span></div>
         <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
@@ -522,7 +531,7 @@
           <div>Yield now: <span class=\"font-semibold\">${esc(yieldNow)}</span></div>
           <div><div class=\"text-[11px] text-slate-500\">Risk</div><div class=\"flex items-center gap-1\"><span class=\"px-1.5 py-0.5 rounded-full text-[10px] ${vacTrend.indexOf('↓')!==-1?'bg-emerald-600/10 text-emerald-700 dark:text-emerald-400':'bg-slate-200/70 dark:bg-slate-800 text-slate-600'}\">${esc(vacTrend)}</span><span class=\"px-1.5 py-0.5 rounded-full text-[10px] ${invTrend.indexOf('↓')!==-1?'bg-emerald-600/10 text-emerald-700 dark:text-emerald-400':'bg-slate-200/70 dark:bg-slate-800 text-slate-600'}\">${esc(invTrend)}</span></div></div>
         </div>
-        <div class=\"mt-2 flex flex-wrap gap-1 text-[11px] text-slate-500 dark:text-slate-400\">\n          <span class=\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\">Entry ~$${Number(r.typicalPrice||0)?Number(r.typicalPrice||0).toLocaleString():'—'}</span>\n          ${answers.brief && answers.brief.beds_min? `<span class=\\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\\">Beds ≥${esc(answers.brief.beds_min)}</span>`:''}\n        </div>
+        <div class=\"mt-2 flex flex-wrap gap-1 text-[11px] text-slate-500 dark:text-slate-400\">\n          <span class=\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\">3-bed 5y: ${_prevStr} → ${_latestStr} ${_valueStr}</span>\n          <span class=\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\">Entry ~$${Number(r.typicalPrice||0)?Number(r.typicalPrice||0).toLocaleString():'—'}</span>\n          ${answers.brief && answers.brief.beds_min? `<span class=\\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\\">Beds ≥${esc(answers.brief.beds_min)}</span>`:''}\n        </div>
       </div>`;
     }).join('');
     if (cardsHolder) cardsHolder.innerHTML = cards;
