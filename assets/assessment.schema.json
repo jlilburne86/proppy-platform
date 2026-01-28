@@ -17,7 +17,6 @@
     {"id":"country","prompt":"Country","type":"single_select","options":["Australia","New Zealand","United Kingdom","United States","Singapore","China","India","Other"],"required_when":{"const":true},"maps_to_field":"client.country","step_group":"start"},
     {"id":"country_other","prompt":"Country (other)","type":"text","show_when":{"eq":["client.country","Other"]},"maps_to_field":"client.country_other","step_group":"start"},
     {"id":"current_state","prompt":"State (if in Australia)","type":"single_select","options":["NSW","VIC","QLD","SA","WA","TAS","ACT","NT"],"show_when":{"eq":["client.country","Australia"]},"maps_to_field":"client.state","step_group":"start"},
-    {"id":"firb","prompt":"FIRB approval status","type":"single_select","options":["Not applicable","Approved","Pending","Unsure"],"show_when":{"not":{"eq":["client.country","Australia"]}},"maps_to_field":"client.firb","step_group":"start"},
 
     {"id":"goals","prompt":"Primary goals","type":"multi_select","options":["Capital growth","Rental yield","Balanced","Cashflow now","Portfolio scale"],"required_when":{"const":true},"maps_to_field":"motivation.goals","step_group":"goals"},
     {"id":"strategy_goal","prompt":"Strategy focus","type":"single_select","options":["High Growth","High Yield","Balanced"],"required_when":{"const":true},"maps_to_field":"strategy.goal","step_group":"goals"},

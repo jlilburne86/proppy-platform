@@ -169,12 +169,7 @@
         } else if (node.id === 'country'){
           const hint = document.createElement('div');
           hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
-          hint.textContent = 'If you live outside Australia, we’ll ask about FIRB approval next.';
-          box.appendChild(hint);
-        } else if (node.id === 'firb'){
-          const hint = document.createElement('div');
-          hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
-          hint.innerHTML = 'Foreign Investment Review Board (FIRB) may apply. Learn more at <a href="https://www.ato.gov.au/individuals-and-families/investments-and-assets/foreign-resident-investments/foreign-investment-in-australia" target="_blank" rel="noopener" class="underline">ato.gov.au — Foreign investment in Australia</a>.';
+          hint.textContent = 'If you live outside Australia, we’ll include FIRB guidance in your next steps.';
           box.appendChild(hint);
         }
         break;
@@ -519,7 +514,7 @@
       if (resp && resp.recommended_next_step){ lead = { recommended_next_step: resp.recommended_next_step }; }
       if (!lead) lead = window.ProppyEngine.computeLead(answers);
       track('assessment_submit', { next: lead.recommended_next_step });
-      await analyzeThen(()=> redirectToRecommended(lead), 'Finalising brief…');
+      await analyzeThen(()=> renderFinalNextSteps(lead), 'Finalising brief…');
       return true;
     }
   }
@@ -644,5 +639,53 @@
     else if (lead && lead.recommended_next_step==='SIGNUP_MATCHES') href = 'pricing.html';
     else if (lead && lead.recommended_next_step==='FINANCE_INTRO') href = 'book.html#finance';
     location.assign(href + qs);
+  }
+
+  function renderFinalNextSteps(lead){
+    const root = document.getElementById('step-root'); if (!root) return;
+    const nextHref = (function(){
+      if (!lead) return 'technology.html';
+      if (lead.recommended_next_step==='BOOK_CALL') return 'book.html';
+      if (lead.recommended_next_step==='SIGNUP_MATCHES') return 'pricing.html';
+      if (lead.recommended_next_step==='FINANCE_INTRO') return 'book.html#finance';
+      return 'technology.html';
+    })();
+    const tasks = [];
+    if ((answers.client.country||'') !== 'Australia'){
+      tasks.push({text:'Review FIRB requirements (if applicable)', href:'https://www.ato.gov.au/individuals-and-families/investments-and-assets/foreign-resident-investments/foreign-investment-in-australia'});
+    }
+    const pre = answers.finance.preapproval;
+    if (pre==='Pending' || pre==='Unsure' || pre==='Need help'){
+      tasks.push({text:'Prepare/confirm your pre‑approval letter', href: nextHref.indexOf('book.html')!==-1? 'book.html#finance':'pricing.html'});
+    }
+    const compsCount = (answers.comparables||[]).filter(c=> c && c.url).length;
+    if (compsCount===0){ tasks.push({text:'Add 1–3 example properties (optional)', href:'#'}); }
+    function quickSlots(){
+      const now = new Date();
+      const fmt = d=> d.toLocaleString(undefined,{ weekday:'short', hour:'numeric', minute:'2-digit'});
+      const s1 = new Date(now.getTime()+ 6*60*60*1000);
+      const s2 = new Date(now.getTime()+ 30*60*60*1000);
+      const s3 = new Date(now.getTime()+ 54*60*60*1000);
+      return [s1,s2,s3].map(d=>({ label: fmt(d), href: 'book.html?slot='+encodeURIComponent(d.toISOString()) }));
+    }
+    const slots = quickSlots();
+    const leadLabel = (lead && lead.recommended_next_step==='BOOK_CALL')? 'Book a strategy call'
+      : (lead && lead.recommended_next_step==='SIGNUP_MATCHES')? 'Create account to receive matches'
+      : (lead && lead.recommended_next_step==='FINANCE_INTRO')? 'Finance intro + shortlist'
+      : 'Save brief + get shortlist';
+    root.innerHTML = `
+      <div class="mb-4">
+        <div class="text-xs text-slate-500">Final</div>
+        <h2 class="text-2xl font-extrabold">Next steps</h2>
+        <p class="text-slate-600 dark:text-slate-300">Here’s what we recommend based on your brief. Book a call, and we’ll take you through the next five years with context, not hype.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 mb-6">
+        <div class="font-semibold mb-2">Recommended action</div>
+        <a href="${nextHref}" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">${leadLabel}<span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        ${lead && lead.recommended_next_step==='BOOK_CALL' ? `<div class="mt-3 text-xs text-slate-500">Quick times:</div><div class="mt-1 flex flex-wrap gap-2">${slots.map(s=>`<a href="${s.href}" class=\"px-3 py-1.5 text-xs rounded-full border border-slate-200 dark:border-slate-700\">${s.label}</a>`).join('')}</div>`:''}
+      </div>
+      ${tasks.length? `<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 mb-6"><div class="font-semibold mb-2">Prepare</div><ul class="list-disc pl-5 text-sm text-slate-600 dark:text-slate-300">${tasks.map(t=>`<li>${t.href && t.href!=='#'? `<a href=\"${t.href}\" class=\"underline\" target=\"_blank\" rel=\"noopener\">${t.text}</a>`: t.text}</li>`).join('')}</ul></div>`:''}
+      <div class="text-xs text-slate-500">Backed by our <a href="guarantee.html" class="underline" target="_blank" rel="noopener">Money‑Back Guarantee</a>. Historical, educational view only. No predictions or advice.</div>
+    `;
   }
 })();
