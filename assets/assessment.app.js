@@ -536,8 +536,7 @@
             const map = await getShortlistMap(10);
             const lines = ['State,Suburb,Price5y,Yield'];
             Object.keys(map).forEach(st=>{ map[st].forEach(r=>{ const area = String(r.area||'').replace(/<[^>]+>/g,'').replace(/,/g,' '); const p5 = bandFrom(r.price5yGrowth,0); const y=r.grossYield||''; lines.push([st, area, p5, y].join(',')); }); });
-            const blob = new Blob([lines.join('
-')], {type:'text/csv;charset=utf-8'});
+            const blob = new Blob([lines.join('\n')], {type:'text/csv;charset=utf-8'});
             const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download='proppy-shortlist.csv'; a.click(); setTimeout(()=> URL.revokeObjectURL(url), 1000);
           }); }
         }catch(e){}
