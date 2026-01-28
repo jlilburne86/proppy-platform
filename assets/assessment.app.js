@@ -128,6 +128,13 @@
       row.appendChild(input);
       wrap.appendChild(row);
     });
+    // Start step: add privacy note
+    if (group === 'start'){
+      const priv = document.createElement('div');
+      priv.className = 'text-xs text-slate-500 dark:text-slate-400';
+      priv.innerHTML = 'We use this to prepare your brief and next steps. See our <a href="privacy.html" class="underline" target="_blank" rel="noopener">Privacy Policy</a>.';
+      wrap.appendChild(priv);
+    }
     return wrap;
   }
 
