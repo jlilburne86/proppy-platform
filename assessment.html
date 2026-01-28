@@ -167,6 +167,9 @@
     <header class="mb-6">
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Free Investment Assessment</h1>
       <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">Define your brief. We’ll map your next purchase with data‑led clarity. No pressure. Clear, data‑driven insights.</p>
+      <div id="data-pulse" class="h-1 w-44 rounded-full overflow-hidden mt-3 hidden">
+        <div class="h-1 scanner"></div>
+      </div>
     </header>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <!-- Steps -->
@@ -204,6 +207,10 @@
             <div class="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
               <div id="signals-bar" class="h-2 w-0 rounded-full bg-accent transition-[width] duration-300"></div>
             </div>
+          </div>
+          <div class="mb-2">
+            <button id="signals-info" class="text-xs underline text-slate-500 dark:text-slate-400" type="button">What affects this?</button>
+            <ul id="signals-breakdown" class="hidden mt-2 space-y-1 text-xs text-slate-600 dark:text-slate-300"></ul>
           </div>
           <div id="scope-chip" class="text-xs text-slate-600 dark:text-slate-300 mb-3"></div>
           <ul id="engine" class="space-y-2 text-sm text-slate-700 dark:text-slate-200"></ul>

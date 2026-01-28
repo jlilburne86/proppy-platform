@@ -263,6 +263,10 @@
     const bar = $('#signals-bar'); const lab = $('#signals-label');
     if (bar) bar.style.width = Math.max(5, Math.min(100, sig.score)) + '%';
     if (lab) lab.textContent = sig.label;
+    // Render breakdown
+    const infoBtn = $('#signals-info'); const bd = $('#signals-breakdown');
+    if (bd) bd.innerHTML = sig.breakdown.map(b=> `<li class="flex items-center justify-between"><span>${esc(b.label)}</span><span class="font-semibold ${b.points>=0?'text-emerald-600':'text-rose-600'}">${b.points>0?'+':''}${b.points}</span></li>`).join('');
+    if (infoBtn && bd && !infoBtn._wired){ infoBtn._wired = true; infoBtn.addEventListener('click', ()=>{ bd.classList.toggle('hidden'); }); }
     // Render scope chip
     const chip = $('#scope-chip'); if (chip) chip.textContent = scope;
     ul.innerHTML = items.map(i=> `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-accent">${esc(i.icon||'check_circle')}</span><div><div class="font-semibold">${esc(i.title)}</div><div class="text-slate-500 dark:text-slate-400 text-xs">${esc(i.desc)}</div></div></li>`).join('');
@@ -289,21 +293,25 @@
   }
 
   function computeSignals(){
-    let score = 0;
+    let score = 0; const breakdown = [];
     // timing
-    if (/^(Now|1–3 months)$/.test(answers.engagement.timeline||'')) score += 30; else if (answers.engagement.timeline) score += 10;
+    if (/^(Now|1–3 months)$/.test(answers.engagement.timeline||'')) { score += 30; breakdown.push({label:'Timeline soon', points:30}); }
+    else if (answers.engagement.timeline) { score += 10; breakdown.push({label:'Timeline set', points:10}); }
     // finance
     const pre = answers.finance.preapproval;
-    if (pre==='Obtained') score += 25; else if (pre==='Pending') score += 15; else if (pre==='Expired') score += 10; else if (pre==='Need help') score += 5;
+    if (pre==='Obtained') { score += 25; breakdown.push({label:'Finance obtained', points:25}); }
+    else if (pre==='Pending') { score += 15; breakdown.push({label:'Finance pending', points:15}); }
+    else if (pre==='Expired') { score += 10; breakdown.push({label:'Finance expired', points:10}); }
+    else if (pre==='Need help') { score += 5; breakdown.push({label:'Needs finance help', points:5}); }
     // experience
-    if (answers.motivation.experience==='Experienced' || answers.motivation.experience==='Professional') score += 10;
+    if (answers.motivation.experience==='Experienced' || answers.motivation.experience==='Professional') { score += 10; breakdown.push({label:'Experienced', points:10}); }
     // suggestions openness
-    if (answers.locations.open_to_suggestions!==false) score += 10;
+    if (answers.locations.open_to_suggestions!==false) { score += 10; breakdown.push({label:'Open to suggestions', points:10}); }
     // comparables
-    const comps = (answers.comparables||[]).filter(c=> c && c.url).length; if (comps>0) score += 5;
+    const comps = (answers.comparables||[]).filter(c=> c && c.url).length; if (comps>0) { score += 5; breakdown.push({label:'Comparables added', points:5}); }
     score = Math.max(0, Math.min(100, score));
     const label = score>=70? 'Strong' : score>=35? 'Medium' : 'Early';
-    return { score, label };
+    return { score, label, breakdown };
   }
 
   function computeScope(){
@@ -359,7 +367,7 @@
     }catch(e){ fn(); }
   }
 
-  function setVal(node, val){ set(answers, node.maps_to_field, val); saveDraft(); renderBrief(); }
+  function setVal(node, val){ set(answers, node.maps_to_field, val); saveDraft(); renderBrief(); pulseData(); }
 
   function setProgress(){
     const curId = stepOrder[idx]||'summary';
@@ -417,6 +425,11 @@
   function get(o,p){ return p.split('.').reduce((x,k)=> (x&&x[k]!==undefined)? x[k]:undefined, o); }
   function set(o,p,v){ const parts=p.split('.'); let x=o; while(parts.length>1){ const k=parts.shift(); x=x[k]=x[k]||{}; } x[parts[0]]=v; }
   function track(ev, params){ try{ if (typeof window.gtag==='function') gtag('event', ev, params||{}); }catch(e){} }
+  function pulseData(){
+    const bar = document.getElementById('data-pulse'); if (!bar) return;
+    bar.classList.remove('hidden');
+    clearTimeout(pulseData._t); pulseData._t = setTimeout(()=> bar.classList.add('hidden'), 1200);
+  }
   function redirectToRecommended(lead){
     const qs = location.search || '';
     let href = 'technology.html';
