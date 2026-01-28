@@ -152,7 +152,10 @@
     wrap.innerHTML = `
       <p class="text-slate-600 dark:text-slate-300 mb-3">This helps calibrate condition, size and location expectations so our conversation is productive.</p>
       <div id="comp-list" class="space-y-3"></div>
-      <button id="comp-add" class="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">+ Add link</button>
+      <div class="flex items-center gap-3 mt-2">
+        <button id="comp-add" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">+ Add link</button>
+        <button id="comp-skip" class="text-sm underline" type="button">Skip this step</button>
+      </div>
     `;
     const root = wrap.querySelector('#comp-list');
     function row(item, i){
@@ -185,13 +188,14 @@
       answers.comparables.forEach((c,i)=> root.appendChild(row(c,i)));
       $('#comp-add', wrap).disabled = answers.comparables.length>=3;
     }
-    if (answers.comparables.length===0) answers.comparables.push({ url:'', tag:'' });
     renderList();
     $('#comp-add', wrap).addEventListener('click', ()=>{
       if (answers.comparables.length>=3) return;
       answers.comparables.push({ url:'', tag:'' });
       saveDraft(); renderList(); track('comparable_added', { count: answers.comparables.length, domain: host(answers.comparables.at(-1).url||'') });
     });
+    const skipBtn = $('#comp-skip', wrap);
+    if (skipBtn) skipBtn.addEventListener('click', ()=>{ goNextIfValid(true); });
     return wrap;
   }
 
