@@ -897,11 +897,11 @@
   function renderFinalNextSteps(lead){
     const root = document.getElementById('step-root'); if (!root) return;
     const nextHref = (function(){
-      if (!lead) return 'technology.html';
+      if (!lead) return 'book.html';
       if (lead.recommended_next_step==='BOOK_CALL') return 'book.html';
-      if (lead.recommended_next_step==='SIGNUP_MATCHES') return 'pricing.html';
+      if (lead.recommended_next_step==='SIGNUP_MATCHES') return 'book.html';
       if (lead.recommended_next_step==='FINANCE_INTRO') return 'book.html#finance';
-      return 'technology.html';
+      return 'book.html';
     })();
     // Build name/email params for booking links
     const nameParam = encodeURIComponent(([answers.client.first_name, answers.client.last_name].filter(Boolean).join(' '))||'');
@@ -925,10 +925,7 @@
       return [s1,s2,s3].map(d=>({ label: fmt(d), href: 'book.html?slot='+encodeURIComponent(d.toISOString()) + (nameParam? `&name=${nameParam}`:'' ) + (emailParam? `&email=${emailParam}`:'' ) }));
     }
     const slots = quickSlots();
-    const leadLabel = (lead && lead.recommended_next_step==='BOOK_CALL')? 'Book a strategy call'
-      : (lead && lead.recommended_next_step==='SIGNUP_MATCHES')? 'Create account to receive matches'
-      : (lead && lead.recommended_next_step==='FINANCE_INTRO')? 'Finance intro + shortlist'
-      : 'Save brief + get shortlist';
+    const leadLabel = 'Book a strategy call';
     root.innerHTML = `
       <div class="mb-4">
         <div class="text-xs text-slate-500">Final</div>
