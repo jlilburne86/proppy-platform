@@ -85,8 +85,7 @@
     $('#btn-next').textContent = idx>=stepOrder.length-1? 'Finish' : 'Continue';
     track('assessment_step_view', { step_id: curId });
     // Wire mobile sticky save action
-    const save2 = document.getElementById('cta-save');
-    if (save2 && !save2._wired){ save2._wired=true; save2.addEventListener('click', async ()=>{ await serverDraft('POST'); alert('Saved. You can resume later.'); }); }
+    // Removed Save & resume; no secondary mobile CTA wiring
     // Wire inline email checklist capture
     const sendBtn = document.getElementById('checklist-send');
     if (sendBtn && !sendBtn._wired){
@@ -714,9 +713,8 @@
   }
 
   function bindNav(){
-    $('#btn-back').addEventListener('click', ()=>{ if (idx>0){ idx--; render(); }});
-    $('#btn-save').addEventListener('click', async ()=>{ await serverDraft('POST'); alert('Saved. You can resume later.'); });
-    $('#btn-next').addEventListener('click', async ()=>{ await goNextIfValid(true); });
+    const backBtn = $('#btn-back'); if (backBtn) backBtn.addEventListener('click', ()=>{ if (idx>0){ idx--; render(); }});
+    const nextBtn = $('#btn-next'); if (nextBtn) nextBtn.addEventListener('click', async ()=>{ await goNextIfValid(true); });
   }
 
   async function goNextIfValid(fromClick){
