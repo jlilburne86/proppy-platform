@@ -1,0 +1,17 @@
+{
+  "how-it-works.html": [
+    {"q": "What does Proppy actually do?", "a": "We source, assess and secure investment properties nationwide using data-led shortlisting and expert negotiation. You get a de-risked, end-to-end process."},
+    {"q": "How do you choose locations?", "a": "We prioritise markets with tight vacancy, rising rents, improving listings/DOM and sustainable demand drivers. Signals are reviewed weekly across AU cities and regions."},
+    {"q": "Do you help with finance, PM and conveyancing?", "a": "Yes. We coordinate the buying journey with your broker, conveyancer and property manager to keep contracts, inspections and settlement on track."},
+    {"q": "What kinds of properties do you target?", "a": "Established houses and townhomes in undersupplied suburbs with strong rentability and value-add potential. We avoid oversupplied stock and risky projects."},
+    {"q": "How long does it take to purchase?", "a": "Typical engagements run 4–10 weeks depending on brief, budget and market conditions. We keep you informed at each step with shortlists and rationale."}
+  ],
+  "pricing.html": [
+    {"q": "How are fees structured?", "a": "Transparent fixed fees with no hidden extras. You know your cost upfront, and our money-back guarantee applies if we don’t deliver as agreed."},
+    {"q": "Do you offer a guarantee?", "a": "Yes. If you’re not satisfied with our service, you’re covered by our guarantee. See the Guarantee page for full details and conditions."},
+    {"q": "What’s included in the fee?", "a": "Briefing, market selection, property shortlisting, inspections, analysis, negotiation strategy and contract support through to settlement."},
+    {"q": "Any additional costs?", "a": "Third‑party costs like building & pest, conveyancing and lender fees are separate. We’ll outline recommended providers and typical ranges."},
+    {"q": "Do you work with interstate buyers?", "a": "Yes. Most clients are interstate. Our process is designed for remote execution with clear updates and video walkthroughs."}
+  ]
+}
+

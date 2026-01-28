@@ -16,3 +16,46 @@
 
 # Pretty URLs for property detail pages
 /property/:slug  /property/:slug.html  200
+
+# WordPress-style blog URLs to articles
+/:year/:month/:slug/   /articles/:slug.html 301
+/:year/:month/:slug    /articles/:slug.html 301
+/blog/:slug/           /articles/:slug.html 301
+/blog/:slug            /articles/:slug.html 301
+
+# WordPress sections to articles/resources
+/investor-guides/:slug/   /articles/:slug.html 301
+/investor-guides/:slug    /articles/:slug.html 301
+/market-updates/:slug/    /articles/:slug.html 301
+/market-updates/:slug     /articles/:slug.html 301
+/investor-updates/:slug/  /articles/:slug.html 301
+/investor-updates/:slug   /articles/:slug.html 301
+
+# Top-level WordPress pages
+/about-us                 /about.html 301
+/contact-us               /contact.html 301
+/get-started              /book.html 301
+/investor-assessment-session /book.html 301
+/how-we-do-it             /how-it-works.html 301
+/our-technology           /technology.html 301
+/our-results              /results.html 301
+/money-back-guarantee     /guarantee.html 301
+/pricing                  /pricing.html 301
+/privacy-policy           /privacy.html 301
+/terms-and-conditions     /terms.html 301
+/what-we-do               /advantage.html 301
+/why-choose-proppy        /advantage.html 301
+/properties-we-source     /sourcing.html 301
+/investor-guides          /resources.html 301
+/investor-updates         /resources.html 301
+/market-updates           /resources.html 301
+/reviews-and-customer-testimonials /results.html 301
+/sitemap                  /site-map.html 301
+
+# WordPress taxonomy archives to Resources
+/category/*  /resources.html 301
+/tag/*       /resources.html 301
+/author/*    /resources.html 301
+
+# WordPress search to Resources
+/?s=:query   /resources.html 301

@@ -1,0 +1,7 @@
+{
+  "place_id": "ChIJf76gf1Bd1moRiEM-8v2TQF4",
+  "api_key_env": "GOOGLE_PLACES_API_KEY",
+  "min_rating": 3,
+  "max_reviews": 20,
+  "language": "en-AU"
+}
