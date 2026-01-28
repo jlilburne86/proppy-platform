@@ -95,7 +95,6 @@
     if (id==='preapproval') return 'This keeps your brief realistic and avoids unsuitable properties.';
     if (id==='open_to_suggestions' && (a.locations.open_to_suggestions!==false)) return 'We include areas you may not have considered when fundamentals align.';
     if (id==='property_types' && (a.brief.property_types||[]).includes('Unit/Apartment')) return 'Strata can materially change cashflow—this keeps recommendations aligned.';
-    if (id==='investment_type' && a.strategy.investment_type==='Value Add') return 'Your renovation appetite changes both areas and property condition we target.';
     if (id==='target_states') return 'Choose states to consider, or keep it Australia‑wide for the broadest historical view.';
     if (id==='top_priorities') return 'Fast path: we’ll prioritise constraints to accelerate alignment.';
     return '';
@@ -386,12 +385,18 @@
     // seeded sort helper
     const seed = 137;
     const h = s=>{ let x=seed; for(let i=0;i<s.length;i++){ x = (x*31 + s.charCodeAt(i)) & 0xffffffff; } return (x>>>0)/0xffffffff; };
-    // pick up to 2 per state
+    // pick up to 2 per state, prefer user-selected states first
     const picks = [];
-    for (const [st, arr] of byState){
+    const sel = (answers.locations.states||[]).filter(s=> s && s!=='Australia-wide').map(s=> s.toUpperCase());
+    const allStates = Array.from(byState.keys());
+    const orderedStates = sel.length? [...sel.filter(s=> byState.has(s)), ...allStates.filter(s=> !sel.includes(s))] : allStates;
+    for (const st of orderedStates){
+      const arr = byState.get(st)||[];
+      if (!arr.length) continue;
       const suburbFirst = arr.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || (b.avgScore||0)-(a.avgScore||0));
       const shuffled = suburbFirst.sort((a,b)=> h(String(a.slug||a.area||'')) - h(String(b.slug||b.area||'')));
-      shuffled.slice(0,2).forEach(x=> picks.push(x));
+      shuffled.slice(0,2).forEach(x=> { if (picks.length<8) picks.push(x); });
+      if (picks.length>=8) break; // safety cap before final limit
     }
     // limit total cards to 4
     const finalPicks = picks.slice(0,4);
@@ -425,11 +430,13 @@
     }).join('');
     document.getElementById('historical-cards').innerHTML = cards;
     box.classList.remove('hidden');
+    // analytics
+    track('historical_fit_view', { count: finalPicks.length, focus: _historicalFocus, states: (answers.locations.states||[]).join(',') });
     // wire toggle buttons once
     const b5 = document.getElementById('hf-5y'); const b10 = document.getElementById('hf-10y');
     function setActive(){ if(!b5||!b10) return; b5.classList.toggle('bg-slate-200', _historicalFocus==='5y'); b10.classList.toggle('bg-slate-200', _historicalFocus==='10y'); }
-    if (b5 && !b5._wired){ b5._wired=true; b5.addEventListener('click', ()=>{ _historicalFocus='5y'; renderHistorical(); setActive(); }); }
-    if (b10 && !b10._wired){ b10._wired=true; b10.addEventListener('click', ()=>{ _historicalFocus='10y'; renderHistorical(); setActive(); }); }
+    if (b5 && !b5._wired){ b5._wired=true; b5.addEventListener('click', ()=>{ _historicalFocus='5y'; track('historical_focus_toggle', { focus:'5y' }); renderHistorical(); setActive(); }); }
+    if (b10 && !b10._wired){ b10._wired=true; b10.addEventListener('click', ()=>{ _historicalFocus='10y'; track('historical_focus_toggle', { focus:'10y' }); renderHistorical(); setActive(); }); }
     setActive();
   }
 
