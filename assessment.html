@@ -196,6 +196,16 @@
             <div class="h-2 scanner"></div>
             <div class="p-3 text-xs text-slate-600 dark:text-slate-300">Calibrating shortlist filters in real time.</div>
           </div>
+          <div class="mb-3">
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-1">
+              <span>Signals strength</span>
+              <span id="signals-label">—</span>
+            </div>
+            <div class="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+              <div id="signals-bar" class="h-2 w-0 rounded-full bg-accent transition-[width] duration-300"></div>
+            </div>
+          </div>
+          <div id="scope-chip" class="text-xs text-slate-600 dark:text-slate-300 mb-3"></div>
           <ul id="engine" class="space-y-2 text-sm text-slate-700 dark:text-slate-200"></ul>
         </div>
         <div class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 mt-6 sticky top-[calc(6rem+1rem)]">

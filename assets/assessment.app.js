@@ -257,6 +257,14 @@
   function renderEngine(){
     const ul = $('#engine'); if (!ul) return;
     const items = computeHighlights();
+    const sig = computeSignals();
+    const scope = computeScope();
+    // Render meter
+    const bar = $('#signals-bar'); const lab = $('#signals-label');
+    if (bar) bar.style.width = Math.max(5, Math.min(100, sig.score)) + '%';
+    if (lab) lab.textContent = sig.label;
+    // Render scope chip
+    const chip = $('#scope-chip'); if (chip) chip.textContent = scope;
     ul.innerHTML = items.map(i=> `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-accent">${esc(i.icon||'check_circle')}</span><div><div class="font-semibold">${esc(i.title)}</div><div class="text-slate-500 dark:text-slate-400 text-xs">${esc(i.desc)}</div></div></li>`).join('');
   }
 
@@ -278,6 +286,34 @@
     if (answers.locations.open_to_suggestions!==false){ out.push({ icon:'travel_explore', title:'Nationwide scan', desc:'We’ll search beyond familiar areas using signals.' }); }
     else if (answers.locations.acceptability_drivers && answers.locations.acceptability_drivers.length){ out.push({ icon:'tune', title:'Location constraints', desc: answers.locations.acceptability_drivers.join(', ') }); }
     return out.slice(0,5);
+  }
+
+  function computeSignals(){
+    let score = 0;
+    // timing
+    if (/^(Now|1–3 months)$/.test(answers.engagement.timeline||'')) score += 30; else if (answers.engagement.timeline) score += 10;
+    // finance
+    const pre = answers.finance.preapproval;
+    if (pre==='Obtained') score += 25; else if (pre==='Pending') score += 15; else if (pre==='Expired') score += 10; else if (pre==='Need help') score += 5;
+    // experience
+    if (answers.motivation.experience==='Experienced' || answers.motivation.experience==='Professional') score += 10;
+    // suggestions openness
+    if (answers.locations.open_to_suggestions!==false) score += 10;
+    // comparables
+    const comps = (answers.comparables||[]).filter(c=> c && c.url).length; if (comps>0) score += 5;
+    score = Math.max(0, Math.min(100, score));
+    const label = score>=70? 'Strong' : score>=35? 'Medium' : 'Early';
+    return { score, label };
+  }
+
+  function computeScope(){
+    const parts = [];
+    if (answers.finance.price_band) parts.push(`Budget ${answers.finance.price_band}`);
+    if (answers.locations.states && answers.locations.states.length) parts.push(answers.locations.states.join(', '));
+    if (answers.brief.property_types && answers.brief.property_types.length) parts.push(answers.brief.property_types.join(', '));
+    if (answers.brief.beds_min) parts.push(`${answers.brief.beds_min}+ bed`);
+    if (answers.brief.baths_min) parts.push(`${answers.brief.baths_min}+ bath`);
+    return parts.join(' • ');
   }
 
   function bindNav(){
