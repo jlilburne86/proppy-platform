@@ -47,18 +47,26 @@
   ];
 
   function render(){
-    const root = $('#step-root');
-    root.innerHTML = '';
-    const meta = stepMeta[idx] || {};
-    const head = document.createElement('div');
-    head.innerHTML = `<div class="mb-4"><div class="text-xs text-slate-500">Step ${idx+1} of ${steps.length}</div><h2 class="text-2xl font-extrabold">${meta.title||''}</h2><p class="text-slate-600 dark:text-slate-300">${meta.helper||''}</p></div>`;
-    root.appendChild(head);
-    root.appendChild(steps[idx].el);
-    setProgress();
-    renderBrief();
-    $('#btn-back').disabled = idx===0;
-    $('#btn-next').textContent = idx===steps.length-1? 'Finish' : 'Continue';
-    track('assessment_step_view', { step_id: steps[idx].id });
+    try{
+      const root = $('#step-root');
+      if (!root) return;
+      root.innerHTML = '';
+      const meta = stepMeta[idx] || {};
+      const head = document.createElement('div');
+      head.innerHTML = `<div class="mb-4"><div class="text-xs text-slate-500">Step ${idx+1} of ${steps.length}</div><h2 class="text-2xl font-extrabold">${meta.title||''}</h2><p class="text-slate-600 dark:text-slate-300">${meta.helper||''}</p></div>`;
+      root.appendChild(head);
+      const cur = steps[idx];
+      if (cur && cur.el) root.appendChild(cur.el); else root.insertAdjacentHTML('beforeend', `<div class="text-sm text-red-600">Something went wrong loading this step. Please refresh.</div>`);
+      setProgress();
+      renderBrief();
+      if ($('#btn-back')) $('#btn-back').disabled = idx===0;
+      if ($('#btn-next')) $('#btn-next').textContent = idx===steps.length-1? 'Finish' : 'Continue';
+      if (cur) track('assessment_step_view', { step_id: cur.id });
+    }catch(e){
+      console.error('Render error', e);
+      const root = $('#step-root');
+      if (root) root.innerHTML = `<div class="text-sm text-red-600">We hit a snag. Please refresh or try again later.</div>`;
+    }
   }
 
   function renderBrief(){
@@ -125,7 +133,7 @@
         </div>
         <p class="mt-4 text-sm text-slate-500" id="tip"></p>`;
       // set
-      $$('input[name=strat]').forEach(r=>{ r.checked = (state.brief.strategy===r.value); r.addEventListener('change',()=>{
+      el.querySelectorAll('input[name=strat]').forEach(r=>{ r.checked = (state.brief.strategy===r.value); r.addEventListener('change',()=>{
         state.brief.strategy = r.value; saveDraft(); renderBrief(); updateTip(); }); });
       function updateTip(){
         const s = state.brief.strategy||'';
@@ -147,7 +155,7 @@
               <input type="radio" name="tl" value="${opt}"> <span>${opt}</span>
             </label>`).join('')}
         </div>`;
-      $$('input[name=tl]').forEach(r=>{ r.checked = (state.brief.timeline===r.value); r.addEventListener('change',()=>{ state.brief.timeline=r.value; saveDraft(); renderBrief(); }); });
+      el.querySelectorAll('input[name=tl]').forEach(r=>{ r.checked = (state.brief.timeline===r.value); r.addEventListener('change',()=>{ state.brief.timeline=r.value; saveDraft(); renderBrief(); }); });
     }, ()=> !!state.brief.timeline));
 
     // Step 4: Finance
@@ -195,7 +203,7 @@
           <div><label class="text-sm">Construction preference</label><select id="cp" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700"><option value="">Select…</option><option>Low maintenance</option><option>Renovation OK</option></select></div>
         </div>`;
       // set
-      $$('#step-root input[type=checkbox]').forEach(c=>{ c.checked = (state.brief.types||[]).includes(c.value); c.addEventListener('change',()=>{
+      el.querySelectorAll('input[type=checkbox]').forEach(c=>{ c.checked = (state.brief.types||[]).includes(c.value); c.addEventListener('change',()=>{
         const set = new Set(state.brief.types||[]); if (c.checked) set.add(c.value); else set.delete(c.value); state.brief.types = Array.from(set); saveDraft(); renderBrief(); }); });
       el.querySelector('#bemin').value = state.brief.beds_min||'';
       el.querySelector('#bemax').value = state.brief.beds_max||'';
@@ -291,7 +299,7 @@
         </div>`;
       // set
       const selStates = new Set(state.brief.states||[]);
-      $$('#step-root input[type=checkbox]').forEach(c=>{
+      el.querySelectorAll('input[type=checkbox]').forEach(c=>{
         if (STATES.includes(c.value)) c.checked = selStates.has(c.value);
       });
       el.querySelector('#subs').value = state.brief.suburbs||'';
@@ -301,18 +309,18 @@
       function refreshDrivers(){ driversBox.classList.toggle('hidden', el.querySelector('#open').checked); }
       refreshDrivers();
       const setDrivers = new Set(state.brief.location_drivers||[]);
-      $$('#step-root #drivers input[type=checkbox]').forEach(c=>{ c.checked = setDrivers.has(c.value); });
+      el.querySelectorAll('#drivers input[type=checkbox]').forEach(c=>{ c.checked = setDrivers.has(c.value); });
 
       el.oninput = ()=>{
         // states
         const chosen = [];
-        $$('#step-root input[type=checkbox]').forEach(c=>{ if (STATES.includes(c.value) && c.checked) chosen.push(c.value); });
+        el.querySelectorAll('input[type=checkbox]').forEach(c=>{ if (STATES.includes(c.value) && c.checked) chosen.push(c.value); });
         state.brief.states = chosen;
         state.brief.suburbs = el.querySelector('#subs').value.trim();
         state.brief.open_suggestions = el.querySelector('#open').checked;
         // drivers
         const ds = [];
-        $$('#step-root #drivers input[type=checkbox]').forEach(c=>{ if (c.checked) ds.push(c.value); });
+        el.querySelectorAll('#drivers input[type=checkbox]').forEach(c=>{ if (c.checked) ds.push(c.value); });
         // keep to 3
         if (ds.length>3){ ds.length = 3; }
         state.brief.location_drivers = ds;

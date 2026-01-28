@@ -8,21 +8,8 @@
   init();
 
   async function init(){
-    const v = Date.now().toString(36);
-    try{
-      schema = await fetchJson(path('assets/assessment.schema.json?v='+v));
-    }catch(e){ schema = null; }
-    if (!schema || !schema.steps || !schema.nodes){
-      const root = document.getElementById('step-root');
-      if (root) root.innerHTML = '<div class="text-sm text-rose-600">We couldn\'t load the assessment configuration. Please hard refresh (Cmd+Shift+R) and try again.</div>';
-      // Proceed with minimal defaults to avoid a blank screen
-      schema = { rule_version:'v1', steps:[ {id:'start', title:'Let\'s define your brief.', group:'start'} ], nodes:[
-        {id:'first_name', prompt:'First name', type:'text', maps_to_field:'client.first_name', step_group:'start'},
-        {id:'last_name', prompt:'Last name', type:'text', maps_to_field:'client.last_name', step_group:'start'},
-        {id:'email', prompt:'Email', type:'text', maps_to_field:'client.email', step_group:'start'},
-        {id:'mobile', prompt:'Mobile', type:'text', maps_to_field:'client.mobile', step_group:'start'}
-      ] };
-    }
+    const v = '20260128';
+    schema = await fetchJson(path('assets/assessment.schema.json?v='+v));
     const resume = new URLSearchParams(location.search||'').get('resume');
     if (resume){
       try{
@@ -55,9 +42,14 @@
   }
 
   function computeFlow(){
-    // One screen per group; include all step groups in order to avoid visibility edge-cases hiding the first page
-    const groups = (schema.steps||[]).map(s=> s.group);
-    // Ensure comparables present at end if defined separately
+    // One screen per group; include groups that have visible nodes, but always include 'start' first
+    const visible = window.ProppyEngine.visibleNodes(schema, answers);
+    const groups = [];
+    for (const step of (schema.steps||[])){
+      const nodesInGroup = visible.filter(n=> n.step_group === step.group);
+      if (nodesInGroup.length){ groups.push(step.group); }
+    }
+    if (!groups.includes('start')) groups.unshift('start');
     if (!groups.includes('comparables')) groups.push('comparables');
     activeGroups = groups;
     stepOrder = groups;
