@@ -258,7 +258,137 @@
       });
     }, ()=> true));
 
+    // Step 6: Location scope
+    list.push(step('location', el=>{
+      const STATES = ['NSW','VIC','QLD','SA','WA','TAS','ACT','NT'];
+      const DRIVERS = ['Rent growth','Low vacancy','Infrastructure','Price point','Schools','Commute'];
+      el.innerHTML = `
+        <h2 class=\"text-2xl font-extrabold mb-1\">Where should we scan?</h2>
+        <p class=\"text-slate-600 dark:text-slate-300 mb-4\">Local knowledge is useful — but we scan nationwide to find where the signals are strongest.</p>
+        <div class=\"mb-4\">
+          <label class=\"text-sm\">Target states</label>
+          <div class=\"grid grid-cols-2 md:grid-cols-4 gap-2 mt-1\">
+            ${STATES.map(s=>`<label class=\"flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer\"><input type=\"checkbox\" value=\"${s}\"> <span>${s}</span></label>`).join('')}
+          </div>
+        </div>
+        <div class=\"mb-4\"><label class=\"text-sm\">Any suburbs already in mind? (optional)</label>
+          <input id=\"subs\" type=\"text\" class=\"mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700\" placeholder=\"e.g., Joondalup, Thornbury\">
+        </div>
+        <div class=\"mb-2 flex items-center gap-2\"><input id=\"open\" type=\"checkbox\"><label for=\"open\" class=\"text-sm\">Open to data‑led suggestions</label></div>
+        <div id=\"drivers\" class=\"mt-2 hidden\">
+          <label class=\"text-sm\">What makes a location acceptable? (pick up to 3)</label>
+          <div class=\"grid grid-cols-2 md:grid-cols-3 gap-2 mt-1\">
+            ${DRIVERS.map(d=>`<label class=\"flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer\"><input type=\"checkbox\" value=\"${d}\"> <span>${d}</span></label>`).join('')}
+          </div>
+        </div>`;
+      // set
+      const selStates = new Set(state.brief.states||[]);
+      $$('#step-root input[type=checkbox]').forEach(c=>{
+        if (STATES.includes(c.value)) c.checked = selStates.has(c.value);
+      });
+      el.querySelector('#subs').value = state.brief.suburbs||'';
+      el.querySelector('#open').checked = !!state.brief.open_suggestions;
+      // drivers
+      const driversBox = el.querySelector('#drivers');
+      function refreshDrivers(){ driversBox.classList.toggle('hidden', el.querySelector('#open').checked); }
+      refreshDrivers();
+      const setDrivers = new Set(state.brief.location_drivers||[]);
+      $$('#step-root #drivers input[type=checkbox]').forEach(c=>{ c.checked = setDrivers.has(c.value); });
+
+      el.oninput = ()=>{
+        // states
+        const chosen = [];
+        $$('#step-root input[type=checkbox]').forEach(c=>{ if (STATES.includes(c.value) && c.checked) chosen.push(c.value); });
+        state.brief.states = chosen;
+        state.brief.suburbs = el.querySelector('#subs').value.trim();
+        state.brief.open_suggestions = el.querySelector('#open').checked;
+        // drivers
+        const ds = [];
+        $$('#step-root #drivers input[type=checkbox]').forEach(c=>{ if (c.checked) ds.push(c.value); });
+        // keep to 3
+        if (ds.length>3){ ds.length = 3; }
+        state.brief.location_drivers = ds;
+        refreshDrivers(); saveDraft(); renderBrief();
+      };
+    }, ()=> (state.brief.states||[]).length>0 ));
+
+    // Step 7: Risk & Success
+    list.push(step('risk', el=>{
+      el.innerHTML = `
+        <h2 class=\"text-2xl font-extrabold mb-1\">How should this feel in 5 years?</h2>
+        <p class=\"text-slate-600 dark:text-slate-300 mb-4\">This shapes shortlist constraints and negotiation approach.</p>
+        <div class=\"mb-4\">
+          <label class=\"text-sm\">Risk tolerance</label>
+          <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 mt-1\">
+            ${['Conservative','Moderate','Growth‑focused'].map(r=>`<label class=\"flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer\"><input type=\"radio\" name=\"risk\" value=\"${r}\"> <span>${r}</span></label>`).join('')}
+          </div>
+        </div>
+        <div>
+          <label class=\"text-sm\">What would success look like in 5 years?</label>
+          <textarea id=\"succ\" rows=\"3\" class=\"mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700\" placeholder=\"Briefly describe outcomes you’d like to see\"></textarea>
+        </div>`;
+      $$('input[name=risk]').forEach(r=>{ r.checked = (state.brief.risk===r.value); r.addEventListener('change',()=>{ state.brief.risk=r.value; saveDraft(); renderBrief(); }); });
+      el.querySelector('#succ').value = state.brief.success||'';
+      el.querySelector('#succ').addEventListener('input', e=>{ state.brief.success = e.target.value.trim(); saveDraft(); });
+    }, ()=> !!state.brief.risk));
+
+    // Step 8: Summary & Next Step (client‑only first pass)
+    list.push(step('summary', el=>{
+      const route = computeRouting(state.brief);
+      el.innerHTML = `
+        <h2 class=\"text-2xl font-extrabold mb-2\">Your Investment Brief</h2>
+        <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 mb-6\">
+          ${summaryItem('Strategy', state.brief.strategy)}
+          ${summaryItem('Timeline', state.brief.timeline)}
+          ${summaryItem('Budget', state.brief.budget_band)}
+          ${summaryItem('Types', (state.brief.types||[]).join(', '))}
+          ${summaryItem('States', (state.brief.states||[]).join(', '))}
+          ${summaryItem('Risk', state.brief.risk)}
+        </div>
+        <div class=\"rounded-2xl border border-slate-200 dark:border-slate-800 p-4 mb-6\">
+          <h3 class=\"font-bold mb-2\">How Proppy works</h3>
+          <ol class=\"list-decimal pl-5 space-y-1 text-slate-600 dark:text-slate-300\">
+            <li>Define the brief</li>
+            <li>Analyse markets nationwide</li>
+            <li>Source and secure the right property</li>
+          </ol>
+        </div>
+        <div class=\"flex flex-col md:flex-row items-start md:items-center gap-3\">
+          ${primaryCta(route)}
+          <div class=\"flex gap-4\">${secondaryCtas(route)}</div>
+        </div>
+        <p class=\"mt-3 text-sm text-slate-500\">No pressure. Clear, data‑driven insights. Speak with an expert, not a salesperson.</p>`;
+      track('assessment_submit', { priority: route.priority, next_action: route.next });
+      // attach tracking to CTAs
+      el.querySelectorAll('[data-ev]').forEach(a=> a.addEventListener('click', ()=> track(a.getAttribute('data-ev'), {})) );
+    }));
+
     return list;
+  }
+
+  function summaryItem(label, val){ if (!val) return ''; return `<div><div class=\"text-slate-500 text-sm\">${label}</div><div class=\"font-semibold\">${escapeHtml(val)}</div></div>`; }
+
+  function computeRouting(b){
+    const soon = /^(Now|1–3 months)$/.test(b.timeline||'');
+    const fin = (b.preapproval==='In progress' || b.preapproval==='Obtained' || b.deposit_source==='Equity' || b.deposit_source==='Mix');
+    const stratSet = (b.strategy && !/^Not sure/.test(b.strategy));
+    if (soon && fin && stratSet) return { priority:'Hot', next:'book' };
+    if (stratSet && (b.timeline==='3–6 months' || (b.timeline && !fin))) return { priority:'Warm', next:'trial' };
+    return { priority:'Nurture', next:'report' };
+  }
+
+  function primaryCta(route){
+    if (route.next==='book') return `<a data-ev=\"cta_book_click\" href=\"book.html\" class=\"inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold\">Book a Call<span class=\"material-symbols-outlined text-sm\">arrow_forward</span></a>`;
+    if (route.next==='trial') return `<a data-ev=\"cta_trial_click\" href=\"pricing.html\" class=\"inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold\">Start Free Trial<span class=\"material-symbols-outlined text-sm\">arrow_forward</span></a>`;
+    return `<a data-ev=\"cta_report_click\" href=\"technology.html\" class=\"inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold\">Get Suburb Report<span class=\"material-symbols-outlined text-sm\">arrow_forward</span></a>`;
+  }
+
+  function secondaryCtas(route){
+    const ctas = [];
+    if (route.next!=='book') ctas.push(`<a data-ev=\"cta_book_click\" href=\"book.html\" class=\"text-sm underline\">Book a Call</a>`);
+    if (route.next!=='trial') ctas.push(`<a data-ev=\"cta_trial_click\" href=\"pricing.html\" class=\"text-sm underline\">Start Free Trial</a>`);
+    if (route.next!=='report') ctas.push(`<a data-ev=\"cta_report_click\" href=\"technology.html\" class=\"text-sm underline\">Get Suburb Report</a>`);
+    return ctas.join('');
   }
 
   function valid(required){
@@ -289,4 +419,3 @@
   // init
   render();
 })();
-
