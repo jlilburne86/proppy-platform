@@ -41,7 +41,7 @@
     setProgress();
     renderBrief();
     $('#btn-back').disabled = idx===0;
-    $('#btn-next').textContent = idx===steps.length-1? 'Review' : 'Continue';
+    $('#btn-next').textContent = idx===steps.length-1? 'Finish' : 'Continue';
     track('assessment_step_view', { step_id: steps[idx].id });
   }
 
@@ -407,15 +407,35 @@
   }
 
   $('#btn-back').addEventListener('click', ()=>{ if (idx>0){ idx--; render(); } });
-  $('#btn-save').addEventListener('click', ()=>{ saveDraft(); alert('Saved on this device. You can resume later.'); });
+  $('#btn-save').addEventListener('click', async ()=>{ saveDraft(); const s = await serverDraft('POST'); alert('Saved. You can resume later' + (s && s.resume_url? ` via ${s.resume_url}` : ' on this device.')); });
   $('#btn-next').addEventListener('click', ()=>{
     const s = steps[idx];
     if (!s.validate()) return alert('Please complete the required fields.');
     track('assessment_step_complete', { step_id: s.id });
     if (idx<steps.length-1){ idx++; render(); }
-    else { /* would show summary/review in next milestone */ alert('Assessment captured. Next: summary & routing.'); }
+    else { try{ await serverSubmit(); }catch(e){} alert('Assessment captured. Next: summary & routing.'); }
   });
 
   // init
   render();
 })();
+  async function serverDraft(method){
+    const body = { brief: state.brief };
+    try{
+      const res = await fetch('/api/assessment/draft' + (method==='PATCH' && state.meta.draft_id? `/${state.meta.draft_id}`:''), {
+        method: method||'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(body)
+      });
+      if (!res.ok) return null;
+      const j = await res.json();
+      if (j.draft_id) state.meta.draft_id = j.draft_id;
+      saveDraft();
+      return j;
+    }catch(e){ return null; }
+  }
+
+  async function serverSubmit(){
+    try{
+      const res = await fetch('/api/assessment/submit', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ brief: state.brief }) });
+      if (!res.ok) return null; const j = await res.json(); return j;
+    }catch(e){ return null; }
+  }

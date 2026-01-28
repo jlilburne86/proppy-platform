@@ -1,0 +1,16 @@
+name = "proppy-assessment-api"
+main = "src/index.js"
+compatibility_date = "2024-12-01"
+
+[vars]
+PUBLIC_BASE_URL = "https://example.com"
+ALLOWED_PREVIEW_DOMAINS = "realestate.com.au,domain.com.au"
+
+[[kv_namespaces]]
+binding = "ASSESS_KV"
+id = "" # fill in after creating KV namespace
+
+[routes]
+patterns = ["/api/*"]
+zone_name = "" # optional; or configure route in CF dashboard
+
