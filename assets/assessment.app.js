@@ -116,7 +116,11 @@
   function renderGroup(group){
     const wrap = document.createElement('div');
     wrap.className = 'space-y-4 animate-fadeIn';
-    const nodes = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===group);
+    let nodes = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===group);
+    // Fallback: if nothing visible (e.g., mis-eval or initial state), render group fields without show_when filtering
+    if (!nodes.length){
+      nodes = (schema.nodes||[]).filter(n=> n.step_group===group);
+    }
     nodes.forEach(node=>{
       const row = document.createElement('div');
       row.className = 'space-y-2 animate-slideUp';
