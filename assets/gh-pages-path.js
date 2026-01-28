@@ -26,5 +26,26 @@
         }
       });
     }
+
+    // CSS fallback and favicon injection to prevent 404s on Pages
+    document.addEventListener('DOMContentLoaded', function(){
+      try{
+        var hasBuilt = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+          .some(l => /assets\/site\.css/i.test(l.getAttribute('href')||''));
+        var hasCDN = Array.from(document.scripts).some(s => /cdn\.tailwindcss\.com/.test(s.src||''));
+        if (!hasBuilt && !hasCDN){
+          var cdn = document.createElement('script');
+          cdn.src = 'https://cdn.tailwindcss.com?plugins=forms,typography';
+          cdn.defer = true; document.head.appendChild(cdn);
+        }
+        var hasIcon = !!document.querySelector('link[rel="icon"]');
+        if (!hasIcon){
+          var icon = document.createElement('link');
+          icon.rel = 'icon';
+          icon.href = (parts.length>=1? repo : '') + '/proppy%20mobile%20icon.png';
+          document.head.appendChild(icon);
+        }
+      }catch(e){}
+    });
   } catch (e) {}
 })();
