@@ -61,8 +61,8 @@
     root.innerHTML = '';
     const head = document.createElement('div');
     const gInfo = groupProgress(curId);
-    const hp = proppyHelp(curId);
-    const helpLine = hp? `<p class=\"text-xs text-slate-500 dark:text-slate-400 mt-1\">How Proppy helps: ${hp}</p>` : '';
+    const hpObj = proppyHelp(curId);
+    const helpLine = hpObj? `<p class=\"text-xs text-slate-500 dark:text-slate-400 mt-1\">How Proppy helps: ${esc(hpObj.text||hpObj)} ${hpObj.href? `<a href=\\\"${hpObj.href}\\\" class=\\\"underline\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Learn more</a>`: ''}</p>` : '';
     head.innerHTML = `<div class=\"mb-4 animate-fadeIn\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p>${helpLine}</div>`;
     root.appendChild(head);
     if (curId==='comparables') root.appendChild(renderComparables());
@@ -99,24 +99,16 @@
   }
 
   function proppyHelp(groupId){
-    switch(groupId){
-      case 'start':
-        return 'We’re buy‑side only, data‑led, and held to outcomes (see our guarantee). Your brief shapes everything we show next.';
-      case 'location':
-        return 'We consider nationwide signals and historical outcomes to surface candidate areas that fit your brief—no hype, no predictions.';
-      case 'goals':
-        return 'We map goals to proven strategies (Set & Forget vs Value Add) and align constraints so you see the right stock sooner.';
-      case 'timing':
-        return 'Timing and experience guide how fast we move and how we negotiate; hot paths get streamlined sourcing.';
-      case 'finance':
-        return 'Budget and pre‑approval sharpen your target list and strengthen negotiation; we can introduce lending if needed.';
-      case 'property':
-        return 'We avoid oversupplied stock and poor strata; filters are tuned to scarcity, rentability, and long‑term resilience.';
-      case 'comparables':
-        return 'Your examples calibrate condition and location expectations so the first shortlist is on‑target.';
-      default:
-        return '';
-    }
+    const map = {
+      start: { text: 'We’re buy‑side only, data‑led, and held to outcomes. Your brief shapes everything we show next.', href: 'guarantee.html' },
+      location: { text: 'We consider nationwide signals and historical outcomes to surface candidate areas that fit your brief—no hype, no predictions.', href: 'technology.html' },
+      goals: { text: 'We map goals to proven strategies (Set & Forget vs Value Add) and align constraints so you see the right stock sooner.', href: 'how-it-works.html' },
+      timing: { text: 'Timing and experience guide how fast we move and how we negotiate; hot paths get streamlined sourcing.', href: 'how-it-works.html' },
+      finance: { text: 'Budget and pre‑approval sharpen your target list and strengthen negotiation; we can introduce lending if needed.', href: 'advantage.html' },
+      property: { text: 'We avoid oversupplied stock and poor strata; filters are tuned to scarcity, rentability, and long‑term resilience.', href: 'technology.html' },
+      comparables: { text: 'Your examples calibrate condition and location expectations so the first shortlist is on‑target.', href: 'how-it-works.html' }
+    };
+    return map[groupId] || null;
   }
 
   function renderGroup(group){
@@ -315,6 +307,8 @@
     const infoBtn = $('#signals-info'); const bd = $('#signals-breakdown');
     if (bd) bd.innerHTML = sig.breakdown.map(b=> `<li class="flex items-center justify-between"><span>${esc(b.label)}</span><span class="font-semibold ${b.points>=0?'text-emerald-600':'text-rose-600'}">${b.points>0?'+':''}${b.points}</span></li>`).join('');
     if (infoBtn && bd && !infoBtn._wired){ infoBtn._wired = true; infoBtn.addEventListener('click', ()=>{ bd.classList.toggle('hidden'); }); }
+    const howBtn = document.getElementById('signals-how');
+    if (howBtn && !howBtn._wired){ howBtn._wired = true; howBtn.addEventListener('click', ()=> showSignalsModal()); }
     // Render scope chip
     const chip = $('#scope-chip'); if (chip) chip.textContent = scope;
     ul.innerHTML = items.map(i=> `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-accent">${esc(i.icon||'check_circle')}</span><div><div class="font-semibold">${esc(i.title)}</div><div class="text-slate-500 dark:text-slate-400 text-xs">${esc(i.desc)}</div></div></li>`).join('');
@@ -613,6 +607,14 @@
   function get(o,p){ return p.split('.').reduce((x,k)=> (x&&x[k]!==undefined)? x[k]:undefined, o); }
   function set(o,p,v){ const parts=p.split('.'); let x=o; while(parts.length>1){ const k=parts.shift(); x=x[k]=x[k]||{}; } x[parts[0]]=v; }
   function track(ev, params){ try{ if (typeof window.gtag==='function') gtag('event', ev, params||{}); }catch(e){} }
+  function showSignalsModal(){
+    const m = document.getElementById('signals-modal'); if (!m) return;
+    m.classList.remove('hidden');
+    const close = document.getElementById('signals-modal-close');
+    const hide = ()=> m.classList.add('hidden');
+    if (close && !close._wired){ close._wired=true; close.addEventListener('click', hide); }
+    m.addEventListener('click', (e)=>{ if (e.target===m || e.target.classList.contains('bg-black/50')) hide(); });
+  }
   function pulseData(){
     const bar = document.getElementById('data-pulse'); if (!bar) return;
     bar.classList.remove('hidden');
