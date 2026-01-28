@@ -321,6 +321,10 @@
     if (howBtn && !howBtn._wired){ howBtn._wired = true; howBtn.addEventListener('click', ()=> showSignalsModal()); }
     // Render scope chip
     const chip = $('#scope-chip'); if (chip) chip.textContent = scope;
+    const chipBrief = document.getElementById('scope-brief'); if (chipBrief) chipBrief.textContent = scope;
+    const briefToggle = document.getElementById('brief-toggle'); const briefEl = document.getElementById('brief');
+    if (briefToggle && briefEl && !briefToggle._wired){ briefToggle._wired=true; briefToggle.addEventListener('click', ()=>{ briefEl.classList.toggle('hidden'); }); }
+    const chip2 = $('#scope-brief'); if (chip2) chip2.textContent = scope;
     ul.innerHTML = items.map(i=> `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-accent">${esc(i.icon||'check_circle')}</span><div><div class="font-semibold">${esc(i.title)}</div><div class="text-slate-500 dark:text-slate-400 text-xs">${esc(i.desc)}</div></div></li>`).join('');
     renderHistorical();
   }
@@ -464,7 +468,15 @@
     if (!rows.length){ box.classList.add('hidden'); if (cardsHolder) cardsHolder.innerHTML=''; return; }
     // global sort by suburb-first, then goal score, then avgScore
     rows.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
-    const finalPicks = rows.slice(0,3);
+    // Dedupe repeated suburbs then take top 3
+    const __seen = new Set();
+    const __unique = [];
+    for (const rr of rows){
+      const k = `${rr.slug||''}|${String(rr.area||'').replace(/<[^>]+>/g,'')}`;
+      if (__seen.has(k)) continue; __seen.add(k); __unique.push(rr);
+      if (__unique.length>=3) break;
+    }
+    const finalPicks = __unique.slice(0,3);
     const cards = finalPicks.map((r,i)=>{
       const label = (String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'')|| `${r.slug||''}`).replace(/\s+\(.*\)$/, '').trim();
       const price5 = bandFrom(r.price5yGrowth, i);
@@ -490,9 +502,9 @@
         <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
           ${priceLine}
           <div>Yield now: <span class=\"font-semibold\">${esc(yieldNow)}</span></div>
-          <div>Risk: <span class=\"font-semibold\">${esc(vacTrend)}, ${esc(invTrend)}</span></div>
+          <div><div class=\"text-[11px] text-slate-500\">Risk</div><div class=\"flex items-center gap-1\"><span class=\"px-1.5 py-0.5 rounded-full text-[10px] ${vacTrend.indexOf('↓')!==-1?'bg-emerald-600/10 text-emerald-700 dark:text-emerald-400':'bg-slate-200/70 dark:bg-slate-800 text-slate-600'}\">${esc(vacTrend)}</span><span class=\"px-1.5 py-0.5 rounded-full text-[10px] ${invTrend.indexOf('↓')!==-1?'bg-emerald-600/10 text-emerald-700 dark:text-emerald-400':'bg-slate-200/70 dark:bg-slate-800 text-slate-600'}\">${esc(invTrend)}</span></div></div>
         </div>
-        <ul class=\"mt-2 text-[11px] text-slate-500 dark:text-slate-400 list-disc pl-5\">${why.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>
+        <div class=\"mt-2 flex flex-wrap gap-1 text-[11px] text-slate-500 dark:text-slate-400\">\n          <span class=\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\">Entry ~$${Number(r.typicalPrice||0)?Number(r.typicalPrice||0).toLocaleString():'—'}</span>\n          ${answers.brief && answers.brief.beds_min? `<span class=\\"px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700\\">Beds ≥${esc(answers.brief.beds_min)}</span>`:''}\n        </div>
       </div>`;
     }).join('');
     if (cardsHolder) cardsHolder.innerHTML = cards;
