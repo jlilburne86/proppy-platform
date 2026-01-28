@@ -62,12 +62,15 @@
     const head = document.createElement('div');
     const gInfo = groupProgress(curId);
     const hpObj = proppyHelp(curId);
-    const helpLine = hpObj? `<p class=\"text-xs text-slate-500 dark:text-slate-400 mt-1\">How Proppy helps: ${esc(hpObj.text||hpObj)} ${hpObj.href? `<a href=\\\"${hpObj.href}\\\" class=\\\"underline\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Learn more</a>`: ''}</p>` : '';
+    const helpLine = hpObj? `<p class=\"text-xs text-slate-500 dark:text-slate-400 mt-1\">How Proppy helps: ${esc(hpObj.text||hpObj)} ${hpObj.href? `<a href=\\\"${hpObj.href}\\\" class=\\\"underline insight-link\\\" data-step=\\\"${curId}\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Learn more</a>`: ''}</p>` : '';
     head.innerHTML = `<div class=\"mb-4 animate-fadeIn\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p>${helpLine}</div>`;
     root.appendChild(head);
     if (curId==='comparables') root.appendChild(renderComparables());
     else root.appendChild(renderGroup(curId));
     setProgress();
+    // Bind insight link tracking
+    root.querySelectorAll('.insight-link').forEach(a=>{ if(!a._wired){ a._wired=true; a.addEventListener('click', ()=> track('insight_learn_more_click', { step: a.getAttribute('data-step')||curId, href: a.getAttribute('href')||'' })); }});
+    if (hpObj){ track('insight_view', { step: curId, href: hpObj.href||'' }); }
     // Advance on Enter for non-textarea inputs
     root.onkeydown = (ev)=>{
       if (ev.key === 'Enter' && !ev.shiftKey && !ev.metaKey && !ev.altKey && !ev.ctrlKey){
