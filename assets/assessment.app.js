@@ -153,15 +153,15 @@
         break;
       case 'date':
         box.innerHTML = `<input type=\"date\" class=\"${common}\" value=\"${value||''}\">`;
-        box.firstChild.addEventListener('input', e=> { setVal(node, e.target.value); autoAdvance(node); });
+        box.firstChild.addEventListener('input', e=> { setVal(node, e.target.value); });
         break;
       case 'toggle':
         box.innerHTML = `<label class=\"inline-flex items-center gap-2\"><input type=\"checkbox\" ${value? 'checked':''}> <span>${node.prompt}</span></label>`;
-        box.firstChild.querySelector('input').addEventListener('change', e=> { setVal(node, !!e.target.checked); autoAdvance(node); });
+        box.firstChild.querySelector('input').addEventListener('change', e=> { setVal(node, !!e.target.checked); });
         break;
       case 'single_select':
         box.innerHTML = `<select class=\"${common}\"><option value=\"\">Select…</option>${(node.options||[]).map(o=>`<option ${o===value?'selected':''}>${o}</option>`).join('')}</select>`;
-        box.firstChild.addEventListener('change', e=> { setVal(node, e.target.value||''); autoAdvance(node); });
+        box.firstChild.addEventListener('change', e=> { setVal(node, e.target.value||''); });
         if (node.id === 'strategy_goal'){
           const hint = document.createElement('div');
           hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
@@ -502,8 +502,24 @@
   }
 
   async function goNextIfValid(fromClick){
-    const errs = window.ProppyEngine.validate(schema, answers);
     const curGroup = stepOrder[idx];
+    // Special-case: Comparables are optional — drop empty rows and skip validation
+    if (curGroup === 'comparables'){
+      if (Array.isArray(answers.comparables)){
+        answers.comparables = answers.comparables.filter(c=> c && c.url && /^https?:\/\//i.test(c.url));
+      }
+      track('assessment_step_complete', { step_id: curGroup });
+      if (idx < stepOrder.length-1){ await analyzeThen(()=>{ idx++; render(); }); return true; }
+      // fall through to submit if last
+      const resp = await serverSubmit();
+      let lead = null;
+      if (resp && resp.recommended_next_step){ lead = { recommended_next_step: resp.recommended_next_step }; }
+      if (!lead) lead = window.ProppyEngine.computeLead(answers);
+      track('assessment_submit', { next: lead.recommended_next_step });
+      await analyzeThen(()=> renderFinalNextSteps(lead), 'Finalising brief…');
+      return true;
+    }
+    const errs = window.ProppyEngine.validate(schema, answers);
     const groupNodeIds = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===curGroup).map(n=> n.id);
     const curErr = errs.find(e=> groupNodeIds.includes(e.id));
     if (curErr) {
