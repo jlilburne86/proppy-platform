@@ -2,11 +2,11 @@
   "rule_version": "v1.0.0",
   "steps": [
     {"id": "start", "title": "Let’s define your brief.", "group": "start"},
-    {"id": "goals", "title": "Your goals & why", "group": "goals"},
+    {"id": "location", "title": "Where should we scan?", "group": "location"},
+    {"id": "goals", "title": "Your goals", "group": "goals"},
     {"id": "timing", "title": "Timing & experience", "group": "timing"},
     {"id": "finance", "title": "Finance snapshot", "group": "finance"},
     {"id": "property", "title": "Property basics", "group": "property"},
-    {"id": "location", "title": "Where should we scan?", "group": "location"},
     {"id": "comparables", "title": "Share up to 3 example properties (optional)", "group": "comparables"}
   ],
   "nodes": [
@@ -18,7 +18,6 @@
 
     {"id":"goals","prompt":"Primary goals","type":"multi_select","options":["Capital growth","Rental yield","Balanced","Cashflow now","Portfolio scale"],"required_when":{"const":true},"maps_to_field":"motivation.goals","step_group":"goals"},
     {"id":"strategy_goal","prompt":"Strategy focus","type":"single_select","options":["High Growth","High Yield","Balanced"],"required_when":{"const":true},"maps_to_field":"strategy.goal","step_group":"goals"},
-    {"id":"why","prompt":"Why this investment?","type":"text","maps_to_field":"motivation.why","step_group":"goals"},
 
     {"id":"timeline","prompt":"When do you want to act?","type":"single_select","options":["Now","1–3 months","3–6 months","6–12 months"],"required_when":{"const":true},"maps_to_field":"engagement.timeline","step_group":"timing"},
     {"id":"experience","prompt":"Experience level","type":"single_select","options":["First‑time","Experienced","Professional"],"maps_to_field":"motivation.experience","step_group":"timing"},
@@ -35,7 +34,7 @@
     {"id":"beds_min","prompt":"Bedrooms (min)","type":"number","maps_to_field":"brief.beds_min","step_group":"property"},
     {"id":"baths_min","prompt":"Bathrooms (min)","type":"number","maps_to_field":"brief.baths_min","step_group":"property"},
 
-    {"id":"target_states","prompt":"Target states","type":"multi_select","options":["NSW","VIC","QLD","SA","WA","TAS","ACT","NT"],"required_when":{"const":true},"maps_to_field":"locations.states","step_group":"location"},
+    {"id":"target_states","prompt":"Target states","type":"multi_select","options":["Australia-wide","NSW","VIC","QLD","SA","WA","TAS","ACT","NT"],"required_when":{"const":true},"maps_to_field":"locations.states","step_group":"location"},
     {"id":"open_to_suggestions","prompt":"Open to data-led suggestions","type":"toggle","maps_to_field":"locations.open_to_suggestions","step_group":"location"},
     {"id":"accept_drivers","prompt":"What makes a location acceptable? (up to 3)","type":"multi_select","options":["Rent growth","Low vacancy","Infrastructure","Price point","Schools","Commute"],"show_when":{"eq":["locations.open_to_suggestions",false]},"required_when":{"eq":["locations.open_to_suggestions",false]},"validation":{"max":3},"maps_to_field":"locations.acceptability_drivers","step_group":"location"},
 

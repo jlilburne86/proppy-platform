@@ -29,7 +29,7 @@
     answers.client = answers.client||{};
     answers.motivation = answers.motivation||{};
     answers.finance = answers.finance||{};
-    answers.strategy = answers.strategy||{};
+    answers.strategy = answers.strategy||{ auto_mapped: true };
     answers.brief = answers.brief||{};
     answers.locations = answers.locations||{ open_to_suggestions:true };
     answers.risk = answers.risk||{};
@@ -307,7 +307,10 @@
     }
     // state filter
     const states = answers.locations.states||[];
-    if (states.length){ const st = String(row.stateName||'').toUpperCase(); if (!states.includes(st)) return false; }
+    if (states.length && !states.includes('Australia-wide')){
+      const st = String(row.stateName||'').toUpperCase();
+      if (!states.includes(st)) return false;
+    }
     return true;
   }
 
@@ -480,7 +483,31 @@
     }catch(e){ fn(); }
   }
 
-  function setVal(node, val){ set(answers, node.maps_to_field, val); saveDraft(); renderBrief(); pulseData(); }
+  function setVal(node, val){
+    // Special handling
+    if (node && node.id === 'target_states' && Array.isArray(val)){
+      if (val.includes('Australia-wide')){ val = ['Australia-wide']; }
+    }
+    set(answers, node.maps_to_field, val);
+    // Auto-map strategy based on goals unless user changed strategy manually
+    if (node && node.id === 'goals'){
+      if (answers.strategy && answers.strategy.auto_mapped !== false){
+        const gs = (answers.motivation.goals||[]).map(String);
+        const map = (arr)=>{
+          if (arr.includes('Rental yield') || arr.includes('Cashflow now')) return 'High Yield';
+          if (arr.includes('Capital growth')) return 'High Growth';
+          if (arr.includes('Balanced') || arr.includes('Portfolio scale')) return 'Balanced';
+          return answers.strategy.goal || 'Balanced';
+        };
+        answers.strategy.goal = map(gs);
+        answers.strategy.auto_mapped = true;
+      }
+    } else if (node && node.id === 'strategy_goal'){
+      // User set strategy manually; lock mapping
+      answers.strategy.auto_mapped = false;
+    }
+    saveDraft(); renderBrief(); pulseData();
+  }
 
   function setProgress(){
     const curId = stepOrder[idx]||'summary';
