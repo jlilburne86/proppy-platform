@@ -375,42 +375,26 @@
 
   async function renderHistorical(){
     const box = document.getElementById('historical'); if (!box) return;
-    // Need minimum info
-    if (!answers.finance.price_band || !(answers.brief.property_types||[]).length || !answers.brief.beds_min){ box.classList.add('hidden'); return; }
     const data = await loadProppy(); if (!data || !data.length){ box.classList.add('hidden'); return; }
-    // filter and score
-    const rows = data.filter(matchesCohort);
-    if (!rows.length){ box.classList.add('hidden'); return; }
-    // group by state, prefer suburb rows
-    const byState = new Map();
-    rows.forEach(r=>{
-      const st = String(r.stateName||'OTHER').toUpperCase();
-      if (!byState.has(st)) byState.set(st, []);
-      byState.get(st).push(r);
-    });
-    // seeded sort helper
-    const seed = 137;
-    const h = s=>{ let x=seed; for(let i=0;i<s.length;i++){ x = (x*31 + s.charCodeAt(i)) & 0xffffffff; } return (x>>>0)/0xffffffff; };
-    // pick up to N per state (default 10), prefer user-selected states first
-    const picks = [];
-    const sel = (answers.locations.states||[]).filter(s=> s && s!=='Australia-wide').map(s=> s.toUpperCase());
-    const allStates = Array.from(byState.keys());
-    const orderedStates = sel.length? [...sel.filter(s=> byState.has(s)), ...allStates.filter(s=> !sel.includes(s))] : allStates;
-    const perState = 10;
-    for (const st of orderedStates){
-      const arr = byState.get(st)||[];
-      if (!arr.length) continue;
-      // Relax further if strict filter produced too few rows: include all types/bed cohorts
-      let suburbFirst = arr;
-      if (arr.length < perState){
-        suburbFirst = arr; // already minimal; otherwise the matchesCohort filter above limits type/bed/budget
-      }
-      suburbFirst = suburbFirst.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
-      const shuffled = suburbFirst.sort((a,b)=> h(String(a.slug||a.area||'')) - h(String(b.slug||b.area||'')));
-      shuffled.slice(0, perState).forEach(x=> picks.push(x));
+    // filter and score (Houses only, budget with tolerance, states filter if provided)
+    let rows = data.filter(matchesCohort);
+    // fallback: if too few, relax budget requirement (states + Houses only)
+    if (rows.length < 3){
+      rows = data.filter(r=>{
+        const rowType = (r.type||'').toLowerCase();
+        if (rowType.indexOf('house')===-1) return false;
+        const states = answers.locations.states||[];
+        if (states.length && !states.includes('Australia-wide')){
+          const st = String(r.stateName||'').toUpperCase();
+          if (!states.includes(st)) return false;
+        }
+        return true;
+      });
     }
-    // limit total cards overall to 40 to keep UI snappy (4 states * 10 if many)
-    const finalPicks = picks.slice(0,40);
+    if (!rows.length){ box.classList.add('hidden'); return; }
+    // global sort by suburb-first, then goal score, then avgScore
+    rows.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
+    const finalPicks = rows.slice(0,3);
     const cards = finalPicks.map((r,i)=>{
       const label = (String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'')|| `${r.slug||''}`).replace(/\s+\(.*\)$/, '').trim();
       const price5 = bandFrom(r.price5yGrowth, i);
