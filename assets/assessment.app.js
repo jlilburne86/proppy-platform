@@ -292,13 +292,13 @@
   }
 
   function primaryCta(lead){
-    if (lead.recommended_next_step==='BOOK_CALL') return `<a data-ev="cta_book_click" href="book.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Book a strategy call<span class="material-symbols-outlined text-sm">arrow_forward</span></a>`;
+    if (lead.recommended_next_step==='BOOK_CALL') return `<a data-ev="cta_book_click" href="book.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Book a 15‑min call<span class="material-symbols-outlined text-sm">arrow_forward</span></a>`;
     if (lead.recommended_next_step==='SIGNUP_MATCHES') return `<a data-ev="cta_signup_click" href="pricing.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Create account to receive matches<span class="material-symbols-outlined text-sm">arrow_forward</span></a>`;
     if (lead.recommended_next_step==='FINANCE_INTRO') return `<a data-ev="cta_finance_click" href="book.html#finance" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Finance intro + shortlist<span class="material-symbols-outlined text-sm">arrow_forward</span></a>`;
     return `<a data-ev="cta_report_click" href="technology.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Save brief + get shortlist<span class="material-symbols-outlined text-sm">arrow_forward</span></a>`;
   }
   function secondaryCtas(lead){
-    const out=[]; if (lead.recommended_next_step!=='BOOK_CALL') out.push(`<a data-ev="cta_book_click" href="book.html" class="text-sm underline">Book a strategy call</a>`);
+    const out=[]; if (lead.recommended_next_step!=='BOOK_CALL') out.push(`<a data-ev="cta_book_click" href="book.html" class="text-sm underline">Book a 15‑min call</a>`);
     if (lead.recommended_next_step!=='SIGNUP_MATCHES') out.push(`<a data-ev="cta_signup_click" href="pricing.html" class="text-sm underline">Create account</a>`);
     if (lead.recommended_next_step!=='REPORT_SHORTLIST') out.push(`<a data-ev="cta_report_click" href="technology.html" class="text-sm underline">Get shortlist/report</a>`);
     return out.join('');
@@ -562,10 +562,10 @@
               const top = (picks||[]).slice(0,3);
               const items = top.map(r=>{
                 const area = String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'').replace(/\s+\(.*\)$/,'').trim();
-                const price5 = bandFrom(r.price5yGrowth, 0); const yieldNow = r.grossYield||'—';
-                return `<tr><td class="py-1 pr-2">${esc(area)}</td><td class="py-1 pr-2">${esc(price5)}</td><td class="py-1">${esc(yieldNow)}</td></tr>`;
+                const price5 = bandFrom(r.price5yGrowth, 0); const yieldNow = r.grossYield||'—'; const fit = Math.round(Number(r.avgScore||0))||'';
+                return `<tr><td class="py-1 pr-2">${esc(area)}</td><td class="py-1 pr-2 text-right">${esc(price5)}</td><td class="py-1 pr-2 text-right">${esc(yieldNow)}</td><td class="py-1 text-right">${fit?`${fit}/100`:''}</td></tr>`;
               }).join('');
-              body.innerHTML = `<div class="mb-2"><div class="font-semibold mb-1">Top 3 overall</div><table class="w-full text-left"><thead><tr><th class="py-1 pr-2">Suburb</th><th class="py-1 pr-2">Price 5y</th><th class="py-1">Yield</th></tr></thead><tbody>${items}</tbody></table></div>`;
+              body.innerHTML = `<div class="mb-2"><div class="font-semibold mb-1">Top 3 overall</div><table class="w-full text-left"><thead><tr><th class="py-1 pr-2">Suburb</th><th class="py-1 pr-2 text-right">Growth 5y</th><th class="py-1 pr-2 text-right">Yield</th><th class="py-1 text-right">Fit</th></tr></thead><tbody>${items}</tbody></table></div>`;
             }catch(e){}
           }
           const modal = document.getElementById('shortlist-modal');
@@ -932,7 +932,7 @@
       return [s1,s2,s3].map(d=>({ label: fmt(d), href: 'book.html?slot='+encodeURIComponent(d.toISOString()) + (nameParam? `&name=${nameParam}`:'' ) + (emailParam? `&email=${emailParam}`:'' ) }));
     }
     const slots = quickSlots();
-    const leadLabel = 'Book a strategy call';
+    const leadLabel = 'Book a 15‑min call';
     root.innerHTML = `
       <div class="mb-4">
         <div class="text-xs text-slate-500">Final</div>
