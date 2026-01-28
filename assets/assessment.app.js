@@ -326,7 +326,8 @@
   }
 
   let _proppyData = null;
-  let _historicalFocus = '5y'; // '5y' or '10y'
+  // Historical view fixed to 5y
+  const _historicalFocus = '5y';
   async function loadProppy(){
     if (_proppyData) return _proppyData;
     // Prefer slim top-10 dataset if available
@@ -467,8 +468,7 @@
     const cards = finalPicks.map((r,i)=>{
       const label = (String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'')|| `${r.slug||''}`).replace(/\s+\(.*\)$/, '').trim();
       const price5 = bandFrom(r.price5yGrowth, i);
-      const price10 = bandFrom(r.price10yGrowth, i);
-      const cagr = bandFrom(r.gsp5, i);
+      // 10y / CAGR removed from card details; fixed to 5y view
       const rent5 = bandFrom(r.rent5yGrowth, i);
       const yieldNow = r.grossYield || '—';
       const vacTrend = (parseFloat(String(r.stVacancyRate||'0'))<0)? 'Vacancy ↓' : 'Vacancy ↔';
@@ -484,9 +484,7 @@
         `Vacancy trend: ${vacTrend.replace(/\s.*/, '')}`,
         `Inventory trend: ${invTrend.replace(/\s.*/, '')}`
       ];
-      const priceLine = _historicalFocus==='10y'
-        ? `<div>Price 10y: <span class=\"font-semibold\">${esc(price10)}</span></div><div>CAGR 5y: <span class=\"font-semibold\">${esc(cagr)}</span></div>`
-        : `<div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div><div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>`;
+      const priceLine = `<div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div><div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>`;
       return `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">
         <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-full\" title=\"${esc(tip)}\">${esc(ribbon)}</span></div>
         <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
@@ -500,13 +498,8 @@
     if (cardsHolder) cardsHolder.innerHTML = cards;
     box.classList.remove('hidden');
     // analytics
-    track('historical_fit_view', { count: finalPicks.length, focus: _historicalFocus, states: (answers.locations.states||[]).join(',') });
-    // wire toggle buttons once
-    const b5 = document.getElementById('hf-5y'); const b10 = document.getElementById('hf-10y');
-    function setActive(){ if(!b5||!b10) return; b5.classList.toggle('bg-slate-200', _historicalFocus==='5y'); b10.classList.toggle('bg-slate-200', _historicalFocus==='10y'); }
-    if (b5 && !b5._wired){ b5._wired=true; b5.addEventListener('click', ()=>{ _historicalFocus='5y'; track('historical_focus_toggle', { focus:'5y' }); renderHistorical(); setActive(); }); }
-    if (b10 && !b10._wired){ b10._wired=true; b10.addEventListener('click', ()=>{ _historicalFocus='10y'; track('historical_focus_toggle', { focus:'10y' }); renderHistorical(); setActive(); }); }
-    setActive();
+    track('historical_fit_view', { count: finalPicks.length, focus: '5y', states: (answers.locations.states||[]).join(',') });
+    // 5y/10y toggle removed; fixed to 5y
     // Shortlist modal wiring
     const viewBtn = document.getElementById('shortlist-view');
     if (viewBtn && !viewBtn._wired){
