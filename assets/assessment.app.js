@@ -265,7 +265,15 @@
     if (curErr) { if (fromClick) alert('Please complete required fields.'); return false; }
     track('assessment_step_complete', { step_id: curId });
     if (idx < stepOrder.length-1){ idx++; render(); return true; }
-    else { await serverSubmit(); track('assessment_submit'); return true; }
+    else {
+      const resp = await serverSubmit();
+      let lead = null;
+      if (resp && resp.recommended_next_step){ lead = { recommended_next_step: resp.recommended_next_step }; }
+      if (!lead) lead = window.ProppyEngine.computeLead(answers);
+      track('assessment_submit', { next: lead.recommended_next_step });
+      redirectToRecommended(lead);
+      return true;
+    }
   }
 
   function setVal(node, val){ set(answers, node.maps_to_field, val); saveDraft(); renderBrief(); }
@@ -327,4 +335,12 @@
   function get(o,p){ return p.split('.').reduce((x,k)=> (x&&x[k]!==undefined)? x[k]:undefined, o); }
   function set(o,p,v){ const parts=p.split('.'); let x=o; while(parts.length>1){ const k=parts.shift(); x=x[k]=x[k]||{}; } x[parts[0]]=v; }
   function track(ev, params){ try{ if (typeof window.gtag==='function') gtag('event', ev, params||{}); }catch(e){} }
+  function redirectToRecommended(lead){
+    const qs = location.search || '';
+    let href = 'technology.html';
+    if (lead && lead.recommended_next_step==='BOOK_CALL') href = 'book.html';
+    else if (lead && lead.recommended_next_step==='SIGNUP_MATCHES') href = 'pricing.html';
+    else if (lead && lead.recommended_next_step==='FINANCE_INTRO') href = 'book.html#finance';
+    location.assign(href + qs);
+  }
 })();

@@ -129,7 +129,7 @@ function buildEngagement(answers, analytics, rule_version, lead){
     motivation: pickPaths(answers, ['motivation.goals','motivation.horizon','motivation.experience','motivation.risk']),
     finance: pickPaths(answers, ['finance.price_band','finance.deposit_band','finance.deposit_source','finance.borrowing_band','finance.preapproval','finance.preapproval_amount','finance.preapproval_expiry']),
     strategy: pickPaths(answers, ['strategy.investment_type','strategy.goal','strategy.target_yield','strategy.target_growth','strategy.reno_budget','strategy.reno_scope','strategy.dev_experience','strategy.dev_planning_risk','strategy.dev_holding']),
-    brief: pickPaths(answers, ['brief.property_types','brief.beds_min','brief.beds_max','brief.baths_min','brief.baths_max','brief.construction','brief.land_min','brief.land_max','brief.strata_tolerance','brief.building_style','brief.dual_config','brief.features','brief.additional_requirements','brief.top_priorities','brief.must_avoids']),
+    brief: pickPaths(answers, ['brief.property_types','brief.beds_min','brief.baths_min','brief.construction','brief.land_min','brief.land_max','brief.strata_tolerance','brief.building_style','brief.dual_config','brief.features','brief.additional_requirements','brief.top_priorities','brief.must_avoids']),
     locations: pickPaths(answers, ['locations.states','locations.regions','locations.suburbs','locations.proximity','locations.open_to_suggestions','locations.acceptability_drivers']),
     comparableProperties: (answers.comparables||[]).slice(0,3).map(c=>({ url:c.url, tag:c.tag, source_domain: safeHost(c.url) })),
     engagement: { timeline: get(answers,'engagement.timeline'), status:'submitted' },

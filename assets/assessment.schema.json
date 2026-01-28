@@ -45,10 +45,8 @@
     {"id":"dev_holding","prompt":"Holding tolerance","type":"single_select","options":["Low","Medium","High"],"show_when":{"eq":["strategy.investment_type","Development"]},"maps_to_field":"strategy.dev_holding","step_group":"strategy"},
 
     {"id":"property_types","prompt":"Property types","type":"multi_select","options":["House","Townhouse","Villa","Unit/Apartment","Dual income","Land-dev"],"required_when":{"const":true},"maps_to_field":"brief.property_types","step_group":"what"},
-    {"id":"beds_min","prompt":"Bedrooms min","type":"number","maps_to_field":"brief.beds_min","step_group":"what"},
-    {"id":"beds_max","prompt":"Bedrooms max","type":"number","maps_to_field":"brief.beds_max","step_group":"what"},
-    {"id":"baths_min","prompt":"Bathrooms min","type":"number","maps_to_field":"brief.baths_min","step_group":"what"},
-    {"id":"baths_max","prompt":"Bathrooms max","type":"number","maps_to_field":"brief.baths_max","step_group":"what"},
+    {"id":"beds_min","prompt":"Bedrooms (min)","type":"number","maps_to_field":"brief.beds_min","step_group":"what"},
+    {"id":"baths_min","prompt":"Bathrooms (min)","type":"number","maps_to_field":"brief.baths_min","step_group":"what"},
     {"id":"construction","prompt":"Construction preference","type":"single_select","options":["New","Established","Both"],"maps_to_field":"brief.construction","step_group":"what"},
     {"id":"land_min","prompt":"Land size min (m²)","type":"number","show_when":{"includes":["brief.property_types","House|Townhouse|Villa"]},"maps_to_field":"brief.land_min","step_group":"what"},
     {"id":"land_max","prompt":"Land size max (m²)","type":"number","show_when":{"includes":["brief.property_types","House|Townhouse|Villa"]},"maps_to_field":"brief.land_max","step_group":"what"},
