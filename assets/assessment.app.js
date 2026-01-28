@@ -57,7 +57,7 @@
     root.innerHTML = '';
     const head = document.createElement('div');
     const gInfo = groupProgress(curId);
-    head.innerHTML = `<div class=\"mb-4\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p></div>`;
+    head.innerHTML = `<div class=\"mb-4 animate-fadeIn\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p></div>`;
     root.appendChild(head);
     if (curId==='comparables') root.appendChild(renderComparables());
     else root.appendChild(renderGroup(curId));
@@ -94,11 +94,11 @@
 
   function renderGroup(group){
     const wrap = document.createElement('div');
-    wrap.className = 'space-y-4';
+    wrap.className = 'space-y-4 animate-fadeIn';
     const nodes = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===group);
     nodes.forEach(node=>{
       const row = document.createElement('div');
-      row.className = 'space-y-2';
+      row.className = 'space-y-2 animate-slideUp';
       const label = document.createElement('label');
       label.className = 'text-sm'; label.textContent = node.prompt;
       row.appendChild(label);

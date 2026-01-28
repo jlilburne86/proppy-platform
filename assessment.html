@@ -26,11 +26,24 @@
             sans: ['Plus Jakarta Sans','sans-serif'],
             display: ['Plus Jakarta Sans','sans-serif']
           },
-          borderRadius: { DEFAULT: '1.5rem', '2xl': '2.5rem', '3xl':'3rem' }
+          borderRadius: { DEFAULT: '1.5rem', '2xl': '2.5rem', '3xl':'3rem' },
+          keyframes: {
+            fadeIn: { '0%':{opacity:0, transform:'translateY(4px)'}, '100%':{opacity:1, transform:'translateY(0)'} },
+            slideUp: { '0%':{opacity:0, transform:'translateY(8px)'}, '100%':{opacity:1, transform:'translateY(0)'} },
+            pulseSoft: { '0%,100%':{opacity:0.4, transform:'scale(1)'}, '50%':{opacity:1, transform:'scale(1.05)'} }
+          },
+          animation: {
+            fadeIn: 'fadeIn .35s ease-out both',
+            slideUp: 'slideUp .45s ease-out both',
+            pulseSoft: 'pulseSoft 2s ease-in-out infinite'
+          }
         }
       }
     }
   </script>
+  <style>
+    #progress-bar{ transition: width .3s ease; }
+  </style>
   <link rel="canonical" href="assessment.html" />
   <meta name="description" content="Define your brief. We’ll map your next purchase with data‑led clarity."/>
   <style>
@@ -156,7 +169,7 @@
         <div id="progress" class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full mb-4">
           <div id="progress-bar" class="h-2 bg-slate-900 dark:bg-white rounded-full" style="width:8%"></div>
         </div>
-        <div id="step-root" class="step-card bg-white dark:bg-slate-900 p-6 md:p-8"></div>
+        <div id="step-root" class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 animate-fadeIn"></div>
         <div class="mt-4 flex items-center justify-between">
           <button id="btn-back" class="px-4 py-2 rounded-full border border-slate-300 dark:border-slate-700 text-sm">Back</button>
           <div class="flex items-center gap-3">
@@ -171,6 +184,23 @@
         <div class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 sticky top-24">
           <h2 class="text-lg font-extrabold mb-3">Your Brief</h2>
           <div id="brief" class="space-y-3 text-sm"></div>
+        </div>
+        <div class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 mt-6 sticky top-[calc(6rem+1rem)]">
+          <h2 class="text-lg font-extrabold mb-3">What happens next</h2>
+          <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+            <li class="flex items-start gap-3 animate-slideUp" style="animation-delay:.0s">
+              <span class="material-symbols-outlined text-accent animate-pulseSoft">assignment</span>
+              <div><span class="font-semibold text-slate-900 dark:text-slate-100">Define your brief</span><div>We capture the goal, budget and constraints.</div></div>
+            </li>
+            <li class="flex items-start gap-3 animate-slideUp" style="animation-delay:.05s">
+              <span class="material-symbols-outlined text-accent animate-pulseSoft">insights</span>
+              <div><span class="font-semibold text-slate-900 dark:text-slate-100">Scan markets</span><div>We scan nationwide signals to shortlist markets.</div></div>
+            </li>
+            <li class="flex items-start gap-3 animate-slideUp" style="animation-delay:.1s">
+              <span class="material-symbols-outlined text-accent animate-pulseSoft">home</span>
+              <div><span class="font-semibold text-slate-900 dark:text-slate-100">Source & secure</span><div>We source the right property and negotiate well.</div></div>
+            </li>
+          </ol>
         </div>
       </aside>
     </div>
