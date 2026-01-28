@@ -322,7 +322,43 @@
 
   let _proppyData = null;
   let _historicalFocus = '5y'; // '5y' or '10y'
-  async function loadProppy(){ if (_proppyData) return _proppyData; try{ const r = await fetch(path('data/proppydata.json')); _proppyData = await r.json(); return _proppyData; }catch(e){ _proppyData=[]; return _proppyData; } }
+  async function loadProppy(){
+    if (_proppyData) return _proppyData;
+    // Prefer slim top-10 dataset if available
+    try{
+      const slim = await fetch(path('data/historical/top10.json'));
+      if (slim.ok){ _proppyData = await slim.json(); return _proppyData; }
+    }catch(e){}
+    // Fallback to cached slim in localStorage
+    try{
+      const cached = JSON.parse(localStorage.getItem('proppy_top10')||'');
+      if (cached && Array.isArray(cached) && cached.length){ _proppyData = cached; return _proppyData; }
+    }catch(e){}
+    // Fallback to full dataset, then compute slim cache for next loads
+    try{
+      const r = await fetch(path('data/proppydata.json'));
+      const full = await r.json();
+      _proppyData = full;
+      // compute slim top10 per state (Houses only, ranked by avgScore)
+      try{
+        const byState = new Map();
+        (full||[]).forEach(row=>{
+          if (String((row.type||'')).toLowerCase().indexOf('house')===-1) return;
+          const st = String(row.stateName||'OTHER').toUpperCase();
+          if (!byState.has(st)) byState.set(st, []);
+          byState.get(st).push(row);
+        });
+        const top = [];
+        for (const [st, arr] of byState){
+          const ranked = arr.slice().sort((a,b)=> (numFrom(b.avgScore||0)-numFrom(a.avgScore||0)) );
+          top.push(...ranked.slice(0,10));
+        }
+        localStorage.setItem('proppy_top10', JSON.stringify(top));
+        _proppyData = top;
+      }catch(e){}
+      return _proppyData;
+    }catch(e){ _proppyData=[]; return _proppyData; }
+  }
 
   function isSuburbRow(row){
     const lvl = String(row.areaLevel||'');
@@ -405,6 +441,10 @@
       const vacTrend = (parseFloat(String(r.stVacancyRate||'0'))<0)? 'Vacancy ↓' : 'Vacancy ↔';
       const invTrend = (parseFloat(String(r.stInventory||'0'))<0)? 'Inventory ↓' : 'Inventory ↔';
       const fit = r.avgScore || 0;
+      // ribbon label by goal
+      const goals = (answers.motivation.goals||[]).map(String);
+      const strat = (answers.strategy && answers.strategy.goal) || '';
+      const ribbon = (goals.includes('Rental yield') || goals.includes('Cashflow now') || strat==='High Yield')? 'Best for Yield' : (goals.includes('Capital growth') || strat==='High Growth')? 'Best for Growth' : 'Balanced Fit';
       const why = [
         `Budget aligned with typical entry (~${Number(r.typicalPrice||0).toLocaleString()})`,
         `Vacancy trend: ${vacTrend.replace(/\s.*/, '')}`,
@@ -414,7 +454,7 @@
         ? `<div>Price 10y: <span class=\"font-semibold\">${esc(price10)}</span></div><div>CAGR 5y: <span class=\"font-semibold\">${esc(cagr)}</span></div>`
         : `<div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div><div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>`;
       return `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">
-        <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full\">Fit ${fit}</span></div>
+        <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-full\">${esc(ribbon)}</span></div>
         <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
           ${priceLine}
           <div>Yield now: <span class=\"font-semibold\">${esc(yieldNow)}</span></div>
