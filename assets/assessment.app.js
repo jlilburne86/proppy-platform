@@ -32,6 +32,7 @@
     answers.strategy = answers.strategy||{ auto_mapped: true };
     answers.brief = answers.brief||{};
     answers.locations = answers.locations||{ open_to_suggestions:true };
+    if (!answers.client.country) answers.client.country = 'Australia';
     if (!Array.isArray(answers.locations.states) || answers.locations.states.length===0){
       answers.locations.states = ['Australia-wide'];
     }
@@ -140,6 +141,16 @@
           const hint = document.createElement('div');
           hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
           hint.textContent = 'Tip: We auto-map based on your goals (Yield → High Yield, Growth → High Growth, Balanced/Scale → Balanced). You can override.';
+          box.appendChild(hint);
+        } else if (node.id === 'country'){
+          const hint = document.createElement('div');
+          hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
+          hint.textContent = 'If you live outside Australia, we’ll ask about FIRB approval next.';
+          box.appendChild(hint);
+        } else if (node.id === 'firb'){
+          const hint = document.createElement('div');
+          hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
+          hint.innerHTML = 'Foreign Investment Review Board (FIRB) may apply. Learn more at <a href="https://firb.gov.au/" target="_blank" rel="noopener" class="underline">firb.gov.au</a>.';
           box.appendChild(hint);
         }
         break;
@@ -257,7 +268,8 @@
     const b = [];
     if (answers.client.first_name || answers.client.last_name) b.push(chip('Name', [answers.client.first_name,answers.client.last_name].filter(Boolean).join(' ')));
     if (answers.client.email) b.push(chip('Email', answers.client.email));
-    if (answers.client.location) b.push(chip('Location', answers.client.location));
+    if (answers.client.country) b.push(chip('Country', answers.client.country==='Other'? (answers.client.country_other||'Other') : answers.client.country));
+    if (answers.client.country==='Australia' && answers.client.state) b.push(chip('State', answers.client.state));
     if (answers.strategy.investment_type) b.push(chip('Strategy', answers.strategy.investment_type));
     if (answers.engagement.timeline) b.push(chip('Timeline', answers.engagement.timeline));
     if (answers.finance.price_band) b.push(chip('Budget', answers.finance.price_band));
