@@ -367,12 +367,11 @@
   }
 
   function matchesCohort(row){
-    const type = (answers.brief.property_types||[])[0] || '';
-    const mapType = t=> t.includes('Unit')? 'Units' : 'Houses';
+    // Force Houses-only regardless of user type selection
     const rowType = (row.type||'').toLowerCase();
-    const wantType = mapType(type).toLowerCase();
-    if (type && rowType && rowType.indexOf(wantType)===-1) return false;
-    const beds = Number(answers.brief.beds_min||0);
+    if (rowType.indexOf('house')===-1) return false;
+    // Bedrooms: treat as minimum; focus on 3+
+    const beds = Math.max(Number(answers.brief.beds_min||0), 3);
     const rb = String(row.bedrooms||'All');
     if (rb!=='All'){ const nb = parseInt(rb,10); if (!isNaN(nb) && nb < beds) return false; }
     // budget with tolerance band (±15%) and forgiving when no band set
@@ -494,6 +493,41 @@
     if (b5 && !b5._wired){ b5._wired=true; b5.addEventListener('click', ()=>{ _historicalFocus='5y'; track('historical_focus_toggle', { focus:'5y' }); renderHistorical(); setActive(); }); }
     if (b10 && !b10._wired){ b10._wired=true; b10.addEventListener('click', ()=>{ _historicalFocus='10y'; track('historical_focus_toggle', { focus:'10y' }); renderHistorical(); setActive(); }); }
     setActive();
+    // Shortlist modal wiring
+    const viewBtn = document.getElementById('shortlist-view');
+    if (viewBtn && !viewBtn._wired){
+      viewBtn._wired = true;
+      viewBtn.addEventListener('click', async ()=>{
+        try{
+          const map = await getShortlistMap(10);
+          const body = document.getElementById('shortlist-body');
+          if (body){
+            const sections = Object.keys(map).sort().map(st=>{
+              const items = map[st].map(r=>{
+                const area = String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'').replace(/\s+\(.*\)$/,'').trim();
+                const price5 = bandFrom(r.price5yGrowth, 0); const yieldNow = r.grossYield||'—';
+                return `<tr><td class="py-1 pr-2">${esc(area)}</td><td class="py-1 pr-2">${esc(price5)}</td><td class="py-1">${esc(yieldNow)}</td></tr>`;
+              }).join('');
+              return `<div class="mb-4"><div class="font-semibold mb-1">${st==='AU'?'Australia‑wide':esc(st)}</div><table class="w-full text-left"><thead><tr><th class="py-1 pr-2">Suburb</th><th class="py-1 pr-2">Price 5y</th><th class="py-1">Yield</th></tr></thead><tbody>${items}</tbody></table></div>`;
+            }).join('');
+            body.innerHTML = sections || '<div class="text-xs text-slate-500">No matches found.</div>';
+          }
+          const modal = document.getElementById('shortlist-modal');
+          if (modal){ modal.classList.remove('hidden'); }
+          const close = document.getElementById('shortlist-modal-close');
+          if (close && !close._wired){ close._wired=true; close.addEventListener('click', ()=> modal.classList.add('hidden')); }
+          const dl = document.getElementById('shortlist-download');
+          if (dl && !dl._wired){ dl._wired=true; dl.addEventListener('click', async ()=>{
+            const map = await getShortlistMap(10);
+            const lines = ['State,Suburb,Price5y,Yield'];
+            Object.keys(map).forEach(st=>{ map[st].forEach(r=>{ const area = String(r.area||'').replace(/<[^>]+>/g,'').replace(/,/g,' '); const p5 = bandFrom(r.price5yGrowth,0); const y=r.grossYield||''; lines.push([st, area, p5, y].join(',')); }); });
+            const blob = new Blob([lines.join('
+')], {type:'text/csv;charset=utf-8'});
+            const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download='proppy-shortlist.csv'; a.click(); setTimeout(()=> URL.revokeObjectURL(url), 1000);
+          }); }
+        }catch(e){}
+      });
+    }
   }
 
   function computeHighlights(){
@@ -546,6 +580,49 @@
     // default balanced if none selected
     const a = numFrom(row.avgScore||0);
     return (isNaN(a)?0:a)*1.0 + (isNaN(price5)?0:price5)*0.3 + (isNaN(yieldNow)?0:yieldNow)*0.3;
+  }
+
+  async function getShortlistMap(count){
+    const data = await loadProppy(); if (!data || !data.length) return {};
+    const states = (answers.locations.states||[]).filter(s=> s && s!=='Australia-wide').map(s=> s.toUpperCase());
+    const allStates = Array.from(new Set(data.map(r=> String(r.stateName||'OTHER').toUpperCase())));
+    const targetStates = states.length? states : allStates;
+    const map = {};
+    for (const st of targetStates){
+      const subset = data.filter(r=> String(r.stateName||'').toUpperCase()===st && String((r.type||'')).toLowerCase().includes('house'));
+      const picks = shortlistForSet(subset, count||10);
+      if (picks.length) map[st] = picks;
+    }
+    // Australia-wide group
+    const auPicks = shortlistForSet(data.filter(r=> String((r.type||'')).toLowerCase().includes('house')), count||10);
+    if (auPicks.length) map['AU'] = auPicks;
+    return map;
+  }
+
+  function shortlistForSet(set, count){
+    // Apply budget tolerance attempts and min beds (3+), then goal ranking
+    const band = (function(){
+      const m = String(answers.finance.price_band||'').match(/(\d+[\.,]?\d*)\s*[kKmM]?\s*[–-]\s*(\d+[\.,]?\d*)\s*([kKmM]?)/);
+      if (!m) return null;
+      const a = parseFloat(m[1].replace(',','')); const b = parseFloat(m[2].replace(',','')); const unit=m[3]||'';
+      const toNum = v=> /m/i.test(unit)? v*1_000_000 : v*1_000;
+      return { lo: toNum(a), hi: toNum(b) };
+    })();
+    let rows = [];
+    if (band){
+      const attempts = [ { tol:0.15, shift:0 }, { tol:0.30, shift:0 }, { tol:0.30, shift:-0.20 }, { tol:0.30, shift:-0.35 }, { tol:0.30, shift:-0.50 } ];
+      for (const a of attempts){
+        const lo = Math.max(0, band.lo*(1+a.shift)*(1-a.tol));
+        const hi = band.hi*(1+a.shift)*(1+a.tol);
+        rows = set.filter(r=>{ const tp = Number(r.typicalPrice||0); return tp>=lo && tp<=hi; });
+        if (rows.length>=count) break;
+      }
+    }
+    if (!rows.length) rows = set.slice();
+    const minBeds = Math.max(Number(answers.brief.beds_min||0), 3);
+    rows = rows.filter(r=>{ const rb=String(r.bedrooms||'All'); if (rb==='All') return true; const nb=parseInt(rb,10); return isNaN(nb)? true : nb>=minBeds; });
+    rows.sort((a,b)=> goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
+    return rows.slice(0, count||10);
   }
 
   function computeSignals(){
