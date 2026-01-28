@@ -34,9 +34,25 @@
     $('#progress-bar').style.width = Math.max(8, pct)+ '%';
   }
 
+  const stepMeta = [
+    { id:'define',    title:"Let’s define your brief.", helper:"A few basics so we can keep the search focused." },
+    { id:'strategy',  title:"What should this investment deliver?", helper:"Pick one for now — we’ll refine together." },
+    { id:'readiness', title:"When do you want to act?", helper:"Timing guides shortlist urgency and negotiation strategy." },
+    { id:'finance',   title:"Let’s set the search range.", helper:"Ranges are fine. No issue if finance isn’t ready yet." },
+    { id:'property',  title:"What are we targeting?", helper:"High‑quality assets that avoid oversupplied stock and risky projects." },
+    { id:'examples',  title:"Show us 1–3 examples (optional)", helper:"Paste a listing link or an address. This sharpens the shortlist." },
+    { id:'location',  title:"Where should we scan?", helper:"We scan nationwide to find where the signals are strongest." },
+    { id:'risk',      title:"How should this feel in 5 years?", helper:"This shapes shortlist constraints and negotiation approach." },
+    { id:'summary',   title:"Your Investment Brief", helper:"Review and pick the next step." }
+  ];
+
   function render(){
     const root = $('#step-root');
     root.innerHTML = '';
+    const meta = stepMeta[idx] || {};
+    const head = document.createElement('div');
+    head.innerHTML = `<div class="mb-4"><div class="text-xs text-slate-500">Step ${idx+1} of ${steps.length}</div><h2 class="text-2xl font-extrabold">${meta.title||''}</h2><p class="text-slate-600 dark:text-slate-300">${meta.helper||''}</p></div>`;
+    root.appendChild(head);
     root.appendChild(steps[idx].el);
     setProgress();
     renderBrief();
@@ -70,15 +86,13 @@
     // Step 1: Define brief
     list.push(step('define', el=>{
       el.innerHTML = `
-        <h2 class="text-2xl font-extrabold mb-1">Let’s define your brief.</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">This keeps the search focused — and saves time later.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div><label class="text-sm">First name</label><input id="fn" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="text" value=""></div>
-          <div><label class="text-sm">Last name</label><input id="ln" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="text" value=""></div>
-          <div><label class="text-sm">Email</label><input id="em" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="email" value=""></div>
-          <div><label class="text-sm">Mobile</label><input id="mb" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="tel" value=""></div>
-          <div class="md:col-span-2"><label class="text-sm">Current location</label><input id="loc" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="text" value=""></div>
-          <div class="md:col-span-2 flex items-center gap-2"><input id="cc" type="checkbox"><label for="cc" class="text-sm">I agree to privacy & communications</label></div>
+          <div><label class="text-sm">First name (optional)</label><input id="fn" placeholder="Jane" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="text" value=""></div>
+          <div><label class="text-sm">Last name (optional)</label><input id="ln" placeholder="Doe" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="text" value=""></div>
+          <div><label class="text-sm">Email (required)</label><input id="em" placeholder="you@example.com" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="email" value=""></div>
+          <div><label class="text-sm">Mobile (optional)</label><input id="mb" placeholder="1300 122 914" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="tel" value=""></div>
+          <div class="md:col-span-2"><label class="text-sm">Current location (optional)</label><input id="loc" placeholder="Melbourne, VIC" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700" type="text" value=""></div>
+          <div class="md:col-span-2 flex items-center gap-2"><input id="cc" type="checkbox"><label for="cc" class="text-sm">I agree to Privacy & communications</label></div>
         </div>`;
       const b = state.brief;
       el.querySelector('#fn').value = (b.name||'').split(' ')[0]||'';
@@ -103,8 +117,6 @@
     // Step 2: Strategy
     list.push(step('strategy', el=>{
       el.innerHTML = `
-        <h2 class="text-2xl font-extrabold mb-1">What should this investment deliver?</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">Pick one — we can refine later.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           ${['Capital growth','Rental yield','Balanced growth + yield','Value-add potential','Development','Not sure — help me choose'].map(opt=>`
             <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer">
@@ -129,8 +141,6 @@
     // Step 3: Readiness
     list.push(step('readiness', el=>{
       el.innerHTML = `
-        <h2 class="text-2xl font-extrabold mb-1">When do you want to act?</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">Timing guides shortlist urgency and negotiation strategy.</p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
           ${['Now','1–3 months','3–6 months','6–12 months'].map(opt=>`
             <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer">
@@ -143,8 +153,6 @@
     // Step 4: Finance
     list.push(step('finance', el=>{
       el.innerHTML = `
-        <h2 class="text-2xl font-extrabold mb-1">Let’s set the search range.</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">No issue if not ready — we can introduce finance partners.</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div><label class="text-sm">Budget (band)</label>
             <select id="bb" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700">
@@ -178,14 +186,12 @@
     list.push(step('property', el=>{
       const opts = ['House','Townhouse','Unit','Dual income','Villa','Land & development'];
       el.innerHTML = `
-        <h2 class="text-2xl font-extrabold mb-1">What are we targeting?</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">We avoid oversupplied stock and risky projects to de‑risk outcomes.</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
           ${opts.map(o=>`<label class="flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer"><input type="checkbox" value="${o}"> <span>${o}</span></label>`).join('')}
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div><label class="text-sm">Beds (min–max)</label><div class="flex gap-2"><input id="bemin" type="number" min="0" class="w-full rounded-xl border-slate-300 dark:border-slate-700"><input id="bemax" type="number" min="0" class="w-full rounded-xl border-slate-300 dark:border-slate-700"></div></div>
-          <div><label class="text-sm">Baths (min–max)</label><div class="flex gap-2"><input id="bammin" type="number" min="0" class="w-full rounded-xl border-slate-300 dark:border-slate-700"><input id="bammax" type="number" min="0" class="w-full rounded-xl border-slate-300 dark:border-slate-700"></div></div>
+          <div><label class="text-sm">Beds (min–max) (optional)</label><div class="flex gap-2"><input id="bemin" type="number" min="0" placeholder="2" class="w-full rounded-xl border-slate-300 dark:border-slate-700"><input id="bemax" type="number" min="0" placeholder="4" class="w-full rounded-xl border-slate-300 dark:border-slate-700"></div></div>
+          <div><label class="text-sm">Baths (min–max) (optional)</label><div class="flex gap-2"><input id="bammin" type="number" min="0" placeholder="1" class="w-full rounded-xl border-slate-300 dark:border-slate-700"><input id="bammax" type="number" min="0" placeholder="2" class="w-full rounded-xl border-slate-300 dark:border-slate-700"></div></div>
           <div><label class="text-sm">Construction preference</label><select id="cp" class="mt-1 w-full rounded-xl border-slate-300 dark:border-slate-700"><option value="">Select…</option><option>Low maintenance</option><option>Renovation OK</option></select></div>
         </div>`;
       // set
@@ -209,10 +215,11 @@
     // Step 5B: Examples (URLs or addresses)
     list.push(step('examples', el=>{
       el.innerHTML = `
-        <h2 class="text-2xl font-extrabold mb-1">Show us 1–3 examples.</h2>
-        <p class="text-slate-600 dark:text-slate-300 mb-4">Paste a listing link or an address. This helps us read your preferences.</p>
         <div id="ex-list" class="space-y-3"></div>
-        <button type="button" id="ex-add" class="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">+ Add another</button>
+        <div class="flex items-center gap-3 mt-2">
+          <button type="button" id="ex-add" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">+ Add another</button>
+          <button type="button" id="ex-skip" class="text-sm underline">Skip this step</button>
+        </div>
         <p class="mt-4 text-sm text-slate-500">Why we ask: it helps us de‑risk the shortlist and save time.</p>`;
       const list = state.brief.examples || (state.brief.examples=[]);
       function row(item, i){
@@ -256,6 +263,7 @@
       el.querySelector('#ex-add').addEventListener('click', ()=>{
         if (list.length>=3) return; list.push({kind:'', value:'', notes:''}); saveDraft(); renderList(); track('assessment_example_add',{count:list.length});
       });
+      el.querySelector('#ex-skip').addEventListener('click', ()=>{ idx++; render(); });
     }, ()=> true));
 
     // Step 6: Location scope
