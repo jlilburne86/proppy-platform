@@ -60,6 +60,14 @@ export default {
           return json({ ok:false, error:'fetch_failed' }, 500);
         }
       }
+      if (path === '/assessment/nextsteps' && request.method === 'POST') {
+        const body = await request.json();
+        const email = (body && body.email || '').trim();
+        const next = { tasks: (body && body.tasks) || [], lead: (body && body.lead) || {}, created: Date.now() };
+        const id = cryptoRandomId();
+        await env.ASSESS_KV.put(`nextsteps:${id}`, JSON.stringify({ email, ...next }), { expirationTtl: 60 * 60 * 24 * 30 });
+        return json({ ok:true, id });
+      }
       return json({ error: 'not_found' }, 404);
     } catch (e) {
       return json({ error: 'server_error' }, 500);

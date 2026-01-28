@@ -685,7 +685,22 @@
         ${lead && lead.recommended_next_step==='BOOK_CALL' ? `<div class="mt-3 text-xs text-slate-500">Quick times:</div><div class="mt-1 flex flex-wrap gap-2">${slots.map(s=>`<a href="${s.href}" class=\"px-3 py-1.5 text-xs rounded-full border border-slate-200 dark:border-slate-700\">${s.label}</a>`).join('')}</div>`:''}
       </div>
       ${tasks.length? `<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 mb-6"><div class="font-semibold mb-2">Prepare</div><ul class="list-disc pl-5 text-sm text-slate-600 dark:text-slate-300">${tasks.map(t=>`<li>${t.href && t.href!=='#'? `<a href=\"${t.href}\" class=\"underline\" target=\"_blank\" rel=\"noopener\">${t.text}</a>`: t.text}</li>`).join('')}</ul></div>`:''}
+      <div class="flex items-center gap-3 mb-4">
+        <button id="email-next" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-semibold" ${!answers.client.email? 'disabled':''}>Email me my checklist<span class="material-symbols-outlined text-sm">mail</span></button>
+        ${!answers.client.email? '<span class="text-xs text-slate-500">Add your email above to enable</span>':''}
+      </div>
       <div class="text-xs text-slate-500">Backed by our <a href="guarantee.html" class="underline" target="_blank" rel="noopener">Money‑Back Guarantee</a>. Historical, educational view only. No predictions or advice.</div>
     `;
+    const emailBtn = document.getElementById('email-next');
+    if (emailBtn && answers.client.email){
+      emailBtn.addEventListener('click', async ()=>{
+        try{
+          const tasksOut = tasks.map(t=> ({ text: t.text, href: t.href||'' }));
+          const res = await fetch('/api/assessment/nextsteps', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({ email: answers.client.email, tasks: tasksOut, lead }) });
+          if (res.ok){ alert('Checklist saved. We\'ll email you shortly.'); }
+          else { alert('Saved locally. We\'ll send your checklist after the call.'); }
+        }catch(e){ alert('Saved locally. We\'ll send your checklist after the call.'); }
+      });
+    }
   }
 })();
