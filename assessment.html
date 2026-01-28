@@ -227,7 +227,13 @@
           <div id="scope-chip" class="text-xs text-slate-600 dark:text-slate-300 mb-3"></div>
           <ul id="engine" class="space-y-2 text-sm text-slate-700 dark:text-slate-200"></ul>
           <div id="historical" class="mt-4 hidden">
-            <h3 class="text-sm font-bold mb-2">If you’d invested in these suburbs five years ago…</h3>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-sm font-bold">If you’d invested in these suburbs five years ago…</h3>
+              <div class="inline-flex items-center gap-1 text-[11px]">
+                <button id="hf-5y" class="px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700">5y</button>
+                <button id="hf-10y" class="px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700">10y</button>
+              </div>
+            </div>
             <div id="historical-cards" class="space-y-2"></div>
             <a href="book.html" class="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold">Don’t miss the next five years — Book an investment call<span class="material-symbols-outlined text-xs">arrow_forward</span></a>
             <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-2">Historical, educational view only. No predictions or advice.</div>

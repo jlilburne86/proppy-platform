@@ -274,7 +274,14 @@
   }
 
   let _proppyData = null;
+  let _historicalFocus = '5y'; // '5y' or '10y'
   async function loadProppy(){ if (_proppyData) return _proppyData; try{ const r = await fetch(path('data/proppydata.json')); _proppyData = await r.json(); return _proppyData; }catch(e){ _proppyData=[]; return _proppyData; } }
+
+  function isSuburbRow(row){
+    const lvl = String(row.areaLevel||'');
+    const slug = String(row.slug||'');
+    return /suburb/i.test(lvl) || /^suburb-/.test(slug);
+  }
 
   function matchesCohort(row){
     const type = (answers.brief.property_types||[])[0] || '';
@@ -321,30 +328,47 @@
     // filter and score
     const rows = data.filter(matchesCohort);
     if (!rows.length){ box.classList.add('hidden'); return; }
-    const seed = 17;
-    const picks = rows.sort((a,b)=> (b.avgScore||0)-(a.avgScore||0)).slice(0,4);
-    const cards = picks.map((r,i)=>{
+    // group by state, prefer suburb rows
+    const byState = new Map();
+    rows.forEach(r=>{
+      const st = String(r.stateName||'OTHER').toUpperCase();
+      if (!byState.has(st)) byState.set(st, []);
+      byState.get(st).push(r);
+    });
+    // seeded sort helper
+    const seed = 137;
+    const h = s=>{ let x=seed; for(let i=0;i<s.length;i++){ x = (x*31 + s.charCodeAt(i)) & 0xffffffff; } return (x>>>0)/0xffffffff; };
+    // pick up to 2 per state
+    const picks = [];
+    for (const [st, arr] of byState){
+      const suburbFirst = arr.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || (b.avgScore||0)-(a.avgScore||0));
+      const shuffled = suburbFirst.sort((a,b)=> h(String(a.slug||a.area||'')) - h(String(b.slug||b.area||'')));
+      shuffled.slice(0,2).forEach(x=> picks.push(x));
+    }
+    // limit total cards to 4
+    const finalPicks = picks.slice(0,4);
+    const cards = finalPicks.map((r,i)=>{
       const label = (String(r.area||'').replace(/<[^>]+>/g,'').replace(/,\s*AUSTRALIA/i,'')|| `${r.slug||''}`).replace(/\s+\(.*\)$/, '').trim();
       const price5 = bandFrom(r.price5yGrowth, i);
       const price10 = bandFrom(r.price10yGrowth, i);
-      const cagr = bandFrom(r.gsp5, i); // using gsp5 as proxy
+      const cagr = bandFrom(r.gsp5, i);
       const rent5 = bandFrom(r.rent5yGrowth, i);
       const yieldNow = r.grossYield || '—';
       const vacTrend = (parseFloat(String(r.stVacancyRate||'0'))<0)? 'Vacancy ↓' : 'Vacancy ↔';
       const invTrend = (parseFloat(String(r.stInventory||'0'))<0)? 'Inventory ↓' : 'Inventory ↔';
       const fit = r.avgScore || 0;
       const why = [
-        `Budget aligned with typical entry (~${(r.typicalPrice||'').toLocaleString?.()||r.typicalPrice})`,
+        `Budget aligned with typical entry (~${Number(r.typicalPrice||0).toLocaleString()})`,
         `Vacancy trend: ${vacTrend.replace(/\s.*/, '')}`,
         `Inventory trend: ${invTrend.replace(/\s.*/, '')}`
       ];
+      const priceLine = _historicalFocus==='10y'
+        ? `<div>Price 10y: <span class=\"font-semibold\">${esc(price10)}</span></div><div>CAGR 5y: <span class=\"font-semibold\">${esc(cagr)}</span></div>`
+        : `<div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div><div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>`;
       return `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">
         <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full\">Fit ${fit}</span></div>
         <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
-          <div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div>
-          <div>Price 10y: <span class=\"font-semibold\">${esc(price10)}</span></div>
-          <div>CAGR 5y: <span class=\"font-semibold\">${esc(cagr)}</span></div>
-          <div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>
+          ${priceLine}
           <div>Yield now: <span class=\"font-semibold\">${esc(yieldNow)}</span></div>
           <div>Risk: <span class=\"font-semibold\">${esc(vacTrend)}, ${esc(invTrend)}</span></div>
         </div>
@@ -353,6 +377,12 @@
     }).join('');
     document.getElementById('historical-cards').innerHTML = cards;
     box.classList.remove('hidden');
+    // wire toggle buttons once
+    const b5 = document.getElementById('hf-5y'); const b10 = document.getElementById('hf-10y');
+    function setActive(){ if(!b5||!b10) return; b5.classList.toggle('bg-slate-200', _historicalFocus==='5y'); b10.classList.toggle('bg-slate-200', _historicalFocus==='10y'); }
+    if (b5 && !b5._wired){ b5._wired=true; b5.addEventListener('click', ()=>{ _historicalFocus='5y'; renderHistorical(); setActive(); }); }
+    if (b10 && !b10._wired){ b10._wired=true; b10.addEventListener('click', ()=>{ _historicalFocus='10y'; renderHistorical(); setActive(); }); }
+    setActive();
   }
 
   function computeHighlights(){
