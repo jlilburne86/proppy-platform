@@ -792,7 +792,17 @@
     const curId = stepOrder[idx]||'summary';
     const g = groupProgress(curId);
     const pct = Math.round(((g.index+1)/Math.max(1,g.total))*100);
-    $('#progress-bar').style.width = Math.max(8, pct) + '%';
+    const bar = $('#progress-bar'); const prog = $('#progress'); const stepper = $('#stepper');
+    if (idx>=stepOrder.length-1){
+      if (prog) prog.classList.add('hidden');
+      if (stepper) stepper.classList.remove('hidden');
+      const mcta = document.getElementById('mobile-cta'); if (mcta) mcta.classList.remove('hidden');
+    } else {
+      if (prog) prog.classList.remove('hidden');
+      if (stepper) stepper.classList.add('hidden');
+      const mcta = document.getElementById('mobile-cta'); if (mcta) mcta.classList.add('hidden');
+    }
+    if (bar) bar.style.width = Math.max(8, pct) + '%';
   }
 
   function groupFor(id){
