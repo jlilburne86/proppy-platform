@@ -3,6 +3,7 @@
   const $ = (s,p)=> (p||document).querySelector(s);
   const $$ = (s,p)=> Array.from((p||document).querySelectorAll(s));
   let schema = null; let answers = {}; let stepOrder = []; let idx = 0; let draft = {};
+  let activeGroups = [];
 
   init();
 
@@ -37,17 +38,18 @@
   }
 
   function computeFlow(){
-    // Derive one-question-per-screen order by step groups
+    // Derive one-question-per-screen order by step groups; also compute activeGroups for progress
     const visible = window.ProppyEngine.visibleNodes(schema, answers);
     const order = [];
+    const groups = [];
     for (const step of schema.steps){
-      for (const n of visible.filter(n=> n.step_group === step.group)){
-        order.push(n.id);
-      }
-      if (step.id==='comparables') order.push('comparables');
-      if (step.id==='summary') order.push('summary');
+      const nodesInGroup = visible.filter(n=> n.step_group === step.group);
+      if (nodesInGroup.length){ groups.push(step.group); nodesInGroup.forEach(n=> order.push(n.id)); }
+      if (step.id==='comparables'){ groups.push('comparables'); order.push('comparables'); }
+      if (step.id==='summary'){ groups.push('summary'); order.push('summary'); }
     }
     stepOrder = order;
+    activeGroups = groups;
   }
 
   function render(){
@@ -56,12 +58,21 @@
     const root = $('#step-root');
     root.innerHTML = '';
     const head = document.createElement('div');
-    head.innerHTML = `<div class="mb-4"><div class="text-xs text-slate-500">Step ${Math.min(idx+1, stepOrder.length)} of ${stepOrder.length}</div><h2 class="text-2xl font-extrabold">${titleFor(curId)}</h2><p class="text-slate-600 dark:text-slate-300">${helperFor(curId)}</p></div>`;
+    const gInfo = groupProgress(curId);
+    head.innerHTML = `<div class=\"mb-4\"><div class=\"text-xs text-slate-500\">Step ${gInfo.index+1} of ${gInfo.total}</div><h2 class=\"text-2xl font-extrabold\">${titleFor(curId)}</h2><p class=\"text-slate-600 dark:text-slate-300\">${helperFor(curId)}</p></div>`;
     root.appendChild(head);
     if (curId==='comparables') root.appendChild(renderComparables());
     else if (curId==='summary') root.appendChild(renderSummary());
     else root.appendChild(renderQuestion(curId));
     setProgress();
+    // Advance on Enter for non-textarea inputs
+    root.onkeydown = (ev)=>{
+      if (ev.key === 'Enter' && !ev.shiftKey && !ev.metaKey && !ev.altKey && !ev.ctrlKey){
+        const target = ev.target;
+        const isTextArea = target && target.tagName === 'TEXTAREA';
+        if (!isTextArea){ ev.preventDefault(); goNextIfValid(); }
+      }
+    };
     renderBrief();
     $('#btn-back').disabled = idx===0;
     $('#btn-next').textContent = idx>=stepOrder.length-1? 'Finish' : 'Continue';
@@ -111,16 +122,16 @@
         box.firstChild.addEventListener('input', e=>{ const n=e.target.value; setVal(node, n!==''? Number(n):''); });
         break;
       case 'date':
-        box.innerHTML = `<input type="date" class="${common}" value="${value||''}">`;
-        box.firstChild.addEventListener('input', e=> setVal(node, e.target.value));
+        box.innerHTML = `<input type=\"date\" class=\"${common}\" value=\"${value||''}\">`;
+        box.firstChild.addEventListener('input', e=> { setVal(node, e.target.value); autoAdvance(node); });
         break;
       case 'toggle':
-        box.innerHTML = `<label class="inline-flex items-center gap-2"><input type="checkbox" ${value? 'checked':''}> <span>${node.prompt}</span></label>`;
-        box.firstChild.querySelector('input').addEventListener('change', e=> setVal(node, !!e.target.checked));
+        box.innerHTML = `<label class=\"inline-flex items-center gap-2\"><input type=\"checkbox\" ${value? 'checked':''}> <span>${node.prompt}</span></label>`;
+        box.firstChild.querySelector('input').addEventListener('change', e=> { setVal(node, !!e.target.checked); autoAdvance(node); });
         break;
       case 'single_select':
-        box.innerHTML = `<select class="${common}"><option value="">Select…</option>${(node.options||[]).map(o=>`<option ${o===value?'selected':''}>${o}</option>`).join('')}</select>`;
-        box.firstChild.addEventListener('change', e=> setVal(node, e.target.value||''));
+        box.innerHTML = `<select class=\"${common}\"><option value=\"\">Select…</option>${(node.options||[]).map(o=>`<option ${o===value?'selected':''}>${o}</option>`).join('')}</select>`;
+        box.firstChild.addEventListener('change', e=> { setVal(node, e.target.value||''); autoAdvance(node); });
         break;
       case 'multi_select':
         box.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-2">${(node.options||[]).map(o=>`<label class="flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer"><input type="checkbox" value="${o}" ${(value||[]).includes(o)?'checked':''}> <span>${o}</span></label>`).join('')}</div>`;
@@ -244,21 +255,44 @@
   function bindNav(){
     $('#btn-back').addEventListener('click', ()=>{ if (idx>0){ idx--; render(); }});
     $('#btn-save').addEventListener('click', async ()=>{ await serverDraft('POST'); alert('Saved. You can resume later.'); });
-    $('#btn-next').addEventListener('click', async ()=>{
-      // Validate current visible required subset
-      const errs = window.ProppyEngine.validate(schema, answers);
-      const curId = stepOrder[idx];
-      const curErr = errs.find(e=> e.id===curId);
-      if (curErr) { alert('Please complete required fields.'); return; }
-      track('assessment_step_complete', { step_id: curId });
-      if (idx < stepOrder.length-1){ idx++; render(); }
-      else { await serverSubmit(); track('assessment_submit'); alert('Assessment captured.'); }
-    });
+    $('#btn-next').addEventListener('click', async ()=>{ await goNextIfValid(true); });
+  }
+
+  async function goNextIfValid(fromClick){
+    const errs = window.ProppyEngine.validate(schema, answers);
+    const curId = stepOrder[idx];
+    const curErr = errs.find(e=> e.id===curId);
+    if (curErr) { if (fromClick) alert('Please complete required fields.'); return false; }
+    track('assessment_step_complete', { step_id: curId });
+    if (idx < stepOrder.length-1){ idx++; render(); return true; }
+    else { await serverSubmit(); track('assessment_submit'); return true; }
   }
 
   function setVal(node, val){ set(answers, node.maps_to_field, val); saveDraft(); renderBrief(); }
 
-  function setProgress(){ $('#progress-bar').style.width = Math.max(8, Math.round(((idx+1)/Math.max(1,stepOrder.length))*100)) + '%'; }
+  function setProgress(){
+    const curId = stepOrder[idx]||'summary';
+    const g = groupProgress(curId);
+    const pct = Math.round(((g.index+1)/Math.max(1,g.total))*100);
+    $('#progress-bar').style.width = Math.max(8, pct) + '%';
+  }
+
+  function groupFor(id){
+    if (id==='comparables' || id==='summary') return id;
+    const n = schema.nodes.find(x=> x.id===id);
+    return n && n.step_group || 'start';
+  }
+  function groupProgress(id){
+    const grp = groupFor(id);
+    const idxG = Math.max(0, activeGroups.indexOf(grp));
+    return { index: idxG, total: Math.max(1, activeGroups.length) };
+  }
+
+  function autoAdvance(node){
+    if (node.type === 'single_select' || node.type === 'toggle' || node.type === 'date'){
+      setTimeout(()=> { goNextIfValid(false); }, 40);
+    }
+  }
 
   function saveDraft(){ try{ localStorage.setItem('assessmentDraftV2', JSON.stringify(answers)); }catch(e){} }
   function loadDraft(){ try{ return JSON.parse(localStorage.getItem('assessmentDraftV2')||''); }catch(e){ return null; } }
