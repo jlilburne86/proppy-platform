@@ -54,6 +54,11 @@
     @media (min-width: 768px){ .analyze-overlay{inset:0} }
     .scanner{background:linear-gradient(90deg, rgba(99,102,241,0.15) 0%, rgba(99,102,241,0.35) 50%, rgba(99,102,241,0.15) 100%); background-size:200% 100%; animation: scan 1.2s linear infinite}
     @keyframes scan { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+    /* SVG animations */
+    .svg-spin{ animation: svgspin 1.8s linear infinite }
+    @keyframes svgspin { to { transform: rotate(360deg) } }
+    .svg-ping circle { animation: ping 1.8s ease-out infinite }
+    @keyframes ping { 0%{opacity:.9; r:2} 70%{opacity:0; r:10} 100%{opacity:0; r:10} }
   </style>
   <style id="nav-support-styles">
   .nav-submenu{display:none}
@@ -167,6 +172,7 @@
     <header class="mb-6">
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Free Investment Assessment</h1>
       <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-2xl">Define your brief. We’ll map your next purchase with data‑led clarity. No pressure. Clear, data‑driven insights.</p>
+      <div class="mt-1 text-xs text-slate-500 dark:text-slate-400">About 2–3 minutes • Only relevant questions</div>
       <div id="data-pulse" class="h-1 w-44 rounded-full overflow-hidden mt-3 hidden">
         <div class="h-1 scanner"></div>
       </div>
@@ -201,7 +207,13 @@
           </div>
           <div class="mb-3">
             <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-1">
-              <span>Signals strength</span>
+              <span class="inline-flex items-center gap-1">
+                <svg width="12" height="12" viewBox="0 0 24 24" class="text-accent svg-spin" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" opacity=".2"/>
+                  <path d="M21 12a9 9 0 0 0-9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Signals strength
+              </span>
               <span id="signals-label">—</span>
             </div>
             <div class="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
@@ -219,15 +231,24 @@
           <h2 class="text-lg font-extrabold mb-3">What happens next</h2>
           <ol class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
             <li class="flex items-start gap-3 animate-slideUp" style="animation-delay:.0s">
-              <span class="material-symbols-outlined text-accent animate-pulseSoft">assignment</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" class="text-accent" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
               <div><span class="font-semibold text-slate-900 dark:text-slate-100">Define your brief</span><div>We capture the goal, budget and constraints.</div></div>
             </li>
             <li class="flex items-start gap-3 animate-slideUp" style="animation-delay:.05s">
-              <span class="material-symbols-outlined text-accent animate-pulseSoft">insights</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" class="text-accent" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2" opacity=".3"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor" class="svg-ping"/>
+              </svg>
               <div><span class="font-semibold text-slate-900 dark:text-slate-100">Scan markets</span><div>We scan nationwide signals to shortlist markets.</div></div>
             </li>
             <li class="flex items-start gap-3 animate-slideUp" style="animation-delay:.1s">
-              <span class="material-symbols-outlined text-accent animate-pulseSoft">home</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" class="text-accent" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3H10v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8z" stroke="currentColor" stroke-width="2"/>
+              </svg>
               <div><span class="font-semibold text-slate-900 dark:text-slate-100">Source & secure</span><div>We source the right property and negotiate well.</div></div>
             </li>
           </ol>
