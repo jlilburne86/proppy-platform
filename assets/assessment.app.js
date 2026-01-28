@@ -411,10 +411,30 @@
 
   async function renderHistorical(){
     const box = document.getElementById('historical'); if (!box) return;
+    const statesSel = (answers.locations.states||[]).filter(s=> s && s!=='Australia-wide');
+    const hasStates = statesSel.length>0;
+    const hasBudget = !!(answers.finance.price_band);
+    const hasBeds = !!(answers.brief.beds_min);
+    const cardsHolder = document.getElementById('historical-cards');
+    // Gate: if not ready, show guidance instead of hiding
+    if (!(hasStates && hasBudget && hasBeds)){
+      box.classList.remove('hidden');
+      if (cardsHolder){
+        const needs = [];
+        if (!hasStates) needs.push('Select one or more states');
+        if (!hasBudget) needs.push('Set your budget range');
+        if (!hasBeds) needs.push('Choose minimum bedrooms');
+        cardsHolder.innerHTML = `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">\n  <div class=\"text-xs text-slate-500 dark:text-slate-400\">Complete the following to see matched suburbs:</div>\n  <ul class=\"mt-1 list-disc pl-5 text-xs text-slate-600 dark:text-slate-300\">${needs.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>\n</div>`;
+      }
+      return;
+    }
     const data = await loadProppy(); if (!data || !data.length){ box.classList.add('hidden'); return; }
+    // Show matching animation briefly
+    box.classList.remove('hidden');
+    if (cardsHolder){ cardsHolder.innerHTML = `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\"><div class=\"h-1.5 w-40 rounded-full scanner mb-2\"></div><div class=\"text-xs text-slate-500 dark:text-slate-400\">Matching suburbs…</div></div>`; }
+    await new Promise(r=> setTimeout(r, 350));
     // filter and score (Houses only, budget with tolerance, states filter if provided)
     let rows = data.filter(matchesCohort);
-    // fallback: if too few, relax budget requirement (states + Houses only)
     if (rows.length < 3){
       rows = data.filter(r=>{
         const rowType = (r.type||'').toLowerCase();
@@ -427,7 +447,7 @@
         return true;
       });
     }
-    if (!rows.length){ box.classList.add('hidden'); return; }
+    if (!rows.length){ box.classList.add('hidden'); if (cardsHolder) cardsHolder.innerHTML=''; return; }
     // global sort by suburb-first, then goal score, then avgScore
     rows.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
     const finalPicks = rows.slice(0,3);
@@ -445,6 +465,7 @@
       const goals = (answers.motivation.goals||[]).map(String);
       const strat = (answers.strategy && answers.strategy.goal) || '';
       const ribbon = (goals.includes('Rental yield') || goals.includes('Cashflow now') || strat==='High Yield')? 'Best for Yield' : (goals.includes('Capital growth') || strat==='High Growth')? 'Best for Growth' : 'Balanced Fit';
+      const tip = ribbon==='Best for Yield' ? 'Higher gross yield and rent growth historically' : ribbon==='Best for Growth' ? 'Stronger price growth historically' : 'Balanced growth and yield historically';
       const why = [
         `Budget aligned with typical entry (~${Number(r.typicalPrice||0).toLocaleString()})`,
         `Vacancy trend: ${vacTrend.replace(/\s.*/, '')}`,
@@ -454,7 +475,7 @@
         ? `<div>Price 10y: <span class=\"font-semibold\">${esc(price10)}</span></div><div>CAGR 5y: <span class=\"font-semibold\">${esc(cagr)}</span></div>`
         : `<div>Price 5y: <span class=\"font-semibold\">${esc(price5)}</span></div><div>Rent 5y: <span class=\"font-semibold\">${esc(rent5)}</span></div>`;
       return `<div class=\"rounded-xl border border-slate-200 dark:border-slate-800 p-3\">
-        <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-full\">${esc(ribbon)}</span></div>
+        <div class=\"flex items-center justify-between mb-1\"><div class=\"font-semibold\">${esc(label)}</div><span class=\"text-xs bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-full\" title=\"${esc(tip)}\">${esc(ribbon)}</span></div>
         <div class=\"grid grid-cols-2 gap-2 text-xs text-slate-600 dark:text-slate-300\">
           ${priceLine}
           <div>Yield now: <span class=\"font-semibold\">${esc(yieldNow)}</span></div>
@@ -463,7 +484,7 @@
         <ul class=\"mt-2 text-[11px] text-slate-500 dark:text-slate-400 list-disc pl-5\">${why.map(w=>`<li>${esc(w)}</li>`).join('')}</ul>
       </div>`;
     }).join('');
-    document.getElementById('historical-cards').innerHTML = cards;
+    if (cardsHolder) cardsHolder.innerHTML = cards;
     box.classList.remove('hidden');
     // analytics
     track('historical_fit_view', { count: finalPicks.length, focus: _historicalFocus, states: (answers.locations.states||[]).join(',') });
