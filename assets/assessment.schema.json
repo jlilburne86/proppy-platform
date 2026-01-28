@@ -68,7 +68,9 @@
     {"id":"risk","prompt":"Risk tolerance","type":"single_select","options":["Conservative","Moderate","Aggressive"],"required_when":{"const":true},"maps_to_field":"risk.tolerance","step_group":"risk"},
     {"id":"success_def","prompt":"What would success look like in 5 years?","type":"text","maps_to_field":"risk.success","step_group":"risk"},
 
+    {"id":"top_priorities","prompt":"Top priorities (pick up to 3)","type":"multi_select","options":["Price","Yield","Capital growth","Low maintenance","Commute","Schools"],"validation":{"max":3},"show_when":{"and":[{"in":["engagement.timeline",["Now","1–3 months"]]},{"not":{"eq":["finance.preapproval","Need help"]}}]},"required_when":{"and":[{"in":["engagement.timeline",["Now","1–3 months"]]},{"not":{"eq":["finance.preapproval","Need help"]}}]},"maps_to_field":"brief.top_priorities","step_group":"risk"},
+    {"id":"must_avoids","prompt":"Must-avoids (pick up to 3)","type":"multi_select","options":["Flood risk","Bushfire risk","Strata issues","High-rise","Main road","Poor yield"],"validation":{"max":3},"show_when":{"and":[{"in":["engagement.timeline",["Now","1–3 months"]]},{"not":{"eq":["finance.preapproval","Need help"]}}]},"required_when":{"and":[{"in":["engagement.timeline",["Now","1–3 months"]]},{"not":{"eq":["finance.preapproval","Need help"]}}]},"maps_to_field":"brief.must_avoids","step_group":"risk"},
+
     {"id":"comparables","prompt":"Example properties","type":"group","maps_to_field":"comparables","step_group":"comparables"}
   ]
 }
-

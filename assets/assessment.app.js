@@ -72,10 +72,14 @@
     return (step && (step.title||step.prompt)) || 'Assessment';
   }
   function helperFor(id){
-    // Simple micro-insights for key states
-    if (id==='preapproval') return 'This keeps your shortlist realistic and avoids wasting time.';
-    if (id==='open_to_suggestions') return 'We scan beyond familiar areas to find strengthening fundamentals.';
-    if (id==='property_types') return 'Strata or land considerations change both cashflow and target suburbs.';
+    const a = answers;
+    // Insight selection based on node + state
+    if (id==='preapproval') return 'This keeps your shortlist realistic and avoids unsuitable properties.';
+    if (id==='open_to_suggestions' && (a.locations.open_to_suggestions!==false)) return 'We scan beyond familiar areas to find where fundamentals strengthen before headlines.';
+    if (id==='property_types' && (a.brief.property_types||[]).includes('Unit/Apartment')) return 'Strata can materially change cashflow—this keeps recommendations aligned.';
+    if (id==='investment_type' && a.strategy.investment_type==='Value Add') return 'Your renovation appetite changes both suburbs and property condition we target.';
+    if (id==='target_states') return 'Nationwide scan ensures we don’t miss markets where signals are strongest.';
+    if (id==='top_priorities') return 'Fast path: we’ll prioritise constraints to accelerate your shortlist.';
     return '';
   }
 

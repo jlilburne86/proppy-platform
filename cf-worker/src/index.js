@@ -40,8 +40,9 @@ export default {
         const analytics = body && body.analytics || {};
         const rule_version = body && body.rule_version || 'v1.0.0';
         const lead = computeLead(answers);
+        const engagement = buildEngagement(answers, analytics, rule_version, lead);
         const engagement_id = `eng-${cryptoRandomId().slice(0,8)}`;
-        const payload = { answers, analytics, rule_version, lead, created: Date.now(), status:'submitted' };
+        const payload = { engagement, created: Date.now(), status:'submitted' };
         await env.ASSESS_KV.put(`engagement:${engagement_id}`, JSON.stringify(payload), { expirationTtl: 60 * 60 * 24 * 365 });
         return json({ engagement_id, priority: lead.priority, recommended_next_step: lead.recommended_next_step, reason_codes: lead.reason_codes, rule_version });
       }
@@ -115,3 +116,29 @@ function extractOG(html){
 }
 
 function get(obj, path){ if(!path) return undefined; return path.split('.').reduce((o,k)=> (o&&o[k]!==undefined)? o[k]:undefined, obj); }
+
+function set(obj, path, val){ const parts = path.split('.'); let o=obj; while(parts.length>1){ const k=parts.shift(); o=o[k]=o[k]||{}; } o[parts[0]]=val; }
+
+function pickPaths(obj, paths){ const out={}; for(const p of paths){ const v=get(obj,p); if(v!==undefined) set(out,p,v); } return out; }
+
+function safeHost(u){ try{ return new URL(u).hostname; }catch(e){ return ''; } }
+
+function buildEngagement(answers, analytics, rule_version, lead){
+  const engagement = {
+    client: pickPaths(answers, ['client.first_name','client.last_name','client.email','client.mobile','client.location']),
+    motivation: pickPaths(answers, ['motivation.goals','motivation.horizon','motivation.experience','motivation.risk']),
+    finance: pickPaths(answers, ['finance.price_band','finance.deposit_band','finance.deposit_source','finance.borrowing_band','finance.preapproval','finance.preapproval_amount','finance.preapproval_expiry']),
+    strategy: pickPaths(answers, ['strategy.investment_type','strategy.goal','strategy.target_yield','strategy.target_growth','strategy.reno_budget','strategy.reno_scope','strategy.dev_experience','strategy.dev_planning_risk','strategy.dev_holding']),
+    brief: pickPaths(answers, ['brief.property_types','brief.beds_min','brief.beds_max','brief.baths_min','brief.baths_max','brief.construction','brief.land_min','brief.land_max','brief.strata_tolerance','brief.building_style','brief.dual_config','brief.features','brief.additional_requirements','brief.top_priorities','brief.must_avoids']),
+    locations: pickPaths(answers, ['locations.states','locations.regions','locations.suburbs','locations.proximity','locations.open_to_suggestions','locations.acceptability_drivers']),
+    comparableProperties: (answers.comparables||[]).slice(0,3).map(c=>({ url:c.url, tag:c.tag, source_domain: safeHost(c.url) })),
+    engagement: { timeline: get(answers,'engagement.timeline'), status:'submitted' },
+    rule_version,
+    analytics,
+    lead_score: lead.score,
+    priority: lead.priority,
+    recommended_next_step: lead.recommended_next_step,
+    reason_codes: lead.reason_codes
+  };
+  return engagement;
+}
