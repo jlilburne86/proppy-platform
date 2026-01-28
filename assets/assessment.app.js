@@ -446,6 +446,16 @@
         return true;
       });
     }
+    if (!rows.length){
+      // As a final resort, take global Houses-only top by goal score
+      rows = data.filter(r=> String((r.type||'')).toLowerCase().includes('house'));
+    }
+    // Ensure we never show fewer than 3: top-up from global Houses set if needed
+    if (rows.length < 3){
+      const have = new Set(rows.map(r=> r.id||r.slug||r.area));
+      const extras = data.filter(r=> String((r.type||'')).toLowerCase().includes('house') && !have.has(r.id||r.slug||r.area));
+      rows = rows.concat(extras);
+    }
     if (!rows.length){ box.classList.add('hidden'); if (cardsHolder) cardsHolder.innerHTML=''; return; }
     // global sort by suburb-first, then goal score, then avgScore
     rows.sort((a,b)=> (isSuburbRow(b)?1:0)-(isSuburbRow(a)?1:0) || goalSortScore(b)-goalSortScore(a) || (b.avgScore||0)-(a.avgScore||0));
