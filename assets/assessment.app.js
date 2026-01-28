@@ -32,6 +32,9 @@
     answers.strategy = answers.strategy||{ auto_mapped: true };
     answers.brief = answers.brief||{};
     answers.locations = answers.locations||{ open_to_suggestions:true };
+    if (!Array.isArray(answers.locations.states) || answers.locations.states.length===0){
+      answers.locations.states = ['Australia-wide'];
+    }
     answers.risk = answers.risk||{};
     answers.engagement = answers.engagement||{};
     answers.comparables = answers.comparables||[];
@@ -133,6 +136,12 @@
       case 'single_select':
         box.innerHTML = `<select class=\"${common}\"><option value=\"\">Select…</option>${(node.options||[]).map(o=>`<option ${o===value?'selected':''}>${o}</option>`).join('')}</select>`;
         box.firstChild.addEventListener('change', e=> { setVal(node, e.target.value||''); autoAdvance(node); });
+        if (node.id === 'strategy_goal'){
+          const hint = document.createElement('div');
+          hint.className = 'text-xs text-slate-500 dark:text-slate-400 mt-1';
+          hint.textContent = 'Tip: We auto-map based on your goals (Yield → High Yield, Growth → High Growth, Balanced/Scale → Balanced). You can override.';
+          box.appendChild(hint);
+        }
         break;
       case 'multi_select':
         box.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-2 gap-2">${(node.options||[]).map(o=>`<label class="flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer"><input type="checkbox" value="${o}" ${(value||[]).includes(o)?'checked':''}> <span>${o}</span></label>`).join('')}</div>`;
