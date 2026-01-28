@@ -49,6 +49,11 @@
   <style>
     .step-card{border:1px solid rgb(226 232 240);border-radius:1.5rem}
     .dark .step-card{border-color:rgb(30 41 59)}
+    /* Assessment overlay */
+    .analyze-overlay{position:fixed; inset:auto 0 0 0; top:unset;}
+    @media (min-width: 768px){ .analyze-overlay{inset:0} }
+    .scanner{background:linear-gradient(90deg, rgba(99,102,241,0.15) 0%, rgba(99,102,241,0.35) 50%, rgba(99,102,241,0.15) 100%); background-size:200% 100%; animation: scan 1.2s linear infinite}
+    @keyframes scan { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
   </style>
   <style id="nav-support-styles">
   .nav-submenu{display:none}
@@ -184,6 +189,14 @@
         <div class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 sticky top-24">
           <h2 class="text-lg font-extrabold mb-3">Your Brief</h2>
           <div id="brief" class="space-y-3 text-sm"></div>
+        </div>
+        <div class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 mt-6 sticky top-[calc(6rem+1rem)]">
+          <h2 class="text-lg font-extrabold mb-3">Live Assessment</h2>
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden mb-3">
+            <div class="h-2 scanner"></div>
+            <div class="p-3 text-xs text-slate-600 dark:text-slate-300">Calibrating shortlist filters in real time.</div>
+          </div>
+          <ul id="engine" class="space-y-2 text-sm text-slate-700 dark:text-slate-200"></ul>
         </div>
         <div class="step-card bg-white dark:bg-slate-900 p-6 md:p-8 mt-6 sticky top-[calc(6rem+1rem)]">
           <h2 class="text-lg font-extrabold mb-3">What happens next</h2>

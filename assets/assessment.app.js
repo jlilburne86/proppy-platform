@@ -251,6 +251,33 @@
     if (answers.brief.property_types && answers.brief.property_types.length) b.push(chip('Types', answers.brief.property_types.join(', ')));
     if (answers.locations.states && answers.locations.states.length) b.push(chip('States', answers.locations.states.join(', ')));
     $('#brief').innerHTML = b.join('');
+    renderEngine();
+  }
+
+  function renderEngine(){
+    const ul = $('#engine'); if (!ul) return;
+    const items = computeHighlights();
+    ul.innerHTML = items.map(i=> `<li class="flex items-start gap-2"><span class="material-symbols-outlined text-accent">${esc(i.icon||'check_circle')}</span><div><div class="font-semibold">${esc(i.title)}</div><div class="text-slate-500 dark:text-slate-400 text-xs">${esc(i.desc)}</div></div></li>`).join('');
+  }
+
+  function computeHighlights(){
+    const out = [];
+    // Fast path
+    const soon = /^(Now|1–3 months)$/.test(answers.engagement.timeline||'');
+    const finHelp = answers.finance.preapproval==='Need help';
+    if (soon && !finHelp){ out.push({ icon:'bolt', title:'Fast Path enabled', desc:'We’ll prioritise constraints to accelerate your shortlist.' }); }
+    // Finance readiness
+    const pre = answers.finance.preapproval;
+    if (pre==='Obtained' || pre==='Pending'){ out.push({ icon:'verified', title:'Finance readiness', desc:`Pre-approval ${pre.toLowerCase()}. We’ll keep scope realistic.` }); }
+    else if (pre==='Need help'){ out.push({ icon:'account_balance', title:'Finance intro', desc:'We’ll queue a lending intro alongside your shortlist.' }); }
+    // Strategy
+    if (answers.strategy && answers.strategy.goal){ out.push({ icon:'track_changes', title:'Strategy focus', desc: `${answers.strategy.goal} focus shapes markets and stock.` }); }
+    // Property focus
+    if (answers.brief.property_types && answers.brief.property_types.length){ out.push({ icon:'home', title:'Property focus', desc: answers.brief.property_types.join(', ') }); }
+    // Suggestions
+    if (answers.locations.open_to_suggestions!==false){ out.push({ icon:'travel_explore', title:'Nationwide scan', desc:'We’ll search beyond familiar areas using signals.' }); }
+    else if (answers.locations.acceptability_drivers && answers.locations.acceptability_drivers.length){ out.push({ icon:'tune', title:'Location constraints', desc: answers.locations.acceptability_drivers.join(', ') }); }
+    return out.slice(0,5);
   }
 
   function bindNav(){
@@ -265,17 +292,35 @@
     const groupNodeIds = window.ProppyEngine.visibleNodes(schema, answers).filter(n=> n.step_group===curGroup).map(n=> n.id);
     const curErr = errs.find(e=> groupNodeIds.includes(e.id));
     if (curErr) { if (fromClick) alert('Please complete required fields.'); return false; }
-    track('assessment_step_complete', { step_id: curId });
-    if (idx < stepOrder.length-1){ idx++; render(); return true; }
+    track('assessment_step_complete', { step_id: curGroup });
+    if (idx < stepOrder.length-1){ await analyzeThen(()=>{ idx++; render(); }); return true; }
     else {
       const resp = await serverSubmit();
       let lead = null;
       if (resp && resp.recommended_next_step){ lead = { recommended_next_step: resp.recommended_next_step }; }
       if (!lead) lead = window.ProppyEngine.computeLead(answers);
       track('assessment_submit', { next: lead.recommended_next_step });
-      redirectToRecommended(lead);
+      await analyzeThen(()=> redirectToRecommended(lead), 'Finalising brief…');
       return true;
     }
+  }
+
+  async function analyzeThen(fn, label){
+    try{
+      const root = document.getElementById('step-root');
+      if (!root) { fn(); return; }
+      const overlay = document.createElement('div');
+      overlay.className = 'analyze-overlay bg-white/90 dark:bg-slate-900/90 flex items-center justify-center z-40';
+      overlay.innerHTML = `<div class="text-center animate-fadeIn"><div class="h-1.5 w-44 rounded-full scanner mb-3 mx-auto"></div><div class="text-sm text-slate-700 dark:text-slate-200">${esc(label||'Analyzing inputs…')}</div></div>`;
+      // Position over step area
+      const container = root.parentElement;
+      container.style.position = 'relative';
+      overlay.style.position = 'absolute'; overlay.style.inset = '0';
+      container.appendChild(overlay);
+      await new Promise(r=> setTimeout(r, 300));
+      container.removeChild(overlay);
+      fn();
+    }catch(e){ fn(); }
   }
 
   function setVal(node, val){ set(answers, node.maps_to_field, val); saveDraft(); renderBrief(); }
