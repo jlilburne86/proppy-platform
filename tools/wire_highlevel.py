@@ -169,6 +169,8 @@ def build_snippet(cfg: dict) -> str:
 
     # GitHub Pages path fix (rewrite absolute /assets and /page links when served from repo pages)
     parts.append('<script src="assets/gh-pages-path.js"></script>')
+    # Booking router: supports data-booking-url to route via book.html with calendar override
+    parts.append('<script src="assets/booking-router.js"></script>')
 
     if cfg.get('utm_passthrough'):
         parts.append("""
