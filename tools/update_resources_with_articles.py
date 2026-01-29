@@ -115,7 +115,6 @@ def update_resources():
     p = ROOT / 'resources.html'
     html = p.read_text(encoding='utf-8')
     latest = build_latest_block()
-    index = build_index_block()
     if '<!-- latest-articles:start -->' in html:
         html = re.sub(r'<!-- latest-articles:start -->[\s\S]*?<!-- latest-articles:end -->', latest, html)
     else:
@@ -124,11 +123,10 @@ def update_resources():
             html = html.replace('<!-- articles-index:start -->', latest + '\n<!-- articles-index:start -->')
         else:
             html = re.sub(r'(</footer>)', latest + '\n\1', html, count=1)
-
-    if '<!-- articles-index:start -->' in html:
-        html = re.sub(r'<!-- articles-index:start -->[\s\S]*?<!-- articles-index:end -->', index, html)
-    else:
-        html = re.sub(r'(</footer>)', index + '\n\1', html, count=1)
+    # Ensure any existing articles index section is removed entirely
+    html = re.sub(r'<!-- articles-index:start -->[\s\S]*?<!-- articles-index:end -->', '', html)
+    # Fallback removal if an unmarked index block exists with recognizable heading
+    html = re.sub(r'<section[\s\S]*?>[\s\S]*?Editorial Articles[\s\S]*?</section>', '', html)
     # Remove links to non-published articles anywhere else on the page
     allowed = set()
     for pmd in ART_DIR.glob('*.md'):
@@ -142,7 +140,7 @@ def update_resources():
             # Remove full anchor blocks that link to this slug
             html = re.sub(rf'<a[^>]+href=\"/?articles/{re.escape(slug)}\.html\"[^>]*>[\s\S]*?</a>', '', html)
     p.write_text(html, encoding='utf-8')
-    print('resources.html updated with latest + index')
+    print('resources.html updated with latest only')
 
 if __name__ == '__main__':
     update_resources()
