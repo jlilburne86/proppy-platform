@@ -40,6 +40,8 @@ def latest_articles(n=6):
     items = []
     for p in ART_DIR.glob('*.md'):
         fm = parse_front_matter(p.read_text(encoding='utf-8', errors='ignore'))
+        if fm.get('publish_status','').lower() != 'published':
+            continue
         title = fm.get('title', p.stem)
         mtime = p.stat().st_mtime
         slug = p.stem
@@ -51,6 +53,8 @@ def grouped_articles():
     groups = {pillar: [] for pillar in CAT_TO_PILLAR.values()}
     for p in ART_DIR.glob('*.md'):
         fm = parse_front_matter(p.read_text(encoding='utf-8', errors='ignore'))
+        if fm.get('publish_status','').lower() != 'published':
+            continue
         title = fm.get('title', p.stem)
         cat = fm.get('category', '').strip('[]')
         cat = cat.split(',')[0].strip()
@@ -63,7 +67,7 @@ def build_latest_block():
     items = latest_articles(6)
     cards = []
     for _, title, slug in items:
-        cards.append(f'''<a href="/articles/{slug}.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow">
+        cards.append(f'''<a href="articles/{slug}.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow">
   <h4 class="font-bold mb-1">{title}</h4>
   <p class="text-sm text-slate-500">Draft outline</p>
 </a>''')
@@ -85,7 +89,7 @@ def build_index_block():
     sections = []
     for pillar, items in groups.items():
         items.sort()
-        lis = '\n'.join([f'<li><a class="text-primary hover:underline" href="/articles/{slug}.html">{title}</a></li>' for title, slug in items])
+        lis = '\n'.join([f'<li><a class="text-primary hover:underline" href="articles/{slug}.html">{title}</a></li>' for title, slug in items])
         pid = PILLAR_ANCHOR.get(pillar, 'pillar')
         sections.append(f'<div><h3 id="{pid}" class="text-lg font-bold mb-2">{pillar}</h3><ul class="list-disc pl-5 space-y-1">{lis}</ul></div>')
     grid = '<div class="grid grid-cols-1 md:grid-cols-2 gap-8">' + '\n'.join(sections) + '</div>'
@@ -125,6 +129,18 @@ def update_resources():
         html = re.sub(r'<!-- articles-index:start -->[\s\S]*?<!-- articles-index:end -->', index, html)
     else:
         html = re.sub(r'(</footer>)', index + '\n\1', html, count=1)
+    # Remove links to non-published articles anywhere else on the page
+    allowed = set()
+    for pmd in ART_DIR.glob('*.md'):
+        fm = parse_front_matter(pmd.read_text(encoding='utf-8', errors='ignore'))
+        if fm.get('publish_status','').lower() == 'published':
+            allowed.add(pmd.stem)
+    # Find all article links
+    slugs_in_page = set(re.findall(r'href="/??articles/([a-z0-9\-]+)\.html"', html))
+    for slug in slugs_in_page:
+        if slug not in allowed:
+            # Remove full anchor blocks that link to this slug
+            html = re.sub(rf'<a[^>]+href=\"/?articles/{re.escape(slug)}\.html\"[^>]*>[\s\S]*?</a>', '', html)
     p.write_text(html, encoding='utf-8')
     print('resources.html updated with latest + index')
 

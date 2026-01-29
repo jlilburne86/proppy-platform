@@ -41,7 +41,7 @@ def ensure_meta(html: str, filename: str) -> str:
     canon_target = CANON.get(filename, filename)
     # Add canonical link
     if 'rel="canonical"' not in head:
-        canon_tag = f'\n<link rel="canonical" href="/{canon_target}">'
+        canon_tag = f'\n<link rel="canonical" href="{canon_target}">'
         head = head + canon_tag
     # Add meta description based on map
     desc = DESCRIPTIONS.get(canon_target, DESCRIPTIONS.get(filename))
@@ -68,4 +68,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

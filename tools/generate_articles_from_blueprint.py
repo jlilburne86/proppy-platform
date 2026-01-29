@@ -152,7 +152,7 @@ def update_resources():
         items = []
         for title in titles:
             slug = slugify(title)
-            items.append(f'<li><a class="text-primary hover:underline" href="/articles/{slug}.md">{title}</a></li>')
+            items.append(f'<li><a class="text-primary hover:underline" href="articles/{slug}.md">{title}</a></li>')
         ul = '<ul class="list-disc pl-5 space-y-1">' + '\n'.join(items) + '</ul>'
         sections.append(f'<div><h3 class="text-lg font-bold mb-2">{pillar}</h3>{ul}</div>')
     grid = '<div class="grid grid-cols-1 md:grid-cols-2 gap-8">' + '\n'.join(sections) + '</div>'
@@ -188,4 +188,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

@@ -4,7 +4,7 @@ description: "Which capitals show the strongest signals now — vacancy, rents, 
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"

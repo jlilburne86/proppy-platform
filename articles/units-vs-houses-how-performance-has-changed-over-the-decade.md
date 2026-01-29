@@ -4,7 +4,7 @@ description: "A data‑first view on units vs houses—yield vs growth, where st
 category: [Strategy]
 audience: [Both]
 reading_time: "5 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"

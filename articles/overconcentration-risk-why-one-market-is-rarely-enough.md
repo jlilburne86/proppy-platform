@@ -4,7 +4,7 @@ description: "Why concentrating in one market is risky — evidence for diversif
 category: [Risk]
 audience: [Both]
 reading_time: "5 min"
-publish_status: published
+publish_status: draft
 author: "Proppy Editorial"
 owner: "editor@proppy.com.au"
 next_review_date: "2026-07-22"

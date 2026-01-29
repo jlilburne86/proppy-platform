@@ -28,7 +28,15 @@ def render_inline(text: str) -> str:
     # links [text](url)
     def link_repl(m):
         t = h.escape(m.group(1))
-        u = h.escape(m.group(2), quote=True)
+        raw = m.group(2)
+        # rewrite absolute article links to sibling files; other absolute links to root become parent-relative
+        if raw.startswith('/articles/'):
+            u = raw.split('/')[-1]
+        elif raw.startswith('/'):
+            u = '../' + raw.lstrip('/')
+        else:
+            u = raw
+        u = h.escape(u, quote=True)
         return f'<a href="{u}" class="text-primary hover:underline">{t}</a>'
     text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', link_repl, text)
     # bold **text**
@@ -71,7 +79,12 @@ def md_to_html(md: str) -> str:
         img_m = re.findall(r'!\[([^\]]*)\]\(([^)]+)\)', ln)
         if img_m:
             for alt, src in img_m:
-                out.append(f'<figure class="my-4"><img src="{html.escape(src, quote=True)}" alt="{html.escape(alt)}" class="w-full rounded-2xl border border-slate-200 dark:border-slate-800"/>')
+                # make article-relative if absolute assets path
+                if src.startswith('/assets/'):
+                    src_eff = '../' + src.lstrip('/')
+                else:
+                    src_eff = src
+                out.append(f'<figure class="my-4"><img src="{html.escape(src_eff, quote=True)}" alt="{html.escape(alt)}" class="w-full rounded-2xl border border-slate-200 dark:border-slate-800"/>')
                 if alt:
                     out.append(f'<figcaption class="text-xs text-slate-500 dark:text-slate-400 mt-2">{html.escape(alt)}</figcaption>')
                 out.append('</figure>')
@@ -129,10 +142,10 @@ def md_to_html(md: str) -> str:
     if img_count < 4:
         remaining = 4 - img_count
         gallery_imgs = [
-            '/assets/screenshots/platform-screenshot.png',
-            '/assets/screenshots/technology.png',
-            '/assets/screenshots/how-it-works.png',
-            '/assets/screenshots/homepage-9.png',
+            '../assets/screenshots/platform-screenshot.png',
+            '../assets/screenshots/technology.png',
+            '../assets/screenshots/how-it-works.png',
+            '../assets/screenshots/homepage-9.png',
         ]
         fig = ['<section class="my-8 grid grid-cols-1 sm:grid-cols-2 gap-4">']
         for i in range(remaining):
@@ -146,6 +159,21 @@ def read_nav():
     idx = (ROOT / 'index.html').read_text(encoding='utf-8', errors='ignore')
     m = re.search(r'<nav[\s\S]*?</nav>', idx, flags=re.I)
     return m.group(0) if m else ''
+
+def make_nav_article_relative(nav_html: str) -> str:
+    def href_repl(m):
+        v = m.group(1)
+        if v.startswith(('http://','https://','//','#','mailto:','tel:','javascript:','data:','../')):
+            return m.group(0)
+        return f'href="../{v}"'
+    def src_repl(m):
+        v = m.group(1)
+        if v.startswith(('http://','https://','//','#','data:','../')):
+            return m.group(0)
+        return f'src="../{v}"'
+    nav_html = re.sub(r'href="([^"]+)"', href_repl, nav_html)
+    nav_html = re.sub(r'src="([^"]+)"', src_repl, nav_html)
+    return nav_html
 
 CAT_TO_PILLAR = {
   'Market Trends': 'Market Trends & Analysis',
@@ -195,12 +223,15 @@ def author_block(name: str) -> str:
     a = AUTHORS.get(name) or AUTHORS.get('Proppy Editorial') or {
         'name': name,
         'title': 'Editorial',
-        'avatar': '/proppy-mobile-icon.png',
+        'avatar': '../proppy-mobile-icon.png',
         'bio': ''
     }
+    av = a.get('avatar','')
+    if av.startswith('/'):
+        av = '../' + av.lstrip('/')
     return f'''<section class="max-w-3xl mx-auto px-6 py-8">
   <div class="flex items-start gap-4 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 bg-white dark:bg-slate-900">
-    <img src="{a.get('avatar','/proppy-mobile-icon.png')}" alt="{a.get('name','Author')}" class="w-12 h-12 rounded-full object-cover"/>
+    <img src="{av}" alt="{a.get('name','Author')}" class="w-12 h-12 rounded-full object-cover"/>
     <div>
       <p class="font-bold">{a.get('name','Author')}</p>
       <p class="text-xs text-slate-500">{a.get('title','')}</p>
@@ -240,7 +271,10 @@ def images_block(slug: str) -> str:
         return ''
     figures=[]
     for img in imgs[:4]:
-        src = html.escape(img.get('src',''))
+        raw = img.get('src','')
+        if raw.startswith('/'):
+            raw = '../' + raw.lstrip('/')
+        src = html.escape(raw)
         alt = html.escape(img.get('alt',''))
         figures.append(f'''<figure class="my-4">
   <picture>
@@ -256,6 +290,8 @@ def hero_image(slug: str, title: str) -> str:
     if not imgs:
         return ''
     hero = imgs[0]['src']
+    if hero.startswith('/'):
+        hero = '../' + hero.lstrip('/')
     alt = imgs[0].get('alt', title)
     return f'''<section class="max-w-3xl mx-auto px-6">
   <div class="hero-img"><img src="{html.escape(hero)}" alt="{html.escape(alt)}" loading="eager" decoding="async"/></div>
@@ -306,7 +342,7 @@ def pick_related(this_slug: str, category: str) -> str:
         return ''
     cards = []
     for _, title, slug in items:
-        cards.append(f'<a href="/articles/{slug}.html" class="related-card"><h4 class="font-bold mb-1">{title}</h4><p class="text-sm text-slate-500">Related read</p></a>')
+        cards.append(f'<a href="{slug}.html" class="related-card"><h4 class="font-bold mb-1">{title}</h4><p class="text-sm text-slate-500">Related read</p></a>')
     grid = '<div class="related-grid">' + '\n'.join(cards) + '</div>'
     return '<section class="max-w-3xl mx-auto px-6 py-8"><h3 class="text-lg font-extrabold mb-2">Related Articles</h3>' + grid + '</section>'
 
@@ -334,16 +370,16 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
     reading_time = compute_read_time(raw_md)
     author = fm.get('author', 'Proppy Editorial')
     today = datetime.date.today().strftime('%d %b %Y')
-    canonical = f'/articles/{slug}.html'
+    canonical = f'{slug}.html'
     pillar = CAT_TO_PILLAR.get(category, category)
     anchor = PILLAR_ANCHOR.get(pillar, '')
     breadcrumbs = f'''<nav aria-label="Breadcrumb" class="text-sm text-slate-500 dark:text-slate-400 mb-4">
   <ol class="flex items-center gap-2">
-    <li><a class="hover:underline" href="/index.html">Home</a></li>
+    <li><a class="hover:underline" href="../index.html">Home</a></li>
     <li>›</li>
-    <li><a class="hover:underline" href="/resources.html">Resources</a></li>
+    <li><a class="hover:underline" href="../resources.html">Resources</a></li>
     <li>›</li>
-    <li><a class="hover:underline" href="/resources.html#{anchor}">{html.escape(pillar)}</a></li>
+    <li><a class="hover:underline" href="../resources.html#{anchor}">{html.escape(pillar)}</a></li>
   </ol>
 </nav>'''
     meta_row = f'''<div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-6">
@@ -358,21 +394,23 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
   <span>{today}</span>
 </div>'''
     back_cta = f'''<section class="max-w-3xl mx-auto px-6 py-8 flex items-center gap-3">
-  <a href="/resources.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
+  <a href="../resources.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
     <span class="material-symbols-outlined text-sm">arrow_back</span>
     Back to Resources
   </a>
-  <a href="/resources.html#{anchor}" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
+  <a href="../resources.html#{anchor}" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold">
     <span class="material-symbols-outlined text-sm">category</span>
     Back to {html.escape(pillar)}
   </a>
 </section>'''
     author_html = author_block(author)
     # OG image override from scorecards
-    og_image = '/assets/screenshots/platform-screenshot.png'
+    og_image = '../assets/screenshots/platform-screenshot.png'
     for img in SCORECARDS.get(slug, {}).get('images', []):
         if img.get('og'):
             og_image = img.get('src', og_image)
+    if og_image.startswith('/'):
+        og_image = '../' + og_image.lstrip('/')
 
     outlook_txt, outlook_cls = compute_outlook(slug)
     page = f'''<!DOCTYPE html>
@@ -385,6 +423,7 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link rel="stylesheet" href="../assets/site.css"/>
 <link rel="canonical" href="{canonical}">
 <meta name="description" content="{html.escape(desc)}">
 <meta property="og:type" content="article">
@@ -396,9 +435,10 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
 <meta name="twitter:title" content="{html.escape(title)}">
 <meta name="twitter:description" content="{html.escape(desc)}">
 <meta name="twitter:image" content="{html.escape(og_image)}">
-<script id="navx-script" src="/tools/navx-accessible.js"></script>
-<link rel="stylesheet" href="/tools/ux.css"/>
-<script src="/tools/analytics.js"></script>
+<script id="color-mode-guard">(function(){{try{{document.documentElement.classList.remove('dark');}}catch(e){{}}}})();</script>
+<script id="navx-script" src="../tools/navx-accessible.js"></script>
+<link rel="stylesheet" href="../tools/ux.css"/>
+<script src="../tools/analytics.js"></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans">
 <a href="#content" class="skip-link">Skip to content</a>
@@ -428,9 +468,9 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
         <span class="text-slate-400 text-sm">© {datetime.date.today().year} Proppy Inc. All rights reserved.</span>
       </div>
       <div class="flex gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
-        <a class="hover:text-primary transition-colors" href="/privacy.html">Privacy Policy</a>
-        <a class="hover:text-primary transition-colors" href="/terms.html">Terms of Service</a>
-        <a class="hover:text-primary transition-colors" href="/site-map.html">Site Map</a>
+        <a class="hover:text-primary transition-colors" href="../privacy.html">Privacy Policy</a>
+        <a class="hover:text-primary transition-colors" href="../terms.html">Terms of Service</a>
+        <a class="hover:text-primary transition-colors" href="../site-map.html">Site Map</a>
       </div>
     </div>
   </div>
@@ -439,7 +479,7 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
     return page
 
 def main():
-    nav_html = read_nav()
+    nav_html = make_nav_article_relative(read_nav())
     out_files = []
     for md_path in ART_MD_DIR.glob('*.md'):
         slug = md_path.stem

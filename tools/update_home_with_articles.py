@@ -29,7 +29,7 @@ def latest(n=3):
 def build_block():
     cards=[]
     for _,title,desc,slug in latest():
-        cards.append(f'''<a href="/articles/{slug}.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow bg-white dark:bg-slate-900">
+        cards.append(f'''<a href="articles/{slug}.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow bg-white dark:bg-slate-900">
   <h4 class="font-bold mb-1">{title}</h4>
   <p class="text-sm text-slate-500 line-clamp-2">{desc}</p>
 </a>''')
@@ -40,7 +40,7 @@ def build_block():
       '  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8">',
       '    <div class="flex items-center justify-between mb-3">',
       '      <h2 class="text-2xl font-extrabold">Latest Articles</h2>',
-      '      <a class="text-sm font-semibold text-primary" href="/resources.html">View all</a>',
+      '      <a class="text-sm font-semibold text-primary" href="resources.html">View all</a>',
       '    </div>',
       grid,
       '  </div>',
@@ -63,4 +63,3 @@ def run():
 
 if __name__=='__main__':
     run()
-

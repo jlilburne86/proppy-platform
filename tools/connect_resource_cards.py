@@ -112,7 +112,7 @@ def update_resources_cards():
             cta_text = 'View Analysis'
         # replace the CTA container with a proper anchor
         block = re.sub(r'<div class=\"mt-auto\">[\s\S]*?</div>',
-                       f'<div class="mt-auto">\n<a href="/articles/{slug}.html">{cta_text} <span class="material-symbols-outlined text-sm">arrow_forward</span></a>\n</div>',
+                       f'<div class="mt-auto">\n<a href="articles/{slug}.html">{cta_text} <span class="material-symbols-outlined text-sm">arrow_forward</span></a>\n</div>',
                        block, count=1)
         return block
 
@@ -125,4 +125,3 @@ def update_resources_cards():
 
 if __name__ == '__main__':
     update_resources_cards()
-

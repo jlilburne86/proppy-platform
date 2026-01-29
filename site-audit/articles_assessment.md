@@ -1,0 +1,48 @@
+# Articles Assessment (Top 46 from resources.html)
+
+- Adelaide's Northern Suburbs: Salisbury to Gawler — words:1194 • h2:9 • imgs:0 • data refs:34
+- Auction Clearance Rates: What They Signal and What They Don't — words:1198 • h2:9 • imgs:0 • data refs:33
+- Boom, Plateau, or Decline: How to Read Market Signals — words:508 • h2:9 • imgs:4 • data refs:44
+- Brisbane Growth Corridors: Ipswich, Logan and Moreton Bay — words:506 • h2:9 • imgs:4 • data refs:44
+- Building Your First Investment Property Portfolio — words:1195 • h2:9 • imgs:0 • data refs:33
+- Case Study: Converting to Dual Income — words:1189 • h2:9 • imgs:0 • data refs:33
+- Case Study: First-Time Buyer in Regional QLD — words:1193 • h2:9 • imgs:0 • data refs:33
+- Case Study: Managing Negative Gearing Through Rate Rises — words:1193 • h2:9 • imgs:0 • data refs:33
+- Case Study: Multi-City Portfolio Building Over 8 Years — words:1195 • h2:9 • imgs:0 • data refs:33
+- Case Study: Renovating for Value vs. Cash — words:1191 • h2:9 • imgs:0 • data refs:33
+- Central Coast NSW: Opportunity or Oversupply Risk? — words:1194 • h2:9 • imgs:0 • data refs:34
+- Choosing Between New Estates and Established Suburbs — words:1197 • h2:9 • imgs:0 • data refs:33
+- DIY Investing vs. Buyer's Agent: Evaluating the Trade-off — words:1203 • h2:9 • imgs:0 • data refs:33
+- Days-on-Market as a Leading Indicator — words:1190 • h2:9 • imgs:0 • data refs:33
+- Demographic Trends Shaping Australian Property Demand — words:1188 • h2:9 • imgs:0 • data refs:33
+- Depreciation and Tax Optimization for Investors — words:1195 • h2:9 • imgs:0 • data refs:33
+- First Home Buyer Grants and Market Impact — words:1190 • h2:9 • imgs:0 • data refs:33
+- Foreign Investment Trends in Australian Residential Property — words:1190 • h2:9 • imgs:0 • data refs:33
+- Geelong and the Bellarine Peninsula — words:1190 • h2:9 • imgs:0 • data refs:34
+- Gold Coast Growth Corridors: Coomera to Pimpama — words:1194 • h2:9 • imgs:0 • data refs:34
+- Hobart's Expanding Outer Ring: Bridgewater to Glenorchy — words:1196 • h2:9 • imgs:0 • data refs:34
+- House vs. Unit: What the Data Actually Shows — words:1199 • h2:9 • imgs:0 • data refs:33
+- Interest Rate Risk Management for Investors — words:1188 • h2:9 • imgs:0 • data refs:33
+- Interstate Migration Patterns Post-2020: Where Australians Moved and Why — words:1196 • h2:9 • imgs:0 • data refs:33
+- Legislative Changes and Tenancy Reforms — words:1186 • h2:9 • imgs:0 • data refs:33
+- Long-Term Price Growth: What 20-Year Data Reveals — words:508 • h2:9 • imgs:4 • data refs:44
+- Natural Disasters, Insurance, and Property Resilience — words:1188 • h2:9 • imgs:0 • data refs:33
+- Newcastle and Lake Macquarie Investment Profile — words:1192 • h2:9 • imgs:0 • data refs:34
+- Overleveraging and Cashflow Stress: Warning Signs — words:1188 • h2:9 • imgs:0 • data refs:33
+- Perth Metro North: Joondalup and Wanneroo — words:1192 • h2:9 • imgs:0 • data refs:34
+- Post-Pandemic Property Shifts: What Has Endured and What Hasn't — words:512 • h2:9 • imgs:4 • data refs:44
+- Regional vs. Metro: The Trade-offs Australian Investors Face — words:1201 • h2:9 • imgs:0 • data refs:33
+- Rental Yield Compression in Australian Capital Cities — words:1190 • h2:9 • imgs:0 • data refs:33
+- Rentvesting: The Case For and Against — words:1195 • h2:9 • imgs:0 • data refs:33
+- Sunshine Coast Growth Hubs: Caloundra to Maroochydore — words:1194 • h2:9 • imgs:0 • data refs:34
+- Supply Constraints and Construction Delays: The 2020–2024 Reality — words:1194 • h2:9 • imgs:0 • data refs:33
+- Tenant Default and Arrears Risk — words:1186 • h2:9 • imgs:0 • data refs:33
+- The 2024 Interstate Investment Playbook — words:874 • h2:9 • imgs:4 • data refs:42
+- The Build-to-Rent Sector in Australia: Implications for Investors — words:1196 • h2:9 • imgs:0 • data refs:33
+- The Regional Premium Shift: When Lifestyle Suburbs Outperform — words:1192 • h2:9 • imgs:0 • data refs:33
+- The Role of Property Managers in Portfolio Success — words:1199 • h2:9 • imgs:0 • data refs:33
+- Understanding the Australian Property Cycle — words:457 • h2:9 • imgs:4 • data refs:41
+- Vacancy Risk in Oversupplied Markets — words:645 • h2:10 • imgs:0 • data refs:38
+- When Growth Slows: Historical Examples from Australian Cities — words:506 • h2:9 • imgs:4 • data refs:44
+- When to Use Equity and When to Save Cash — words:1201 • h2:9 • imgs:0 • data refs:33
+- Yield vs Capital Growth: Finding the Balance — words:479 • h2:9 • imgs:4 • data refs:42

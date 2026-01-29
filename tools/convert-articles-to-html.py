@@ -119,17 +119,17 @@ def generate_article_html(slug: str, frontmatter: dict, html_content: str) -> st
         }},
       }};
     </script>
-<link rel="canonical" href="/articles/{slug}.html">
+<link rel="canonical" href="articles/{slug}.html">
 <meta name="description" content="{description}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Proppy">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
-<meta property="og:image" content="/assets/screenshots/platform-screenshot.png">
+<meta property="og:image" content="../assets/screenshots/platform-screenshot.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
-<meta name="twitter:image" content="/assets/screenshots/platform-screenshot.png">
+<meta name="twitter:image" content="../assets/screenshots/platform-screenshot.png">
 <style id="nav-support-styles">
 .nav-submenu{{display:none}}
 .group:hover>.nav-submenu,.group:focus-within>.nav-submenu,.group.open>.nav-submenu{{display:block}}

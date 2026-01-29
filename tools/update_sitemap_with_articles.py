@@ -21,7 +21,7 @@ def build_block():
     for p in sorted(ART.glob('*.md')):
         fm=parse_front(p.read_text(encoding='utf-8',errors='ignore'))
         title=fm.get('title', p.stem)
-        lis.append(f'<li><a class="text-primary hover:underline" href="/articles/{p.stem}.html">{title}</a></li>')
+        lis.append(f'<li><a class="text-primary hover:underline" href="articles/{p.stem}.html">{title}</a></li>')
     ul='<ul class="list-disc pl-6 space-y-1">'+'\n'.join(lis)+'</ul>'
     return '\n'.join([
       '<!-- sitemap-articles:start -->',
@@ -44,4 +44,3 @@ def run():
 
 if __name__=='__main__':
     run()
-
