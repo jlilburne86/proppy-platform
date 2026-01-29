@@ -40,10 +40,14 @@ def copy_dirs():
             shutil.copytree(src, dst)
 
 def copy_files():
+    # Explicit includes
     for f in INCLUDE_FILES:
         src = ROOT / f
         if src.exists():
             shutil.copy2(src, DOCS / f)
+    # Copy all top-level HTML files
+    for p in ROOT.glob('*.html'):
+        shutil.copy2(p, DOCS / p.name)
 
 def main():
     clean_docs()

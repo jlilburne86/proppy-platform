@@ -3,13 +3,43 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Speak with a Specialist - Proppy</title>
+
+<meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/site.css?v=20260128">
-<link rel="icon" href="proppy%20mobile%20icon.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000000",
+              accent: "#6366f1",
+              "background-light": "#fcfcfd",
+              "background-dark": "#0a0a0a",
+              "card-light": "#ffffff",
+              "card-dark": "#161616",
+              "pastel-orange": "#fff4e6",
+              "pastel-blue": "#f0f4ff",
+              "pastel-purple": "#f8f5ff",
+              "pastel-green": "#f0fdf4",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1.5rem",
+              "2xl": "2.5rem",
+              "3xl": "3rem",
+            },
+          },
+        },
+      };
+    </script>
 <style>
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
@@ -31,14 +61,13 @@
             opacity: 0.3;
         }
     </style>
-<style id="nav-support-styles">
+
+<link rel="canonical" href="home-9.html"><style id="nav-support-styles">
 .nav-submenu{display:none}
 .group:hover>.nav-submenu,.group:focus-within>.nav-submenu,.group.open>.nav-submenu{display:block}
 .nav-toggle{cursor:pointer}
 </style>
-
-<link rel="canonical" href="book.html">
-<meta name="description" content="Book a free strategy call to discuss your goals and plan your next move."><style id="navx-styles">
+<style id="navx-styles">
 .navx-sub{display:none}
 .navx-group:hover>.navx-sub,.navx-group:focus-within>.navx-sub,.navx-group.open>.navx-sub{display:block}
 .navx-toggle{cursor:pointer}
@@ -74,8 +103,8 @@
   <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
-         <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden" loading="lazy" decoding="async">
-         <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto" loading="lazy" decoding="async">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/ decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/ decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -265,22 +294,77 @@
 </div>
 </div>
 </div>
-<div class="p-0">
-  <div class="px-8 pt-6">
-    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="text-sm text-slate-700 dark:text-slate-200 flex items-center gap-2">
-        <span class="material-symbols-outlined text-base text-emerald-500">verified</span>
-        <span>Backed by our <a href="guarantee.html" class="underline">Money‑Back Guarantee</a></span>
-      </div>
-      <a href="assessment.html" class="text-xs underline">View or update your brief</a>
-    </div>
-    <div id="brief-picks" class="mt-2 text-xs text-slate-600 dark:text-slate-300"></div>
-  </div>
-  <section class="mt-6">
-  <iframe id="booking-frame" src="https://engage.proppy.com.au/widget/booking/SVsjfrJiVD0ENzep7fzo" style="width:100%; height:900px; border:0; overflow:hidden;" scrolling="no" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  <script src="https://engage.proppy.com.au/js/form_embed.js" type="text/javascript"></script>
-</section>
-</div></div></div>
+<div class="flex flex-col md:flex-row h-full">
+<div class="w-full md:w-1/2 p-6 border-r border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-6">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-400">chevron_left</span>
+</button>
+<span class="font-bold text-slate-700 dark:text-slate-200">October 2024</span>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-slate-400 mb-2">
+<div>Su</div>
+<div>Mo</div>
+<div>Tu</div>
+<div>We</div>
+<div>Th</div>
+<div>Fr</div>
+<div>Sa</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-sm font-medium">
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700">29</div>
+<div class="aspect-square flex items-center justify-center text-slate-300 dark:text-slate-700">30</div>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 disabled" disabled="">1</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 disabled" disabled="">2</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 disabled" disabled="">3</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">4</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">5</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">6</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">7</button>
+<button class="aspect-square flex items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black shadow-md shadow-slate-200 dark:shadow-none">8</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">9</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">10</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">11</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">12</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">13</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">14</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">15</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">16</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">17</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">18</button>
+<button class="aspect-square flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300">19</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 p-6 bg-slate-50/30 dark:bg-black/20 flex flex-col">
+<h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 mb-4 uppercase tracking-wider">Tuesday, Oct 8</h3>
+<div class="space-y-3 custom-scrollbar overflow-y-auto flex-grow pr-2 -mr-2">
+<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
+                                    9:00 AM
+                                </button>
+<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
+                                    9:30 AM
+                                </button>
+<button class="w-full py-3 px-4 rounded-xl border border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-bold transition-all text-center shadow-lg shadow-slate-200 dark:shadow-none">
+                                    10:00 AM
+                                </button>
+<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
+                                    10:30 AM
+                                </button>
+<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
+                                    11:00 AM
+                                </button>
+<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
+                                    1:00 PM
+                                </button>
+<button class="w-full py-3 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-card-dark hover:border-black dark:hover:border-white text-slate-700 dark:text-slate-200 font-medium transition-all text-center">
+                                    2:30 PM
+                                </button>
+</div>
+</div>
+</div>
 <div class="p-6 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 mt-auto">
 <button class="w-full bg-primary dark:bg-white dark:text-primary text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2">
 <span>Confirm 10:00 AM</span>
@@ -290,6 +374,44 @@
 </div>
 </div>
 </div>
+
+<section class="max-w-7xl mx-auto px-6 py-14">
+  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
+    <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <div class="flex items-center gap-3 justify-center">
+      <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
+      <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
+    </div>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-6 py-10">
+  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-2">Start Free Assessment</div>
+      <h3 class="text-2xl md:text-3xl font-extrabold">Book a free strategy call</h3>
+      <p class="text-slate-600 dark:text-slate-400 mt-1 animate-fade-in delay-100">See how Proppy helps you buy the right property, in the right market, at the right price.</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book now</a>
+      <a href="pricing.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">View pricing</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="max-w-7xl mx-auto px-6 py-14">
+  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
+    <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <div class="flex items-center gap-3 justify-center">
+      <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
+      <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">
   <div class="max-w-7xl mx-auto px-6">
@@ -323,59 +445,6 @@
     }
   });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
-})();
-</script>
-<script>
-// Merge name/email into the booking iframe if present in query
-(function(){
-  try{
-    var qs = new URLSearchParams(location.search||'');
-    var frame = document.getElementById('booking-frame');
-    if (frame && (qs.get('name') || qs.get('email'))){
-      var u = new URL(frame.src, location.href);
-      var name = qs.get('name')||''; var email = qs.get('email')||'';
-      if (name && !u.searchParams.get('name')) u.searchParams.set('name', name);
-      if (email && !u.searchParams.get('email')) u.searchParams.set('email', email);
-      // also try first_name / last_name for GetHighLevel if supported
-      if (name && (!u.searchParams.get('first_name') || !u.searchParams.get('last_name'))){
-        var parts = name.split(/\s+/); var first = parts.shift()||''; var last = parts.join(' ');
-        if (!u.searchParams.get('first_name')) u.searchParams.set('first_name', first);
-        if (!u.searchParams.get('last_name')) u.searchParams.set('last_name', last);
-      }
-      if (frame.src !== u.toString()) frame.src = u.toString();
-    }
-    // Render brief picks chips if provided
-    try{
-      var picks = qs.get('picks');
-      if (picks){
-        var list = picks.split(',').filter(Boolean).slice(0,3);
-        var holder = document.getElementById('brief-picks');
-        if (holder){
-          holder.innerHTML = '<div class="flex items-center gap-2 flex-wrap">' + list.map(function(l){ return '<span class="px-2 py-1 rounded-full border border-slate-200 dark:border-slate-700">'+ decodeURIComponent(l) +'</span>'; }).join('') + '</div>';
-        }
-      }
-    }catch(e){}
-  }catch(e){}
-})();
-</script>
-<script>
-(function(){
-  try{
-    var params = new URLSearchParams(location.search);
-    var cal = params.get('calendar');
-    if (cal){
-      var ok = false, u;
-      try{
-        u = new URL(cal, location.href);
-        var h = u.hostname;
-        if (/engage\.proppy\.com\.au$/.test(h) || /leadconnector|gohighlevel/.test(h)) ok = true;
-      }catch(e){}
-      if (ok){
-        var f = document.getElementById('booking-frame');
-        if (f) f.src = u.toString();
-      }
-    }
-  }catch(e){}
 })();
 </script>
 <!-- Auto-generated by tools/wire_highlevel.py -->
@@ -460,5 +529,5 @@ src="https://www.facebook.com/tr?id=1259694178868699&ev=PageView&noscript=1"
       });
     }
   }catch(e){}
-})();</script><script type="application/ld+json" data-auto="1">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://proppy.com.au", "name": "Home"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://proppy.com.au/book.html", "name": "Speak with a property investment specialist."}}]}]</script>
+})();</script><script type="application/ld+json" data-auto="1">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://proppy.com.au", "name": "Home"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://proppy.com.au/home-9.html", "name": "Speak with a property investment specialist."}}]}]</script>
 </body></html>

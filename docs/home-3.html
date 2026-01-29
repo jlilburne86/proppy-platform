@@ -3,13 +3,44 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Smarter Property Investment - Proppy</title>
+
+<meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/site.css?v=20260128">
-<link rel="icon" href="proppy%20mobile%20icon.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000000",
+              accent: "#6366f1",
+              "background-light": "#fcfcfd",
+              "background-dark": "#0a0a0a",
+              "card-light": "#ffffff",
+              "card-dark": "#161616",
+              "pastel-orange": "#fff4e6",
+              "pastel-blue": "#f0f4ff",
+              "pastel-purple": "#f8f5ff",
+              "pastel-green": "#f0fdf4",
+              "pastel-red": "#fef2f2",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              display: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1.5rem",
+              "2xl": "2.5rem",
+              "3xl": "3rem",
+            },
+          },
+        },
+      };
+    </script>
 <style>
 .underline-accent {
     position: relative;
@@ -37,8 +68,7 @@
 }
 </style>
 
-<link rel="canonical" href="index.html">
-<meta name="description" content="Proppy helps you buy the right property in the right market at the right price with data-led insights and expert execution."><style id="nav-support-styles">
+<link rel="canonical" href="home-3.html"><style id="nav-support-styles">
 .nav-submenu{display:none}
 .group:hover>.nav-submenu,.group:focus-within>.nav-submenu,.group.open>.nav-submenu{display:block}
 .nav-toggle{cursor:pointer}
@@ -64,8 +94,6 @@
 <meta name="twitter:title" content="Proppy">
 <meta name="twitter:description" content="Smarter property investment with data-led insights and expert execution.">
 <meta name="twitter:image" content="assets/placeholders/tablet.svg">
-<link rel="alternate" type="application/rss+xml" title="Proppy Articles" href="articles.xml" />
-<link rel="preload" as="image" href="proppy%20mobile%20icon.png">
 <script id="color-mode-guard">(function(){try{document.documentElement.classList.remove('dark');}catch(e){}})();</script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
@@ -82,7 +110,7 @@
     <div class="flex items-center gap-3">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
         <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/ decoding="async">
-        <img src="proppy-logo.webp" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/ decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/ decoding="async">
         <span class="sr-only">Proppy</span>
       </a>
     </div>
@@ -129,7 +157,7 @@
     </div>
   </div>
   <div class="fixed inset-0 navx-overlay bg-black/40"></div>
-  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer overflow-y-auto bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
     <div class="flex items-center justify-between mb-2">
       <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
         <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/ decoding="async">
@@ -171,22 +199,9 @@
 <li><a class="block py-2" href="contact.html">Contact</a></li>
 </ul>
 </li></ul>
-    <a href="assessment.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Start Free Assessment</a>
+    <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Start Free Assessment</a>
   </div>
 </nav>
-  <div class="max-w-7xl mx-auto px-6 mt-24 md:mt-32">
-    <section class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div>
-          <h2 class="text-xl font-extrabold mb-1">Free Assessment</h2>
-          <p class="text-slate-600 dark:text-slate-300">Fast brief review + next steps.</p>
-        </div>
-        <div>
-          <a href="assessment.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold w-full md:w-auto justify-center">Start Free Assessment<span class="material-symbols-outlined text-sm">arrow_forward</span></a>
-        </div>
-      </div>
-    </section>
-  </div>
 
 
 <div id="content"></div>
@@ -206,12 +221,9 @@
 <p class="max-w-2xl mx-auto text-lg text-slate-500 dark:text-slate-400 mb-10 leading-relaxed animate-fade-in delay-100">
         Gain the confidence of nationwide market intelligence. We combine institutional-grade data with expert strategy to help you build a high-performing property portfolio anywhere in Australia.
     </p>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
-<a href="book.html" class="bg-primary dark:bg-white dark:text-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300">Book a Call</a>
-<a href="how-it-works.html" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">How Proppy Works</a>
-</div>
-<div class="text-sm text-slate-600 dark:text-slate-400 mb-12">
-  <a href="guarantee.html" class="hover:text-primary">Learn about our Money‑Back Guarantee</a>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+<button class="bg-primary dark:bg-white dark:text-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300">Book a Call</button>
+<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">How Proppy Works</button>
 </div>
 <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 mb-20 text-sm font-semibold text-slate-600 dark:text-slate-400">
 <div class="flex items-center gap-2">
@@ -227,32 +239,6 @@
 <span>$500M+ Property Purchased</span>
 </div>
 </div>
-
-<section class="max-w-6xl mx-auto my-6 px-6">
-  <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-6 text-slate-500 dark:text-slate-400 text-sm">
-        <span class="uppercase tracking-wider font-bold text-slate-400">Trusted by</span>
-        <div class="flex items-center gap-4 opacity-80">
-          <img src="assets/screenshots/platform-screenshot.webp" alt="Partner 1" class="h-6"/ loading="lazy" decoding="async">
-          <img src="assets/screenshots/platform-screenshot.webp" alt="Partner 2" class="h-6"/ loading="lazy" decoding="async">
-          <img src="assets/screenshots/platform-screenshot.webp" alt="Partner 3" class="h-6"/ loading="lazy" decoding="async">
-        </div>
-      </div>
-      <div class="flex items-center gap-6 text-sm">
-        <div class="max-w-xs">
-          <p class="font-semibold">“Proppy found us a high‑yield property in 3 weeks.”</p>
-          <p class="text-slate-500 dark:text-slate-400">— Sarah, Melbourne</p>
-        </div>
-        <div class="hidden md:block w-px h-10 bg-slate-200 dark:bg-slate-800"></div>
-        <div class="max-w-xs hidden md:block">
-          <p class="font-semibold">“Their data cut through the noise. We acted with confidence.”</p>
-          <p class="text-slate-500 dark:text-slate-400">— James, Brisbane</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 <div class="bg-pastel-orange dark:bg-orange-950/20 rounded-[3rem] p-8 md:p-12 flex flex-col items-center justify-center min-h-[450px] border border-orange-100 dark:border-orange-900/30 relative overflow-hidden group">
 <div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5 pointer-events-none"></div>
@@ -341,36 +327,7 @@
       <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
     </div>
   </div>
-</section><section class="max-w-7xl mx-auto px-6 py-16">
-  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-12">
-    <div class="text-center mb-6">
-      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-        <span class="material-symbols-outlined text-sm">apps</span>
-        The Platform
-      </span>
-    </div>
-    <h2 class="text-3xl md:text-2xl md:text-4xl font-extrabold text-center mb-3">See the platform in action</h2>
-    <p class="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in delay-100">Explore how you search markets, analyse deals, and track your portfolio with Proppy.</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/platform-screenshot.webp" alt="Workflow overview" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
-        <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Guided workflow: from goals to secured deal</figcaption>
-        <p class="px-4 pb-4 text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Onboarding: define goals, budget, timeline → suggested markets & criteria.</p>
-      </figure>
-      <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/platform-screenshot.webp" alt="Market intelligence" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
-        <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Market intelligence and signals at a glance</figcaption>
-        <p class="px-4 pb-4 text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Suburb heatmap with KPIs: vacancy, yield, supply, growth momentum.</p>
-      </figure>
-      <figure class="rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900">
-        <img src="assets/screenshots/platform-screenshot.webp" alt="Portfolio dashboard" class="w-full h-auto img-rounded img-shadow" loading="lazy" decoding="async">
-        <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-400">Portfolio and deal tracking dashboard</figcaption>
-        <p class="px-4 pb-4 text-xs text-slate-500 dark:text-slate-400 italic">Annotation: Portfolio dashboard: equity, rent p/w, 12‑mo growth, pipeline.</p>
-      </figure>
-    </div>
-  </div>
-  </section>
-
+</section>
 <section class="max-w-7xl mx-auto px-6 py-10">
   <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
     <div>
@@ -383,58 +340,21 @@
       <a href="pricing.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">View pricing</a>
     </div>
   </div>
-<!-- latest-articles-home:start -->
-<section class="max-w-7xl mx-auto px-6 py-10">
-  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 md:p-8">
-    <div class="flex items-center justify-between mb-3">
-      <h2 class="text-2xl font-extrabold">Latest Articles</h2>
-      <a class="text-sm font-semibold text-primary" href="resources.html">View all</a>
+</section>
+
+
+<section class="max-w-7xl mx-auto px-6 py-14">
+  <div class="rounded-[2rem] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-wider mb-3">Ready?</div>
+    <h3 class="text-2xl md:text-3xl font-extrabold mb-2">Let’s map your next purchase</h3>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 animate-fade-in delay-100">A 20‑minute call to clarify goals, markets, and the plan to act.</p>
+    <div class="flex items-center gap-3 justify-center">
+      <a href="book.html" class="px-5 py-3 rounded-full bg-primary text-white font-semibold hover:shadow-lg hover:shadow-primary/30">Book a call</a>
+      <a href="how-it-works.html" class="px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 font-semibold">How it works</a>
     </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4"><a href="articles/when-to-use-equity-when-to-save-cash.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow bg-white dark:bg-slate-900">
-  <h4 class="font-bold mb-1">When to Use Equity and When to Save Cash</h4>
-  <p class="text-sm text-slate-500 line-clamp-2">Equity release timing, costs, and risk—balancing leverage with buffers across cycle phases.</p>
-</a>
-<a href="articles/when-growth-slows-historical-examples-from-australian-cities.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow bg-white dark:bg-slate-900">
-  <h4 class="font-bold mb-1">When Growth Slows: Historical Examples from Australian Cities</h4>
-  <p class="text-sm text-slate-500 line-clamp-2">A data‑led guide to when growth slows: historical examples from australian cities — using vacancy, rents, listings, DOM and supply signals to translate analysis…</p>
-</a>
-<a href="articles/the-role-of-property-managers.html" class="block rounded-2xl border border-slate-200 dark:border-slate-800 p-4 hover:shadow-md transition-shadow bg-white dark:bg-slate-900">
-  <h4 class="font-bold mb-1">The Role of Property Managers in Portfolio Success</h4>
-  <p class="text-sm text-slate-500 line-clamp-2">PM selection criteria, fee structures, vacancy fill times, and how bad management erodes returns—what to measure and when to switch.</p>
-</a></div>
   </div>
 </section>
-<!-- latest-articles-home:end -->
-
-<!-- Trust strip -->
-<section class="py-6 border-t border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-slate-900/40">
-  <div class="max-w-7xl mx-auto px-6 flex flex-wrap gap-3 items-center justify-center text-sm font-semibold text-slate-600 dark:text-slate-300">
-    <span>15+ Years</span>
-    <span class="opacity-30">•</span>
-    <a href="guarantee.html" class="hover:text-primary">Money‑Back Guarantee</a>
-    <span class="opacity-30">•</span>
-    <span>Nationwide Sourcing</span>
-    <span class="opacity-30">•</span>
-    <a href="technology.html" class="hover:text-primary">Top 1% Data‑Led</a>
-  </div>
-  </section>
-
-  <section class="py-14 md:py-16">
-    <div class="max-w-7xl mx-auto px-6">
-      <div id="google-reviews"></div>
-    </div>
-  </section>
 </main>
-
-<!-- Mobile sticky booking bar -->
-<section class="fixed bottom-4 inset-x-0 z-50 px-4 md:hidden">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex gap-2">
-      <a href="book.html" class="flex-1 inline-flex items-center justify-center px-4 py-3 rounded-full bg-slate-900 text-white font-semibold shadow-lg shadow-slate-900/20">Book a Free Call</a>
-      <a href="guarantee.html" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-white border border-slate-200 text-slate-900 font-semibold">Guarantee</a>
-    </div>
-  </div>
-</section>
 <section class="py-16 md:py-24 bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-16">
@@ -650,7 +570,6 @@
 <p class="mt-6 text-sm text-slate-400 font-medium animate-fade-in delay-100">Limited spots available for this month</p>
 </div>
 </section>
-
 <footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-center gap-8">
@@ -666,7 +585,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/google-reviews.js"></script>
 <script id="nav-support-script">
 (function(){
   function closeAll(){ document.querySelectorAll('.group.open').forEach(el=>el.classList.remove('open')); }
@@ -767,6 +685,6 @@ src="https://www.facebook.com/tr?id=1259694178868699&ev=PageView&noscript=1"
       });
     }
   }catch(e){}
-})();</script><script type="application/ld+json" data-auto="1">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://proppy.com.au", "name": "Home"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://proppy.com.au/", "name": "Smarter Property Investment.<br/>
+})();</script><script type="application/ld+json" data-auto="1">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://proppy.com.au", "name": "Home"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://proppy.com.au/home-3.html", "name": "Smarter Property Investment.<br/>
         Powered by Data. <span class=\"underline-accent\">Guided by Experts.</span>"}}]}]</script>
 </body></html>
