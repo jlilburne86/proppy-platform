@@ -13,6 +13,8 @@ sources:
   - name: PropTrack
     url: https://www.proptrack.com.au/insights/
 version: 1
+
+og_image: "/assets/screenshots/how-it-works.png"
 ---
 # Building Your First Investment Property Portfolio
 

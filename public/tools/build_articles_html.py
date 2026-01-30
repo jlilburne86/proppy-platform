@@ -409,8 +409,9 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
   </a>
 </section>'''
     author_html = author_block(author)
-    # OG image override from scorecards
-    og_image = f'{SITE}/assets/screenshots/platform-screenshot.png'
+    # OG/Twitter image: allow front matter override, else fallback
+    fm_og = fm.get('og_image')
+    og_image = fm_og if fm_og else f'{SITE}/assets/screenshots/platform-screenshot.png'
     for img in SCORECARDS.get(slug, {}).get('images', []):
         if img.get('og'):
             og_image = img.get('src', og_image)

@@ -15,6 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
+
+og_image: "/assets/screenshots/platform-screenshot.png"
 ---
 # When to Use Equity and When to Save Cash
 

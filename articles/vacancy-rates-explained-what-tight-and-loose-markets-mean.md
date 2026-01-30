@@ -18,6 +18,8 @@ sources:
   - name: "CoreLogic"
     url: "https://www.corelogic.com.au/news-research"
 version: 2
+
+og_image: "/assets/screenshots/technology.png"
 ---
 # Vacancy Rates Explained: What Tight and Loose Markets Mean
 

@@ -15,6 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
+
+og_image: "/assets/screenshots/homepage-9.png"
 ---
 # Brisbane Growth Corridors: Ipswich, Logan and Moreton Bay
 

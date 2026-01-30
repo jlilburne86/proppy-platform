@@ -18,6 +18,8 @@ sources:
   - name: "CoreLogic"
     url: "https://www.corelogic.com.au/news-research"
 version: 2
+
+og_image: "/assets/screenshots/homepage-9.png"
 ---
 # Rentvesting Explained: How Investors Separate Home and Portfolio
 

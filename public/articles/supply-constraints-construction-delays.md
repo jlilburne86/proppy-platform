@@ -15,6 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
+
+og_image: "/assets/screenshots/how-it-works.png"
 ---
 # [Supply Constraints](supply-constraints-construction-delays.html) and Construction Delays: The 2020–2024 Reality
 
