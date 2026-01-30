@@ -44,6 +44,9 @@ def main():
             continue
         if name.startswith('admin'):
             continue
+        # skip demo/variant pages from sitemap
+        if name.startswith('home-'):
+            continue
         path = os.path.join(ROOT, name)
         try:
             st = os.stat(path)
