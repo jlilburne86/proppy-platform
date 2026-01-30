@@ -37,7 +37,7 @@ Note: Pull from `data/proppydata.json` for your target LGA/suburb; prefer the la
 ## What the Data Shows
 Signals to combine:
 - Vacancy: Sub‑~1.5% tight. Rising vacancy can foreshadow softer rents and longer leasing times.
-- Rents (YoY/QoQ): Sustained rent growth supports yield and buffers. Stall = watch vacancy and [approvals](articles/supply-constraints-construction-delays.html).
+- Rents (YoY/QoQ): Sustained rent growth supports yield and buffers. Stall = watch vacancy and [approvals](supply-constraints-construction-delays.html).
 - Listings (YoY) and DOM: Fewer listings and falling DOM indicate stronger buyer depth; the reverse warns of softening.
 - Pipeline (approvals/completions): Low approvals today can point to tighter rentals 12–24 months ahead.
 - Investor lending: Rising participation can sharpen competition; falling can ease it.

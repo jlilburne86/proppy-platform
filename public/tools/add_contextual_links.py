@@ -65,7 +65,8 @@ def main():
     patterns = []
     for rx, slug in KEYMAP.items():
         if is_published(slug):
-            patterns.append((rx, f'articles/{slug}.html'))
+            # Within articles/, link to sibling HTML
+            patterns.append((rx, f'{slug}.html'))
     updated = 0
     for md in ART.glob('*.md'):
         fm, body = parse_front(md.read_text(encoding='utf-8', errors='ignore'))
@@ -73,6 +74,9 @@ def main():
         if status != 'published':
             continue
         new_body = linkify(body, patterns, limit=2)
+        # Cleanup old absolute-internal links from prior runs
+        for _, slug in KEYMAP.items():
+            new_body = new_body.replace(f'](articles/{slug}.html)', f']({slug}.html)')
         if new_body != body:
             txt = md.read_text(encoding='utf-8', errors='ignore')
             if txt.strip().startswith('---'):
@@ -86,4 +90,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

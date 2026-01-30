@@ -16,7 +16,7 @@ sources:
     url: https://www.corelogic.com.au/news-research
 version: 1
 ---
-# [Days-on-Market](articles/days-on-market-as-leading-indicator.html) as a Leading Indicator
+# [Days-on-Market](days-on-market-as-leading-indicator.html) as a Leading Indicator
 
 > Summary: DOM trends from CoreLogic and PropTrack—how shortening and lengthening cycles signal demand shifts 3–6 months early.
 

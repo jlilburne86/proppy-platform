@@ -18,7 +18,7 @@ version: 1
 ---
 # When to Use Equity and When to Save Cash
 
-> Summary: [Equity release](articles/when-to-use-equity-when-to-save-cash.html) timing, costs, and risk—balancing leverage with buffers across cycle phases.
+> Summary: [Equity release](when-to-use-equity-when-to-save-cash.html) timing, costs, and risk—balancing leverage with buffers across cycle phases.
 
 ## Key Takeaways
 - [Fill 3–5 bullet takeaways referencing signals]

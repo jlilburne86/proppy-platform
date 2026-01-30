@@ -16,7 +16,7 @@ sources:
     url: https://www.corelogic.com.au/news-research
 version: 1
 ---
-# [Supply Constraints](articles/supply-constraints-construction-delays.html) and Construction Delays: The 2020–2024 Reality
+# [Supply Constraints](supply-constraints-construction-delays.html) and Construction Delays: The 2020–2024 Reality
 
 > Summary: Builder collapses, material costs, and labor shortages—how supply-side issues created undersupply in high-demand markets.
 

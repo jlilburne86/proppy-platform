@@ -32,7 +32,7 @@ version: 1
 
 ## Process Outline
 1) Due diligence package (planning, flood, overlays, build/pest).
-2) Scope works and [approvals](articles/supply-constraints-construction-delays.html); staged payments; tight timeline.
+2) Scope works and [approvals](supply-constraints-construction-delays.html); staged payments; tight timeline.
 3) Lease sequencing; adjust insurance appropriately.
 
 ## Risks & Mitigations

@@ -18,7 +18,7 @@ version: 1
 ---
 # The 2024 Interstate Investment Playbook
 
-> Summary: How to invest across state lines with a repeatable, data‑led process — comparing vacancy, rents, listings, DOM and [approvals](articles/supply-constraints-construction-delays.html) by city, and managing logistics and risk.
+> Summary: How to invest across state lines with a repeatable, data‑led process — comparing vacancy, rents, listings, DOM and [approvals](supply-constraints-construction-delays.html) by city, and managing logistics and risk.
 
 ## Key Takeaways
 - [Fill 3–5 bullet takeaways referencing signals]

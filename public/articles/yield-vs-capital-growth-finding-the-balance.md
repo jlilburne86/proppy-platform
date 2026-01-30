@@ -18,7 +18,7 @@ version: 1
 ---
 # Yield vs Capital Growth: Finding the Balance
 
-> Summary: Balance cashflow and equity with a multi‑signal framework—vacancy, rents, listings, DOM, [approvals](articles/supply-constraints-construction-delays.html)—and practical calculations investors can reuse.
+> Summary: Balance cashflow and equity with a multi‑signal framework—vacancy, rents, listings, DOM, [approvals](supply-constraints-construction-delays.html)—and practical calculations investors can reuse.
 
 ## Key Takeaways
 - [Fill 3–5 bullet takeaways referencing signals]
