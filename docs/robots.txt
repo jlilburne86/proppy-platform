@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://jlilburne86.github.io/proppy-platform/sitemap.xml
