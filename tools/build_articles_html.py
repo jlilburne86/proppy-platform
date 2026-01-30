@@ -463,6 +463,7 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
 {body_html}
 </main>
 {author_html}
+<script type=\"application/ld+json\">{{\"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": {json.dumps(title)}, \"description\": {json.dumps(desc)}, \"author\": {json.dumps(author)}, \"datePublished\": {json.dumps(datetime.date.today().isoformat())}, \"mainEntityOfPage\": {json.dumps(canonical)}, \"image\": [{json.dumps(og_image)}], \"publisher\": {{\"@type\": \"Organization\", \"name\": \"Proppy\"}}}}</script>
 {pick_related(slug, category)}
 {back_cta}
 <footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">
