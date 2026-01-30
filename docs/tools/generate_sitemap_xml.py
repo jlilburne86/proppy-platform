@@ -47,6 +47,9 @@ def main():
         # skip demo/variant pages from sitemap
         if name.startswith('home-'):
             continue
+        # skip alias pages
+        if name == 'investor-resources-hub.html':
+            continue
         path = os.path.join(ROOT, name)
         try:
             st = os.stat(path)
