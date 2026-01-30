@@ -4,7 +4,11 @@ from pathlib import Path
 ROOT = Path('/Users/boo2/Desktop/proppy')
 ART = ROOT / 'articles'
 OUT = ROOT / 'articles.xml'
-SITE = 'http://127.0.0.1:8000'
+try:
+    from tools.seo_config import site_url
+    SITE = site_url()
+except Exception:
+    SITE = 'https://jlilburne86.github.io/proppy-platform'
 
 def parse_front(text: str) -> dict:
     fm = {}
@@ -58,4 +62,3 @@ def main():
 
 if __name__=='__main__':
     main()
-

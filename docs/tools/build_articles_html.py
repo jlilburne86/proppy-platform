@@ -370,7 +370,12 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
     reading_time = compute_read_time(raw_md)
     author = fm.get('author', 'Proppy Editorial')
     today = datetime.date.today().strftime('%d %b %Y')
-    canonical = f'{slug}.html'
+    try:
+        from tools.seo_config import site_url as _site_url
+        SITE = _site_url()
+    except Exception:
+        SITE = 'https://jlilburne86.github.io/proppy-platform'
+    canonical = f'{SITE}/articles/{slug}.html'
     pillar = CAT_TO_PILLAR.get(category, category)
     anchor = PILLAR_ANCHOR.get(pillar, '')
     breadcrumbs = f'''<nav aria-label="Breadcrumb" class="text-sm text-slate-500 dark:text-slate-400 mb-4">
@@ -405,12 +410,12 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
 </section>'''
     author_html = author_block(author)
     # OG image override from scorecards
-    og_image = '../assets/screenshots/platform-screenshot.png'
+    og_image = f'{SITE}/assets/screenshots/platform-screenshot.png'
     for img in SCORECARDS.get(slug, {}).get('images', []):
         if img.get('og'):
             og_image = img.get('src', og_image)
     if og_image.startswith('/'):
-        og_image = '../' + og_image.lstrip('/')
+        og_image = f'{SITE}/' + og_image.lstrip('/')
 
     outlook_txt, outlook_cls = compute_outlook(slug)
     page = f'''<!DOCTYPE html>
