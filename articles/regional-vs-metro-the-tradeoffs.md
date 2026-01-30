@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # Regional vs. Metro: The Trade-offs Australian Investors Face
 
 > Summary: Yield, growth, liquidity, and vacancy compared—using Geelong, Newcastle, and Central Coast data vs. capital city benchmarks.

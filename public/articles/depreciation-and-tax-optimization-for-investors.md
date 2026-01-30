@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # Depreciation and Tax Optimization for Investors
 
 > Summary: How depreciation schedules work, new vs. established properties, and the post-2017 changes—with real return examples.

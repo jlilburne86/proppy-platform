@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Understanding the Australian Property Cycle
 
 > Summary: A practical primer on the phases of Australia’s property cycle—how to read rates, vacancy, listings and [approvals](supply-constraints-construction-delays.html)—and turn them into repeatable actions.

@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Tenant Default and Arrears Risk
 
 > Summary: Probability, impact, and mitigation strategies for rental arrears—including bond adequacy, insurance, and PM selection.

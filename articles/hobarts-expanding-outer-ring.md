@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Hobart's Expanding Outer Ring: Bridgewater to Glenorchy
 
 > Summary: Tasmania's affordability plays—rent yields, price growth, and migration-driven demand in Hobart's outer suburbs.

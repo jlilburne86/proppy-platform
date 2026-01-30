@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Natural Disasters, Insurance, and Property Resilience
 
 > Summary: Flood, bushfire, and cyclone risk in Australian markets—insurance costs, council overlays, and climate-adjusted investing.

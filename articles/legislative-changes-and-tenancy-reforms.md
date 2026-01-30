@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Legislative Changes and Tenancy Reforms
 
 > Summary: State-by-state rental law changes from 2020–2024, impact on investor returns, and how to adapt portfolio strategy.

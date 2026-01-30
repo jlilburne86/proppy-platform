@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Long-Term Price Growth: What 20-Year Data Reveals
 
 > Summary: A data‑led guide to long-term price growth: what 20-year data reveals — using vacancy, rents, listings, DOM and supply signals to translate analysis into…

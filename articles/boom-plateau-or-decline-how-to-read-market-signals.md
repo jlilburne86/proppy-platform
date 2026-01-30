@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # Boom, Plateau, or Decline: How to Read Market Signals
 
 > Summary: A repeatable way to read multi‑signal data so you can tell when a market is accelerating (boom), levelling off (plateau), or softening (decline) — and act with confidence.

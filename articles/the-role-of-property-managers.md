@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # The Role of Property Managers in Portfolio Success
 
 > Summary: PM selection criteria, fee structures, vacancy fill times, and how bad management erodes returns—what to measure and when to switch.

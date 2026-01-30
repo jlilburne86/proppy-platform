@@ -9,7 +9,8 @@ sources:
   - name: RBA
     url: https://www.rba.gov.au/
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Case Study: Managing Through Interest Rate Rises
 
 > Summary: The investor’s edge is process — buffers, rent reviews, insurance and selective improvements — not prediction.

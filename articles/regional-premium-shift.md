@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # The Regional Premium Shift: When Lifestyle Suburbs Outperform
 
 > Summary: Post-pandemic regional price growth—separating structural demand from temporary speculation using vacancy and employment data.

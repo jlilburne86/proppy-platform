@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Geelong and the Bellarine Peninsula
 
 > Summary: Regional Victoria's strongest performer—vacancy, rents, infrastructure, and what the data reveals about sustained growth.

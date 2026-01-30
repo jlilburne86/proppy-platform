@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # DIY Investing vs. Buyer's Agent: Evaluating the Trade-off
 
 > Summary: Cost-benefit analysis of buyer's agent fees vs. DIY due diligence—when expertise adds value and when it doesn't.

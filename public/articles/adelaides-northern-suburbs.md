@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Adelaide’s Northern Suburbs: Salisbury to Gawler
 
 > Summary: A practical guide to reading the most important signals in Adelaide’s north so you can buy with conviction, hold through plateaus and avoid pockets of oversupply.

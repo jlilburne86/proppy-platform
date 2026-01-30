@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # Yield vs Capital Growth: Finding the Balance
 
 > Summary: Balance cashflow and equity with a multi‑signal framework—vacancy, rents, listings, DOM, [approvals](supply-constraints-construction-delays.html)—and practical calculations investors can reuse.

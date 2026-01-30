@@ -9,7 +9,8 @@ sources:
   - name: ABS
     url: https://www.abs.gov.au/
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Case Study: Renovating for Value vs Cashflow
 
 > Summary: Renovations work when they fix what tenants and buyers value; they fail when they chase trends or ignore layout and light.

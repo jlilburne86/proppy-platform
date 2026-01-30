@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Sunshine Coast Growth Hubs: Caloundra to Maroochydore
 
 > Summary: SEQ's coastal alternative—vacancy, employment diversification, and infrastructure shaping the Sunshine Coast opportunity.

@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Overleveraging and Cashflow Stress: Warning Signs
 
 > Summary: When LVR, debt serviceability, and vacancy combine to create distress—how to recognize risk before it crystallizes.

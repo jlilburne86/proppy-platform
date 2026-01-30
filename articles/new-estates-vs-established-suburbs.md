@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # Choosing Between New Estates and Established Suburbs
 
 > Summary: Land appreciation, build quality, oversupply risk, and infrastructure lag—comparing new vs. established with Australian data.

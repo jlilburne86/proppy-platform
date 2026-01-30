@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # When Growth Slows: Historical Examples from Australian Cities
 
 > Summary: A data‑led guide to when growth slows: historical examples from australian cities — using vacancy, rents, listings, DOM and supply signals to translate analysis…

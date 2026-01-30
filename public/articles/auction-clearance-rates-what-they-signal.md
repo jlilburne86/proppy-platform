@@ -13,7 +13,8 @@ sources:
   - name: ABS
     url: https://www.abs.gov.au/
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Auction Clearance Rates: What They Signal (and What They Don’t)
 
 > Summary: Clearance rates are a useful temperature check — but only when combined with listings, DOM, vacancy and rents. Treat them as short‑run pulse, not a stand‑alone decision rule.

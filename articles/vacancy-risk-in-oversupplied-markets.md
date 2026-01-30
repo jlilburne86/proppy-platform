@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Vacancy Risk in Oversupplied Markets
 
 > Summary: How to spot oversupply early using [approvals](supply-constraints-construction-delays.html), listings, vacancy and absorption — and practical ways to reduce leasing risk and protect cashflow.

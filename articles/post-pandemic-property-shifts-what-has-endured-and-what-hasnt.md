@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Post-Pandemic Property Shifts: What Has Endured and What Hasn't
 
 > Summary: A data‑led guide to post-pandemic property shifts: what has endured and what hasn't — using vacancy, rents, listings, DOM and supply signals to translate…

@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Newcastle and Lake Macquarie Investment Profile
 
 > Summary: Regional NSW's largest city—employment, vacancy, rent growth, and why Newcastle outperformed Sydney in 2020–2023.

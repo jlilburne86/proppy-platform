@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # Foreign Investment Trends in Australian Residential Property
 
 > Summary: FIRB data on foreign buyer volumes, policy changes, and how international capital affects inner-city apartment markets.

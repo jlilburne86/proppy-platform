@@ -11,7 +11,8 @@ sources:
   - name: ABS
     url: https://www.abs.gov.au/
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Case Study: First‑Time Buyer in Regional QLD
 
 > Summary: A grounded walkthrough of a first purchase in a regional QLD town under rental pressure, emphasising buffers, quality, and clarity.

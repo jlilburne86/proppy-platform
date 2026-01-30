@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # Rentvesting: The Case For and Against
 
 > Summary: Living in desirable locations while investing elsewhere—financial math, lifestyle trade-offs, and when it makes sense.

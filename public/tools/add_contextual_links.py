@@ -6,11 +6,14 @@ ART = ROOT / 'articles'
 
 # Map keywords/phrases to target slugs
 KEYMAP = {
-  r'\bvacancy rates?\b': 'vacancy-rates-explained-what-tight-and-loose-markets-mean',
-  r'\bdays?-?on-?market\b': 'days-on-market-as-leading-indicator',
-  r'\bbuilding approvals\b|\bapprovals\b|\bsupply constraints\b': 'supply-constraints-construction-delays',
+  r'\bvacancy rates?\b|\bvaca?ncy\b': 'vacancy-rates-explained-what-tight-and-loose-markets-mean',
+  r'\bdays?-?on-?market\b|\bDOM\b': 'days-on-market-as-leading-indicator',
+  r'\bbuilding approvals\b|\bapprovals\b|\bsupply constraints?\b|\bconstruction delays?\b': 'supply-constraints-construction-delays',
   r'\brentvesting\b': 'rentvesting-explained-how-investors-separate-home-and-portfolio',
   r'\bequity release\b|\busing equity\b': 'when-to-use-equity-when-to-save-cash',
+  r'\binterstate migration\b|\bmigration patterns\b': 'interstate-migration-patterns-post-2020',
+  r'\bgross yield\b|\byields?\b': 'rental-yield-compression-capital-cities',
+  r'\bprice growth\b|\blong-?term growth\b': 'long-term-price-growth-what-20-year-data-reveals',
 }
 
 def parse_front(text: str):
@@ -33,7 +36,7 @@ def is_published(slug: str) -> bool:
     fm,_ = parse_front(p.read_text(encoding='utf-8', errors='ignore'))
     return (fm.get('publish_status','') or '').lower() == 'published'
 
-def linkify(body: str, patterns: list[tuple[str,str]], limit: int = 2) -> str:
+def linkify(body: str, patterns, limit: int = 4) -> str:
     # Avoid replacing inside existing markdown links
     def safe_replace(text: str, pat: str, url: str) -> tuple[str, int]:
         count = 0

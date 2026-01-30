@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # Rental Yield Compression in Australian Capital Cities
 
 > Summary: Why gross yields fell from 4.5% to 3.2% in Sydney and Melbourne—and what it means for new investors in 2024.

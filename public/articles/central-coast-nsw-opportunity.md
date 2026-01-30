@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Central Coast NSW: Opportunity or Oversupply Risk?
 
 > Summary: Analyzing Gosford, Wyong, and Woy Woy—vacancy trends, commute dynamics, and what separates strong from weak pockets.

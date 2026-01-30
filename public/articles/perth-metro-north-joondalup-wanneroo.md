@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/homepage-9.png---
 # Perth Metro North: Joondalup and Wanneroo
 
 > Summary: Vacancy, rent trends, employment hubs, and Metronet's impact on Perth's northern growth corridor.

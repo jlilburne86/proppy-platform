@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/how-it-works.png---
 # House vs. Unit: What the Data Actually Shows
 
 > Summary: Capital growth, yield, vacancy, and maintenance compared across Sydney, Melbourne, Brisbane using 10-year CoreLogic data.

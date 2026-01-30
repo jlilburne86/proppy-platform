@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # The Build-to-Rent Sector in Australia: Implications for Investors
 
 > Summary: Institutional capital entering BTR—how it affects supply, rents, and whether individual investors should worry.

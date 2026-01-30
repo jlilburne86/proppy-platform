@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # Interstate Migration Patterns Post-2020: Where Australians Moved and Why
 
 > Summary: ABS data on the great relocation—Queensland, WA inflows, and what sustained migration means for rental demand.

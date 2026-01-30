@@ -11,7 +11,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Case Study: Multi‑City Portfolio Building Over 8 Years
 
 > Summary: A measured approach to buying across cycles: stabilisers first, accelerators when signals align, and strict quality filters.

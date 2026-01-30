@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # Demographic Trends Shaping Australian Property Demand
 
 > Summary: Aging population, household formation rates, and migration—how demographics create long-term rental and ownership demand.

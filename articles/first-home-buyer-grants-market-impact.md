@@ -15,7 +15,8 @@ sources:
   - name: CoreLogic
     url: https://www.corelogic.com.au/news-research
 version: 1
----
+
+og_image: "/assets/screenshots/technology.png---
 # First Home Buyer Grants and Market Impact
 
 > Summary: How state and federal incentives shift demand—analyzing the effect on entry-level price points and investor competition.

@@ -11,7 +11,8 @@ sources:
   - name: ABS
     url: https://www.abs.gov.au/
 version: 1
----
+
+og_image: "/assets/screenshots/platform-screenshot.png---
 # Case Study: Converting to Dual Income
 
 > Summary: Where dual‑income works, what to check before you buy, and how to keep buffers healthy during conversion.
