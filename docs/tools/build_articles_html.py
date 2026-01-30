@@ -444,6 +444,7 @@ def build_page_html(fm: dict, body_html: str, nav_html: str, slug: str, raw_md: 
 <script id="navx-script" src="../tools/navx-accessible.js"></script>
 <link rel="stylesheet" href="../tools/ux.css"/>
 <script src="../tools/analytics.js"></script>
+<script type="application/ld+json">{{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{"@type": "ListItem", "position": 1, "name": "Home", "item": "__HOME__" }}, {{"@type": "ListItem", "position": 2, "name": "Resources", "item": "__RES__" }}, {{"@type": "ListItem", "position": 3, "name": "__PILLAR__", "item": "__PRES__" }}, {{"@type": "ListItem", "position": 4, "name": "__TITLE__", "item": "__CANON__" }} ]}}</script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans">
 <a href="#content" class="skip-link">Skip to content</a>
