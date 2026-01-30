@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hastings – Waterfront Cottage - Proppy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#0f172a',accent:'#4f46e5','background-light':'#f8fafc','background-dark':'#020617','card-light':'#ffffff','card-dark':'#0f172a'},fontFamily:{sans:['Plus Jakarta Sans','sans-serif'],display:['Plus Jakarta Sans','sans-serif']},borderRadius:{DEFAULT:'1rem','2xl':'2rem','3xl':'3rem'}}}};</script>
+  <link rel="stylesheet" href="tools/ux.css" />
+<script id="color-mode-guard">(function(){try{document.documentElement.classList.remove('dark');}catch(e){}})();</script>
+<style id="navx-styles">
+.navx-sub{display:none}
+.navx-group:hover>.navx-sub,.navx-group:focus-within>.navx-sub,.navx-group.open>.navx-sub{display:block}
+.navx-toggle{cursor:pointer}
+.navx-overlay{display:none}
+.navx-drawer{transform:translateX(100%); transition:transform .2s ease}
+.navx-open .navx-overlay{display:block}
+.navx-open .navx-drawer{transform:translateX(0)}
+</style>
+<script id="navx-script">
+(function(){
+  function closeAll(){ document.querySelectorAll('.navx-group.open').forEach(el=>el.classList.remove('open')); document.querySelectorAll('.navx-toggle[aria-expanded="true"]').forEach(a=>a.setAttribute('aria-expanded','false')); }
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    var toggle = t.closest('a.navx-toggle');
+    if (toggle){ e.preventDefault(); e.stopPropagation(); var parent = toggle.closest('.navx-group'); var isOpen = parent.classList.contains('open'); closeAll(); if(!isOpen){ parent.classList.add('open'); toggle.setAttribute('aria-expanded','true'); } return; }
+    if (!t.closest('.navx-sub')){ closeAll(); }
+  }, true);
+  // mobile drawer
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('#navx-burger');
+    var closeBtn = e.target.closest('#navx-close');
+    if (btn){ e.preventDefault(); document.documentElement.classList.add('navx-open'); }
+    if (closeBtn || e.target.classList.contains('navx-overlay')){ document.documentElement.classList.remove('navx-open'); }
+    // accordion
+    var acc = e.target.closest('.navx-acc');
+    if (acc){ e.preventDefault(); var body = acc.nextElementSibling; if(body){ body.classList.toggle('hidden'); }}
+  });
+})();
+</script>
+
+<link rel="canonical" href="https://proppy.com.au/property-hastings-waterfront-cottage.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Proppy", "url": "https://proppy.com.au", "logo": "https://proppy.com.au/proppy-logo.png", "sameAs": ["https://www.facebook.com/proppy.com.au", "https://www.instagram.com/proppy.com.au"], "telephone": "+611300122914", "address": {"@type": "PostalAddress", "streetAddress": "Level 3, 55 Collins St", "addressLocality": "Melbourne", "addressRegion": "VIC", "postalCode": "3000", "addressCountry": "AU"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Proppy", "url": "https://proppy.com.au", "potentialAction": {"@type": "SearchAction", "target": "https://proppy.com.au/?s={search_term_string}", "query-input": "required name=search_term_string"}}</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
+  
+
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-slate-900 md:bg-white/80 md:dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-7 w-7 md:hidden"/ decoding="async">
+        <img src="proppy-logo.png" alt="Proppy" class="hidden md:block h-8 md:h-9 w-auto"/ decoding="async">
+        <span class="sr-only">Proppy</span>
+      </a>
+    </div>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+      <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<div class="navx-group relative">
+  <a class="navx-toggle hover:text-primary transition-colors" href="how-it-works.html" role="button" aria-expanded="false">How It Works</a>
+  <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
+    <a href="how-it-works.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">How It Works</a>
+<a href="technology.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Technology</a>
+  </div>
+</div>
+<div class="navx-group relative">
+  <a class="navx-toggle hover:text-primary transition-colors" href="javascript:void(0)" role="button" aria-expanded="false">Solutions</a>
+  <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
+    <a href="advantage.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Advantage</a>
+<a href="sourcing.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Sourcing</a>
+<a href="about.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+<a href="team.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Team</a>
+  </div>
+</div>
+<div class="navx-group relative">
+  <a class="navx-toggle hover:text-primary transition-colors" href="javascript:void(0)" role="button" aria-expanded="false">Success</a>
+  <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
+    <a href="results.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Results</a>
+<a href="guarantee.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Guarantee</a>
+  </div>
+</div>
+<a class="hover:text-primary transition-colors" href="resources.html">Resources</a>
+<div class="navx-group relative">
+  <a class="navx-toggle hover:text-primary transition-colors" href="javascript:void(0)" role="button" aria-expanded="false">Start Free Assessment</a>
+  <div class="navx-sub absolute left-0 mt-2 hidden group-hover:block bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg min-w-[220px] p-2 z-50">
+    <a href="pricing.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Pricing</a>
+<a href="book.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Book a Call</a>
+<a href="contact.html" class="block px-4 py-2 rounded hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+  </div>
+</div>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="book.html" class="hidden md:inline-flex px-5 py-2.5 text-sm font-semibold text-white bg-slate-900 dark:bg-white dark:text-slate-900 rounded-full hover:shadow-lg transition-all">Book a Call</a>
+      <button id="navx-burger" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div class="fixed inset-0 navx-overlay bg-black/40"></div>
+  <div class="fixed right-0 top-0 h-full w-80 max-w-[85vw] navx-drawer bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-4">
+    <div class="flex items-center justify-between mb-2">
+      <a href="index.html" class="inline-flex items-center gap-2" aria-label="Proppy home">
+        <img src="proppy%20mobile%20icon.png" alt="Proppy" class="h-6 w-6"/ decoding="async">
+      </a>
+      <button id="navx-close" class="w-10 h-10 rounded-lg border border-slate-300 dark:border-slate-700 inline-flex items-center justify-center">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <ul class="text-slate-700 dark:text-slate-300"><li class="border-b border-slate-200 dark:border-slate-800"><a class="block py-3 font-semibold" href="index.html">Home</a></li>
+<li class="border-b border-slate-200 dark:border-slate-800">
+<button class="navx-acc w-full flex items-center justify-between py-3 text-left font-semibold">How It Works<span class="material-symbols-outlined text-base">expand_more</span></button>
+<ul class="navx-acc-body hidden pl-3 pb-3">
+<li><a class="block py-2" href="how-it-works.html">How It Works</a></li>
+<li><a class="block py-2" href="technology.html">Technology</a></li>
+</ul>
+</li>
+<li class="border-b border-slate-200 dark:border-slate-800">
+<button class="navx-acc w-full flex items-center justify-between py-3 text-left font-semibold">Solutions<span class="material-symbols-outlined text-base">expand_more</span></button>
+<ul class="navx-acc-body hidden pl-3 pb-3">
+<li><a class="block py-2" href="advantage.html">Advantage</a></li>
+<li><a class="block py-2" href="sourcing.html">Sourcing</a></li>
+<li><a class="block py-2" href="about.html">About</a></li>
+<li><a class="block py-2" href="team.html">Team</a></li>
+</ul>
+</li>
+<li class="border-b border-slate-200 dark:border-slate-800">
+<button class="navx-acc w-full flex items-center justify-between py-3 text-left font-semibold">Success<span class="material-symbols-outlined text-base">expand_more</span></button>
+<ul class="navx-acc-body hidden pl-3 pb-3">
+<li><a class="block py-2" href="results.html">Results</a></li>
+<li><a class="block py-2" href="guarantee.html">Guarantee</a></li>
+</ul>
+</li>
+<li class="border-b border-slate-200 dark:border-slate-800"><a class="block py-3 font-semibold" href="resources.html">Resources</a></li>
+<li class="border-b border-slate-200 dark:border-slate-800">
+<button class="navx-acc w-full flex items-center justify-between py-3 text-left font-semibold">Start Free Assessment<span class="material-symbols-outlined text-base">expand_more</span></button>
+<ul class="navx-acc-body hidden pl-3 pb-3">
+<li><a class="block py-2" href="pricing.html">Pricing</a></li>
+<li><a class="block py-2" href="book.html">Book a Call</a></li>
+<li><a class="block py-2" href="contact.html">Contact</a></li>
+</ul>
+</li></ul>
+    <a href="book.html" class="mt-4 inline-flex w-full items-center justify-center px-5 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold">Start Free Assessment</a>
+  </div>
+</nav>
+
+
+
+  <main class="pt-28 pb-24">
+    <section class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-100 dark:border-indigo-800 mb-4">
+            <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+            <span class="text-xs font-bold uppercase tracking-wide text-indigo-600 dark:text-indigo-300">Case Study</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">Hastings – Waterfront Cottage</h1>
+          <p class="text-slate-500 dark:text-slate-400 mb-6">Strategy: <span class="font-semibold text-slate-700 dark:text-slate-200">Coastal Growth Strategy</span></p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <p class="text-xs font-bold text-slate-400 uppercase mb-1">Purchase Price</p>
+              <p class="text-xl font-extrabold">—</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <p class="text-xs font-bold text-slate-400 uppercase mb-1">Instant Equity</p>
+              <p class="text-xl font-extrabold">—</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <p class="text-xs font-bold text-slate-400 uppercase mb-1">12-Mo Growth</p>
+              <p class="text-xl font-extrabold">—</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+            
+          </div>
+          
+          
+        </div>
+        <div>
+          <div class="rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg">
+            <img src="assets/properties/hastings-waterfront-cottage.jpg" alt="Hastings – Waterfront Cottage" class="w-full h-auto" / loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+      <div class="mt-12">
+        <a href="results.html" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-indigo-300">← Back to Results</a>
+      </div>
+    </section>
+  </main>
+<footer class="py-12 border-t border-slate-200 dark:border-slate-800 mt-12">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-extrabold uppercase tracking-tight">Proppy</span>
+        <span class="text-slate-400 text-sm">© 2024 Proppy Inc. All rights reserved.</span>
+      </div>
+      <div class="flex gap-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
+        <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+        <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+        <a class="hover:text-primary transition-colors" href="site-map.html">Site Map</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Auto-generated by tools/wire_highlevel.py -->
+<script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="694527ad0004046b7d0c24f2"></script>
+<script src="https://engage.proppy.com.au/js/external-tracking.js" data-tracking-id="tk_23a0bba9e2804341b3e327fe332a2646"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1259694178868699');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1259694178868699&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Proppy", "url": "https://proppy.com.au", "logo": "https://proppy.com.au/proppy-logo.png", "telephone": "+611300122914", "sameAs": ["https://www.facebook.com/proppy.com.au", "https://www.instagram.com/proppy.com.au"], "address": {"@type": "PostalAddress", "streetAddress": "Level 3, 55 Collins St", "addressLocality": "Melbourne", "addressRegion": "VIC", "postalCode": "3000", "addressCountry": "AU"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "09:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "09:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00"}], "contactPoint": [{"@type": "ContactPoint", "contactType": "customer support", "telephone": "+611300122914"}, {"@type": "ContactPoint", "contactType": "WhatsApp", "telephone": "+61468097767"}]}</script>
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3KZYTX2VQJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3KZYTX2VQJ');
+</script>
+
+
+<script>(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    try{
+      var host = location.hostname;
+      document.querySelectorAll('a[href^="http"]').forEach(function(a){
+        try{
+          var u = new URL(a.href);
+          if (u.hostname && u.hostname !== host){
+            a.setAttribute('target','_blank');
+            var rel = (a.getAttribute('rel')||'').split(/\s+/).filter(Boolean);
+            if (rel.indexOf('noopener')===-1) rel.push('noopener');
+            a.setAttribute('rel', rel.join(' '));
+          }
+        }catch(e){}
+      });
+    }catch(e){}
+  });
+})();</script>
+
+<script src="assets/gh-pages-path.js"></script>
+<script src="assets/booking-router.js"></script>
+
+<script>(function(){
+  try{
+    var qs = location.search ? new URLSearchParams(location.search) : null;
+    if (qs) {
+      document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('a[href]').forEach(function(a){
+          try{
+            var u = new URL(a.href, location.href);
+            var host = u.hostname || '';
+            if (/leadconnectorhq|gohighlevel/.test(host)){
+              qs.forEach(function(v,k){ if(!u.searchParams.has(k)) u.searchParams.set(k,v); });
+              a.href = u.toString();
+            }
+          }catch(e){}
+        });
+        document.querySelectorAll('iframe[src]').forEach(function(iframe){
+          try{
+            var u = new URL(iframe.src, location.href);
+            var host = u.hostname || '';
+            if (/leadconnectorhq|gohighlevel/.test(host)){
+              qs.forEach(function(v,k){ if(!u.searchParams.has(k)) u.searchParams.set(k,v); });
+              if (iframe.src !== u.toString()) iframe.src = u.toString();
+            }
+          }catch(e){}
+        });
+      });
+    }
+  }catch(e){}
+})();</script><script type="application/ld+json" data-auto="1">[{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://proppy.com.au", "name": "Home"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://proppy.com.au/property-hastings-waterfront-cottage.html", "name": "Hastings – Waterfront Cottage"}}]}]</script>
+</body></html>

@@ -1,0 +1,69 @@
+name: GitHub Pages (gh-pages)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build Tailwind CSS
+        run: npx tailwindcss -i styles/tw.css -o assets/site.css --minify
+
+      - name: Build Content
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          python3 tools/build_articles_html.py
+          python3 tools/update_resources_with_articles.py
+          python3 tools/build_articles_rss.py
+          python3 tools/generate_sitemap_xml.py
+
+      - name: Package Public Site
+        run: |
+          python3 tools/deploy_to_public.py
+          python3 tools/remove_tailwind_cdn_in_public.py
+          python3 tools/link_check_public.py
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
