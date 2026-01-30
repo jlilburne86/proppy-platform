@@ -18,7 +18,7 @@ version: 1
 ---
 # Vacancy Risk in Oversupplied Markets
 
-> Summary: How to spot oversupply early using approvals, listings, vacancy and absorption — and practical ways to reduce leasing risk and protect cashflow.
+> Summary: How to spot oversupply early using [approvals](articles/supply-constraints-construction-delays.html), listings, vacancy and absorption — and practical ways to reduce leasing risk and protect cashflow.
 
 ## Key Takeaways
 - [Fill 3–5 bullet takeaways referencing signals]

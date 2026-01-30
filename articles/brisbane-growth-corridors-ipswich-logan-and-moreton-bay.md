@@ -18,7 +18,7 @@ version: 1
 ---
 # Brisbane Growth Corridors: Ipswich, Logan and Moreton Bay
 
-> Summary: A single framework to compare three SEQ corridors using vacancy, rents, listings, DOM and approvals — then decide when to buy, what to buy, and what to avoid.
+> Summary: A single framework to compare three SEQ corridors using vacancy, rents, listings, DOM and [approvals](articles/supply-constraints-construction-delays.html) — then decide when to buy, what to buy, and what to avoid.
 
 ## Key Takeaways
 - Treat each corridor as a portfolio sleeve; don’t average them. Micro‑location selection is the edge.

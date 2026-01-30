@@ -18,7 +18,7 @@ version: 1
 ---
 # Understanding the Australian Property Cycle
 
-> Summary: A practical primer on the phases of Australia’s property cycle—how to read rates, vacancy, listings and approvals—and turn them into repeatable actions.
+> Summary: A practical primer on the phases of Australia’s property cycle—how to read rates, vacancy, listings and [approvals](articles/supply-constraints-construction-delays.html)—and turn them into repeatable actions.
 
 ## Key Takeaways
 - [Fill 3–5 bullet takeaways referencing signals]

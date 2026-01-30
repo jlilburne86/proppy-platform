@@ -27,7 +27,7 @@ version: 1
 Clearance rates reflect auctioned stock outcomes in capital cities. They are timely and noisy. The right way to use them is as part of a short‑run confirmation set with listings and DOM for your target corridor, backed by vacancy/rent dynamics for medium‑term resilience.
 
 ## Data Snapshot (Proppy)
-- Build a 6‑metric dashboard for your corridor: clearance trend (city), listings YoY, DOM, vacancy, rents YoY, approvals.
+- Build a 6‑metric dashboard for your corridor: clearance trend (city), listings YoY, DOM, vacancy, rents YoY, [approvals](articles/supply-constraints-construction-delays.html).
 - Note: For unit‑heavy or regional markets, clearance rates are weaker proxies — rely more on listings/DOM and rental pressure.
 
 ## What the Data Shows

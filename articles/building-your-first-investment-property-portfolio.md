@@ -27,7 +27,7 @@ version: 1
 Markets ebb and flow, but portfolios are built on process. Most delays come from over‑researching and under‑deciding. This guide compresses research into a repeatable method that favours timely, high‑quality decisions and preserves cashflow resilience.
 
 ## Your Dashboard
-- Vacancy, Rents YoY/QoQ, Listings YoY, DOM, Approvals/Pipeline, Investor Lending
+- Vacancy, Rents YoY/QoQ, Listings YoY, DOM, [Approvals](articles/supply-constraints-construction-delays.html)/Pipeline, Investor Lending
 - Sources: `data/proppydata.json` (local), ABS (approvals), RBA/PropTrack (context)
 
 ## Asset Selection
